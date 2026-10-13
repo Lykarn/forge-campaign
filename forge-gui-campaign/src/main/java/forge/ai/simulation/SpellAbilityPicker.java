@@ -91,19 +91,24 @@ public class SpellAbilityPicker {
         if (controller != null) {
             return chooseSpellAbilityToPlaySimulated(controller);
         }
+        // One time budget for the whole decision, shared by every search inside it.
+        forge.campaign.ai.SimulationBudget.beginDecision();
         try {
             return chooseSpellAbilityToPlaySimulated(null);
         } catch (RuntimeException | StackOverflowError e) {
             plan = null;
             System.err.println("[campaign] simulation failed (" + e + "); this decision uses the heuristic AI");
             AiController ai = ((PlayerControllerAi) player.getController()).getAi();
-            ai.setUseSimulation(AIOption.USE_HYBRID_SIMULATION);
+            // No simulation at all for the fallback: hybrid would copy the game again.
+            ai.setUseSimulation(null);
             try {
                 List<SpellAbility> chosen = ai.chooseSpellAbilityToPlay();
                 return chosen == null || chosen.isEmpty() ? null : chosen.get(0);
             } finally {
                 ai.setUseSimulation(AIOption.USE_FULL_SIMULATION);
             }
+        } finally {
+            forge.campaign.ai.SimulationBudget.endDecision();
         }
     }
 
@@ -197,6 +202,11 @@ public class SpellAbilityPicker {
         Score bestSaValue = origGameScore;
         print("Evaluating... (orig score = " + origGameScore +  ")");
         for (int i = 0; i < candidateSAs.size(); i++) {
+            // FORGE-CAMPAIGN: out of time, stop trying more plays (the first is always scored).
+            if (i > 0 && controller.outOfTime()) {
+                break;
+            }
+            // FORGE-CAMPAIGN end
             Score value = evaluateSa(controller, phase, candidateSAs, i);
             if (value.value > bestSaValue.value) {
                 bestSaValue = value;
@@ -391,7 +401,8 @@ public class SpellAbilityPicker {
             if (lastScore.value > bestScore.value) {
                 bestScore = lastScore;
             }
-        } while (choicesIterator.advance(lastScore));
+        // FORGE-CAMPAIGN: out of time, stop trying more targets and modes for this play.
+        } while (!controller.outOfTime() && choicesIterator.advance(lastScore));
         controller.doneEvaluating(bestScore);
         MyRandom.setRandom(origRandom);
         return bestScore;

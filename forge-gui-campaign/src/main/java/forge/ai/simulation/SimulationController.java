@@ -28,7 +28,12 @@ public class SimulationController {
     private GameObject[] currentHostAndTarget;
     // FORGE-CAMPAIGN: a time budget per decision (forge.campaign.ai.SimulationBudget). Upstream has
     // none, so a full-simulation AI could think for minutes on a big board.
-    private final long deadline = forge.campaign.ai.SimulationBudget.deadlineFromNow();
+    private final long deadline = forge.campaign.ai.SimulationBudget.currentDeadline();
+
+    /** True once this decision has used its budget: start nothing new. */
+    public boolean outOfTime() {
+        return forge.campaign.ai.SimulationBudget.expired(deadline);
+    }
     // FORGE-CAMPAIGN end
 
     private static class CachedEffect {
@@ -68,7 +73,7 @@ public class SimulationController {
         // FORGE-CAMPAIGN: stop looking deeper once the budget is spent; the lines already scored
         // still count, so the AI plays the best one found in time.
         return !GameStateEvaluator.isWinning(bestScore.value) && getRecursionDepth() < maxDepth
-                && !forge.campaign.ai.SimulationBudget.expired(deadline);
+                && !outOfTime();
         // FORGE-CAMPAIGN end
     }
 

@@ -174,6 +174,13 @@ def check_adventure() -> None:
         warn("the Adventure did not reach plane loading; no GPU on this machine is the usual cause")
     if "PARTIDA TERMINADA" in text:
         print("  ok: the self-test duel finished")
+        # The duel's enemy came through our shadowed DuelScene, so it must have a tier.
+        tiers = [line.split("[campaign] enemy", 1)[1].strip() for line in text.splitlines()
+                 if "[campaign] enemy" in line]
+        if tiers:
+            print(f"  ok: the enemy played with its tier: {tiers[0]}")
+        else:
+            fail("the duel's enemy was created without a tier: our DuelScene is not in use")
     else:
         warn("the self-test duel did not finish (see adventure.log)")
     for name in ("neo.log",):

@@ -16,7 +16,7 @@ Gate B targets (from the plan, tuned against the tuned reference decks):
 Usage:
   python scripts/bench.py                 all Bosses and Elites, 30 Grunts, 2 games per deck
   python scripts/bench.py --quick         a smoke test: 2 enemies per tier, 1 game, 1 deck
-  python scripts/bench.py --games 4 --grunts 60 --workers 6
+  python scripts/bench.py --games 4 --grunts 60 --workers 5
 """
 from __future__ import annotations
 
@@ -35,6 +35,7 @@ from common import OUT, ROOT, WORK, step
 APP = WORK / "dist" / "ForgeCampaign"
 BENCH_DATA = WORK / "bench-data"
 MAIN = "forge.campaign.bench.TierBench"
+RESTART = 3  # TierBench.RESTART
 TUNED_DECKS = [ROOT / "bench" / "decks" / "ref_red_aggro.dck", ROOT / "bench" / "decks" / "ref_gw_midrange.dck"]
 STARTER_DECKS = ["decks/starter/red_n.json", "decks/starter/green_n.json"]
 TIERS = ("Grunt", "Elite", "Boss")
@@ -48,7 +49,7 @@ def java_command() -> list[str]:
             for line in cfg.splitlines() if line.startswith("app.classpath=")]
     java = APP / "runtime" / "bin" / ("java.exe" if os.name == "nt" else "java")
     options = [o for o in package.JAVA_OPTIONS if "$ROOTDIR" not in o and "MaxRAMPercentage" not in o]
-    return [str(java), "-Xmx3g", *options, f"-Dforge.assetsDir={APP}{os.sep}",
+    return [str(java), "-Xmx4g", *options, f"-Dforge.assetsDir={APP}{os.sep}",
             f"-Dneo.dataDir={BENCH_DATA}", "-cp", os.pathsep.join(jars), MAIN]
 
 
@@ -111,11 +112,12 @@ def main() -> int:
     parser.add_argument("--grunts", type=int, default=30, help="Grunts to sample (-1 = all)")
     parser.add_argument("--elites", type=int, default=-1, help="Elites to sample (-1 = all)")
     parser.add_argument("--bosses", type=int, default=-1, help="Bosses to sample (-1 = all)")
-    parser.add_argument("--workers", type=int, default=6)
+    parser.add_argument("--workers", type=int, default=5, help="parallel games (4 GB of memory each)")
     parser.add_argument("--player-life", type=int, default=20)
     parser.add_argument("--starter", action="store_true", help="also play the Normal starter decks")
     parser.add_argument("--stock", action="store_true",
                         help="baseline: every enemy plays stock Default AI, no simulation (still grouped by tier)")
+    parser.add_argument("--label", default="", help="added to the run folder name")
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--timeout", type=int, default=900, help="seconds before a game counts as a draw")
     args = parser.parse_args()
@@ -124,7 +126,7 @@ def main() -> int:
 
     if not (APP / "app" / "campaign.jar").is_file():
         sys.exit(f"no packaged app at {APP}: run scripts/package.py first")
-    run_dir = OUT / "bench" / (time.strftime("%Y%m%d-%H%M%S") + ("-stock" if args.stock else ""))
+    run_dir = OUT / "bench" / (time.strftime("%Y%m%d-%H%M%S") + ("-stock" if args.stock else "") + (f"-{args.label}" if args.label else ""))
     run_dir.mkdir(parents=True)
     BENCH_DATA.mkdir(parents=True, exist_ok=True)
     cmd = java_command()
@@ -146,27 +148,40 @@ def main() -> int:
     # Deal Bosses first and round-robin, so the slow simulated games spread over all workers.
     order = sorted(chosen, key=lambda c: TIERS.index(c[1]), reverse=True)
     shards = [order[i::args.workers] for i in range(args.workers)]
-    procs = []
+    def launch(i: int) -> subprocess.Popen:
+        log = open(run_dir / f"worker-{i}.log", "a", encoding="utf-8", errors="replace")
+        return subprocess.Popen(
+            [*cmd, "--enemies", str(run_dir / f"enemies-{i}.txt"), "--decks", ",".join(decks),
+             "--games", str(args.games), "--player-life", str(args.player_life),
+             "--timeout", str(args.timeout), "--out", str(run_dir / f"results-{i}.csv"),
+             *(["--stock"] if args.stock else [])],
+            cwd=APP, stdout=log, stderr=subprocess.STDOUT)
+
+    workers = {}
     for i, shard in enumerate(s for s in shards if s):
-        names = run_dir / f"enemies-{i}.txt"
-        names.write_text("\n".join(n for n, _ in shard) + "\n", encoding="utf-8")
-        log = open(run_dir / f"worker-{i}.log", "w", encoding="utf-8", errors="replace")
-        procs.append((subprocess.Popen(
-            [*cmd, "--enemies", str(names), "--decks", ",".join(decks), "--games", str(args.games),
-             "--player-life", str(args.player_life), "--timeout", str(args.timeout),
-             "--out", str(run_dir / f"results-{i}.csv"), *(["--stock"] if args.stock else [])],
-            cwd=APP, stdout=log, stderr=subprocess.STDOUT), log))
+        (run_dir / f"enemies-{i}.txt").write_text("
+".join(n for n, _ in shard) + "
+", encoding="utf-8")
+        workers[i] = launch(i)
         time.sleep(2)  # let each worker write the shared portable profile before the next starts
     start = time.time()
-    while any(p.poll() is None for p, _ in procs):
+    restarts = 0
+    while any(p.poll() is None for p in workers.values()):
         time.sleep(15)
+        for i, p in list(workers.items()):
+            # TierBench exits with RESTART (3) after a timeout or an out-of-memory error; a fresh
+            # process resumes after the games already in its CSV.
+            if p.poll() == RESTART:
+                restarts += 1
+                workers[i] = launch(i)
         done = sum(max(0, sum(1 for _ in open(f, encoding="utf-8")) - 1)
                    for f in run_dir.glob("results-*.csv"))
         print(f"  {done}/{games} games after {(time.time() - start) / 60:.0f} min", flush=True)
-    for p, log in procs:
-        log.close()
+    for i, p in workers.items():
         if p.returncode != 0:
-            print(f"  [WARN] a worker exited with {p.returncode}: see {run_dir}")
+            print(f"  [WARN] worker {i} exited with {p.returncode}: see {run_dir}")
+    if restarts:
+        print(f"  {restarts} worker restart(s) after a timeout or out-of-memory error")
 
     step("3. Summary")
     rows = []

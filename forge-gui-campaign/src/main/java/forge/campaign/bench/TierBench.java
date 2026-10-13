@@ -30,9 +30,12 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -58,6 +61,9 @@ import java.util.concurrent.TimeoutException;
  * still grouped by tier: the baseline the tiers are measured against.
  */
 public final class TierBench {
+    /** Exit code asking scripts/bench.py to start this worker again (it resumes). */
+    public static final int RESTART = 3;
+
     private static boolean stock;
 
     private TierBench() {
@@ -84,9 +90,26 @@ public final class TierBench {
         int timeout = Integer.parseInt(opt(args, "--timeout", "900"));
         stock = has(args, "--stock");
 
-        try (PrintWriter out = new PrintWriter(Files.newBufferedWriter(Path.of(opt(args, "--out", null)), StandardCharsets.UTF_8))) {
-            out.println("enemy,tier,enemy_deck,ref_deck,winner,turns,seconds,mean_turn_s,max_turn_s,enemy_life,player_life,note");
-            out.flush();
+        // Resumable: rows already in --out are skipped, so scripts/bench.py can restart a worker
+        // that stopped (see RESTART below) and it carries on where it was.
+        Path outPath = Path.of(opt(args, "--out", null));
+        Set<String> done = new HashSet<>();
+        boolean fresh = !Files.exists(outPath);
+        if (!fresh) {
+            // Each row ends with ",#<enemy>|<reference deck>|<game number>".
+            for (String line : Files.readAllLines(outPath, StandardCharsets.UTF_8)) {
+                int key = line.lastIndexOf(",#");
+                if (key >= 0) {
+                    done.add(line.substring(key + 2));
+                }
+            }
+        }
+        try (PrintWriter out = new PrintWriter(Files.newBufferedWriter(outPath, StandardCharsets.UTF_8,
+                StandardOpenOption.CREATE, StandardOpenOption.APPEND))) {
+            if (fresh) {
+                out.println("enemy,tier,enemy_deck,ref_deck,winner,turns,seconds,mean_turn_s,max_turn_s,enemy_life,player_life,note,key");
+                out.flush();
+            }
             for (String name : names) {
                 if (name.isBlank()) {
                     continue;
@@ -98,10 +121,22 @@ public final class TierBench {
                 }
                 for (String refPath : refDecks) {
                     for (int g = 0; g < games; g++) {
+                        // No commas in the key: it is the last CSV cell, unquoted.
+                        String key = (enemy.name + "|" + refPath.trim() + "|" + g).replace(',', ';');
+                        if (done.contains(key)) {
+                            continue;
+                        }
                         String row = playOne(enemy, g, refPath.trim(), playerLife, enemyLifeFactor, timeout);
-                        out.println(row);
+                        out.println(row + ",#" + key);
                         out.flush();
                         System.out.println("[bench] " + row);
+                        // A game that timed out may still be running in its thread, and an
+                        // out-of-memory error leaves the heap in doubt: both poison the next
+                        // games, so stop and let bench.py start a clean process.
+                        if (row.contains(",timeout") || row.contains("OutOfMemoryError")) {
+                            System.out.println("[bench] RESTART: stopping this worker after " + key);
+                            System.exit(RESTART);
+                        }
                     }
                 }
             }

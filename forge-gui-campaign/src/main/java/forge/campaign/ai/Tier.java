@@ -14,7 +14,7 @@ import forge.ai.AIOption;
 public enum Tier {
     GRUNT("Default", null, 0),
     ELITE("Elite", AIOption.USE_HYBRID_SIMULATION, 3000),
-    BOSS("Boss", AIOption.USE_FULL_SIMULATION, 5000);
+    BOSS("Boss", AIOption.USE_FULL_SIMULATION, 2000);
 
     public final String defaultProfile;
     public final AIOption defaultSimulation;

@@ -1,6 +1,8 @@
 # Boss tier AI profile for Forge Campaign (enemy tiers: forge.campaign.ai.EnemyTiers).
 # A copy of Forge's res/ai/Experimental.ai with the values marked FORGE-CAMPAIGN changed.
 # Bosses also use full simulation: they search their plays a few steps deep under a time budget.
+# Note: under full simulation Forge skips this profile's attack and combat-trick settings
+# (AiAttackController, ComputerUtilCard read them only without it); the rest still applies.
 # Starting values, tuned with scripts/bench.py.
 
 # The amount of cards at which to stop considering mulligan

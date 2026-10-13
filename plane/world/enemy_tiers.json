@@ -6,7 +6,7 @@
   "tiers": {
     "Grunt": { "profile": "Default", "simulation": "none" },
     "Elite": { "profile": "Elite", "simulation": "hybrid", "budgetMs": 3000 },
-    "Boss": { "profile": "Boss", "simulation": "full", "budgetMs": 5000 }
+    "Boss": { "profile": "Boss", "simulation": "full", "budgetMs": 2000 }
   },
   "enemies": {
   }

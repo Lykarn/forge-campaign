@@ -1,0 +1,30 @@
+[shop]
+WinsToUnlock=20
+Credits=3500
+MinDifficulty=0
+MaxDifficulty=5
+[metadata]
+Name=Vampire Onslaught
+Description=Blood is in the air! Soon your graveyard will yield foul fruit as your vampire horde feeds on itself in a frenzy to gain greater power. Turn your opponent's dead warriors against them using Mimic Vat to ensure a grisly victory.
+Set=M12
+Image=vampire_onslaught.jpg
+[Main]
+2 Blade of the Bloodchief
+4 Bloodghast
+4 Bloodthrone Vampire
+4 Dismember
+4 Gatekeeper of Malakir
+1 Kalastria Highborn
+1 Mimic Vat
+4 Pawn of Ulamog
+23 Swamp
+4 Vampire Hexmage
+4 Vampire Nighthawk
+4 Vampire Outcasts
+1 Verdant Catacombs
+[Sideboard]
+4 Distress|M12
+2 Go for the Throat|MBS
+4 Skinrender|SOM
+3 Vampire Hexmage|ZEN
+2 Vampire Nighthawk|ZEN
