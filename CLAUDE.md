@@ -17,7 +17,7 @@ The full research and design plan is a Claude doc Rory owns: https://claude.ai/c
 - Change upstream behaviour only through shadowed classes in `forge-gui-campaign/`: a full copy of the original with changes marked `FORGE-CAMPAIGN`, listed in `shadows.tsv` with the sha256 of the original. Keep the shadow set small.
 - Neo Forge already shadows `forge/adventure/scene/DuelScene.java` and `DeckEditScene.java`. To change either, start from Neo Forge's copy, not Forge's, and record the Neo file in `shadows.tsv` with upstream `neo`.
 - Plane data changes go in `plane/`, which is laid over a copy of Shandalar to make `res/adventure/Campaign`. Files there override `common/` too (Adventure looks in the plane first), which is how `plane/decks/` replaces enemy decks.
-- New resources outside the plane (AI profiles) go in `res/`, add-only: `package.py` refuses to replace a Forge file.
+- New resources outside the plane (e.g. an AI profile) go in `res/` (none at the moment), add-only: `package.py` refuses to replace a Forge file.
 - Never ship card images (Forge downloads them from Scryfall at runtime). Never sell it. Keep `NOTICE.md` (Wizards Fan Content Policy wording).
 
 ## Build and test (Windows, PowerShell)
@@ -37,8 +37,12 @@ python scripts/test_package.py    # contents, Neo Forge deckcheck, Adventure sel
 ## Status
 
 - **Phase 0 (Foundation), PR #1: Gate A passed** (Rory, 2026-10-13). Merging PR #1 is his sign-off.
-- **Phase 1 (AI tiers), branch `claude/phase-1-ai-tiers`** (stacked on Phase 0). Built: tiers from `plane/world/enemy_tiers.json` (overrides, else boss flag, else life >= 25 = Elite; 366 Grunt / 58 Elite / 40 Boss), `CampaignAi` called from the shadowed `DuelScene`, `res/ai/Elite.ai` and `Boss.ai`, simulation budget (shadowed `SimulationController`), crash fallbacks for Forge's `GameCopier` "Couldn't map" bug (shadowed `SpellAbilityPicker`, `OnePlaySafetyChecker`), 152 AI-playable enemy decks (`scripts/fix_decks.py`), and `scripts/bench.py`. Next: benchmark A (today) vs B (tiers + fixed decks) vs C (fixed decks only), tune to Gate B targets, write `docs/gates/gate-b.md`.
-- Shadows: `Config` (plane), `DuelScene` (Neo's copy; tiers), `SimulationController` (budget), `SpellAbilityPicker` and `OnePlaySafetyChecker` (fail safe). `test_package.py` checks each packaged shadow is ours.
+- **Phase 1 (AI tiers), branch `claude/phase-1-ai-tiers`** (stacked on Phase 0): built, benchmarked, `test_package.py` passes (a Lathliss Boss duel through `DuelScene` with the Boss tier). Waiting on Rory's Gate B test (`docs/gates/gate-b.md`, helper `docs/gates/gate-b-fight.cmd`).
+  - Tiers from `plane/world/enemy_tiers.json`: overrides, else boss flag, else life >= 25 = Elite (366 Grunt / 58 Elite / 40 Boss). All tiers use the Default profile; Grunt = no simulation, Elite = hybrid (safety check, ~1 veto/game), Boss = full simulation with 1.5 s per decision and 10 s per turn.
+  - Benchmark (enemy win % vs Forge Default AI with `bench/decks`, midrange / aggro): Grunt 27/33, Elite 35/56 (stock 37/57), Boss 66/74 (stock 41/80). Boss slowest turn: 12 s in 9 of 10 games, worst 45 s.
+  - Findings: Experimental-based Elite.ai and Boss.ai profiles made both tiers weaker (dropped). The budget can only cut between whole candidate plays (cutting inside SpellAbilityChoicesIterator breaks the search stack), hence the per-turn cap. Forge's GameCopier still throws "Couldn't map <card>" (The Monarch, some creatures) on ~0.5% of Boss decisions: caught, worth an upstream report. Bosses vs aggro are carried by 30-40 starting life: tune in Phase 2 against real player progression.
+- Shadows: `Config` (plane), `DuelScene` (Neo's copy; tiers), `SimulationController` (budget), `SpellAbilityPicker` (budgets, fallback), `OnePlaySafetyChecker` (fail open, veto count). `test_package.py` checks each packaged shadow is ours.
+- Tools: `scripts/bench.py` (headless tier benchmark, `--stock` baseline, resumable workers), `lint_decks.py`, `fix_decks.py` (writes `plane/decks/`, keep list `plane/decks/HAND_EDITED.txt`).
 
 ## Roadmap and key decisions
 

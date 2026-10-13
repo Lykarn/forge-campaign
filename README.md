@@ -10,7 +10,7 @@ Free, unofficial fan project; see [NOTICE.md](NOTICE.md). The full design is in 
 
 ## Status
 
-**Phase 1, AI tiers.** Phase 0 (Gate A) passed: the build assembles Forge and Neo Forge at pinned commits, adds this module, and packages a Windows app whose Adventure runs on a `Campaign` plane. Phase 1 gives every enemy a tier. Grunts play Forge's normal AI. Elites get a tuned profile plus a simulated safety check on every play. Bosses get full look-ahead search under a time budget. Enemy decks are cleaned of cards the AI cannot use. A headless benchmark measures each tier's win rate and speed.
+**Phase 1, AI tiers.** Phase 0 (Gate A) passed: the build assembles Forge and Neo Forge at pinned commits, adds this module, and packages a Windows app whose Adventure runs on a `Campaign` plane. Phase 1 gives every enemy a tier. Grunts play Forge's normal AI. Elites add a simulated safety check that vetoes plays that backfire. Bosses search ahead before each play, under a time budget per decision and per turn. Enemy decks are cleaned of cards the AI cannot use. A headless benchmark measures each tier's win rate and speed.
 
 ## How it is put together
 
@@ -22,7 +22,6 @@ This repo holds only our code and data. Upstream code is fetched at exact commit
 | `forge-gui-campaign/` | Our Maven module. It is built inside Forge's reactor, next to `forge-gui-neo` |
 | `shadows.tsv` | Every upstream class we replace, with the hash of the original we copied |
 | `plane/` | Files laid over a copy of Shandalar to make `res/adventure/Campaign`: enemy tiers (`world/enemy_tiers.json`) and AI-playable enemy decks (`decks/`) |
-| `res/` | Files added to Forge's `res/` (the Elite and Boss AI profiles). Add-only: `package.py` refuses to replace a Forge file |
 | `bench/` | Reference player decks for the tier benchmark |
 | `scripts/` | Build: `assemble.py`, `package.py`, `test_package.py`, `check_shadows.py`. AI: `bench.py` (tier benchmark), `lint_decks.py`, `fix_decks.py` |
 | `.github/workflows/windows.yml` | Builds, packages and tests on every push |

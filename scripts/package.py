@@ -187,10 +187,10 @@ def main() -> int:
     step("3. Forge's resources, our added resources, and our plane")
     res = app / "res"
     shutil.copytree(FORGE / "forge-gui" / "res", res)
-    # res/ in this repo only ADDS files (e.g. the Elite and Boss AI profiles); never replace one
-    # of Forge's, which would be an upstream edit by another name.
+    # res/ in this repo (when present) only ADDS files, such as a new AI profile; never replace
+    # one of Forge's, which would be an upstream edit by another name.
     added = 0
-    for src in (ROOT / "res").rglob("*"):
+    for src in (ROOT / "res").rglob("*") if (ROOT / "res").is_dir() else []:
         if src.is_file():
             dest = res / src.relative_to(ROOT / "res")
             if dest.exists():

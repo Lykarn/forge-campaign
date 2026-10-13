@@ -13,8 +13,11 @@ import forge.ai.AIOption;
  */
 public enum Tier {
     GRUNT("Default", null, 0, 0),
-    ELITE("Elite", AIOption.USE_HYBRID_SIMULATION, 3000, 0),
-    BOSS("Boss", AIOption.USE_FULL_SIMULATION, 1500, 10000);
+    // Every tier keeps Forge's Default profile; tiers differ in how much they think. Profiles
+    // tuned from Experimental.ai made both tiers weaker against the midrange reference deck
+    // (Elite 28% vs 35%, Boss with search 50% vs 66%; benchmark, 2026-10-14).
+    ELITE("Default", AIOption.USE_HYBRID_SIMULATION, 3000, 0),
+    BOSS("Default", AIOption.USE_FULL_SIMULATION, 1500, 10000);
 
     public final String defaultProfile;
     public final AIOption defaultSimulation;

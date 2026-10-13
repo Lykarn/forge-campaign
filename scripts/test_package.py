@@ -4,7 +4,8 @@
   2. deckcheck: the engine loads all cards from the zip and the
      deck rules apply, with no window (Neo Forge's own check).          failure = red build
   3. The Adventure, opened from the menu as a player opens it, plays
-     a self-test duel on Neo Forge's table, on the Campaign plane.     plane wrong = red build;
+     a Boss duel on Neo Forge's table, on the Campaign plane, entered
+     through DuelScene like a map encounter, with the Boss's tier.     plane or tier wrong = red build;
                                                                          no window (no GPU) = warning
 
 Logs land in _build/out for the CI artifact. Run after scripts/package.py.
@@ -25,6 +26,8 @@ from common import IS_WINDOWS, OUT, ROOT, WORK
 
 APP = WORK / "dist" / "ForgeCampaign"
 PLANE = "Campaign"
+# A Boss, so the test also runs full simulation inside the real Adventure process.
+BOSS = "Lathliss"
 failures = 0
 warnings = 0
 
@@ -83,7 +86,7 @@ def tail(path: Path, lines: int = 15) -> str:
 
 
 def check_contents() -> None:
-    print("\n== 1. The package holds our plane, our shadowed classes and our AI profiles")
+    print("\n== 1. The package holds our plane and our shadowed classes")
     # A plane is a folder with a world/world.json (config.json is optional: Config falls back to
     # common/), plus campaign.json from our overlay to show the overlay was applied.
     for marker in ("world/world.json", "campaign.json"):
@@ -111,7 +114,7 @@ def check_contents() -> None:
         if not (APP / "res" / "ai" / profile.name).is_file():
             fail(f"res/ai/{profile.name} is missing from the package")
     if not failures:
-        print(f"  ok: plane folder present, {len(shadows)} shadowed classes are ours, AI profiles installed")
+        print(f"  ok: plane folder present, {len(shadows)} shadowed classes are ours")
 
 
 def check_deckcheck() -> None:
@@ -136,7 +139,7 @@ def find_adventure_log() -> Path | None:
 
 
 def check_adventure() -> None:
-    print("\n== 3. The Adventure from the menu: a self-test duel on the Campaign plane")
+    print(f"\n== 3. The Adventure from the menu: a duel against {BOSS} on the Campaign plane")
 
     def done() -> bool:
         log = find_adventure_log()
@@ -154,8 +157,10 @@ def check_adventure() -> None:
         prefs.write_text("tutorialSeen=true\n", encoding="utf-8")
 
     run_app(["ui"], OUT / "menu.log", timeout=600, stop_when=done,
-            extra_java="-Dneo.adventure.autoLaunch=true -Dneo.adventure.selftest=duel "
-                       "-Dneo.adventure.auto=true")
+            # selftest=anteduel enters through DuelScene, as a map encounter does (selftest=duel goes
+            # straight to Neo Forge's duel bridge and would skip our tiers); auto plays our side.
+            extra_java="-Dneo.adventure.autoLaunch=true -Dneo.adventure.selftest=anteduel "
+                       f"-Dneo.adventure.ante=false -Dneo.adventure.enemy={BOSS} -Dneo.adventure.auto=true")
     log = find_adventure_log()
     if log:
         shutil.copy2(log, OUT / "adventure.log")
@@ -177,10 +182,12 @@ def check_adventure() -> None:
         # The duel's enemy came through our shadowed DuelScene, so it must have a tier.
         tiers = [line.split("[campaign] enemy", 1)[1].strip() for line in text.splitlines()
                  if "[campaign] enemy" in line]
-        if tiers:
-            print(f"  ok: the enemy played with its tier: {tiers[0]}")
-        else:
+        if not tiers:
             fail("the duel's enemy was created without a tier: our DuelScene is not in use")
+        elif "Boss" not in tiers[0] or "simulation full" not in tiers[0]:
+            fail(f"{BOSS} should play as a Boss with full simulation, got: {tiers[0]}")
+        else:
+            print(f"  ok: the enemy played with its tier: {tiers[0]}")
     else:
         warn("the self-test duel did not finish (see adventure.log)")
     for name in ("neo.log",):
