@@ -35,7 +35,7 @@ python scripts/test_package.py    # contents, Neo Forge deckcheck, Adventure sel
 
 ## Status
 
-- **Phase 0 (Foundation), PR #1, branch `claude/phase-0-foundation`.** Code written but never compiled: the first cloud session could not reach Maven Central and Actions was locked. Next: build locally, fix whatever breaks in assemble, Maven, package or tests, then hand Rory Gate A (`docs/gates/gate-a.md`). Success = Adventure opens on the Campaign plane and duels run on Neo Forge's table.
+- **Phase 0 (Foundation), PR #1, branch `claude/phase-0-foundation`.** Built, packaged and tested locally on Rory's machine (2026-10-13): `test_package.py` passes with 0 failures (the Adventure self-test loads the Campaign plane, plays a duel on Neo Forge's table and returns to the map). Waiting on Rory's Gate A test (`docs/gates/gate-a.md`) with `_build/out/ForgeCampaign-windows-x64.zip`. One earlier test run had the Adventure child exit silently right after start; not reproduced in three later runs.
 - Phase 0 shadows only `forge/adventure/util/Config.java`, to force the Campaign plane and log `[campaign] plane: <name>` (checked by `test_package.py` in `data/neo/adventure.log`).
 
 ## Roadmap and key decisions
@@ -55,3 +55,10 @@ Phases, each ending at a gate: 0 Foundation (Gate A) → 1 AI tiers (Gate B) →
 - Adventure difficulty only scales enemy life (`enemyLifeFactor`); 462 of 464 enemies use the global AI profile.
 - Neo Forge runs Adventure in a second process (`AdventureLauncher` → `AdventureNeoMain`); its self-test flags (`-Dneo.adventure.autoLaunch=true -Dneo.adventure.selftest=duel -Dneo.adventure.auto=true`) play a duel automatically and log `PARTIDA TERMINADA`.
 - The packaged main jar holds our classes, then Neo Forge's; the launcher loads the main jar first, which is what makes shadowing work.
+
+## Windows gotchas found in the first local build
+
+- Forge's `.gitattributes` (`* text=auto`) checks files out as CRLF on Windows; `check_shadows.py` hashes with LF so hashes match on every OS.
+- jpackage strips `java.exe` from the runtime by default; then Neo Forge opens the Adventure by relaunching our own exe, which Surfshark quarantines (`Drop.Win64.UserProfileSelfRun`). `package.py` keeps `java.exe`/`javaw.exe` so the Adventure starts with `javaw.exe` instead.
+- On a fresh `data/` Neo Forge shows its tutorial instead of the menu, which blocks the Adventure auto-launch; `test_package.py` seeds `tutorialSeen=true`.
+- jpackage's exe launchers are read-only; delete build folders with `common.rmtree`.

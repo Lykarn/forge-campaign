@@ -3,6 +3,8 @@ machine with Python 3.9+ (GitHub's Windows runners included)."""
 from __future__ import annotations
 
 import os
+import shutil
+import stat
 import subprocess
 import sys
 from pathlib import Path
@@ -34,6 +36,15 @@ def read_lock() -> dict[str, str]:
 def run(cmd: list[str], cwd: Path | None = None, **kwargs) -> subprocess.CompletedProcess:
     print("+", " ".join(str(c) for c in cmd), flush=True)
     return subprocess.run([str(c) for c in cmd], cwd=cwd, check=True, **kwargs)
+
+
+def rmtree(path: Path) -> None:
+    """shutil.rmtree that also removes read-only files (jpackage makes its .exe launchers
+    read-only, and Windows refuses to delete those)."""
+    def clear_and_retry(func, target, _exc):
+        os.chmod(target, stat.S_IWRITE)
+        func(target)
+    shutil.rmtree(path, onerror=clear_and_retry)
 
 
 def step(title: str) -> None:

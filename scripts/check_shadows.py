@@ -5,6 +5,9 @@ classpath. That only stays correct while the original is the one we copied. Each
 shadows.tsv records the sha256 of the original; this script hashes the original in the
 assembled upstream trees and stops the build on any mismatch.
 
+Hashes are of the file with LF line endings. Forge's .gitattributes (`* text=auto`) makes Git
+on Windows check files out with CRLF, so raw bytes differ by machine while the code does not.
+
 Usage: python scripts/check_shadows.py   (after scripts/assemble.py has fetched upstream)
 """
 from __future__ import annotations
@@ -33,7 +36,7 @@ def main() -> int:
             print(f"[FAIL] {ours}: upstream original {upstream}:{path} no longer exists")
             problems += 1
             continue
-        actual = hashlib.sha256(original.read_bytes()).hexdigest()
+        actual = hashlib.sha256(original.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
         if actual != expected:
             print(f"[FAIL] {ours}: upstream {upstream}:{path} changed "
                   f"(expected {expected[:12]}, found {actual[:12]}).\n"

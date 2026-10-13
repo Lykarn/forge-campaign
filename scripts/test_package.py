@@ -84,9 +84,11 @@ def tail(path: Path, lines: int = 15) -> str:
 
 def check_contents() -> None:
     print("\n== 1. The package holds our plane and our shadowed Config")
-    config = APP / "res" / "adventure" / PLANE / "config.json"
-    if not config.is_file():
-        fail(f"res/adventure/{PLANE}/config.json is missing")
+    # A plane is a folder with a world/world.json (config.json is optional: Config falls back to
+    # common/), plus campaign.json from our overlay to show the overlay was applied.
+    for marker in ("world/world.json", "campaign.json"):
+        if not (APP / "res" / "adventure" / PLANE / marker).is_file():
+            fail(f"res/adventure/{PLANE}/{marker} is missing")
     jar = APP / "app" / "campaign.jar"
     if not jar.is_file():
         fail("app/campaign.jar is missing")
@@ -133,6 +135,14 @@ def check_adventure() -> None:
             return False
         text = log.read_text(encoding="utf-8", errors="replace")
         return "PARTIDA TERMINADA" in text or "Could not find or load main class" in text
+
+    # On a fresh data/ folder Neo Forge opens its tutorial instead of the main menu, and the
+    # Adventure auto-launch only fires from the menu. Mark the tutorial as already offered (the
+    # flag NeoTutorial writes itself); a settings file that exists also means "not first run".
+    prefs = APP / "data" / "preferences" / "neo.properties"
+    if not prefs.is_file():
+        prefs.parent.mkdir(parents=True, exist_ok=True)
+        prefs.write_text("tutorialSeen=true\n", encoding="utf-8")
 
     run_app(["ui"], OUT / "menu.log", timeout=600, stop_when=done,
             extra_java="-Dneo.adventure.autoLaunch=true -Dneo.adventure.selftest=duel "

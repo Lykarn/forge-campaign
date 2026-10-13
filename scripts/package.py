@@ -21,7 +21,7 @@ import sys
 import zipfile
 from pathlib import Path
 
-from common import FORGE, IS_WINDOWS, NEO, OUT, ROOT, WORK, read_lock, run, step
+from common import FORGE, IS_WINDOWS, NEO, OUT, ROOT, WORK, read_lock, rmtree, run, step
 
 APP_NAME = "ForgeCampaign"
 PLANE_NAME = "Campaign"
@@ -139,7 +139,7 @@ def main() -> int:
 
     step("1. Jars: one main jar (ours over Neo Forge's), the rest as they are")
     if stage.exists():
-        shutil.rmtree(stage)
+        rmtree(stage)
     stage.mkdir(parents=True)
     neo_jar = one(sorted(lib.glob("forge-gui-neo-*.jar")), "forge-gui-neo jar in target/lib")
     our_jar = one([p for p in target.glob("forge-gui-campaign-*.jar")
@@ -155,7 +155,7 @@ def main() -> int:
 
     step("2. The app folder with its own Java (jpackage)")
     if dist.exists():
-        shutil.rmtree(dist)
+        rmtree(dist)
     jpackage = shutil.which("jpackage")
     if not jpackage and os.environ.get("JAVA_HOME"):
         jpackage = str(Path(os.environ["JAVA_HOME"]) / "bin" / ("jpackage.exe" if IS_WINDOWS else "jpackage"))
@@ -164,7 +164,12 @@ def main() -> int:
     cmd = [jpackage, "--type", "app-image", "--name", APP_NAME, "--app-version", version,
            "--vendor", "Forge Campaign (fan project)",
            "--input", stage, "--main-jar", "campaign.jar", "--main-class", "forge.neo.NeoMain",
-           "--arguments", "ui", "--dest", dist]
+           "--arguments", "ui", "--dest", dist,
+           # Keep java.exe/javaw.exe in the runtime (jpackage strips them by default). Without
+           # them Neo Forge opens the Adventure by relaunching ForgeCampaign.exe itself, and
+           # antivirus heuristics (Surfshark: Drop.Win64.UserProfileSelfRun) quarantine an
+           # unsigned exe that runs itself from the user profile. With them it starts javaw.exe.
+           "--jlink-options", "--strip-debug --no-man-pages --no-header-files"]
     for option in JAVA_OPTIONS:
         cmd += ["--java-options", option]
     if IS_WINDOWS:

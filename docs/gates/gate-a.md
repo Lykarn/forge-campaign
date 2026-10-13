@@ -6,8 +6,11 @@ CI already checks the parts it can without a screen: the cards load, the plane a
 
 ## Get the build
 
-1. Open the pull request for this gate and click the green check, or go to **Actions > Windows build** and open the latest run for the branch.
-2. Under **Artifacts**, download **ForgeCampaign-windows-x64** and unzip it. Unzip the inner zip too, somewhere you can write to (not Program Files).
+While Actions is locked, the build is made on your machine: unzip `_build\out\ForgeCampaign-windows-x64.zip` from the repo folder somewhere you can write to (not Program Files). It is the same zip CI would upload.
+
+Once Actions works again: open the pull request for this gate and click the green check, or go to **Actions > Windows build** and open the latest run for the branch. Under **Artifacts**, download **ForgeCampaign-windows-x64**, unzip it, and unzip the inner zip too.
+
+If your antivirus quarantines `ForgeCampaign.exe` (Surfshark did, as `Drop.Win64.UserProfileSelfRun`, before the build stopped relaunching its own exe for the Adventure), say so on the pull request rather than adding an exclusion: it means the fix is incomplete.
 
 ## Test (about 10 minutes)
 
