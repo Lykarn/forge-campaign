@@ -84,31 +84,46 @@ public class SpellAbilityPicker {
         return candidateSAs;
     }
 
-    // FORGE-CAMPAIGN: full simulation can throw while copying the game (seen: "Couldn't map <card>"
-    // from GameCopier), which ended the whole duel. A failed top-level decision now falls back to
-    // the heuristic AI for that one decision; nested searches still throw up to it.
+    // FORGE-CAMPAIGN: two safety nets around the top-level search (nested searches pass through).
+    // 1. Time: each decision gets a budget (SimulationBudget), and so does each turn. Once the
+    //    turn's search time is spent, the rest of the turn's decisions use the heuristic AI, so a
+    //    planeswalker-heavy Boss cannot keep a player waiting for minutes.
+    // 2. Errors: full simulation can throw while copying the game (seen: "Couldn't map <card>"
+    //    from GameCopier), which ended the whole duel. A failed decision uses the heuristic AI.
     public SpellAbility chooseSpellAbilityToPlay(SimulationController controller) {
         if (controller != null) {
             return chooseSpellAbilityToPlaySimulated(controller);
         }
-        // One time budget for the whole decision, shared by every search inside it.
+        int turn = game.getPhaseHandler().getTurn();
+        if (forge.campaign.ai.SimulationBudget.turnSpent(turn)) {
+            plan = null;
+            forge.campaign.ai.AiStats.TURN_CAPPED.incrementAndGet();
+            return chooseHeuristically();
+        }
         forge.campaign.ai.SimulationBudget.beginDecision();
+        forge.campaign.ai.AiStats.SIM_DECISIONS.incrementAndGet();
+        long started = System.nanoTime();
         try {
             return chooseSpellAbilityToPlaySimulated(null);
         } catch (RuntimeException | StackOverflowError e) {
             plan = null;
+            forge.campaign.ai.AiStats.FALLBACKS.incrementAndGet();
             System.err.println("[campaign] simulation failed (" + e + "); this decision uses the heuristic AI");
-            AiController ai = ((PlayerControllerAi) player.getController()).getAi();
-            // No simulation at all for the fallback: hybrid would copy the game again.
-            ai.setUseSimulation(null);
-            try {
-                List<SpellAbility> chosen = ai.chooseSpellAbilityToPlay();
-                return chosen == null || chosen.isEmpty() ? null : chosen.get(0);
-            } finally {
-                ai.setUseSimulation(AIOption.USE_FULL_SIMULATION);
-            }
+            return chooseHeuristically();
         } finally {
-            forge.campaign.ai.SimulationBudget.endDecision();
+            forge.campaign.ai.SimulationBudget.endDecision(turn, System.nanoTime() - started);
+        }
+    }
+
+    /** This decision by the normal heuristic AI: no simulation at all (hybrid would copy the game). */
+    private SpellAbility chooseHeuristically() {
+        AiController ai = ((PlayerControllerAi) player.getController()).getAi();
+        ai.setUseSimulation(null);
+        try {
+            List<SpellAbility> chosen = ai.chooseSpellAbilityToPlay();
+            return chosen == null || chosen.isEmpty() ? null : chosen.get(0);
+        } finally {
+            ai.setUseSimulation(AIOption.USE_FULL_SIMULATION);
         }
     }
 
@@ -203,6 +218,9 @@ public class SpellAbilityPicker {
         print("Evaluating... (orig score = " + origGameScore +  ")");
         for (int i = 0; i < candidateSAs.size(); i++) {
             // FORGE-CAMPAIGN: out of time, stop trying more plays (the first is always scored).
+            // Only here, between whole evaluations: stopping inside the targets/modes loop would
+            // skip SpellAbilityChoicesIterator.advance(), which pops the search stack, and break
+            // the decision ("getBestPlan() expects currentStack to be empty").
             if (i > 0 && controller.outOfTime()) {
                 break;
             }
@@ -401,8 +419,7 @@ public class SpellAbilityPicker {
             if (lastScore.value > bestScore.value) {
                 bestScore = lastScore;
             }
-        // FORGE-CAMPAIGN: out of time, stop trying more targets and modes for this play.
-        } while (!controller.outOfTime() && choicesIterator.advance(lastScore));
+        } while (choicesIterator.advance(lastScore));
         controller.doneEvaluating(bestScore);
         MyRandom.setRandom(origRandom);
         return bestScore;

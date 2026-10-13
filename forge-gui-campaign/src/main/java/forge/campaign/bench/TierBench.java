@@ -6,6 +6,7 @@ import forge.LobbyPlayer;
 import forge.adventure.data.EnemyData;
 import forge.adventure.data.WorldData;
 import forge.adventure.util.CardUtil;
+import forge.campaign.ai.AiStats;
 import forge.campaign.ai.CampaignAi;
 import forge.campaign.ai.EnemyTiers;
 import forge.deck.Deck;
@@ -107,7 +108,7 @@ public final class TierBench {
         try (PrintWriter out = new PrintWriter(Files.newBufferedWriter(outPath, StandardCharsets.UTF_8,
                 StandardOpenOption.CREATE, StandardOpenOption.APPEND))) {
             if (fresh) {
-                out.println("enemy,tier,enemy_deck,ref_deck,winner,turns,seconds,mean_turn_s,max_turn_s,enemy_life,player_life,note,key");
+                out.println("enemy,tier,enemy_deck,ref_deck,winner,turns,seconds,mean_turn_s,max_turn_s,enemy_life,player_life,vetoes,sim_decisions,fallbacks,turn_capped,note,key");
                 out.flush();
             }
             for (String name : names) {
@@ -174,7 +175,7 @@ public final class TierBench {
                                   float enemyLifeFactor, int timeout) {
         EnemyTiers.Settings settings = EnemyTiers.get().settingsFor(enemy);
         if (stock) {
-            settings = new EnemyTiers.Settings(settings.tier(), "Default", null, 0);
+            settings = new EnemyTiers.Settings(settings.tier(), "Default", null, 0, 0);
         }
         String deckPath = enemy.deck[gameIndex % enemy.deck.length];
         int enemyLife = Math.round(enemy.life * enemyLifeFactor);
@@ -205,6 +206,7 @@ public final class TierBench {
             TurnClock clock = new TurnClock();
             game.subscribeToEvents(clock);
 
+            AiStats.reset();
             long start = System.nanoTime();
             ExecutorService runner = Executors.newSingleThreadExecutor(r -> {
                 Thread t = new Thread(r, "bench-game");
@@ -240,11 +242,13 @@ public final class TierBench {
             double meanTurn = turns > 0 ? seconds / turns : 0;
             return csv(enemy.name, settings.tier().label(), deckPath, refName, winner,
                     String.valueOf(turns), fmt(seconds), fmt(meanTurn), fmt(maxTurn),
-                    String.valueOf(enemyLife), String.valueOf(playerLife), note);
+                    String.valueOf(enemyLife), String.valueOf(playerLife), String.valueOf(AiStats.VETOES.get()),
+                    String.valueOf(AiStats.SIM_DECISIONS.get()), String.valueOf(AiStats.FALLBACKS.get()),
+                    String.valueOf(AiStats.TURN_CAPPED.get()), note);
         } catch (Throwable t) {
             t.printStackTrace();
             return csv(enemy.name, settings.tier().label(), deckPath, refName, "error",
-                    "0", "0", "0", "0", String.valueOf(enemyLife), String.valueOf(playerLife), t.toString());
+                    "0", "0", "0", "0", String.valueOf(enemyLife), String.valueOf(playerLife), "0", "0", "0", "0", t.toString());
         }
     }
 

@@ -24,13 +24,14 @@ public final class EnemyTiers {
     public static final String FILE = "world/enemy_tiers.json";
 
     /** What a tier resolves to for one enemy. simulation is null for none. */
-    public record Settings(Tier tier, String profile, AIOption simulation, int budgetMs) {
+    public record Settings(Tier tier, String profile, AIOption simulation, int budgetMs, int turnBudgetMs) {
         @Override
         public String toString() {
             String sim = simulation == null ? "none"
                     : simulation == AIOption.USE_FULL_SIMULATION ? "full" : "hybrid";
             return tier.label() + " (profile " + profile + ", simulation " + sim
-                    + (simulation == null ? "" : ", budget " + budgetMs + " ms") + ")";
+                    + (simulation == null ? "" : ", budget " + budgetMs + " ms per decision"
+                    + (turnBudgetMs > 0 ? ", " + turnBudgetMs + " ms per turn" : "")) + ")";
         }
     }
 
@@ -51,7 +52,7 @@ public final class EnemyTiers {
     /** For tools and tests: tiers from an already parsed file (null = built-in defaults). */
     public EnemyTiers(JsonValue root) {
         for (Tier t : Tier.values()) {
-            tiers.put(t, new Settings(t, t.defaultProfile, t.defaultSimulation, t.defaultBudgetMs));
+            tiers.put(t, new Settings(t, t.defaultProfile, t.defaultSimulation, t.defaultBudgetMs, t.defaultTurnBudgetMs));
         }
         if (root == null) {
             System.out.println("[campaign] " + FILE + " not found: built-in tier defaults");
@@ -73,7 +74,8 @@ public final class EnemyTiers {
                 tiers.put(t, new Settings(t,
                         v.getString("profile", base.profile()),
                         v.has("simulation") ? parseSimulation(v.getString("simulation")) : base.simulation(),
-                        v.getInt("budgetMs", base.budgetMs())));
+                        v.getInt("budgetMs", base.budgetMs()),
+                        v.getInt("turnBudgetMs", base.turnBudgetMs())));
             }
         }
         JsonValue enemyValues = root.get("enemies");
@@ -120,7 +122,7 @@ public final class EnemyTiers {
         Settings s = settingsOf(tierOf(enemy));
         if (!AiProfileUtil.getAvailableProfiles().contains(s.profile())) {
             System.err.println("[campaign] AI profile " + s.profile() + " is not installed, using Default");
-            s = new Settings(s.tier(), "Default", s.simulation(), s.budgetMs());
+            s = new Settings(s.tier(), "Default", s.simulation(), s.budgetMs(), s.turnBudgetMs());
         }
         return s;
     }

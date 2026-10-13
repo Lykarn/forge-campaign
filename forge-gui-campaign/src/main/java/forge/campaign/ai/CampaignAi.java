@@ -34,6 +34,7 @@ public final class CampaignAi {
         Set<AIOption> options = settings.simulation() == null ? null : EnumSet.of(settings.simulation());
         if (settings.simulation() != null) {
             SimulationBudget.setMillis(settings.budgetMs());
+            SimulationBudget.setTurnMillis(settings.turnBudgetMs());
         }
         int avatars = GuiBase.getInterface().getAvatarCount();
         int sleeves = GuiBase.getInterface().getSleevesCount();

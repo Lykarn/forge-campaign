@@ -30,8 +30,14 @@ public final class OnePlaySafetyChecker {
             Score resultScore = simulator.simulateSpellAbility(sa);
 
             // desperate plays are ok if next combat was already likely to kill AI
-            return resultScore.value == Integer.MIN_VALUE
+            // FORGE-CAMPAIGN: count vetoes for the benchmark (forge.campaign.ai.AiStats).
+            boolean acceptable = resultScore.value == Integer.MIN_VALUE
                     || resultScore.value >= (long) originalScore.value - expectedCardScoreLoss(player, sa, simulator);
+            if (!acceptable) {
+                forge.campaign.ai.AiStats.VETOES.incrementAndGet();
+            }
+            return acceptable;
+            // FORGE-CAMPAIGN end
         // FORGE-CAMPAIGN: copying the game can throw (GameCopier "Couldn't map <card>"), and this check
         // runs outside any error handling (land plays), so it ended the duel. A check that cannot
         // run vetoes nothing: the heuristic AI's choice stands.

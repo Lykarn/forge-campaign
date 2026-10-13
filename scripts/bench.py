@@ -87,8 +87,9 @@ def summarise(rows: list[dict]) -> str:
     groups = defaultdict(list)
     for r in rows:
         groups[(r["tier"], r["ref_deck"])].append(r)
-    lines = ["| Tier | Reference deck | Games | Enemy wins | Draws | Errors | Mean s/turn | Slowest turn s |",
-             "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |"]
+    lines = ["| Tier | Reference deck | Games | Enemy wins | Draws | Errors | Mean s/turn | Slowest turn s "
+             "| Vetoed plays/game | Boss search: failed, turn-capped |",
+             "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |"]
     for tier in TIERS:
         for (t, deck), rs in sorted(groups.items()):
             if t != tier:
@@ -101,7 +102,15 @@ def summarise(rows: list[dict]) -> str:
             mean_turn = sum(float(r["mean_turn_s"]) for r in played) / decided if decided else 0
             slowest = max((float(r["max_turn_s"]) for r in played), default=0)
             rate = f"{100 * wins / decided:.0f}% ({wins})" if decided else "-"
-            lines.append(f"| {tier} | {deck} | {decided} | {rate} | {draws} | {errors} | {mean_turn:.1f} | {slowest:.0f} |")
+            # Older result files have no counter columns.
+            vetoes = sum(int(r.get("vetoes") or 0) for r in played) / decided if decided else 0
+            sims = sum(int(r.get("sim_decisions") or 0) for r in played)
+            falls = sum(int(r.get("fallbacks") or 0) for r in played)
+            capped = sum(int(r.get("turn_capped") or 0) for r in played)
+            fallback = (f"{100 * falls / sims:.1f}% failed, {100 * capped / (sims + capped):.0f}% turn-capped"
+                        if sims else "-")
+            lines.append(f"| {tier} | {deck} | {decided} | {rate} | {draws} | {errors} | {mean_turn:.1f} | {slowest:.0f} "
+                         f"| {vetoes:.1f} | {fallback} |")
     return "\n".join(lines)
 
 

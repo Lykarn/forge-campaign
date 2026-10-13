@@ -12,18 +12,20 @@ import forge.ai.AIOption;
  * simulation: it searches candidate plays a few steps deep and picks the best-scoring line.
  */
 public enum Tier {
-    GRUNT("Default", null, 0),
-    ELITE("Elite", AIOption.USE_HYBRID_SIMULATION, 3000),
-    BOSS("Boss", AIOption.USE_FULL_SIMULATION, 2000);
+    GRUNT("Default", null, 0, 0),
+    ELITE("Elite", AIOption.USE_HYBRID_SIMULATION, 3000, 0),
+    BOSS("Boss", AIOption.USE_FULL_SIMULATION, 1500, 10000);
 
     public final String defaultProfile;
     public final AIOption defaultSimulation;
     public final int defaultBudgetMs;
+    public final int defaultTurnBudgetMs;
 
-    Tier(String defaultProfile, AIOption defaultSimulation, int defaultBudgetMs) {
+    Tier(String defaultProfile, AIOption defaultSimulation, int defaultBudgetMs, int defaultTurnBudgetMs) {
         this.defaultProfile = defaultProfile;
         this.defaultSimulation = defaultSimulation;
         this.defaultBudgetMs = defaultBudgetMs;
+        this.defaultTurnBudgetMs = defaultTurnBudgetMs;
     }
 
     /** "Grunt", "elite", "BOSS" all work; anything else is null. */
