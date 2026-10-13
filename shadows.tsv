@@ -1,0 +1,5 @@
+# Every file in forge-gui-campaign/ that shadows (replaces on the classpath) an upstream file.
+# scripts/check_shadows.py hashes each upstream original at the pinned commit and fails the
+# build if it no longer matches: that means upstream changed it and our copy must be re-ported.
+# Columns (tab-separated): our file, upstream (forge|neo), upstream path, sha256 of the original we copied.
+forge-gui-campaign/src/main/java/forge/adventure/util/Config.java	forge	forge-gui-mobile/src/forge/adventure/util/Config.java	4ec1e8945bbd9bb9629656e58dd771dee07314528da86b8d789ab482bc38503c

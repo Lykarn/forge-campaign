@@ -1,0 +1,5 @@
+{
+  "name": "Campaign",
+  "basedOn": "Shandalar",
+  "note": "Files in plane/ are copied over a copy of Forge's Shandalar plane to make res/adventure/Campaign. Only files we change live here."
+}
