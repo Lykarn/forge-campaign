@@ -21,7 +21,7 @@ import time
 import zipfile
 from pathlib import Path
 
-from common import IS_WINDOWS, OUT, WORK
+from common import IS_WINDOWS, OUT, ROOT, WORK
 
 APP = WORK / "dist" / "ForgeCampaign"
 PLANE = "Campaign"
@@ -83,7 +83,7 @@ def tail(path: Path, lines: int = 15) -> str:
 
 
 def check_contents() -> None:
-    print("\n== 1. The package holds our plane and our shadowed Config")
+    print("\n== 1. The package holds our plane, our shadowed classes and our AI profiles")
     # A plane is a folder with a world/world.json (config.json is optional: Config falls back to
     # common/), plus campaign.json from our overlay to show the overlay was applied.
     for marker in ("world/world.json", "campaign.json"):
@@ -93,16 +93,25 @@ def check_contents() -> None:
     if not jar.is_file():
         fail("app/campaign.jar is missing")
         return
+    # Every shadow in shadows.tsv must be OUR class in campaign.jar. Each one calls into our code
+    # or reads our property, so its bytecode names "campaign"; the upstream originals never do.
+    shadows = [line.split("\t")[0] for line in (ROOT / "shadows.tsv").read_text(encoding="utf-8").splitlines()
+               if line.strip() and not line.startswith("#")]
     with zipfile.ZipFile(jar) as zf:
-        try:
-            data = zf.read("forge/adventure/util/Config.class")
-        except KeyError:
-            fail("campaign.jar has no forge/adventure/util/Config.class: the shadow is not packaged")
-            return
-    if b"campaign.plane" not in data:
-        fail("Config.class in campaign.jar is Forge's original, not our shadow")
-    else:
-        print("  ok: plane folder present, Config.class is our shadow")
+        for ours in shadows:
+            cls = ours.split("src/main/java/", 1)[1].replace(".java", ".class")
+            try:
+                data = zf.read(cls)
+            except KeyError:
+                fail(f"campaign.jar has no {cls}: the shadow is not packaged")
+                continue
+            if b"campaign" not in data:
+                fail(f"{cls} in campaign.jar is the upstream original, not our shadow")
+    for profile in sorted((ROOT / "res" / "ai").glob("*.ai")):
+        if not (APP / "res" / "ai" / profile.name).is_file():
+            fail(f"res/ai/{profile.name} is missing from the package")
+    if not failures:
+        print(f"  ok: plane folder present, {len(shadows)} shadowed classes are ours, AI profiles installed")
 
 
 def check_deckcheck() -> None:

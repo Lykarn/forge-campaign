@@ -1,0 +1,13 @@
+{
+  "_about": "Enemy tiers for Forge Campaign, read by forge.campaign.ai.EnemyTiers. An enemy's tier is its entry under 'enemies' (by name in enemies.json); else Boss if enemies.json marks it a boss; else Elite if its life is at least rules.eliteMinLife; else Grunt. Each tier sets an AI profile (res/ai), a simulation mode (none, hybrid, full) and a time budget per decision in milliseconds.",
+  "rules": {
+    "eliteMinLife": 25
+  },
+  "tiers": {
+    "Grunt": { "profile": "Default", "simulation": "none" },
+    "Elite": { "profile": "Elite", "simulation": "hybrid", "budgetMs": 3000 },
+    "Boss": { "profile": "Boss", "simulation": "full", "budgetMs": 5000 }
+  },
+  "enemies": {
+  }
+}
