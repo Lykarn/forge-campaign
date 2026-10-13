@@ -159,9 +159,7 @@ def main() -> int:
 
     workers = {}
     for i, shard in enumerate(s for s in shards if s):
-        (run_dir / f"enemies-{i}.txt").write_text("
-".join(n for n, _ in shard) + "
-", encoding="utf-8")
+        (run_dir / f"enemies-{i}.txt").write_text("\n".join(n for n, _ in shard) + "\n", encoding="utf-8")
         workers[i] = launch(i)
         time.sleep(2)  # let each worker write the shared portable profile before the next starts
     start = time.time()
