@@ -1,0 +1,6 @@
+# Store and check out text files with LF on every OS: the scripts hash and generate them,
+# and CRLF on Windows only added noise (and once broke a hash, see check_shadows.py).
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.zip binary
