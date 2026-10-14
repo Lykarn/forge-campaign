@@ -79,6 +79,34 @@ public final class SelfCheck {
                     world.getAllPointOfInterest().size() + " targetable points of interest");
         }
 
+        // Every gated road: shut until its flag is set, open after (castle flags for the later regions).
+        for (RegionLayout.Pass p : layout.passes) {
+            if (p.gateFlag() == null) {
+                continue;
+            }
+            int y = world.getHeightInTiles() - p.y() - 1;
+            boolean shut = world.isColliding(p.x(), y);
+            player.setQuestFlag(p.gateFlag(), 1);
+            boolean open = !world.isColliding(p.x(), y);
+            player.setQuestFlag(p.gateFlag(), 0);
+            check("road " + p.id() + " opens with " + p.gateFlag(), shut && open, null);
+        }
+        // The finale appears only once all five colour castles have fallen.
+        forge.adventure.pointofintrest.PointOfInterest finale = null;
+        for (forge.adventure.pointofintrest.PointOfInterest poi : world.getAllPointOfInterest()) {
+            if ("Emrakul".equals(poi.getData().name)) {
+                finale = poi;
+            }
+        }
+        check("the finale is placed in the hub", finale != null, null);
+        if (finale != null) {
+            boolean hidden = !finale.getActive();
+            player.setQuestFlag(DeckSize.CASTLES_FLAG, 5);
+            boolean shown = finale.getActive();
+            player.setQuestFlag(DeckSize.CASTLES_FLAG, 0);
+            check("the finale appears after five castles", hidden && shown, null);
+        }
+
         // Fog: the hub shows from the start, White only after its watchtower.
         int hub = indexOf(layout, "hub");
         int white = indexOf(layout, "white");
@@ -144,6 +172,15 @@ public final class SelfCheck {
         check("a 40-card deck gets no bonus life", DeckSize.lifeBonus(deckOf(40)) == 0, null);
         check("a 50-card deck gets +2 life", DeckSize.lifeBonus(deckOf(50)) == 2, null);
         check("a 75-card deck gets +4 life (the cap)", DeckSize.lifeBonus(deckOf(75)) == 4, null);
+        int start = DeckSize.minimum();
+        player.setQuestFlag(DeckSize.CASTLES_FLAG, 1);
+        int afterOne = DeckSize.minimum();
+        player.setQuestFlag(DeckSize.CASTLES_FLAG, 3);
+        int afterThree = DeckSize.minimum();
+        player.setQuestFlag(DeckSize.CASTLES_FLAG, 0);
+        DeckSize.minimum();
+        check("the minimum deck grows 40, 50, 60 with castles", start == 40 && afterOne == 50 && afterThree == 60,
+                start + ", " + afterOne + ", " + afterThree);
     }
 
     private static boolean hasPoi(World world, String name) {

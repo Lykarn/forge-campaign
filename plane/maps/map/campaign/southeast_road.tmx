@@ -40,7 +40,7 @@
    <properties>
     <property name="dialog">[
  {
-  &quot;text&quot;: &quot;The road is closed. The lands beyond open in a later update of Forge Campaign.&quot;,
+  &quot;text&quot;: &quot;The road to Duskmire is barred. A sign reads: &#x27;Closed until the Blue Castle falls.&#x27;&quot;,
   &quot;options&quot;: [
    {
     &quot;name&quot;: &quot;Turn back&quot;

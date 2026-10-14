@@ -100,7 +100,9 @@ def main() -> int:
         c = under(x, y)
         here = name_of.get(c, f"#{c:06x}")
         want = poi.get("region")
-        ok = want is None or fits(x, y, colour_of[want], args.margin)
+        # Signs and gates stand next to their pass on purpose: a smaller margin for them.
+        margin = 2 if poi.get("atPass") else args.margin
+        ok = want is None or fits(x, y, colour_of[want], margin)
         line = f"  {poi['name']:24} ({x:3}, {y:3})  {here:6}"
         if not ok:
             problems += 1
@@ -108,7 +110,7 @@ def main() -> int:
             seen, queue, found = {(x, y)}, deque([(x, y)]), None
             while queue:
                 cx, cy = queue.popleft()
-                if fits(cx, cy, target, args.margin):
+                if fits(cx, cy, target, margin):
                     found = (cx, cy)
                     break
                 for nx, ny in ((cx + 1, cy), (cx - 1, cy), (cx, cy + 1), (cx, cy - 1)):

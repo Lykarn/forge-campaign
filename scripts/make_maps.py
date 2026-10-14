@@ -130,12 +130,17 @@ def main() -> int:
                                             "action": [{"setQuestFlag": {"key": region["towerFlag"], "val": 1}}]}]}])
             entry.update({"type": "landmark", "spriteAtlas": "../common/maps/tileset/buildings.atlas", "sprite": "MageTower"})
         elif kind == "gate":
-            text = small_map([{"text": build["text"],
-                               "options": [{"name": f"Show the {build['key']}", "condition": [{"item": build["key"]}],
-                                            "text": build["opened"],
-                                            "options": [{"name": "Go on",
-                                                         "action": [{"setQuestFlag": {"key": build["flag"], "val": 1}}]}]},
-                                           {"name": "Turn back"}]}])
+            if build.get("key"):
+                # Opened by the player with a key item: the dialog sets the gate's flag.
+                options = [{"name": f"Show the {build['key']}", "condition": [{"item": build["key"]}],
+                            "text": build["opened"],
+                            "options": [{"name": "Go on",
+                                         "action": [{"setQuestFlag": {"key": build["flag"], "val": 1}}]}]},
+                           {"name": "Turn back"}]
+            else:
+                # Barred until something else sets the flag (a castle boss): only a sign.
+                options = [{"name": "Turn back"}]
+            text = small_map([{"text": build["text"], "options": options}])
             entry.update({"type": "landmark", "spriteAtlas": "../common/maps/tileset/buildings.atlas", "sprite": "Gate",
                           # Shown until the gate is open (negative val: our PointOfInterest shadow).
                           "questFlagsToActivate": [{"key": build["flag"], "val": -1}]})

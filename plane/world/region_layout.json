@@ -27,31 +27,47 @@
   },
   {
    "id": "blue",
-   "name": "Blue",
+   "name": "The Azure Reach",
    "biomes": [
     "blue"
-   ]
+   ],
+   "authored": true,
+   "towerFlag": "tower_blue",
+   "pool": "blue",
+   "requiresFlag": "Ch1WhiteCastleComplete"
   },
   {
    "id": "black",
-   "name": "Black",
+   "name": "Duskmire",
    "biomes": [
     "black"
-   ]
+   ],
+   "authored": true,
+   "towerFlag": "tower_black",
+   "pool": "black",
+   "requiresFlag": "Ch1BlueCastleComplete"
   },
   {
    "id": "red",
-   "name": "Red",
+   "name": "The Cinder Peaks",
    "biomes": [
     "red"
-   ]
+   ],
+   "authored": true,
+   "towerFlag": "tower_red",
+   "pool": "red",
+   "requiresFlag": "Ch1GreenCastleComplete"
   },
   {
    "id": "green",
-   "name": "Green",
+   "name": "The Wildwood",
    "biomes": [
     "green"
-   ]
+   ],
+   "authored": true,
+   "towerFlag": "tower_green",
+   "pool": "green",
+   "requiresFlag": "Ch1WhiteCastleComplete"
   }
  ],
  "pois": [
@@ -86,13 +102,14 @@
   {
    "name": "Cinderwell",
    "region": "hub",
-   "x": 304,
-   "y": 475,
+   "x": 388,
+   "y": 530,
    "build": {
     "kind": "town",
     "from": "Waste Town Tribal",
     "merchant": "hub"
-   }
+   },
+   "auto": true
   },
   {
    "name": "Old Watch Fort",
@@ -128,42 +145,6 @@
     "key": "Writ of Passage",
     "text": "A barred gate blocks the road north to the Plains of Serra. A notice reads: 'By order of the Crossroads council, this road is shut. Writs of passage are held at the Old Watch Fort.'",
     "opened": "The guard reads the writ, nods, and lifts the bar. The road north lies open."
-   }
-  },
-  {
-   "name": "Closed Road West",
-   "region": "hub",
-   "x": 284,
-   "y": 360,
-   "build": {
-    "kind": "closed"
-   }
-  },
-  {
-   "name": "Closed Road East",
-   "region": "hub",
-   "x": 441,
-   "y": 380,
-   "build": {
-    "kind": "closed"
-   }
-  },
-  {
-   "name": "Closed Road South",
-   "region": "hub",
-   "x": 359,
-   "y": 534,
-   "build": {
-    "kind": "closed"
-   }
-  },
-  {
-   "name": "Closed Road Southeast",
-   "region": "hub",
-   "x": 388,
-   "y": 505,
-   "build": {
-    "kind": "closed"
    }
   },
   {
@@ -230,7 +211,7 @@
    "name": "CatLairW",
    "region": "white",
    "x": 256,
-   "y": 101
+   "y": 103
   },
   {
    "name": "CaveW1",
@@ -255,6 +236,557 @@
    "region": "white",
    "x": 352,
    "y": 72
+  },
+  {
+   "name": "East Road",
+   "region": "hub",
+   "atPass": "hub_blue",
+   "side": "hub",
+   "build": {
+    "kind": "gate",
+    "flag": "Ch1WhiteCastleComplete",
+    "text": "The road to The Azure Reach is barred. A sign reads: 'Closed until the White Castle falls.'"
+   },
+   "x": 432,
+   "y": 330
+  },
+  {
+   "name": "Mirrorhall",
+   "region": "blue",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Island Capital",
+    "merchant": "blue"
+   },
+   "x": 594,
+   "y": 412
+  },
+  {
+   "name": "Saltmere",
+   "region": "blue",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Island Town Generic",
+    "merchant": "blue"
+   },
+   "x": 556,
+   "y": 184
+  },
+  {
+   "name": "Tidewatch",
+   "region": "blue",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Island Town Identity",
+    "merchant": "blue"
+   },
+   "x": 548,
+   "y": 302
+  },
+  {
+   "name": "Coral Ford",
+   "region": "blue",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Island Town Tribal",
+    "merchant": "blue"
+   },
+   "x": 508,
+   "y": 384
+  },
+  {
+   "name": "Azure Reach Watchtower",
+   "region": "blue",
+   "auto": true,
+   "build": {
+    "kind": "watchtower",
+    "region": "blue"
+   },
+   "x": 646,
+   "y": 344
+  },
+  {
+   "name": "DjinnPalace",
+   "region": "blue",
+   "auto": true,
+   "x": 492,
+   "y": 238
+  },
+  {
+   "name": "MageTowerU",
+   "region": "blue",
+   "auto": true,
+   "x": 590,
+   "y": 246
+  },
+  {
+   "name": "FortBlue1",
+   "region": "blue",
+   "auto": true,
+   "x": 584,
+   "y": 352
+  },
+  {
+   "name": "MerfolkPool",
+   "region": "blue",
+   "auto": true,
+   "x": 488,
+   "y": 298
+  },
+  {
+   "name": "CaveU1",
+   "region": "blue",
+   "auto": true,
+   "x": 608,
+   "y": 300
+  },
+  {
+   "name": "Jacehold",
+   "region": "blue",
+   "auto": true,
+   "x": 540,
+   "y": 252
+  },
+  {
+   "name": "Blue Castle",
+   "region": "blue",
+   "auto": true,
+   "far": true,
+   "x": 658,
+   "y": 258
+  },
+  {
+   "name": "West Road",
+   "region": "hub",
+   "atPass": "hub_green",
+   "side": "hub",
+   "build": {
+    "kind": "gate",
+    "flag": "Ch1WhiteCastleComplete",
+    "text": "The road to The Wildwood is barred. A sign reads: 'Closed until the White Castle falls.'"
+   },
+   "x": 273,
+   "y": 348
+  },
+  {
+   "name": "Oakheart",
+   "region": "green",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Forest Capital",
+    "merchant": "green"
+   },
+   "x": 118,
+   "y": 176
+  },
+  {
+   "name": "Briarwood",
+   "region": "green",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Forest Town Generic",
+    "merchant": "green"
+   },
+   "x": 96,
+   "y": 412
+  },
+  {
+   "name": "Mossford",
+   "region": "green",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Forest Town Identity",
+    "merchant": "green"
+   },
+   "x": 158,
+   "y": 294
+  },
+  {
+   "name": "Thornvale",
+   "region": "green",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Forest Town Tribal",
+    "merchant": "green"
+   },
+   "x": 178,
+   "y": 380
+  },
+  {
+   "name": "Wildwood Watchtower",
+   "region": "green",
+   "auto": true,
+   "build": {
+    "kind": "watchtower",
+    "region": "green"
+   },
+   "x": 238,
+   "y": 266
+  },
+  {
+   "name": "ElfTown",
+   "region": "green",
+   "auto": true,
+   "x": 196,
+   "y": 196
+  },
+  {
+   "name": "CatLairG",
+   "region": "green",
+   "auto": true,
+   "x": 94,
+   "y": 336
+  },
+  {
+   "name": "Fort7",
+   "region": "green",
+   "auto": true,
+   "x": 96,
+   "y": 248
+  },
+  {
+   "name": "WurmPond",
+   "region": "green",
+   "auto": true,
+   "x": 212,
+   "y": 326
+  },
+  {
+   "name": "Grove1",
+   "region": "green",
+   "auto": true,
+   "x": 154,
+   "y": 236
+  },
+  {
+   "name": "Garruk Forest",
+   "region": "green",
+   "auto": true,
+   "x": 144,
+   "y": 342
+  },
+  {
+   "name": "Green Castle",
+   "region": "green",
+   "auto": true,
+   "far": true,
+   "x": 34,
+   "y": 290
+  },
+  {
+   "name": "South Road",
+   "region": "hub",
+   "atPass": "hub_red",
+   "side": "hub",
+   "build": {
+    "kind": "gate",
+    "flag": "Ch1GreenCastleComplete",
+    "text": "The road to The Cinder Peaks is barred. A sign reads: 'Closed until the Green Castle falls.'"
+   },
+   "x": 301,
+   "y": 476
+  },
+  {
+   "name": "Emberhold",
+   "region": "red",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Mountain Capital",
+    "merchant": "red"
+   },
+   "x": 272,
+   "y": 656
+  },
+  {
+   "name": "Flintcrag",
+   "region": "red",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Mountain Town Generic",
+    "merchant": "red"
+   },
+   "x": 174,
+   "y": 518
+  },
+  {
+   "name": "Ashpeak",
+   "region": "red",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Mountain Town Identity",
+    "merchant": "red"
+   },
+   "x": 256,
+   "y": 564
+  },
+  {
+   "name": "Kiln Hollow",
+   "region": "red",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Mountain Town Tribal",
+    "merchant": "red"
+   },
+   "x": 190,
+   "y": 624
+  },
+  {
+   "name": "Cinder Peaks Watchtower",
+   "region": "red",
+   "auto": true,
+   "build": {
+    "kind": "watchtower",
+    "region": "red"
+   },
+   "x": 110,
+   "y": 556
+  },
+  {
+   "name": "BarbarianCamp",
+   "region": "red",
+   "auto": true,
+   "x": 200,
+   "y": 450
+  },
+  {
+   "name": "LavaForge1",
+   "region": "red",
+   "auto": true,
+   "x": 332,
+   "y": 574
+  },
+  {
+   "name": "Maze",
+   "region": "red",
+   "auto": true,
+   "x": 116,
+   "y": 482
+  },
+  {
+   "name": "SkullCaveR",
+   "region": "red",
+   "auto": true,
+   "x": 238,
+   "y": 502
+  },
+  {
+   "name": "CaveR2",
+   "region": "red",
+   "auto": true,
+   "x": 164,
+   "y": 574
+  },
+  {
+   "name": "Tibalts Fortress",
+   "region": "red",
+   "auto": true,
+   "x": 290,
+   "y": 606
+  },
+  {
+   "name": "Red Castle",
+   "region": "red",
+   "auto": true,
+   "far": true,
+   "x": 102,
+   "y": 632
+  },
+  {
+   "name": "Southeast Road",
+   "region": "hub",
+   "atPass": "hub_black",
+   "side": "hub",
+   "build": {
+    "kind": "gate",
+    "flag": "Ch1BlueCastleComplete",
+    "text": "The road to Duskmire is barred. A sign reads: 'Closed until the Blue Castle falls.'"
+   },
+   "x": 400,
+   "y": 450
+  },
+  {
+   "name": "Gravenhold",
+   "region": "black",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Swamp Capital",
+    "merchant": "black"
+   },
+   "x": 528,
+   "y": 534
+  },
+  {
+   "name": "Mournwick",
+   "region": "black",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Swamp Town Generic",
+    "merchant": "black"
+   },
+   "x": 444,
+   "y": 632
+  },
+  {
+   "name": "Blackwater",
+   "region": "black",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Swamp Town Identity",
+    "merchant": "black"
+   },
+   "x": 604,
+   "y": 592
+  },
+  {
+   "name": "Hollowmarsh",
+   "region": "black",
+   "auto": true,
+   "build": {
+    "kind": "town",
+    "from": "Swamp Town Tribal",
+    "merchant": "black"
+   },
+   "x": 484,
+   "y": 464
+  },
+  {
+   "name": "Duskmire Watchtower",
+   "region": "black",
+   "auto": true,
+   "build": {
+    "kind": "watchtower",
+    "region": "black"
+   },
+   "x": 458,
+   "y": 558
+  },
+  {
+   "name": "Graveyard",
+   "region": "black",
+   "auto": true,
+   "x": 514,
+   "y": 610
+  },
+  {
+   "name": "VampireCastle",
+   "region": "black",
+   "auto": true,
+   "x": 556,
+   "y": 470
+  },
+  {
+   "name": "DrossOutpost",
+   "region": "black",
+   "auto": true,
+   "x": 378,
+   "y": 620
+  },
+  {
+   "name": "EvilGrove",
+   "region": "black",
+   "auto": true,
+   "x": 438,
+   "y": 500
+  },
+  {
+   "name": "CaveB1",
+   "region": "black",
+   "auto": true,
+   "x": 482,
+   "y": 676
+  },
+  {
+   "name": "Grolnoks Bog",
+   "region": "black",
+   "auto": true,
+   "x": 584,
+   "y": 540
+  },
+  {
+   "name": "Black Castle",
+   "region": "black",
+   "auto": true,
+   "far": true,
+   "x": 552,
+   "y": 672
+  },
+  {
+   "name": "Emrakul",
+   "region": "hub",
+   "auto": true,
+   "x": 452,
+   "y": 396
+  },
+  {
+   "name": "Quest_BanditCave",
+   "region": "hub",
+   "auto": true,
+   "story": true,
+   "x": 306,
+   "y": 290
+  },
+  {
+   "name": "Quest_ShardMines",
+   "region": "white",
+   "auto": true,
+   "story": true,
+   "x": 322,
+   "y": 228
+  },
+  {
+   "name": "Quest_LibraryOfVarsil",
+   "region": "blue",
+   "auto": true,
+   "story": true,
+   "x": 478,
+   "y": 346
+  },
+  {
+   "name": "Quest_DigSite",
+   "region": "hub",
+   "auto": true,
+   "story": true,
+   "x": 370,
+   "y": 396
+  },
+  {
+   "name": "Quest_APortalToNowhere",
+   "region": "hub",
+   "auto": true,
+   "story": true,
+   "x": 408,
+   "y": 282
+  },
+  {
+   "name": "Quest_PrimalJungle",
+   "region": "green",
+   "auto": true,
+   "story": true,
+   "x": 44,
+   "y": 338
+  },
+  {
+   "name": "Quest_FrostbittenCavern",
+   "region": "green",
+   "auto": true,
+   "story": true,
+   "x": 226,
+   "y": 372
   }
  ],
  "passes": [
@@ -264,6 +796,54 @@
    "y": 285,
    "radius": 5,
    "gateFlag": "gate_white"
+  },
+  {
+   "id": "hub_blue",
+   "auto": true,
+   "between": [
+    "hub",
+    "blue"
+   ],
+   "gateFlag": "Ch1WhiteCastleComplete",
+   "x": 441,
+   "y": 331,
+   "radius": 5
+  },
+  {
+   "id": "hub_green",
+   "auto": true,
+   "between": [
+    "hub",
+    "green"
+   ],
+   "gateFlag": "Ch1WhiteCastleComplete",
+   "x": 264,
+   "y": 346,
+   "radius": 5
+  },
+  {
+   "id": "hub_red",
+   "auto": true,
+   "between": [
+    "hub",
+    "red"
+   ],
+   "gateFlag": "Ch1GreenCastleComplete",
+   "x": 293,
+   "y": 476,
+   "radius": 5
+  },
+  {
+   "id": "hub_black",
+   "auto": true,
+   "between": [
+    "hub",
+    "black"
+   ],
+   "gateFlag": "Ch1BlueCastleComplete",
+   "x": 400,
+   "y": 459,
+   "radius": 5
   }
  ]
 }

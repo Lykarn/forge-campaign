@@ -1,7 +1,77 @@
 {
-  "_about": "Card pools for merchants and rewards, read by scripts/card_scores.py (which writes plane/card_scores.json). Each pool draws from one or two sets (Forge edition codes), optionally limited to rarities (C, U, R, M), minus any names under exclude. Regions name their pool in region_layout.json.",
-  "pools": {
-    "hub": { "name": "The Crossroads", "sets": ["M10"], "rarities": ["C", "U", "R", "M"] },
-    "white": { "name": "Plains of Serra", "sets": ["DOM"], "rarities": ["C", "U", "R", "M"] }
+ "_about": "Card pools for merchants and rewards, read by scripts/card_scores.py (which writes plane/card_scores.json). Each pool draws from one or two sets (Forge edition codes), optionally limited to rarities (C, U, R, M), minus any names under exclude. Regions name their pool in region_layout.json.",
+ "pools": {
+  "hub": {
+   "name": "The Crossroads",
+   "sets": [
+    "M10"
+   ],
+   "rarities": [
+    "C",
+    "U",
+    "R",
+    "M"
+   ]
+  },
+  "white": {
+   "name": "Plains of Serra",
+   "sets": [
+    "DOM"
+   ],
+   "rarities": [
+    "C",
+    "U",
+    "R",
+    "M"
+   ]
+  },
+  "blue": {
+   "name": "The Azure Reach",
+   "sets": [
+    "KLD"
+   ],
+   "rarities": [
+    "C",
+    "U",
+    "R",
+    "M"
+   ]
+  },
+  "green": {
+   "name": "The Wildwood",
+   "sets": [
+    "XLN"
+   ],
+   "rarities": [
+    "C",
+    "U",
+    "R",
+    "M"
+   ]
+  },
+  "red": {
+   "name": "The Cinder Peaks",
+   "sets": [
+    "DTK"
+   ],
+   "rarities": [
+    "C",
+    "U",
+    "R",
+    "M"
+   ]
+  },
+  "black": {
+   "name": "Duskmire",
+   "sets": [
+    "ISD"
+   ],
+   "rarities": [
+    "C",
+    "U",
+    "R",
+    "M"
+   ]
   }
+ }
 }

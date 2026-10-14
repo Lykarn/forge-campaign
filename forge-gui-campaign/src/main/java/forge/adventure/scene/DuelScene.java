@@ -659,7 +659,8 @@ public class DuelScene extends ForgeScene {
         int mainSize = mainSection.countAll();
 
         int maxDeckSize = format == DeckFormat.Adventure ? Integer.MAX_VALUE : format.getMainRange().getMaximum();
-        int minDeckSize = format == DeckFormat.Adventure ? Config.instance().getConfigData().minDeckSize : format.getMainRange().getMinimum();
+        // FORGE-CAMPAIGN: 40, then 50 after the first castle, 60 after the third (forge.campaign.DeckSize).
+        int minDeckSize = format == DeckFormat.Adventure ? forge.campaign.DeckSize.minimum() : format.getMainRange().getMinimum();
 
         if(format.hasCommander() && playerDeck.has(DeckSection.Commander)) {
             //If they have a partner commander, it counts toward the 99.

@@ -39,5 +39,9 @@ rep("""            Current.player().getStatistic().setResult(enemyName, winner);
             // FORGE-CAMPAIGN: tell RewardScene this loot is a won map duel's (pick 1 of 3).
             forge.campaign.shop.DuelRewards.duelEnded(winner && !isArena && eventData == null);
 """)
+# Phase 3: the minimum deck size grows with the castles beaten (forge.campaign.DeckSize).
+rep("""        int minDeckSize = format == DeckFormat.Adventure ? Config.instance().getConfigData().minDeckSize : format.getMainRange().getMinimum();""",
+    """        // FORGE-CAMPAIGN: 40, then 50 after the first castle, 60 after the third (forge.campaign.DeckSize).
+        int minDeckSize = format == DeckFormat.Adventure ? forge.campaign.DeckSize.minimum() : format.getMainRange().getMinimum();""")
 p.write_text(HEADER + t, encoding="utf-8", newline="\n")
 print("DuelScene.java patched")

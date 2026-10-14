@@ -3,6 +3,26 @@
  "modify": {
   "White Castle": {
    "questFlagsToActivate": []
+  },
+  "Blue Castle": {
+   "questFlagsToActivate": []
+  },
+  "Green Castle": {
+   "questFlagsToActivate": []
+  },
+  "Red Castle": {
+   "questFlagsToActivate": []
+  },
+  "Black Castle": {
+   "questFlagsToActivate": []
+  },
+  "Emrakul": {
+   "questFlagsToActivate": [
+    {
+     "key": "Ch1CastlesComplete",
+     "val": 5
+    }
+   ]
   }
  },
  "add": [
@@ -88,54 +108,6 @@
    ]
   },
   {
-   "name": "Closed Road West",
-   "displayName": "Closed Road West",
-   "count": 0,
-   "map": "../Campaign/maps/map/campaign/closed_road_west.tmx",
-   "questTags": [
-    "Campaign"
-   ],
-   "type": "landmark",
-   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
-   "sprite": "Gate"
-  },
-  {
-   "name": "Closed Road East",
-   "displayName": "Closed Road East",
-   "count": 0,
-   "map": "../Campaign/maps/map/campaign/closed_road_east.tmx",
-   "questTags": [
-    "Campaign"
-   ],
-   "type": "landmark",
-   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
-   "sprite": "Gate"
-  },
-  {
-   "name": "Closed Road South",
-   "displayName": "Closed Road South",
-   "count": 0,
-   "map": "../Campaign/maps/map/campaign/closed_road_south.tmx",
-   "questTags": [
-    "Campaign"
-   ],
-   "type": "landmark",
-   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
-   "sprite": "Gate"
-  },
-  {
-   "name": "Closed Road Southeast",
-   "displayName": "Closed Road Southeast",
-   "count": 0,
-   "map": "../Campaign/maps/map/campaign/closed_road_southeast.tmx",
-   "questTags": [
-    "Campaign"
-   ],
-   "type": "landmark",
-   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
-   "sprite": "Gate"
-  },
-  {
    "name": "Serra's Rest",
    "displayName": "Serra's Rest",
    "count": 0,
@@ -207,6 +179,394 @@
    "displayName": "Serra Watchtower",
    "count": 0,
    "map": "../Campaign/maps/map/campaign/serra_watchtower.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "landmark",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "MageTower"
+  },
+  {
+   "name": "East Road",
+   "displayName": "East Road",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/east_road.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "landmark",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "Gate",
+   "questFlagsToActivate": [
+    {
+     "key": "Ch1WhiteCastleComplete",
+     "val": -1
+    }
+   ]
+  },
+  {
+   "name": "Mirrorhall",
+   "displayName": "Mirrorhall",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/mirrorhall.tmx",
+   "questTags": [
+    "Capital",
+    "BiomeBlue",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "capital",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "IslandCapital"
+  },
+  {
+   "name": "Saltmere",
+   "displayName": "Saltmere",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/saltmere.tmx",
+   "questTags": [
+    "Town",
+    "TownGeneric",
+    "BiomeBlue",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "IslandTown"
+  },
+  {
+   "name": "Tidewatch",
+   "displayName": "Tidewatch",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/tidewatch.tmx",
+   "questTags": [
+    "Town",
+    "TownIdentity",
+    "BiomeBlue",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "IslandTown"
+  },
+  {
+   "name": "Coral Ford",
+   "displayName": "Coral Ford",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/coral_ford.tmx",
+   "questTags": [
+    "Town",
+    "TownTribal",
+    "BiomeBlue",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "IslandTown"
+  },
+  {
+   "name": "Azure Reach Watchtower",
+   "displayName": "Azure Reach Watchtower",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/azure_reach_watchtower.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "landmark",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "MageTower"
+  },
+  {
+   "name": "West Road",
+   "displayName": "West Road",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/west_road.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "landmark",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "Gate",
+   "questFlagsToActivate": [
+    {
+     "key": "Ch1WhiteCastleComplete",
+     "val": -1
+    }
+   ]
+  },
+  {
+   "name": "Oakheart",
+   "displayName": "Oakheart",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/oakheart.tmx",
+   "questTags": [
+    "Capital",
+    "BiomeGreen",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "capital",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "ForestCapital"
+  },
+  {
+   "name": "Briarwood",
+   "displayName": "Briarwood",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/briarwood.tmx",
+   "questTags": [
+    "Town",
+    "BiomeGreen",
+    "TownGeneric",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "ForestTown"
+  },
+  {
+   "name": "Mossford",
+   "displayName": "Mossford",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/mossford.tmx",
+   "questTags": [
+    "Town",
+    "BiomeGreen",
+    "TownIdentity",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "ForestTown"
+  },
+  {
+   "name": "Thornvale",
+   "displayName": "Thornvale",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/thornvale.tmx",
+   "questTags": [
+    "Town",
+    "BiomeGreen",
+    "TownTribal",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "ForestTown"
+  },
+  {
+   "name": "Wildwood Watchtower",
+   "displayName": "Wildwood Watchtower",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/wildwood_watchtower.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "landmark",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "MageTower"
+  },
+  {
+   "name": "South Road",
+   "displayName": "South Road",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/south_road.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "landmark",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "Gate",
+   "questFlagsToActivate": [
+    {
+     "key": "Ch1GreenCastleComplete",
+     "val": -1
+    }
+   ]
+  },
+  {
+   "name": "Emberhold",
+   "displayName": "Emberhold",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/emberhold.tmx",
+   "questTags": [
+    "Capital",
+    "BiomeRed",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "capital",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "MountainCapital"
+  },
+  {
+   "name": "Flintcrag",
+   "displayName": "Flintcrag",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/flintcrag.tmx",
+   "questTags": [
+    "Town",
+    "TownGeneric",
+    "BiomeRed",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "MountainTown"
+  },
+  {
+   "name": "Ashpeak",
+   "displayName": "Ashpeak",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/ashpeak.tmx",
+   "questTags": [
+    "Town",
+    "TownIdentity",
+    "BiomeRed",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "MountainTown"
+  },
+  {
+   "name": "Kiln Hollow",
+   "displayName": "Kiln Hollow",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/kiln_hollow.tmx",
+   "questTags": [
+    "Town",
+    "TownTribal",
+    "BiomeRed",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "MountainTown"
+  },
+  {
+   "name": "Cinder Peaks Watchtower",
+   "displayName": "Cinder Peaks Watchtower",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/cinder_peaks_watchtower.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "landmark",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "MageTower"
+  },
+  {
+   "name": "Southeast Road",
+   "displayName": "Southeast Road",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/southeast_road.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "landmark",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "Gate",
+   "questFlagsToActivate": [
+    {
+     "key": "Ch1BlueCastleComplete",
+     "val": -1
+    }
+   ]
+  },
+  {
+   "name": "Gravenhold",
+   "displayName": "Gravenhold",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/gravenhold.tmx",
+   "questTags": [
+    "Capital",
+    "BiomeBlack",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "capital",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "SwampCapital"
+  },
+  {
+   "name": "Mournwick",
+   "displayName": "Mournwick",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/mournwick.tmx",
+   "questTags": [
+    "Town",
+    "TownGeneric",
+    "BiomeBlack",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "SwampTown"
+  },
+  {
+   "name": "Blackwater",
+   "displayName": "Blackwater",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/blackwater.tmx",
+   "questTags": [
+    "Town",
+    "TownIdentity",
+    "BiomeBlack",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "SwampTown"
+  },
+  {
+   "name": "Hollowmarsh",
+   "displayName": "Hollowmarsh",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/hollowmarsh.tmx",
+   "questTags": [
+    "Town",
+    "TownTribal",
+    "BiomeBlack",
+    "Sidequest",
+    "QuestSource",
+    "Campaign"
+   ],
+   "type": "town",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "SwampTown"
+  },
+  {
+   "name": "Duskmire Watchtower",
+   "displayName": "Duskmire Watchtower",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/duskmire_watchtower.tmx",
    "questTags": [
     "Campaign"
    ],

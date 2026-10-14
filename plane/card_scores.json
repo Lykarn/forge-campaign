@@ -240,7 +240,6 @@
     "Teferi, Hero of Dominaria": 96,
     "Lyra Dawnbringer": 94,
     "Demonlord Belzenlok": 91,
-    "Muldrotha, the Gravetide": 91,
     "Traxos, Scourge of Kroog": 91,
     "Phyrexian Scriptures": 90,
     "The Eldest Reborn": 88,
@@ -277,6 +276,7 @@
     "Goblin Barrage": 71,
     "Two-Headed Giant": 71,
     "Serra Angel": 70,
+    "Muldrotha, the Gravetide": 70,
     "Raff Capashen, Ship's Mage": 70,
     "Deep Freeze": 69,
     "Torgaar, Famine Incarnate": 69,
@@ -475,9 +475,1035 @@
     "Relic Runner": 9,
     "Drudge Sentinel": 3
    }
+  },
+  "blue": {
+   "name": "The Azure Reach",
+   "sets": [
+    "KLD"
+   ],
+   "cards": {
+    "Chandra, Torch of Defiance": 99,
+    "Combustible Gearhulk": 98,
+    "Skysovereign, Consul Flagship": 98,
+    "Nissa, Vital Force": 96,
+    "Noxious Gearhulk": 94,
+    "Torrential Gearhulk": 89,
+    "Fateful Showdown": 89,
+    "Metalwork Colossus": 89,
+    "Fumigate": 88,
+    "Demon of Dark Schemes": 88,
+    "Eliminate the Competition": 88,
+    "Verdurous Gearhulk": 88,
+    "Aethersquall Ancient": 87,
+    "Decoction Module": 86,
+    "Cataclysmic Gearhulk": 84,
+    "Unlicensed Disintegration": 84,
+    "Dynavolt Tower": 84,
+    "Nature's Way": 83,
+    "Acrobatic Maneuver": 81,
+    "Captured by the Consulate": 80,
+    "Depala, Pilot Exemplar": 80,
+    "Aetherstorm Roc": 79,
+    "Underhanded Designs": 79,
+    "Harnessed Lightning": 79,
+    "Creeping Mold": 78,
+    "Fragmentize": 77,
+    "Fortuitous Find": 77,
+    "Aerial Responder": 76,
+    "Chandra's Pyrohelix": 76,
+    "Demolish": 76,
+    "Appetite for the Unnatural": 76,
+    "Empyreal Voyager": 76,
+    "Scrapheap Scrounger": 76,
+    "Ballista Charger": 75,
+    "Welding Sparks": 74,
+    "Skywhaler's Shot": 73,
+    "Aether Meltdown": 73,
+    "Metallurgic Summonings": 73,
+    "Select for Inspection": 73,
+    "Essence Extraction": 73,
+    "Lathnu Hellion": 73,
+    "Arborback Stomper": 73,
+    "Hunt the Weak": 73,
+    "Skyship Stalker": 72,
+    "Aether Tradewinds": 71,
+    "Subtle Strike": 71,
+    "Key to the City": 70,
+    "Ghirapur Orrery": 69,
+    "Wispweaver Angel": 68,
+    "Furious Reprisal": 68,
+    "Bristling Hydra": 68,
+    "Dovin Baan": 68,
+    "Tidy Conclusion": 67,
+    "Quicksmith Genius": 67,
+    "Animation Module": 67,
+    "Impeccable Timing": 66,
+    "Glint-Nest Crane": 66,
+    "Die Young": 66,
+    "Cowl Prowler": 66,
+    "Long-Finned Skywhale": 65,
+    "Saheeli Rai": 65,
+    "Foundry Inspector": 65,
+    "Master Trinketeer": 64,
+    "Revoke Privileges": 64,
+    "Veteran Motorist": 64,
+    "Oviya Pashiri, Sage Lifecrafter": 63,
+    "Kambal, Consul of Allocation": 63,
+    "Glimmer of Genius": 62,
+    "Incendiary Sabotage": 62,
+    "Take Down": 62,
+    "Voltaic Brawler": 62,
+    "Cultivator's Caravan": 62,
+    "Era of Innovation": 61,
+    "Morbid Curiosity": 61,
+    "Syndicate Trafficker": 61,
+    "Fireforger's Puzzleknot": 61,
+    "Midnight Oil": 60,
+    "Cathartic Reunion": 60,
+    "Armorcraft Judge": 60,
+    "Insidious Will": 59,
+    "Brazen Scourge": 59,
+    "Trusty Companion": 58,
+    "Renegade Tactics": 58,
+    "Spark of Creativity": 58,
+    "Wayward Giant": 58,
+    "Architect of the Untamed": 58,
+    "Servant of the Conduit": 58,
+    "Accomplished Automaton": 58,
+    "Servo Exhibition": 57,
+    "Prophetic Prism": 57,
+    "Contraband Kingpin": 56,
+    "Whirler Virtuoso": 56,
+    "Bomat Bazaar Barge": 56,
+    "Consul's Shieldguard": 55,
+    "Riparian Tiger": 55,
+    "Eddytrail Hawk": 54,
+    "Gearseeker Serpent": 54,
+    "Peema Outrider": 53,
+    "Lost Legacy": 52,
+    "Ovalchase Daredevil": 52,
+    "Reckless Fireweaver": 52,
+    "Snare Thopter": 52,
+    "Pressure Point": 51,
+    "Terror of the Fairgrounds": 51,
+    "Whirlermaker": 51,
+    "Authority of the Consuls": 50,
+    "Spireside Infiltrator": 50,
+    "Dubious Challenge": 50,
+    "Aetherflux Reservoir": 50,
+    "Bastion Mastodon": 50,
+    "Chief of the Foundry": 50,
+    "Embraal Bruiser": 49,
+    "Blossoming Defense": 49,
+    "Aetherworks Marvel": 49,
+    "Gonti, Lord of Luxury": 48,
+    "Madcap Experiment": 48,
+    "Maulfist Doorbuster": 48,
+    "Filigree Familiar": 48,
+    "Disappearing Act": 47,
+    "Dukhara Scavenger": 47,
+    "Pia Nalaar": 47,
+    "Panharmonicon": 47,
+    "Tasseled Dromedary": 46,
+    "Cloudblazer": 46,
+    "Rashmi, Eternities Crafter": 46,
+    "Hightide Hermit": 45,
+    "Wind Drake": 45,
+    "Live Fast": 45,
+    "Ghirapur Guide": 45,
+    "Metalspinner's Puzzleknot": 45,
+    "Self-Assembler": 45,
+    "Smuggler's Copter": 45,
+    "Skyswirl Harrier": 44,
+    "Failed Inspection": 44,
+    "Mind Rot": 44,
+    "Bomat Courier": 44,
+    "Padeem, Consul of Innovation": 43,
+    "Tezzeret's Ambition": 43,
+    "Aetherborn Marauder": 43,
+    "Cogworker's Puzzleknot": 43,
+    "Angel of Invention": 42,
+    "Ceremonious Rejection": 42,
+    "Confiscation Coup": 42,
+    "Saheeli's Artistry": 42,
+    "Diabolic Tutor": 42,
+    "Longtusk Cub": 42,
+    "Herald of the Fair": 41,
+    "Minister of Inquiries": 41,
+    "Harsh Scrutiny": 41,
+    "Restoration Gearsmith": 41,
+    "Territorial Gorger": 40,
+    "Wildest Dreams": 40,
+    "Eager Construct": 40,
+    "Multiform Wonder": 40,
+    "Perpetual Timepiece": 40,
+    "Prakhata Club Security": 39,
+    "Rush of Vitality": 39,
+    "Built to Smash": 39,
+    "Aviary Mechanic": 38,
+    "Revolutionary Rebuff": 38,
+    "Lawless Broker": 38,
+    "Fleetwheel Cruiser": 38,
+    "Spontaneous Artist": 37,
+    "Wild Wanderer": 37,
+    "Weldfast Monitor": 37,
+    "Dramatic Reversal": 36,
+    "Fabrication Module": 36,
+    "Marionette Master": 35,
+    "Start Your Engines": 35,
+    "Consulate Surveillance": 34,
+    "Ambitious Aetherborn": 34,
+    "Foundry Screecher": 34,
+    "Larger Than Life": 34,
+    "Janjeet Sentry": 33,
+    "Night Market Lookout": 33,
+    "Deadlock Trap": 33,
+    "Built to Last": 32,
+    "Refurbish": 32,
+    "Aether Theorist": 32,
+    "Make Obsolete": 32,
+    "Maulfist Squad": 32,
+    "Inventor's Apprentice": 32,
+    "Speedway Fanatic": 32,
+    "Gearshift Ace": 31,
+    "Weldfast Wingsmith": 31,
+    "Dhund Operative": 31,
+    "Hijack": 31,
+    "Attune with Aether": 31,
+    "Demolition Stomper": 31,
+    "Paradoxical Outcome": 30,
+    "Engineered Might": 30,
+    "Ovalchase Dragster": 30,
+    "Cultivator of Blades": 29,
+    "Consulate Skygate": 29,
+    "Electrostatic Pummeler": 29,
+    "Commencement of Festivities": 28,
+    "Fairgrounds Warden": 27,
+    "Toolcraft Exemplar": 27,
+    "Durable Handicraft": 27,
+    "Aradara Express": 27,
+    "Prakhata Pillar-Bug": 27,
+    "Salivating Gremlins": 26,
+    "Fairgrounds Trumpeter": 26,
+    "Thriving Rhino": 26,
+    "Workshop Assistant": 26,
+    "Thriving Turtle": 25,
+    "Aethertorch Renegade": 25,
+    "Ornamental Courage": 25,
+    "Wily Bandar": 25,
+    "Woodweaver's Puzzleknot": 25,
+    "Inspired Charge": 24,
+    "Renegade Freighter": 24,
+    "Sky Skiff": 24,
+    "Elegant Edgecrafters": 23,
+    "Shrewd Negotiation": 22,
+    "Weaponcraft Enthusiast": 22,
+    "Giant Spectacle": 22,
+    "Glassblower's Puzzleknot": 22,
+    "Vedalken Blademaster": 21,
+    "Sage of Shaila's Claim": 21,
+    "Thriving Ibex": 20,
+    "Narnam Cobra": 20,
+    "Ruinous Gremlin": 19,
+    "Hazardous Conditions": 19,
+    "Dukhara Peafowl": 19,
+    "Inventor's Goggles": 18,
+    "Thriving Grubs": 17,
+    "Glint-Sleeve Artisan": 16,
+    "Propeller Pioneer": 16,
+    "Experimental Aviator": 16,
+    "Kujar Seedsculptor": 16,
+    "Iron League Steed": 16,
+    "Torch Gauntlet": 16,
+    "Malfunction": 15,
+    "Fretwork Colony": 15,
+    "Visionary Augmenter": 14,
+    "Ninth Bridge Patrol": 13,
+    "Thriving Rats": 13,
+    "Curio Vendor": 11,
+    "Nimble Innovator": 9,
+    "Highspire Artisan": 6
+   }
+  },
+  "green": {
+   "name": "The Wildwood",
+   "sets": [
+    "XLN"
+   ],
+   "cards": {
+    "Star of Extinction": 97,
+    "Carnage Tyrant": 94,
+    "Gishath, Sun's Avatar": 94,
+    "Vraska, Relic Seeker": 94,
+    "Huatli, Warrior Poet": 91,
+    "Wakening Sun's Avatar": 90,
+    "Rampaging Ferocidon": 90,
+    "Lightning Strike": 89,
+    "Ripjaw Raptor": 88,
+    "Dire Fleet Ravager": 87,
+    "Savage Stomp": 86,
+    "Siren Stormtamer": 83,
+    "Fathom Fleet Captain": 83,
+    "Burning Sun's Avatar": 83,
+    "Raging Swordtooth": 83,
+    "Kinjalli's Sunwing": 82,
+    "Makeshift Munitions": 82,
+    "Siren's Ruse": 81,
+    "Walk the Plank": 81,
+    "Rile": 81,
+    "Fleet Swallower": 80,
+    "Old-Growth Dryads": 80,
+    "Vona, Butcher of Magan": 80,
+    "Sanctum Seeker": 79,
+    "Slice in Twain": 79,
+    "March of the Drowned": 78,
+    "Captivating Crew": 78,
+    "Dual Shot": 78,
+    "Regisaur Alpha": 77,
+    "Sky Terror": 77,
+    "Fiery Cannonade": 76,
+    "Perilous Voyage": 75,
+    "Demolish": 75,
+    "Ancient Brontodon": 75,
+    "Colossal Dreadmaw": 75,
+    "Pounce": 75,
+    "Demystify": 74,
+    "Depths of Desire": 74,
+    "Crushing Canopy": 74,
+    "Contract Killing": 73,
+    "Wanted Scoundrels": 73,
+    "Charging Monstrosaur": 73,
+    "Repeating Barrage": 73,
+    "Rowdy Crew": 73,
+    "Verdant Sun's Avatar": 72,
+    "Vanquisher's Banner": 71,
+    "Ixalan's Binding": 70,
+    "Revel in Riches": 70,
+    "Ruthless Knave": 70,
+    "Skulduggery": 70,
+    "Vanquish the Weak": 70,
+    "Vance's Blasting Cannons": 70,
+    "Bright Reprisal": 69,
+    "Duskborne Skymarcher": 69,
+    "Admiral Beckett Brass": 69,
+    "Legion's Judgment": 68,
+    "Dreamcaller Siren": 68,
+    "Jace, Cunning Castaway": 68,
+    "Overflowing Insight": 68,
+    "Spell Swindle": 68,
+    "Deathgorge Scavenger": 68,
+    "Dark Nourishment": 67,
+    "Firecannon Blast": 67,
+    "Elaborate Firecannon": 67,
+    "Blight Keeper": 66,
+    "Shapers of Nature": 66,
+    "Imperial Aerosaur": 65,
+    "Chart a Course": 65,
+    "Bonded Horncrest": 65,
+    "Pious Interdiction": 64,
+    "Spreading Rot": 64,
+    "Settle the Wreckage": 63,
+    "Deeproot Waters": 63,
+    "Slash of Talons": 62,
+    "Air Elemental": 62,
+    "Ruin Raider": 62,
+    "Unfriendly Fire": 62,
+    "Shapers' Sanctuary": 62,
+    "Thundering Spineback": 62,
+    "Marauding Looter": 62,
+    "Opt": 61,
+    "Fire Shrine Keeper": 60,
+    "Emperor's Vanguard": 60,
+    "Ranging Raptors": 59,
+    "Raptor Companion": 58,
+    "Costly Plunder": 58,
+    "Snapping Sailback": 58,
+    "Kitesail Freebooter": 57,
+    "Skymarch Bloodletter": 57,
+    "Frenzied Raptor": 57,
+    "Angrath's Marauders": 56,
+    "Sun-Crowned Hunters": 56,
+    "Waker of the Wilds": 56,
+    "Call to the Feast": 56,
+    "Pillar of Origins": 56,
+    "Prying Blade": 56,
+    "Spell Pierce": 55,
+    "Heartless Pillage": 55,
+    "Verdant Rebirth": 55,
+    "Inspiring Cleric": 54,
+    "Skyblade of the Legion": 54,
+    "Cancel": 54,
+    "Pirate's Prize": 54,
+    "Captain Lannery Storm": 54,
+    "Storm Fleet Arsonist": 54,
+    "Commune with Dinosaurs": 54,
+    "Ravenous Daggertooth": 54,
+    "Bishop of Rebirth": 53,
+    "Lookout's Dispersal": 53,
+    "Raiders' Wake": 53,
+    "Trove of Temptation": 53,
+    "Vicious Conquistador": 52,
+    "Headstrong Brute": 52,
+    "Storm Fleet Aerialist": 51,
+    "Wildgrowth Walker": 51,
+    "Hostage Taker": 51,
+    "Mavren Fein, Dusk Apostle": 50,
+    "Duress": 50,
+    "New Horizons": 50,
+    "Belligerent Brontodon": 50,
+    "Bellowing Aegisaur": 49,
+    "Deathless Ancient": 49,
+    "Dire Fleet Captain": 49,
+    "Grazing Whiptail": 48,
+    "Looming Altisaur": 47,
+    "Queen's Commission": 47,
+    "Ritual of Rejuvenation": 47,
+    "Tocatli Honor Guard": 47,
+    "Prosperous Pirates": 47,
+    "Desperate Castaways": 47,
+    "Spike-Tailed Ceratops": 47,
+    "Treasure Map": 47,
+    "Glorifier of Dusk": 46,
+    "Legion's Landing": 46,
+    "Shining Aerosaur": 46,
+    "Search for Azcanta": 46,
+    "Arguel's Blood Fast": 46,
+    "Sunbird's Invocation": 46,
+    "Growing Rites of Itlimoc": 46,
+    "Conqueror's Galleon": 46,
+    "Dowsing Dagger": 46,
+    "Herald of Secret Streams": 45,
+    "River's Rebuke": 45,
+    "Ashes of the Abhorrent": 44,
+    "Axis of Mortality": 44,
+    "Sheltering Light": 44,
+    "Arcane Adaptation": 44,
+    "Lightning-Rig Crew": 44,
+    "Hierophant's Chalice": 44,
+    "Kopala, Warden of Waves": 43,
+    "Boneyard Parley": 43,
+    "Otepec Huntmaster": 43,
+    "Deadeye Plunderers": 42,
+    "Sanguine Sacrament": 41,
+    "Daring Saboteur": 41,
+    "Dive Down": 41,
+    "Vraska's Contempt": 41,
+    "Thrash of Raptors": 41,
+    "Bishop's Soldier": 40,
+    "Favorable Winds": 40,
+    "Sailor of Means": 40,
+    "Dire Fleet Hoarder": 40,
+    "Fathom Fleet Cutthroat": 40,
+    "Atzocan Archer": 40,
+    "Entrancing Melody": 39,
+    "Sure Strike": 39,
+    "Ixalli's Keeper": 39,
+    "Kinjalli's Caller": 38,
+    "Priest of the Wakening Sun": 38,
+    "Wind Strider": 38,
+    "Bishop of the Bloodstained": 38,
+    "Fell Flagship": 38,
+    "Goring Ceratops": 37,
+    "Territorial Hammerskull": 36,
+    "Shore Keeper": 36,
+    "Skittering Heartstopper": 36,
+    "Tishana, Voice of Thunder": 36,
+    "Gilded Sentinel": 36,
+    "Paladin of the Bloodstained": 35,
+    "Tempest Caller": 35,
+    "Sorcerous Spyglass": 35,
+    "Headwater Sentries": 34,
+    "Pterodon Knight": 33,
+    "Merfolk Branchwalker": 33,
+    "Deadeye Tracker": 32,
+    "Queen's Bay Soldier": 32,
+    "Fathom Fleet Firebrand": 32,
+    "Deeproot Warrior": 32,
+    "Emergent Growth": 32,
+    "Shadowed Caravel": 32,
+    "Dire Fleet Interloper": 31,
+    "Hijack": 31,
+    "Tilonalli's Knight": 31,
+    "Storm Fleet Spy": 30,
+    "Dinosaur Stampede": 30,
+    "Blinding Fog": 30,
+    "Drover of the Mighty": 30,
+    "Sentinel Totem": 30,
+    "Deadeye Quartermaster": 29,
+    "Storm Sculptor": 29,
+    "Sword-Point Diplomacy": 29,
+    "Cobbled Wings": 29,
+    "Siren Lookout": 28,
+    "Wily Goblin": 28,
+    "Crash the Ramparts": 28,
+    "Vampire's Zeal": 27,
+    "Bloodcrazed Paladin": 27,
+    "Dusk Legion Dreadnought": 27,
+    "Lurking Chupacabra": 26,
+    "Mark of the Vampire": 26,
+    "Storm Fleet Pyromancer": 26,
+    "Sleek Schooner": 26,
+    "Anointed Deacon": 25,
+    "Steadfast Armasaur": 24,
+    "Navigator's Ruin": 24,
+    "One With the Wind": 24,
+    "Deadeye Tormentor": 24,
+    "Rigging Runner": 24,
+    "Rallying Roar": 23,
+    "Raptor Hatchling": 23,
+    "Blossom Dryad": 23,
+    "Deeproot Champion": 23,
+    "Pirate's Cutlass": 23,
+    "Primal Amulet": 23,
+    "Thaumatic Compass": 23,
+    "Sunrise Seeker": 22,
+    "River Sneak": 22,
+    "Grim Captain's Call": 22,
+    "Nest Robber": 22,
+    "Kumena's Speaker": 22,
+    "Tishana's Wayfinder": 22,
+    "Vineshaper Mystic": 21,
+    "Shaper Apprentice": 20,
+    "Shipwreck Looter": 20,
+    "Watertrap Weaver": 20,
+    "Adanto Vanguard": 19,
+    "Rummaging Goblin": 19,
+    "Swashbuckling": 19,
+    "Seekers' Squire": 18,
+    "Tilonalli's Skinshifter": 17,
+    "River Heralds' Boon": 17,
+    "Run Aground": 16,
+    "Encampment Keeper": 14,
+    "Imperial Lancer": 14,
+    "Queen's Agent": 13,
+    "Jungle Delver": 13,
+    "Emissary of Sunrise": 12,
+    "Legion Conquistador": 12,
+    "Ixalli's Diviner": 12,
+    "Brazen Buccaneers": 11,
+    "Jade Guardian": 10
+   }
+  },
+  "red": {
+   "name": "The Cinder Peaks",
+   "sets": [
+    "DTK"
+   ],
+   "cards": {
+    "Dragonlord Atarka": 97,
+    "Dragonlord Dromoka": 96,
+    "Descent of the Dragons": 94,
+    "Dragonlord Ojutai": 93,
+    "Kolaghan's Command": 93,
+    "Thunderbreak Regent": 91,
+    "Dragonlord Kolaghan": 91,
+    "Dromoka's Command": 91,
+    "Surrak, the Hunt Caller": 88,
+    "Silumgar's Command": 88,
+    "Volcanic Vision": 86,
+    "Avatar of the Resolute": 86,
+    "Foul Renewal": 85,
+    "Harbinger of the Hunt": 85,
+    "Radiant Purge": 84,
+    "Naturalize": 84,
+    "Sidisi, Undead Vizier": 83,
+    "Ultimate Price": 83,
+    "Rending Volley": 83,
+    "Pacifism": 82,
+    "Blessed Reincarnation": 82,
+    "Stratus Dancer": 82,
+    "Deathbringer Regent": 82,
+    "Ojutai Exemplars": 81,
+    "Sunscorch Regent": 81,
+    "Death Wind": 81,
+    "Gravepurge": 81,
+    "Roast": 81,
+    "Deathmist Raptor": 81,
+    "Boltwing Marauder": 81,
+    "Zurgo Bellstriker": 80,
+    "Pitiless Horde": 79,
+    "Draconic Roar": 79,
+    "Twin Bolt": 79,
+    "Necromaster Dragon": 79,
+    "Epic Confrontation": 77,
+    "Seismic Rupture": 75,
+    "Display of Dominance": 75,
+    "Pristine Skywise": 75,
+    "Foul-Tongue Invocation": 74,
+    "Risen Executioner": 74,
+    "Arashin Sovereign": 73,
+    "Sarkhan Unbroken": 73,
+    "Icefall Regent": 72,
+    "Ire Shaman": 72,
+    "Savage Ventmaw": 72,
+    "Blood-Chin Fanatic": 71,
+    "Tail Slash": 71,
+    "Dragonlord Silumgar": 71,
+    "Secure the Wastes": 70,
+    "Vandalize": 70,
+    "Silkwrap": 69,
+    "Damnable Pact": 69,
+    "Commune with Lava": 69,
+    "Void Squall": 68,
+    "Sarkhan's Rage": 67,
+    "Surge of Righteousness": 66,
+    "Shorecrasher Elemental": 66,
+    "Self-Inflicted Wound": 66,
+    "Foe-Razer Regent": 66,
+    "Inspiring Call": 66,
+    "Vial of Dragonfire": 66,
+    "Qal Sisma Behemoth": 65,
+    "Collected Company": 65,
+    "Stampeding Elk Herd": 65,
+    "Defeat": 64,
+    "Shaman of Forgotten Ways": 64,
+    "Enduring Scalelord": 64,
+    "Enduring Victory": 63,
+    "Flatten": 63,
+    "Ojutai's Command": 63,
+    "Reduce in Stature": 62,
+    "Dragon Whisperer": 62,
+    "Atarka's Command": 62,
+    "Ruthless Deathfang": 62,
+    "Learn from the Past": 61,
+    "Sidisi's Faithful": 61,
+    "Pinion Feast": 61,
+    "Dragonlord's Prerogative": 60,
+    "Dragon Fodder": 60,
+    "Tormenting Voice": 60,
+    "Stormcrag Elemental": 59,
+    "Explosive Vegetation": 59,
+    "Glade Watcher": 59,
+    "Dragon's Eye Sentry": 58,
+    "Anticipate": 58,
+    "Ancestral Statue": 57,
+    "Profaner of the Dead": 56,
+    "Rakshasa Gravecaller": 56,
+    "Swift Warkite": 56,
+    "Negate": 55,
+    "Corpseweft": 55,
+    "Impact Tremors": 55,
+    "Anafenza, Kin-Tree Spirit": 54,
+    "Atarka Pummeler": 54,
+    "Salt Road Ambushers": 54,
+    "Segmented Krotiq": 54,
+    "Dirgur Nemesis": 53,
+    "Silumgar's Scorn": 53,
+    "Skywise Teachings": 53,
+    "Atarka Monument": 53,
+    "Dromoka Warrior": 52,
+    "Dragon-Scarred Bear": 52,
+    "Contradict": 51,
+    "Sabertooth Outrider": 51,
+    "Cunning Breezedancer": 51,
+    "Scion of Ugin": 50,
+    "Territorial Roc": 50,
+    "Clone Legion": 50,
+    "Silumgar Sorcerer": 50,
+    "Duress": 50,
+    "Dragon Tempest": 50,
+    "Sprinting Warbrute": 50,
+    "Kolaghan Monument": 50,
+    "Custodian of the Trove": 49,
+    "Blood-Chin Rager": 48,
+    "Reckless Imp": 48,
+    "Atarka Efreet": 48,
+    "Scaleguard Sentinels": 48,
+    "Narset Transcendent": 48,
+    "Ojutai Monument": 48,
+    "Silumgar Monument": 48,
+    "Ainok Artillerist": 47,
+    "Herdchaser Dragon": 47,
+    "Sheltered Aerie": 47,
+    "Tapestry of the Ages": 47,
+    "Dragon Hunter": 46,
+    "Orator of Ojutai": 46,
+    "Sight Beyond Sight": 46,
+    "Mind Rot": 46,
+    "Vulturous Aven": 46,
+    "Berserkers' Onslaught": 46,
+    "Conifer Strider": 46,
+    "Dromoka Monument": 46,
+    "Assault Formation": 45,
+    "Mystic Meditation": 43,
+    "Silumgar Assassin": 43,
+    "Dragonlord's Servant": 43,
+    "Herald of Dromoka": 42,
+    "Silumgar Spell-Eater": 42,
+    "Ukud Cobra": 42,
+    "Crater Elemental": 42,
+    "Summit Prowler": 42,
+    "Resupply": 41,
+    "Aerie Bowmasters": 41,
+    "Ainok Survivalist": 41,
+    "Obscuring Aether": 41,
+    "Battle Mastery": 40,
+    "Mirror Mockery": 40,
+    "Ojutai's Summons": 40,
+    "Hardened Berserker": 40,
+    "Sarkhan's Triumph": 40,
+    "Warbringer": 40,
+    "Den Protector": 40,
+    "Dragonloft Idol": 40,
+    "Hidden Dragonslayer": 39,
+    "Marsh Hulk": 39,
+    "Gleam of Authority": 38,
+    "Palace Familiar": 38,
+    "Hedonist's Trove": 38,
+    "Colossodon Yearling": 38,
+    "Myth Realized": 37,
+    "Updraft Elemental": 37,
+    "Lurking Arynx": 37,
+    "Sight of the Scalelords": 37,
+    "Profound Journey": 36,
+    "Student of Ojutai": 36,
+    "Kindled Fury": 36,
+    "Arashin Foremost": 35,
+    "Belltoll Dragon": 35,
+    "Acid-Spewer Dragon": 35,
+    "Butcher's Glee": 35,
+    "Coat with Venom": 35,
+    "Foul-Tongue Shriek": 35,
+    "Circle of Elders": 35,
+    "Glint": 34,
+    "Taigam's Strike": 34,
+    "Virulent Plague": 34,
+    "Shape the Sands": 34,
+    "Artful Maneuver": 33,
+    "Illusory Gains": 33,
+    "Qarsi Sadist": 33,
+    "Gudul Lurker": 32,
+    "Stormwing Dragon": 32,
+    "Spidersilk Net": 32,
+    "Graceblade Artisan": 30,
+    "Shieldhide Dragon": 30,
+    "Wandering Tombshell": 30,
+    "Stormrider Rig": 30,
+    "Center Soul": 29,
+    "Ojutai Interceptor": 29,
+    "Sunbringer's Touch": 29,
+    "Keeper of the Lens": 29,
+    "Glaring Aegis": 28,
+    "Minister of Pain": 28,
+    "Magmatic Chasm": 28,
+    "Press the Advantage": 28,
+    "Scale Blessing": 27,
+    "Elusive Spellfist": 27,
+    "Sibsig Icebreakers": 27,
+    "Atarka Beastbreaker": 27,
+    "Tread Upon": 27,
+    "Misthoof Kirin": 26,
+    "Qarsi Deceiver": 26,
+    "Gate Smasher": 26,
+    "Aven Sunstriker": 25,
+    "Fate Forgotten": 25,
+    "Strongarm Monk": 25,
+    "Kolaghan Skirmisher": 25,
+    "Great Teacher's Decree": 24,
+    "Ojutai's Breath": 24,
+    "Screamreach Brawler": 24,
+    "Gurmag Drowner": 23,
+    "Ambuscade Shaman": 23,
+    "Lightning Berserker": 23,
+    "Lose Calm": 23,
+    "Echoes of the Kin Tree": 22,
+    "Deadly Wanderings": 22,
+    "Sandstorm Charger": 21,
+    "Encase in Ice": 21,
+    "Dutiful Attendant": 21,
+    "Shambling Goblin": 21,
+    "Dromoka's Gift": 21,
+    "Dance of the Skywise": 20,
+    "Volcanic Rush": 20,
+    "Revealing Wind": 20,
+    "Living Lore": 19,
+    "Aven Tactician": 18,
+    "Monastery Loremaster": 18,
+    "Silumgar Butcher": 18,
+    "Champion of Arashin": 17,
+    "Ancient Carp": 17,
+    "Kolaghan Forerunners": 17,
+    "Servant of the Scale": 17,
+    "Marang River Skeleton": 16,
+    "Kolaghan Aspirant": 16,
+    "Zephyr Scribe": 15,
+    "Hand of Silumgar": 15,
+    "Youthful Scholar": 14,
+    "Kolaghan Stormsinger": 14,
+    "Guardian Shield-Bearer": 13,
+    "Dromoka Captain": 12,
+    "Lightwalker": 11,
+    "Salt Road Quartermasters": 9,
+    "Sandcrafter Mage": 8,
+    "Dromoka Dunecaster": 7,
+    "Sandsteppe Scavenger": 5
+   }
+  },
+  "black": {
+   "name": "Duskmire",
+   "sets": [
+    "ISD"
+   ],
+   "cards": {
+    "Liliana of the Veil": 98,
+    "Reaper from the Abyss": 94,
+    "Balefire Dragon": 94,
+    "Grimgrin, Corpse-Born": 90,
+    "Bloodgift Demon": 89,
+    "Blasphemous Act": 89,
+    "Skaab Ruinator": 88,
+    "Curse of Death's Hold": 88,
+    "Devil's Play": 88,
+    "Moldgraf Monstrosity": 88,
+    "Curse of Stalked Prey": 87,
+    "Divine Reckoning": 86,
+    "Olivia Voldaren": 85,
+    "Curse of the Nightly Hunt": 83,
+    "Naturalize": 83,
+    "Angelic Overseer": 81,
+    "Tribute to Hunger": 81,
+    "Burning Vengeance": 81,
+    "Prey Upon": 80,
+    "Ancient Grudge": 79,
+    "Victim of Night": 78,
+    "Bramblecrush": 78,
+    "Witchbane Orb": 78,
+    "Curse of the Bloody Tome": 77,
+    "Curse of the Pierced Heart": 77,
+    "Into the Maw of Hell": 77,
+    "Angel of Flight Alabaster": 76,
+    "Dearly Departed": 76,
+    "Mirror-Mad Phantasm": 76,
+    "Silent Departure": 76,
+    "Ghoulcaller's Chant": 76,
+    "Heretic's Punishment": 76,
+    "Garruk Relentless": 76,
+    "Army of the Damned": 75,
+    "Dead Weight": 75,
+    "Essence of the Wild": 75,
+    "Undead Alchemist": 74,
+    "Geistflame": 74,
+    "Curse of Oblivion": 73,
+    "Smite the Monstrous": 72,
+    "Skaab Goliath": 72,
+    "Diregraf Ghoul": 72,
+    "Brimstone Volley": 71,
+    "Paraselene": 70,
+    "Grasp of Phantoms": 70,
+    "Galvanic Juggernaut": 70,
+    "Murder of Crows": 69,
+    "Endless Ranks of the Dead": 69,
+    "Blazing Torch": 69,
+    "Rebuke": 68,
+    "Harvest Pyre": 68,
+    "Lost in the Mist": 67,
+    "Falkenrath Noble": 67,
+    "Kessig Cagebreakers": 67,
+    "Spectral Rider": 66,
+    "Curiosity": 66,
+    "Rolling Temblor": 66,
+    "Maw of the Mire": 65,
+    "Stitched Drake": 64,
+    "Urgent Exorcism": 63,
+    "Sensory Deprivation": 63,
+    "Corpse Lunge": 63,
+    "Gatstaf Shepherd": 63,
+    "Gutter Grime": 63,
+    "Manor Gargoyle": 63,
+    "Charmbreaker Devils": 62,
+    "Elder of Laurels": 61,
+    "Kindercatch": 61,
+    "Makeshift Mauler": 60,
+    "Think Twice": 60,
+    "Bloodline Keeper": 60,
+    "Spider Spawning": 60,
+    "Vampire Interloper": 59,
+    "Altar's Reap": 58,
+    "Morkrut Banshee": 58,
+    "Mulch": 58,
+    "Mentor of the Meek": 57,
+    "Midnight Haunting": 57,
+    "Forbidden Alchemy": 57,
+    "Grave Bramble": 57,
+    "Hollowhenge Scavenger": 57,
+    "Geist of Saint Traft": 57,
+    "Battleground Geist": 55,
+    "Dissipate": 55,
+    "Desperate Ravings": 55,
+    "Elite Inquisitor": 54,
+    "Festerhide Boar": 54,
+    "Snapcaster Mage": 53,
+    "Moan of the Unhallowed": 53,
+    "Infernal Plunge": 53,
+    "Chapel Geist": 52,
+    "Crossway Vampire": 52,
+    "Instigator Gang": 52,
+    "Cellar Door": 52,
+    "Gallows Warden": 51,
+    "Mindshrieker": 51,
+    "Screeching Bat": 51,
+    "Past in Flames": 51,
+    "Geistcatcher's Rig": 51,
+    "Laboratory Maniac": 50,
+    "Tree of Redemption": 50,
+    "Rotting Fensnake": 49,
+    "Hamlet Captain": 49,
+    "Abattoir Ghoul": 48,
+    "Grimoire of the Dead": 48,
+    "Delver of Secrets": 47,
+    "Skirsdag High Priest": 47,
+    "Avacyn's Pilgrim": 47,
+    "Caravan Vigil": 47,
+    "Parallel Lives": 47,
+    "Village Bell-Ringer": 46,
+    "Moon Heron": 46,
+    "Silverchase Fox": 45,
+    "Cackling Counterpart": 45,
+    "Rooftop Storm": 45,
+    "Heartless Summoning": 45,
+    "Falkenrath Marauders": 45,
+    "Night Revelers": 45,
+    "Grizzled Outcasts": 45,
+    "Ulvenwald Mystics": 45,
+    "Thraben Purebloods": 44,
+    "Fortress Crab": 44,
+    "Lantern Spirit": 44,
+    "Sever the Bloodline": 44,
+    "One-Eyed Scarecrow": 44,
+    "Doomed Traveler": 43,
+    "Stromkirk Patrol": 43,
+    "Hanweir Watchkeep": 43,
+    "Fiend Hunter": 42,
+    "Stony Silence": 42,
+    "Walking Corpse": 42,
+    "Rakish Heir": 42,
+    "Ambush Viper": 42,
+    "Champion of the Parish": 41,
+    "Intangible Virtue": 41,
+    "Creeping Renaissance": 41,
+    "Ranger's Guile": 41,
+    "Voiceless Spirit": 40,
+    "Pitchburn Devils": 40,
+    "Darkthicket Wolf": 40,
+    "Runechanter's Pike": 40,
+    "Abbey Griffin": 39,
+    "Mikaeus, the Lunarch": 39,
+    "Slayer of the Wicked": 39,
+    "Unburial Rites": 39,
+    "Rage Thrower": 39,
+    "Stromkirk Noble": 39,
+    "Inquisitor's Flail": 39,
+    "Mask of Avacyn": 39,
+    "Scourge of Geier Reach": 38,
+    "Nevermore": 37,
+    "Selhoff Occultist": 37,
+    "Frightful Delusion": 36,
+    "Markov Patrician": 36,
+    "Daybreak Ranger": 36,
+    "Full Moon's Rise": 36,
+    "Ashmouth Hound": 35,
+    "Trepanation Blade": 35,
+    "Invisible Stalker": 34,
+    "Moonmist": 34,
+    "Moment of Heroism": 33,
+    "Armored Skaab": 33,
+    "Typhoid Rats": 33,
+    "Kessig Wolf": 33,
+    "Splinterfright": 33,
+    "Butcher's Cleaver": 33,
+    "Traveler's Amulet": 33,
+    "Thraben Sentry": 32,
+    "Back from the Brink": 32,
+    "Memory's Journey": 32,
+    "Villagers of Estwald": 32,
+    "Creepy Doll": 32,
+    "Demonmail Hauberk": 32,
+    "Ghoulcaller's Bell": 32,
+    "Riot Devils": 31,
+    "Evil Twin": 31,
+    "Geist-Honored Monk": 30,
+    "Runic Repetition": 30,
+    "Disciple of Griselbrand": 30,
+    "Cobbled Wings": 30,
+    "Deranged Assistant": 29,
+    "Dream Twist": 29,
+    "Sturmgeist": 29,
+    "Unbreathing Horde": 29,
+    "Traitorous Blood": 29,
+    "Gnaw to the Bone": 29,
+    "Purify the Grave": 28,
+    "Ghoulraiser": 28,
+    "Bloodcrazed Neonate": 28,
+    "Feral Ridgewolf": 28,
+    "Kruin Outlaw": 28,
+    "Sharpened Pitchfork": 28,
+    "Feeling of Dread": 27,
+    "Rally the Peasants": 27,
+    "Bitterheart Witch": 27,
+    "Village Cannibals": 27,
+    "Nightbird's Clutches": 27,
+    "Tormented Pariah": 27,
+    "Mausoleum Guard": 26,
+    "Silver-Inlaid Dagger": 26,
+    "Bonds of Faith": 25,
+    "Skeletal Grimace": 25,
+    "Wreath of Geists": 25,
+    "Claustrophobia": 24,
+    "Spectral Flight": 24,
+    "Stitcher's Apprentice": 24,
+    "Furor of the Bitten": 24,
+    "Lumberknot": 24,
+    "Graveyard Shovel": 24,
+    "Spare from Evil": 23,
+    "Elder Cathar": 22,
+    "Ludevic's Test Subject": 22,
+    "Gruesome Deformity": 22,
+    "Skirsdag Cultist": 22,
+    "Vampiric Fury": 22,
+    "Make a Wish": 22,
+    "Travel Preparations": 22,
+    "Ghostly Possession": 21,
+    "Boneyard Wurm": 21,
+    "Orchard Spirit": 21,
+    "Spidery Grasp": 21,
+    "Mayor of Avabruck": 20,
+    "Avacynian Priest": 19,
+    "Unruly Mob": 19,
+    "Somberwald Spider": 19,
+    "Bump in the Night": 18,
+    "Reckless Waif": 18,
+    "Brain Weevil": 17,
+    "Manor Skeleton": 17,
+    "Night Terrors": 17,
+    "Woodland Sleuth": 17,
+    "Selfless Cathar": 16,
+    "Hysterical Blindness": 16,
+    "Wooden Stake": 16,
+    "Cloistered Youth": 10,
+    "Civilized Scholar": 8,
+    "Village Ironsmith": 8
+   }
   }
  },
  "cards": {
+  "Abattoir Ghoul": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "lifegain",
+    "threat"
+   ]
+  },
+  "Abbey Griffin": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
   "Academy Drake": {
    "type": "Creature",
    "cmc": 3,
@@ -496,6 +1522,23 @@
     "threat"
    ]
   },
+  "Accomplished Automaton": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Acid-Spewer Dragon": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
   "Acidic Slime": {
    "type": "Creature",
    "cmc": 5,
@@ -509,6 +1552,15 @@
    "cmc": 1,
    "colors": "B",
    "roles": []
+  },
+  "Acrobatic Maneuver": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "draw",
+    "removal"
+   ]
   },
   "Act of Treason": {
    "type": "Sorcery",
@@ -524,12 +1576,26 @@
     "trick"
    ]
   },
+  "Adanto Vanguard": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
   "Adeliz, the Cinder Wind": {
    "type": "Creature",
    "cmc": 3,
    "colors": "UR",
    "roles": [
     "evasion",
+    "threat"
+   ]
+  },
+  "Admiral Beckett Brass": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "UBR",
+   "roles": [
     "threat"
    ]
   },
@@ -541,6 +1607,23 @@
     "draw"
    ]
   },
+  "Aerial Responder": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Aerie Bowmasters": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
   "Aesthir Glider": {
    "type": "Creature",
    "cmc": 3,
@@ -548,6 +1631,96 @@
    "roles": [
     "evasion",
     "threat"
+   ]
+  },
+  "Aether Meltdown": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Aether Theorist": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
+  "Aether Tradewinds": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Aetherborn Marauder": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Aetherflux Reservoir": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": [
+    "burn",
+    "lifegain",
+    "removal"
+   ]
+  },
+  "Aethersquall Ancient": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Aetherstorm Roc": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Aethertorch Renegade": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Aetherworks Marvel": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": []
+  },
+  "Ainok Artillerist": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Ainok Survivalist": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "removal"
    ]
   },
   "Air Elemental": {
@@ -574,11 +1747,53 @@
    "colors": "U",
    "roles": []
   },
+  "Altar's Reap": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "draw"
+   ]
+  },
   "Amaranthine Wall": {
    "type": "Creature",
    "cmc": 4,
    "colors": "",
    "roles": []
+  },
+  "Ambitious Aetherborn": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Ambuscade Shaman": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
+  },
+  "Ambush Viper": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Anafenza, Kin-Tree Spirit": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Ancestral Statue": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
   },
   "Ancient Animus": {
    "type": "Instant",
@@ -586,6 +1801,46 @@
    "colors": "G",
    "roles": [
     "removal"
+   ]
+  },
+  "Ancient Brontodon": {
+   "type": "Creature",
+   "cmc": 8,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Ancient Carp": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "U",
+   "roles": []
+  },
+  "Ancient Grudge": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Angel of Flight Alabaster": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Angel of Invention": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
    ]
   },
   "Angel's Feather": {
@@ -604,6 +1859,39 @@
     "lifegain"
    ]
   },
+  "Angelic Overseer": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Angrath's Marauders": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Animation Module": {
+   "type": "Artifact",
+   "cmc": 1,
+   "colors": "",
+   "roles": [
+    "token"
+   ]
+  },
+  "Anointed Deacon": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
   "Ant Queen": {
    "type": "Creature",
    "cmc": 5,
@@ -613,10 +1901,66 @@
     "token"
    ]
   },
+  "Anticipate": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Appetite for the Unnatural": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "lifegain",
+    "removal"
+   ]
+  },
+  "Aradara Express": {
+   "type": "Artifact",
+   "cmc": 5,
+   "colors": "",
+   "roles": []
+  },
+  "Arashin Foremost": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Arashin Sovereign": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "WG",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
   "Arbor Armament": {
    "type": "Instant",
    "cmc": 1,
    "colors": "G",
+   "roles": []
+  },
+  "Arborback Stomper": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "lifegain",
+    "threat"
+   ]
+  },
+  "Arcane Adaptation": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "U",
    "roles": []
   },
   "Arcane Flight": {
@@ -625,11 +1969,59 @@
    "colors": "U",
    "roles": []
   },
+  "Architect of the Untamed": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "token"
+   ]
+  },
+  "Arguel's Blood Fast": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "draw",
+    "lifegain"
+   ]
+  },
+  "Armorcraft Judge": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "draw",
+    "threat"
+   ]
+  },
   "Armored Ascension": {
    "type": "Enchantment",
    "cmc": 4,
    "colors": "W",
    "roles": []
+  },
+  "Armored Skaab": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
+  "Army of the Damned": {
+   "type": "Sorcery",
+   "cmc": 8,
+   "colors": "B",
+   "roles": [
+    "token"
+   ]
+  },
+  "Artful Maneuver": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "trick"
+   ]
   },
   "Artificer's Assistant": {
    "type": "Creature",
@@ -657,12 +2049,119 @@
     "token"
    ]
   },
+  "Ashes of the Abhorrent": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Ashmouth Hound": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn"
+   ]
+  },
   "Assassinate": {
    "type": "Sorcery",
    "cmc": 3,
    "colors": "B",
    "roles": [
     "removal"
+   ]
+  },
+  "Assault Formation": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Atarka Beastbreaker": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Atarka Efreet": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal",
+    "threat"
+   ]
+  },
+  "Atarka Monument": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Atarka Pummeler": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Atarka's Command": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "RG",
+   "roles": [
+    "burn"
+   ]
+  },
+  "Attune with Aether": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "G",
+   "roles": []
+  },
+  "Atzocan Archer": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Authority of the Consuls": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Avacyn's Pilgrim": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Avacynian Priest": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Avatar of the Resolute": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "threat"
    ]
   },
   "Aven Sentry": {
@@ -674,10 +2173,45 @@
     "threat"
    ]
   },
+  "Aven Sunstriker": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Aven Tactician": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Aviary Mechanic": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
   "Awakener Druid": {
    "type": "Creature",
    "cmc": 3,
    "colors": "G",
+   "roles": []
+  },
+  "Axis of Mortality": {
+   "type": "Enchantment",
+   "cmc": 6,
+   "colors": "W",
+   "roles": []
+  },
+  "Back from the Brink": {
+   "type": "Enchantment",
+   "cmc": 6,
+   "colors": "U",
    "roles": []
   },
   "Baird, Steward of Argive": {
@@ -686,6 +2220,16 @@
    "colors": "W",
    "roles": []
   },
+  "Balefire Dragon": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "sweeper",
+    "threat"
+   ]
+  },
   "Ball Lightning": {
    "type": "Creature",
    "cmc": 3,
@@ -693,6 +2237,15 @@
    "roles": [
     "evasion",
     "threat"
+   ]
+  },
+  "Ballista Charger": {
+   "type": "Artifact",
+   "cmc": 5,
+   "colors": "",
+   "roles": [
+    "burn",
+    "removal"
    ]
   },
   "Baloth Gorger": {
@@ -712,6 +2265,29 @@
     "threat"
    ]
   },
+  "Bastion Mastodon": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Battle Mastery": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Battleground Geist": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
   "Befuddle": {
    "type": "Instant",
    "cmc": 3,
@@ -719,6 +2295,31 @@
    "roles": [
     "draw",
     "trick"
+   ]
+  },
+  "Belligerent Brontodon": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "WG",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Bellowing Aegisaur": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Belltoll Dragon": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
    ]
   },
   "Benalish Honor Guard": {
@@ -743,6 +2344,12 @@
     "threat"
    ]
   },
+  "Berserkers' Onslaught": {
+   "type": "Enchantment",
+   "cmc": 5,
+   "colors": "R",
+   "roles": []
+  },
   "Birds of Paradise": {
    "type": "Creature",
    "cmc": 1,
@@ -751,6 +2358,34 @@
     "evasion",
     "ramp"
    ]
+  },
+  "Bishop of Rebirth": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Bishop of the Bloodstained": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Bishop's Soldier": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Bitterheart Witch": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": []
   },
   "Black Knight": {
    "type": "Creature",
@@ -764,10 +2399,35 @@
    "colors": "",
    "roles": []
   },
+  "Blasphemous Act": {
+   "type": "Sorcery",
+   "cmc": 9,
+   "colors": "R",
+   "roles": [
+    "sweeper"
+   ]
+  },
+  "Blazing Torch": {
+   "type": "Artifact",
+   "cmc": 1,
+   "colors": "",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
   "Blessed Light": {
    "type": "Instant",
    "cmc": 5,
    "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Blessed Reincarnation": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "U",
    "roles": [
     "removal"
    ]
@@ -779,6 +2439,21 @@
    "roles": [
     "trick"
    ]
+  },
+  "Blight Keeper": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "lifegain"
+   ]
+  },
+  "Blinding Fog": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
   },
   "Blinding Mage": {
    "type": "Creature",
@@ -795,6 +2470,53 @@
     "removal"
    ]
   },
+  "Blood-Chin Fanatic": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "lifegain",
+    "threat"
+   ]
+  },
+  "Blood-Chin Rager": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Bloodcrazed Neonate": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Bloodcrazed Paladin": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Bloodgift Demon": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "draw",
+    "evasion",
+    "threat"
+   ]
+  },
+  "Bloodline Keeper": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat",
+    "token"
+   ]
+  },
   "Bloodstone Goblin": {
    "type": "Creature",
    "cmc": 2,
@@ -807,6 +2529,20 @@
    "colors": "",
    "roles": [
     "removal"
+   ]
+  },
+  "Blossom Dryad": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Blossoming Defense": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "trick"
    ]
   },
   "Board the Weatherlight": {
@@ -836,6 +2572,58 @@
     "threat"
    ]
   },
+  "Boltwing Marauder": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "BR",
+   "roles": [
+    "evasion",
+    "threat",
+    "trick"
+   ]
+  },
+  "Bomat Bazaar Barge": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Bomat Courier": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Bonded Horncrest": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Bonds of Faith": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Boneyard Parley": {
+   "type": "Sorcery",
+   "cmc": 7,
+   "colors": "B",
+   "roles": []
+  },
+  "Boneyard Wurm": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
   "Borderland Ranger": {
    "type": "Creature",
    "cmc": 3,
@@ -850,11 +2638,68 @@
     "lifegain"
    ]
   },
+  "Brain Weevil": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "discard",
+    "evasion"
+   ]
+  },
   "Bramble Creeper": {
    "type": "Creature",
    "cmc": 5,
    "colors": "G",
    "roles": []
+  },
+  "Bramblecrush": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Brazen Buccaneers": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": []
+  },
+  "Brazen Scourge": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Bright Reprisal": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "draw",
+    "removal"
+   ]
+  },
+  "Brimstone Volley": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Bristling Hydra": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
   },
   "Broken Bond": {
    "type": "Sorcery",
@@ -864,6 +2709,28 @@
     "removal"
    ]
   },
+  "Built to Last": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Built to Smash": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Bump in the Night": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "B",
+   "roles": []
+  },
   "Burning Inquiry": {
    "type": "Sorcery",
    "cmc": 1,
@@ -872,11 +2739,44 @@
     "draw"
    ]
   },
+  "Burning Sun's Avatar": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal",
+    "threat"
+   ]
+  },
+  "Burning Vengeance": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
   "Burst of Speed": {
    "type": "Sorcery",
    "cmc": 1,
    "colors": "R",
    "roles": []
+  },
+  "Butcher's Cleaver": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
+  "Butcher's Glee": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "trick"
+   ]
   },
   "Cabal Evangel": {
    "type": "Creature",
@@ -893,6 +2793,12 @@
     "threat"
    ]
   },
+  "Cackling Counterpart": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
   "Caligo Skin-Witch": {
    "type": "Creature",
    "cmc": 2,
@@ -905,6 +2811,14 @@
    "type": "Sorcery",
    "cmc": 4,
    "colors": "W",
+   "roles": [
+    "token"
+   ]
+  },
+  "Call to the Feast": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "WB",
    "roles": [
     "token"
    ]
@@ -934,6 +2848,14 @@
     "trick"
    ]
   },
+  "Captain Lannery Storm": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "token"
+   ]
+  },
   "Captain of the Watch": {
    "type": "Creature",
    "cmc": 6,
@@ -941,6 +2863,39 @@
    "roles": [
     "threat",
     "token"
+   ]
+  },
+  "Captivating Crew": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Captured by the Consulate": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Caravan Vigil": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Carnage Tyrant": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "threat"
    ]
   },
   "Cast Down": {
@@ -951,12 +2906,37 @@
     "removal"
    ]
   },
+  "Cataclysmic Gearhulk": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Cathartic Reunion": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "draw"
+   ]
+  },
   "Celestial Purge": {
    "type": "Instant",
    "cmc": 2,
    "colors": "W",
    "roles": [
     "removal"
+   ]
+  },
+  "Cellar Door": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "draw",
+    "token"
    ]
   },
   "Cemetery Reaper": {
@@ -976,6 +2956,20 @@
     "threat"
    ]
   },
+  "Center Soul": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Ceremonious Rejection": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "U",
+   "roles": [
+    "counter"
+   ]
+  },
   "Chainer's Torment": {
    "type": "Enchantment",
    "cmc": 4,
@@ -986,6 +2980,14 @@
     "token"
    ]
   },
+  "Champion of Arashin": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
   "Champion of the Flame": {
    "type": "Creature",
    "cmc": 2,
@@ -993,6 +2995,12 @@
    "roles": [
     "evasion"
    ]
+  },
+  "Champion of the Parish": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
   },
   "Chandra Nalaar": {
    "type": "Planeswalker",
@@ -1004,13 +3012,101 @@
     "sweeper"
    ]
   },
+  "Chandra's Pyrohelix": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Chandra, Torch of Defiance": {
+   "type": "Planeswalker",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "draw",
+    "ramp",
+    "removal"
+   ]
+  },
+  "Chapel Geist": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
   "Charge": {
    "type": "Instant",
    "cmc": 1,
    "colors": "W",
    "roles": []
   },
+  "Charging Monstrosaur": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Charmbreaker Devils": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Chart a Course": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Chief of the Foundry": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
   "Child of Night": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Circle of Elders": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Civilized Scholar": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Claustrophobia": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
+  "Cloistered Youth": {
    "type": "Creature",
    "cmc": 2,
    "colors": "B",
@@ -1021,6 +3117,23 @@
    "cmc": 4,
    "colors": "U",
    "roles": []
+  },
+  "Clone Legion": {
+   "type": "Sorcery",
+   "cmc": 9,
+   "colors": "U",
+   "roles": []
+  },
+  "Cloudblazer": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "WU",
+   "roles": [
+    "draw",
+    "evasion",
+    "lifegain",
+    "threat"
+   ]
   },
   "Cloudreader Sphinx": {
    "type": "Creature",
@@ -1037,6 +3150,28 @@
    "colors": "",
    "roles": []
   },
+  "Coat with Venom": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Cobbled Wings": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
+  "Cogworker's Puzzleknot": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "token"
+   ]
+  },
   "Cold-Water Snapper": {
    "type": "Creature",
    "cmc": 6,
@@ -1044,6 +3179,104 @@
    "roles": [
     "threat"
    ]
+  },
+  "Collected Company": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Colossal Dreadmaw": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Colossodon Yearling": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Combustible Gearhulk": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "draw",
+    "threat"
+   ]
+  },
+  "Commencement of Festivities": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Commune with Dinosaurs": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Commune with Lava": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Confiscation Coup": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "U",
+   "roles": []
+  },
+  "Conifer Strider": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Conqueror's Galleon": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Consul's Shieldguard": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "threat",
+    "trick"
+   ]
+  },
+  "Consulate Skygate": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
+  "Consulate Surveillance": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "W",
+   "roles": []
   },
   "Consume Spirit": {
    "type": "Sorcery",
@@ -1053,6 +3286,30 @@
     "burn",
     "lifegain",
     "removal"
+   ]
+  },
+  "Contraband Kingpin": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "UB",
+   "roles": []
+  },
+  "Contract Killing": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "removal",
+    "token"
+   ]
+  },
+  "Contradict": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "counter",
+    "draw"
    ]
   },
   "Convincing Mirage": {
@@ -1067,12 +3324,60 @@
    "colors": "U",
    "roles": []
   },
+  "Corpse Lunge": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Corpseweft": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "token"
+   ]
+  },
   "Corrosive Ooze": {
    "type": "Creature",
    "cmc": 2,
    "colors": "G",
    "roles": [
     "sweeper"
+   ]
+  },
+  "Costly Plunder": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Cowl Prowler": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Crash the Ramparts": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Crater Elemental": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "removal"
    ]
   },
   "Craw Wurm": {
@@ -1083,11 +3388,71 @@
     "threat"
    ]
   },
+  "Creeping Mold": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Creeping Renaissance": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "G",
+   "roles": []
+  },
+  "Creepy Doll": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "",
+   "roles": []
+  },
+  "Crossway Vampire": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "threat",
+    "trick"
+   ]
+  },
+  "Crushing Canopy": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "removal"
+   ]
+  },
   "Cudgel Troll": {
    "type": "Creature",
    "cmc": 4,
    "colors": "G",
    "roles": [
+    "threat"
+   ]
+  },
+  "Cultivator of Blades": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": []
+  },
+  "Cultivator's Caravan": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Cunning Breezedancer": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "WU",
+   "roles": [
+    "evasion",
     "threat"
    ]
   },
@@ -1099,6 +3464,75 @@
     "draw"
    ]
   },
+  "Curio Vendor": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
+  "Curiosity": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Curse of Death's Hold": {
+   "type": "Enchantment",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Curse of Oblivion": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Curse of Stalked Prey": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Curse of the Bloody Tome": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Curse of the Nightly Hunt": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Curse of the Pierced Heart": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Custodian of the Trove": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
   "D'Avenant Trapper": {
    "type": "Creature",
    "cmc": 3,
@@ -1107,10 +3541,24 @@
     "threat"
    ]
   },
+  "Damnable Pact": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "draw"
+   ]
+  },
   "Damping Sphere": {
    "type": "Artifact",
    "cmc": 2,
    "colors": "",
+   "roles": []
+  },
+  "Dance of the Skywise": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "U",
    "roles": []
   },
   "Danitha Capashen, Paragon": {
@@ -1136,6 +3584,12 @@
     "threat"
    ]
   },
+  "Daring Saboteur": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
   "Dark Bargain": {
    "type": "Instant",
    "cmc": 4,
@@ -1143,6 +3597,16 @@
    "roles": [
     "burn",
     "draw"
+   ]
+  },
+  "Dark Nourishment": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "burn",
+    "lifegain",
+    "removal"
    ]
   },
   "Darksteel Colossus": {
@@ -1154,10 +3618,67 @@
     "threat"
    ]
   },
+  "Darkthicket Wolf": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
   "Dauntless Bodyguard": {
    "type": "Creature",
    "cmc": 1,
    "colors": "W",
+   "roles": []
+  },
+  "Daybreak Ranger": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Dead Weight": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Deadeye Plunderers": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "UB",
+   "roles": [
+    "threat",
+    "token"
+   ]
+  },
+  "Deadeye Quartermaster": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": []
+  },
+  "Deadeye Tormentor": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "discard"
+   ]
+  },
+  "Deadeye Tracker": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "B",
+   "roles": []
+  },
+  "Deadlock Trap": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
    "roles": []
   },
   "Deadly Recluse": {
@@ -1165,6 +3686,29 @@
    "cmc": 2,
    "colors": "G",
    "roles": []
+  },
+  "Deadly Wanderings": {
+   "type": "Enchantment",
+   "cmc": 5,
+   "colors": "B",
+   "roles": []
+  },
+  "Dearly Departed": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Death Wind": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
   },
   "Deathbloom Thallid": {
    "type": "Creature",
@@ -1175,10 +3719,54 @@
     "token"
    ]
   },
+  "Deathbringer Regent": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "sweeper",
+    "threat"
+   ]
+  },
+  "Deathgorge Scavenger": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "lifegain",
+    "threat"
+   ]
+  },
+  "Deathless Ancient": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
   "Deathmark": {
    "type": "Sorcery",
    "cmc": 1,
    "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Deathmist Raptor": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Decoction Module": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
    "roles": [
     "removal"
    ]
@@ -1189,6 +3777,65 @@
    "colors": "U",
    "roles": [
     "removal"
+   ]
+  },
+  "Deeproot Champion": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Deeproot Warrior": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Deeproot Waters": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "token"
+   ]
+  },
+  "Defeat": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Delver of Secrets": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "U",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Demolish": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Demolition Stomper": {
+   "type": "Artifact",
+   "cmc": 6,
+   "colors": "",
+   "roles": []
+  },
+  "Demon of Dark Schemes": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
    ]
   },
   "Demon's Horn": {
@@ -1215,17 +3862,177 @@
     "threat"
    ]
   },
+  "Demonmail Hauberk": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": []
+  },
+  "Demystify": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Den Protector": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Depala, Pilot Exemplar": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "WR",
+   "roles": [
+    "draw",
+    "threat"
+   ]
+  },
+  "Depths of Desire": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "removal",
+    "token"
+   ]
+  },
+  "Deranged Assistant": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Descent of the Dragons": {
+   "type": "Sorcery",
+   "cmc": 6,
+   "colors": "R",
+   "roles": [
+    "removal",
+    "token"
+   ]
+  },
+  "Desperate Castaways": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Desperate Ravings": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Devil's Play": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Dhund Operative": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
   "Diabolic Tutor": {
    "type": "Sorcery",
    "cmc": 4,
    "colors": "B",
    "roles": []
   },
+  "Die Young": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
   "Diligent Excavator": {
    "type": "Creature",
    "cmc": 2,
    "colors": "U",
    "roles": []
+  },
+  "Dinosaur Stampede": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "R",
+   "roles": []
+  },
+  "Dire Fleet Captain": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "BR",
+   "roles": []
+  },
+  "Dire Fleet Hoarder": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "token"
+   ]
+  },
+  "Dire Fleet Interloper": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Dire Fleet Ravager": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Diregraf Ghoul": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "B",
+   "roles": []
+  },
+  "Dirgur Nemesis": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "U",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Disappearing Act": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "counter"
+   ]
+  },
+  "Disciple of Griselbrand": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "lifegain"
+   ]
   },
   "Disentomb": {
    "type": "Sorcery",
@@ -1238,6 +4045,30 @@
   "Disorient": {
    "type": "Instant",
    "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Display of Dominance": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Dissipate": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "counter"
+   ]
+  },
+  "Dive Down": {
+   "type": "Instant",
+   "cmc": 1,
    "colors": "U",
    "roles": [
     "trick"
@@ -1257,6 +4088,14 @@
    "colors": "U",
    "roles": [
     "draw"
+   ]
+  },
+  "Divine Reckoning": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "sweeper"
    ]
   },
   "Divine Verdict": {
@@ -1284,6 +4123,64 @@
     "removal"
    ]
   },
+  "Doomed Traveler": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "token"
+   ]
+  },
+  "Dovin Baan": {
+   "type": "Planeswalker",
+   "cmc": 4,
+   "colors": "WU",
+   "roles": [
+    "draw",
+    "lifegain",
+    "trick"
+   ]
+  },
+  "Dowsing Dagger": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "token"
+   ]
+  },
+  "Draconic Roar": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Dragon Fodder": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "token"
+   ]
+  },
+  "Dragon Hunter": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
+  },
+  "Dragon Tempest": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
   "Dragon Whelp": {
    "type": "Creature",
    "cmc": 4,
@@ -1293,6 +4190,14 @@
     "threat"
    ]
   },
+  "Dragon Whisperer": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "token"
+   ]
+  },
   "Dragon's Claw": {
    "type": "Artifact",
    "cmc": 2,
@@ -1300,6 +4205,95 @@
    "roles": [
     "lifegain"
    ]
+  },
+  "Dragon's Eye Sentry": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
+  },
+  "Dragon-Scarred Bear": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Dragonloft Idol": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Dragonlord Atarka": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "RG",
+   "roles": [
+    "evasion",
+    "removal",
+    "threat"
+   ]
+  },
+  "Dragonlord Dromoka": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "WG",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Dragonlord Kolaghan": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "BR",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Dragonlord Ojutai": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "WU",
+   "roles": [
+    "draw",
+    "evasion",
+    "threat"
+   ]
+  },
+  "Dragonlord Silumgar": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "UB",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Dragonlord's Prerogative": {
+   "type": "Instant",
+   "cmc": 6,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Dragonlord's Servant": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Dramatic Reversal": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
   },
   "Dread Shade": {
    "type": "Creature",
@@ -1315,6 +4309,72 @@
    "colors": "B",
    "roles": []
   },
+  "Dream Twist": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "U",
+   "roles": []
+  },
+  "Dreamcaller Siren": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Dromoka Captain": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Dromoka Dunecaster": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
+  },
+  "Dromoka Monument": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Dromoka Warrior": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Dromoka's Command": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "WG",
+   "roles": [
+    "removal",
+    "trick"
+   ]
+  },
+  "Dromoka's Gift": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "G",
+   "roles": []
+  },
+  "Drover of the Mighty": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "ramp"
+   ]
+  },
   "Drudge Sentinel": {
    "type": "Creature",
    "cmc": 3,
@@ -1327,10 +4387,46 @@
    "colors": "B",
    "roles": []
   },
+  "Dual Shot": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
   "Dub": {
    "type": "Enchantment",
    "cmc": 3,
    "colors": "W",
+   "roles": []
+  },
+  "Dubious Challenge": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Dukhara Peafowl": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "",
+   "roles": []
+  },
+  "Dukhara Scavenger": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Durable Handicraft": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "G",
    "roles": []
   },
   "Duress": {
@@ -1341,12 +4437,102 @@
     "discard"
    ]
   },
+  "Dusk Legion Dreadnought": {
+   "type": "Artifact",
+   "cmc": 5,
+   "colors": "",
+   "roles": []
+  },
+  "Duskborne Skymarcher": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "trick"
+   ]
+  },
+  "Dutiful Attendant": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Dynavolt Tower": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Eager Construct": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
   "Earthquake": {
    "type": "Sorcery",
    "cmc": 1,
    "colors": "R",
    "roles": [
     "sweeper"
+   ]
+  },
+  "Echoes of the Kin Tree": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Eddytrail Hawk": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "trick"
+   ]
+  },
+  "Elaborate Firecannon": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Elder Cathar": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Elder of Laurels": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Electrostatic Pummeler": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
+  "Elegant Edgecrafters": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "G",
+   "roles": [
+    "threat"
    ]
   },
   "Elfhame Druid": {
@@ -1357,10 +4543,30 @@
     "ramp"
    ]
   },
+  "Eliminate the Competition": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Elite Inquisitor": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
   "Elite Vanguard": {
    "type": "Creature",
    "cmc": 1,
    "colors": "W",
+   "roles": []
+  },
+  "Elusive Spellfist": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
    "roles": []
   },
   "Elvish Archdruid": {
@@ -1385,11 +4591,95 @@
     "draw"
    ]
   },
+  "Embraal Bruiser": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
   "Emerald Oryx": {
    "type": "Creature",
    "cmc": 4,
    "colors": "G",
    "roles": []
+  },
+  "Emergent Growth": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Emissary of Sunrise": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Emperor's Vanguard": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Empyreal Voyager": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "UG",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Encampment Keeper": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
+  },
+  "Encase in Ice": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
+  "Endless Ranks of the Dead": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "token"
+   ]
+  },
+  "Enduring Scalelord": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "WG",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Enduring Victory": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Engineered Might": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "WG",
+   "roles": [
+    "trick"
+   ]
   },
   "Enormous Baloth": {
    "type": "Creature",
@@ -1405,12 +4695,60 @@
    "colors": "G",
    "roles": []
   },
+  "Entrancing Melody": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
+  "Epic Confrontation": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "removal",
+    "trick"
+   ]
+  },
+  "Era of Innovation": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Essence Extraction": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "lifegain",
+    "removal"
+   ]
+  },
   "Essence Scatter": {
    "type": "Instant",
    "cmc": 2,
    "colors": "U",
    "roles": [
     "counter"
+   ]
+  },
+  "Essence of the Wild": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Evil Twin": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "UB",
+   "roles": [
+    "removal"
    ]
   },
   "Eviscerate": {
@@ -1445,11 +4783,76 @@
     "removal"
    ]
   },
+  "Experimental Aviator": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "token"
+   ]
+  },
+  "Explosive Vegetation": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "ramp"
+   ]
+  },
   "Fabricate": {
    "type": "Sorcery",
    "cmc": 3,
    "colors": "U",
    "roles": []
+  },
+  "Fabrication Module": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
+  "Failed Inspection": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "counter",
+    "draw"
+   ]
+  },
+  "Fairgrounds Trumpeter": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Fairgrounds Warden": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Falkenrath Marauders": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Falkenrath Noble": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "lifegain",
+    "threat"
+   ]
   },
   "Fall of the Thran": {
    "type": "Enchantment",
@@ -1459,6 +4862,65 @@
     "sweeper"
    ]
   },
+  "Fate Forgotten": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Fateful Showdown": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "draw",
+    "removal"
+   ]
+  },
+  "Fathom Fleet Captain": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat",
+    "token"
+   ]
+  },
+  "Fathom Fleet Cutthroat": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "removal",
+    "threat"
+   ]
+  },
+  "Fathom Fleet Firebrand": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Favorable Winds": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
+  "Feeling of Dread": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Fell Flagship": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
   "Feral Abomination": {
    "type": "Creature",
    "cmc": 6,
@@ -1467,12 +4929,45 @@
     "threat"
    ]
   },
+  "Feral Ridgewolf": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "evasion"
+   ]
+  },
   "Fervent Strike": {
    "type": "Instant",
    "cmc": 1,
    "colors": "R",
    "roles": [
     "trick"
+   ]
+  },
+  "Festerhide Boar": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Fiend Hunter": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Fiery Cannonade": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "sweeper"
    ]
   },
   "Fiery Hellhound": {
@@ -1498,6 +4993,15 @@
     "removal"
    ]
   },
+  "Filigree Familiar": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "draw",
+    "lifegain"
+   ]
+  },
   "Final Parting": {
    "type": "Sorcery",
    "cmc": 5,
@@ -1510,6 +5014,15 @@
    "colors": "R",
    "roles": [
     "threat"
+   ]
+  },
+  "Fire Shrine Keeper": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "removal"
    ]
   },
   "Fireball": {
@@ -1527,6 +5040,15 @@
    "colors": "R",
    "roles": []
   },
+  "Firecannon Blast": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
   "Firefist Adept": {
    "type": "Creature",
    "cmc": 5,
@@ -1534,6 +5056,15 @@
    "roles": [
     "removal",
     "threat"
+   ]
+  },
+  "Fireforger's Puzzleknot": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "burn",
+    "removal"
    ]
   },
   "Flashfreeze": {
@@ -1544,11 +5075,51 @@
     "counter"
    ]
   },
+  "Flatten": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Fleet Swallower": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "U",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Fleetwheel Cruiser": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": []
+  },
+  "Foe-Razer Regent": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "removal",
+    "threat"
+   ]
+  },
   "Fog": {
    "type": "Instant",
    "cmc": 1,
    "colors": "G",
    "roles": []
+  },
+  "Forbidden Alchemy": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
   },
   "Forebear's Blade": {
    "type": "Artifact",
@@ -1556,11 +5127,112 @@
    "colors": "",
    "roles": []
   },
+  "Fortress Crab": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": []
+  },
+  "Fortuitous Find": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Foul Renewal": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Foul-Tongue Invocation": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "lifegain",
+    "removal"
+   ]
+  },
+  "Foul-Tongue Shriek": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Foundry Inspector": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Foundry Screecher": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Fragmentize": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
   "Frenzied Rage": {
    "type": "Enchantment",
    "cmc": 2,
    "colors": "R",
    "roles": []
+  },
+  "Frenzied Raptor": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Fretwork Colony": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Frightful Delusion": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "counter"
+   ]
+  },
+  "Full Moon's Rise": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Fumigate": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "lifegain",
+    "sweeper"
+   ]
   },
   "Fungal Infection": {
    "type": "Instant",
@@ -1581,6 +5253,21 @@
     "token"
    ]
   },
+  "Furious Reprisal": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Furor of the Bitten": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "R",
+   "roles": []
+  },
   "Gaea's Blessing": {
    "type": "Sorcery",
    "cmc": 2,
@@ -1597,6 +5284,23 @@
     "threat"
    ]
   },
+  "Gallows Warden": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Galvanic Juggernaut": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
   "Garna, the Bloodflame": {
    "type": "Creature",
    "cmc": 5,
@@ -1605,12 +5309,101 @@
     "threat"
    ]
   },
+  "Garruk Relentless": {
+   "type": "Planeswalker",
+   "cmc": 4,
+   "colors": "BG",
+   "roles": [
+    "burn",
+    "removal",
+    "token"
+   ]
+  },
   "Garruk Wildspeaker": {
    "type": "Planeswalker",
    "cmc": 4,
    "colors": "G",
    "roles": [
     "token"
+   ]
+  },
+  "Gate Smasher": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
+  "Gatstaf Shepherd": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Gearseeker Serpent": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "U",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Gearshift Ace": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Geist of Saint Traft": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "WU",
+   "roles": [
+    "token"
+   ]
+  },
+  "Geist-Honored Monk": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "token"
+   ]
+  },
+  "Geistcatcher's Rig": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "",
+   "roles": [
+    "removal",
+    "threat"
+   ]
+  },
+  "Geistflame": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Ghirapur Guide": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Ghirapur Orrery": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": [
+    "draw"
    ]
   },
   "Ghitu Chronicler": {
@@ -1634,6 +5427,32 @@
    "colors": "R",
    "roles": []
   },
+  "Ghostly Possession": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Ghoulcaller's Bell": {
+   "type": "Artifact",
+   "cmc": 1,
+   "colors": "",
+   "roles": []
+  },
+  "Ghoulcaller's Chant": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Ghoulraiser": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
+  },
   "Giant Growth": {
    "type": "Instant",
    "cmc": 1,
@@ -1641,6 +5460,12 @@
    "roles": [
     "trick"
    ]
+  },
+  "Giant Spectacle": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
   },
   "Giant Spider": {
    "type": "Creature",
@@ -1670,11 +5495,102 @@
     "ramp"
    ]
   },
+  "Gilded Sentinel": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Gishath, Sun's Avatar": {
+   "type": "Creature",
+   "cmc": 8,
+   "colors": "WRG",
+   "roles": [
+    "draw",
+    "evasion",
+    "threat"
+   ]
+  },
+  "Glade Watcher": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Glaring Aegis": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
+  },
+  "Glassblower's Puzzleknot": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
+  "Gleam of Authority": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Glimmer of Genius": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Glint": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Glint-Nest Crane": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "draw",
+    "evasion"
+   ]
+  },
+  "Glint-Sleeve Artisan": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Glorifier of Dusk": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
   "Glorious Charge": {
    "type": "Instant",
    "cmc": 2,
    "colors": "W",
    "roles": []
+  },
+  "Gnaw to the Bone": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "lifegain"
+   ]
   },
   "Goblin Artillery": {
    "type": "Creature",
@@ -1721,10 +5637,32 @@
    "colors": "R",
    "roles": []
   },
+  "Gonti, Lord of Luxury": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "draw"
+   ]
+  },
   "Gorgon Flail": {
    "type": "Artifact",
    "cmc": 2,
    "colors": "",
+   "roles": []
+  },
+  "Goring Ceratops": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Graceblade Artisan": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
    "roles": []
   },
   "Grand Warlord Radha": {
@@ -1736,12 +5674,53 @@
     "threat"
    ]
   },
+  "Grasp of Phantoms": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Grave Bramble": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
   "Gravedigger": {
    "type": "Creature",
    "cmc": 4,
    "colors": "B",
    "roles": [
     "removal"
+   ]
+  },
+  "Gravepurge": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "draw",
+    "removal"
+   ]
+  },
+  "Graveyard Shovel": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Grazing Whiptail": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "threat"
    ]
   },
   "Great Sable Stag": {
@@ -1752,12 +5731,47 @@
     "threat"
    ]
   },
+  "Great Teacher's Decree": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "W",
+   "roles": []
+  },
   "Griffin Sentinel": {
    "type": "Creature",
    "cmc": 3,
    "colors": "W",
    "roles": [
     "evasion"
+   ]
+  },
+  "Grim Captain's Call": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
+  },
+  "Grimgrin, Corpse-Born": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "UB",
+   "roles": [
+    "removal",
+    "threat"
+   ]
+  },
+  "Grimoire of the Dead": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": []
+  },
+  "Grizzled Outcasts": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "threat"
    ]
   },
   "Grow from the Ashes": {
@@ -1767,6 +5781,20 @@
    "roles": [
     "ramp"
    ]
+  },
+  "Growing Rites of Itlimoc": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Gruesome Deformity": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "B",
+   "roles": []
   },
   "Grunn, the Lonely King": {
    "type": "Creature",
@@ -1785,6 +5813,12 @@
     "threat"
    ]
   },
+  "Guardian Shield-Bearer": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
   "Guardians of Koilos": {
    "type": "Creature",
    "cmc": 5,
@@ -1792,6 +5826,28 @@
    "roles": [
     "removal",
     "threat"
+   ]
+  },
+  "Gudul Lurker": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "U",
+   "roles": []
+  },
+  "Gurmag Drowner": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Gutter Grime": {
+   "type": "Enchantment",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "token"
    ]
   },
   "Hallar, the Firefletcher": {
@@ -1804,11 +5860,47 @@
     "threat"
    ]
   },
+  "Hamlet Captain": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Hand of Silumgar": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Hanweir Watchkeep": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": []
+  },
   "Haphazard Bombardment": {
    "type": "Enchantment",
    "cmc": 6,
    "colors": "R",
    "roles": []
+  },
+  "Harbinger of the Hunt": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "RG",
+   "roles": [
+    "evasion",
+    "sweeper",
+    "threat"
+   ]
+  },
+  "Hardened Berserker": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
   },
   "Harm's Way": {
    "type": "Instant",
@@ -1816,10 +5908,54 @@
    "colors": "W",
    "roles": []
   },
+  "Harnessed Lightning": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Harsh Scrutiny": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "discard"
+   ]
+  },
+  "Harvest Pyre": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
   "Haunting Echoes": {
    "type": "Sorcery",
    "cmc": 5,
    "colors": "B",
+   "roles": []
+  },
+  "Hazardous Conditions": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "BG",
+   "roles": []
+  },
+  "Headstrong Brute": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Headwater Sentries": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
    "roles": []
   },
   "Healing Grace": {
@@ -1830,10 +5966,107 @@
     "lifegain"
    ]
   },
+  "Heartless Pillage": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "discard",
+    "token"
+   ]
+  },
+  "Heartless Summoning": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Hedonist's Trove": {
+   "type": "Enchantment",
+   "cmc": 7,
+   "colors": "B",
+   "roles": []
+  },
   "Helm of the Host": {
    "type": "Artifact",
    "cmc": 4,
    "colors": "",
+   "roles": []
+  },
+  "Herald of Dromoka": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Herald of Secret Streams": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": []
+  },
+  "Herald of the Fair": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "threat",
+    "trick"
+   ]
+  },
+  "Herdchaser Dragon": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Heretic's Punishment": {
+   "type": "Enchantment",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Hidden Dragonslayer": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Hierophant's Chalice": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "lifegain",
+    "ramp"
+   ]
+  },
+  "Highspire Artisan": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Hightide Hermit": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Hijack": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "R",
    "roles": []
   },
   "History of Benalia": {
@@ -1849,6 +6082,15 @@
    "cmc": 6,
    "colors": "U",
    "roles": []
+  },
+  "Hollowhenge Scavenger": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "lifegain",
+    "threat"
+   ]
   },
   "Holy Strength": {
    "type": "Enchantment",
@@ -1875,6 +6117,14 @@
    "cmc": 3,
    "colors": "U",
    "roles": []
+  },
+  "Hostage Taker": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "UB",
+   "roles": [
+    "removal"
+   ]
   },
   "Howl of the Night Pack": {
    "type": "Sorcery",
@@ -1909,6 +6159,24 @@
     "draw"
    ]
   },
+  "Huatli, Warrior Poet": {
+   "type": "Planeswalker",
+   "cmc": 5,
+   "colors": "WR",
+   "roles": [
+    "lifegain",
+    "removal",
+    "token"
+   ]
+  },
+  "Hunt the Weak": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "removal"
+   ]
+  },
   "Hypnotic Specter": {
    "type": "Creature",
    "cmc": 3,
@@ -1918,12 +6186,27 @@
     "threat"
    ]
   },
+  "Hysterical Blindness": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
   "Ice Cage": {
    "type": "Enchantment",
    "cmc": 2,
    "colors": "U",
    "roles": [
     "removal"
+   ]
+  },
+  "Icefall Regent": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
    ]
   },
   "Icy Manipulator": {
@@ -1949,17 +6232,71 @@
     "threat"
    ]
   },
+  "Illusory Gains": {
+   "type": "Enchantment",
+   "cmc": 5,
+   "colors": "U",
+   "roles": []
+  },
+  "Impact Tremors": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn"
+   ]
+  },
+  "Impeccable Timing": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Imperial Aerosaur": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat",
+    "trick"
+   ]
+  },
+  "Imperial Lancer": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
+  },
   "In Bolas's Clutches": {
    "type": "Enchantment",
    "cmc": 6,
    "colors": "U",
    "roles": []
   },
+  "Incendiary Sabotage": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "sweeper"
+   ]
+  },
   "Indestructibility": {
    "type": "Enchantment",
    "cmc": 4,
    "colors": "W",
    "roles": []
+  },
+  "Infernal Plunge": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "ramp"
+   ]
   },
   "Inferno Elemental": {
    "type": "Creature",
@@ -1970,6 +6307,84 @@
     "threat"
    ]
   },
+  "Inquisitor's Flail": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
+  "Insidious Will": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "counter"
+   ]
+  },
+  "Inspired Charge": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "W",
+   "roles": []
+  },
+  "Inspiring Call": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Inspiring Cleric": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "lifegain",
+    "threat"
+   ]
+  },
+  "Instigator Gang": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Intangible Virtue": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Into the Maw of Hell": {
+   "type": "Sorcery",
+   "cmc": 6,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Inventor's Apprentice": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "R",
+   "roles": []
+  },
+  "Inventor's Goggles": {
+   "type": "Artifact",
+   "cmc": 1,
+   "colors": "",
+   "roles": []
+  },
+  "Invisible Stalker": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
   "Invoke the Divine": {
    "type": "Instant",
    "cmc": 3,
@@ -1977,6 +6392,44 @@
    "roles": [
     "lifegain",
     "removal"
+   ]
+  },
+  "Ire Shaman": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "draw",
+    "evasion",
+    "threat"
+   ]
+  },
+  "Iron League Steed": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "",
+   "roles": []
+  },
+  "Ixalan's Binding": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Ixalli's Diviner": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Ixalli's Keeper": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "trick"
    ]
   },
   "Jace Beleren": {
@@ -1987,10 +6440,31 @@
     "draw"
    ]
   },
+  "Jace, Cunning Castaway": {
+   "type": "Planeswalker",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "draw",
+    "token"
+   ]
+  },
   "Jackal Familiar": {
    "type": "Creature",
    "cmc": 1,
    "colors": "R",
+   "roles": []
+  },
+  "Jade Guardian": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": []
+  },
+  "Janjeet Sentry": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
    "roles": []
   },
   "Jaya Ballard": {
@@ -2070,6 +6544,12 @@
     "trick"
    ]
   },
+  "Jungle Delver": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "G",
+   "roles": []
+  },
   "Kalonian Behemoth": {
    "type": "Creature",
    "cmc": 7,
@@ -2084,6 +6564,14 @@
    "colors": "G",
    "roles": [
     "draw"
+   ]
+  },
+  "Kambal, Consul of Allocation": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "WB",
+   "roles": [
+    "lifegain"
    ]
   },
   "Karn's Temporal Sundering": {
@@ -2112,6 +6600,12 @@
     "removal",
     "threat"
    ]
+  },
+  "Keeper of the Lens": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "",
+   "roles": []
   },
   "Keldon Overseer": {
    "type": "Creature",
@@ -2145,12 +6639,68 @@
     "threat"
    ]
   },
+  "Kessig Cagebreakers": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "threat",
+    "token"
+   ]
+  },
+  "Kessig Wolf": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Key to the City": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Kindercatch": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
   "Kindled Fury": {
    "type": "Instant",
    "cmc": 1,
    "colors": "R",
    "roles": [
     "trick"
+   ]
+  },
+  "Kinjalli's Caller": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
+  },
+  "Kinjalli's Sunwing": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Kitesail Freebooter": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "evasion"
    ]
   },
   "Knight of Grace": {
@@ -2173,6 +6723,60 @@
     "threat"
    ]
   },
+  "Kolaghan Aspirant": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn"
+   ]
+  },
+  "Kolaghan Forerunners": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Kolaghan Monument": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Kolaghan Skirmisher": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Kolaghan Stormsinger": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Kolaghan's Command": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "BR",
+   "roles": [
+    "burn",
+    "discard",
+    "removal"
+   ]
+  },
+  "Kopala, Warden of Waves": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
   "Kraken's Eye": {
    "type": "Artifact",
    "cmc": 2,
@@ -2189,11 +6793,60 @@
     "lifegain"
    ]
   },
+  "Kruin Outlaw": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": []
+  },
+  "Kujar Seedsculptor": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Kumena's Speaker": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "G",
+   "roles": []
+  },
   "Kwende, Pride of Femeref": {
    "type": "Creature",
    "cmc": 4,
    "colors": "W",
    "roles": []
+  },
+  "Laboratory Maniac": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
+  "Lantern Spirit": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Larger Than Life": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Lathnu Hellion": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
   },
   "Lava Axe": {
    "type": "Sorcery",
@@ -2201,6 +6854,44 @@
    "colors": "R",
    "roles": [
     "burn"
+   ]
+  },
+  "Lawless Broker": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Learn from the Past": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Legion Conquistador": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Legion's Judgment": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Legion's Landing": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "token"
    ]
   },
   "Levitation": {
@@ -2223,6 +6914,12 @@
    "colors": "W",
    "roles": []
   },
+  "Lightning Berserker": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "R",
+   "roles": []
+  },
   "Lightning Bolt": {
    "type": "Instant",
    "cmc": 1,
@@ -2239,6 +6936,29 @@
    "roles": [
     "threat"
    ]
+  },
+  "Lightning Strike": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Lightning-Rig Crew": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "burn"
+   ]
+  },
+  "Lightwalker": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
   },
   "Lightwielder Paladin": {
    "type": "Creature",
@@ -2257,6 +6977,14 @@
     "discard"
    ]
   },
+  "Liliana of the Veil": {
+   "type": "Planeswalker",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
   "Lingering Phantom": {
    "type": "Creature",
    "cmc": 6,
@@ -2264,6 +6992,20 @@
    "roles": [
     "threat"
    ]
+  },
+  "Live Fast": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Living Lore": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": []
   },
   "Llanowar Elves": {
    "type": "Creature",
@@ -2288,11 +7030,93 @@
    "colors": "G",
    "roles": []
   },
+  "Long-Finned Skywhale": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Longtusk Cub": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Lookout's Dispersal": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "counter"
+   ]
+  },
+  "Looming Altisaur": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": []
+  },
   "Looming Shade": {
    "type": "Creature",
    "cmc": 3,
    "colors": "B",
    "roles": []
+  },
+  "Lose Calm": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "R",
+   "roles": []
+  },
+  "Lost Legacy": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Lost in the Mist": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "counter",
+    "removal"
+   ]
+  },
+  "Ludevic's Test Subject": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Lumberknot": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": []
+  },
+  "Lurking Arynx": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Lurking Chupacabra": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
   },
   "Lurking Predators": {
    "type": "Enchantment",
@@ -2311,6 +7135,14 @@
     "threat"
    ]
   },
+  "Madcap Experiment": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "burn"
+   ]
+  },
   "Magebane Armor": {
    "type": "Artifact",
    "cmc": 3,
@@ -2326,6 +7158,47 @@
     "sweeper",
     "threat"
    ]
+  },
+  "Magmatic Chasm": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Make Obsolete": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
+  },
+  "Make a Wish": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "G",
+   "roles": []
+  },
+  "Makeshift Mauler": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Makeshift Munitions": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Malfunction": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "U",
+   "roles": []
   },
   "Mammoth Spider": {
    "type": "Creature",
@@ -2343,12 +7216,92 @@
     "burn"
    ]
   },
+  "Manor Gargoyle": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Manor Skeleton": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Marang River Skeleton": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Marauding Looter": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "UR",
+   "roles": [
+    "draw",
+    "threat"
+   ]
+  },
+  "March of the Drowned": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Marionette Master": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "B",
+   "roles": []
+  },
+  "Mark of the Vampire": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "B",
+   "roles": []
+  },
+  "Markov Patrician": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Marsh Hulk": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
   "Marwyn, the Nurturer": {
    "type": "Creature",
    "cmc": 3,
    "colors": "G",
    "roles": [
     "ramp"
+   ]
+  },
+  "Mask of Avacyn": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
+  "Master Trinketeer": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "threat",
+    "token"
    ]
   },
   "Master of the Wild Hunt": {
@@ -2362,6 +7315,57 @@
     "token"
    ]
   },
+  "Maulfist Doorbuster": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "threat",
+    "trick"
+   ]
+  },
+  "Maulfist Squad": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Mausoleum Guard": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "token"
+   ]
+  },
+  "Mavren Fein, Dusk Apostle": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "token"
+   ]
+  },
+  "Maw of the Mire": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "lifegain",
+    "removal"
+   ]
+  },
+  "Mayor of Avabruck": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "token"
+   ]
+  },
   "Megrim": {
    "type": "Enchantment",
    "cmc": 3,
@@ -2369,6 +7373,26 @@
    "roles": [
     "burn"
    ]
+  },
+  "Memory's Journey": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
+  "Mentor of the Meek": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Merfolk Branchwalker": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
   },
   "Merfolk Looter": {
    "type": "Creature",
@@ -2404,6 +7428,46 @@
    "colors": "W",
    "roles": []
   },
+  "Metallurgic Summonings": {
+   "type": "Enchantment",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "token"
+   ]
+  },
+  "Metalspinner's Puzzleknot": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Metalwork Colossus": {
+   "type": "Creature",
+   "cmc": 11,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Midnight Haunting": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "token"
+   ]
+  },
+  "Midnight Oil": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "draw"
+   ]
+  },
   "Might of Oaks": {
    "type": "Instant",
    "cmc": 4,
@@ -2411,6 +7475,12 @@
    "roles": [
     "trick"
    ]
+  },
+  "Mikaeus, the Lunarch": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
   },
   "Mind Control": {
    "type": "Enchantment",
@@ -2442,11 +7512,46 @@
     "draw"
    ]
   },
+  "Mindshrieker": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Minister of Inquiries": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "U",
+   "roles": []
+  },
+  "Minister of Pain": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
+  },
+  "Mirror Mockery": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
   "Mirror of Fate": {
    "type": "Artifact",
    "cmc": 5,
    "colors": "",
    "roles": []
+  },
+  "Mirror-Mad Phantasm": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
   },
   "Mishra's Self-Replicator": {
    "type": "Creature",
@@ -2462,17 +7567,99 @@
     "threat"
    ]
   },
+  "Misthoof Kirin": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Moan of the Unhallowed": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "token"
+   ]
+  },
   "Mold Adder": {
    "type": "Creature",
    "cmc": 1,
    "colors": "G",
    "roles": []
   },
+  "Moldgraf Monstrosity": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Moment of Heroism": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Monastery Loremaster": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Moon Heron": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Moonmist": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Morbid Curiosity": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Morkrut Banshee": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "removal",
+    "threat"
+   ]
+  },
   "Mox Amber": {
    "type": "Artifact",
    "cmc": 0,
    "colors": "",
    "roles": []
+  },
+  "Mulch": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "draw"
+   ]
   },
   "Muldrotha, the Gravetide": {
    "type": "Creature",
@@ -2490,10 +7677,54 @@
     "evasion"
    ]
   },
+  "Multiform Wonder": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "",
+   "roles": [
+    "removal",
+    "threat"
+   ]
+  },
+  "Murder of Crows": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Mystic Meditation": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Myth Realized": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
+  },
   "Naban, Dean of Iteration": {
    "type": "Creature",
    "cmc": 2,
    "colors": "U",
+   "roles": []
+  },
+  "Narnam Cobra": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
+  "Narset Transcendent": {
+   "type": "Planeswalker",
+   "cmc": 4,
+   "colors": "WU",
    "roles": []
   },
   "Naru Meha, Master Wizard": {
@@ -2520,12 +7751,37 @@
     "removal"
    ]
   },
+  "Nature's Way": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "removal",
+    "trick"
+   ]
+  },
   "Navigator's Compass": {
    "type": "Artifact",
    "cmc": 1,
    "colors": "",
    "roles": [
     "lifegain"
+   ]
+  },
+  "Navigator's Ruin": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
+  "Necromaster Dragon": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "UB",
+   "roles": [
+    "evasion",
+    "threat",
+    "token"
    ]
   },
   "Negate": {
@@ -2536,12 +7792,96 @@
     "counter"
    ]
   },
+  "Nest Robber": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Nevermore": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "New Horizons": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Night Market Lookout": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Night Revelers": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Night Terrors": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
+  },
+  "Nightbird's Clutches": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "trick"
+   ]
+  },
   "Nightmare": {
    "type": "Creature",
    "cmc": 6,
    "colors": "B",
    "roles": [
     "evasion"
+   ]
+  },
+  "Nimble Innovator": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Ninth Bridge Patrol": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Nissa, Vital Force": {
+   "type": "Planeswalker",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "draw",
+    "removal"
+   ]
+  },
+  "Noxious Gearhulk": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "lifegain",
+    "removal",
+    "threat"
    ]
   },
   "Oakenform": {
@@ -2558,10 +7898,96 @@
     "removal"
    ]
   },
+  "Obscuring Aether": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "G",
+   "roles": []
+  },
+  "Ojutai Exemplars": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Ojutai Interceptor": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Ojutai Monument": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Ojutai's Breath": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
+  "Ojutai's Command": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "WU",
+   "roles": [
+    "counter",
+    "draw",
+    "lifegain"
+   ]
+  },
+  "Ojutai's Summons": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "token"
+   ]
+  },
+  "Old-Growth Dryads": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "ramp",
+    "threat"
+   ]
+  },
+  "Olivia Voldaren": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "BR",
+   "roles": [
+    "evasion",
+    "removal",
+    "threat"
+   ]
+  },
   "On Serra's Wings": {
    "type": "Enchantment",
    "cmc": 4,
    "colors": "W",
+   "roles": []
+  },
+  "One With the Wind": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
+  "One-Eyed Scarecrow": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "",
    "roles": []
   },
   "Open the Vaults": {
@@ -2578,6 +8004,21 @@
     "draw"
    ]
   },
+  "Orator of Ojutai": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "draw",
+    "evasion"
+   ]
+  },
+  "Orchard Spirit": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
   "Orcish Vandal": {
    "type": "Creature",
    "cmc": 2,
@@ -2587,6 +8028,12 @@
     "removal"
    ]
   },
+  "Ornamental Courage": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "G",
+   "roles": []
+  },
   "Ornithopter": {
    "type": "Creature",
    "cmc": 0,
@@ -2595,11 +8042,49 @@
     "evasion"
    ]
   },
+  "Otepec Huntmaster": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Ovalchase Daredevil": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Ovalchase Dragster": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": []
+  },
+  "Overflowing Insight": {
+   "type": "Sorcery",
+   "cmc": 7,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
   "Overrun": {
    "type": "Sorcery",
    "cmc": 5,
    "colors": "G",
    "roles": []
+  },
+  "Oviya Pashiri, Sage Lifecrafter": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "token"
+   ]
   },
   "Pacifism": {
    "type": "Enchantment",
@@ -2609,10 +8094,42 @@
     "removal"
    ]
   },
+  "Padeem, Consul of Innovation": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Palace Familiar": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "draw",
+    "evasion"
+   ]
+  },
   "Palace Guard": {
    "type": "Creature",
    "cmc": 3,
    "colors": "W",
+   "roles": []
+  },
+  "Paladin of the Bloodstained": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "threat",
+    "token"
+   ]
+  },
+  "Panharmonicon": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
    "roles": []
   },
   "Panic Attack": {
@@ -2623,10 +8140,49 @@
     "trick"
    ]
   },
+  "Paradoxical Outcome": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "draw",
+    "removal"
+   ]
+  },
+  "Parallel Lives": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "G",
+   "roles": []
+  },
+  "Paraselene": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "lifegain",
+    "sweeper"
+   ]
+  },
   "Pardic Wanderer": {
    "type": "Creature",
    "cmc": 6,
    "colors": "",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Past in Flames": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "R",
+   "roles": []
+  },
+  "Peema Outrider": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
    "roles": [
     "evasion",
     "threat"
@@ -2640,6 +8196,20 @@
     "evasion",
     "trick"
    ]
+  },
+  "Perilous Voyage": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Perpetual Timepiece": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
   },
   "Phantom Warrior": {
    "type": "Creature",
@@ -2655,6 +8225,15 @@
     "sweeper"
    ]
   },
+  "Pia Nalaar": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "token",
+    "trick"
+   ]
+  },
   "Pierce the Sky": {
    "type": "Instant",
    "cmc": 2,
@@ -2663,11 +8242,69 @@
     "removal"
    ]
   },
+  "Pillar of Origins": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Pinion Feast": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Pious Interdiction": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "lifegain",
+    "removal"
+   ]
+  },
+  "Pirate's Cutlass": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
+  "Pirate's Prize": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "draw",
+    "token"
+   ]
+  },
+  "Pitchburn Devils": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal",
+    "threat"
+   ]
+  },
   "Pithing Needle": {
    "type": "Artifact",
    "cmc": 1,
    "colors": "",
    "roles": []
+  },
+  "Pitiless Horde": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
   },
   "Planar Cleansing": {
    "type": "Sorcery",
@@ -2702,6 +8339,15 @@
     "draw"
    ]
   },
+  "Pounce": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "removal",
+    "trick"
+   ]
+  },
   "Powerstone Shard": {
    "type": "Artifact",
    "cmc": 3,
@@ -2710,6 +8356,20 @@
     "ramp"
    ]
   },
+  "Prakhata Club Security": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Prakhata Pillar-Bug": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
   "Precognition Field": {
    "type": "Enchantment",
    "cmc": 4,
@@ -2717,6 +8377,45 @@
    "roles": [
     "draw"
    ]
+  },
+  "Press the Advantage": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Pressure Point": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Prey Upon": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "removal",
+    "trick"
+   ]
+  },
+  "Priest of the Wakening Sun": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Primal Amulet": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": []
   },
   "Primevals' Glorious Rebirth": {
    "type": "Sorcery",
@@ -2729,6 +8428,15 @@
    "cmc": 6,
    "colors": "G",
    "roles": [
+    "threat"
+   ]
+  },
+  "Pristine Skywise": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "WU",
+   "roles": [
+    "evasion",
     "threat"
    ]
   },
@@ -2747,10 +8455,73 @@
     "removal"
    ]
   },
+  "Profaner of the Dead": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Profound Journey": {
+   "type": "Sorcery",
+   "cmc": 7,
+   "colors": "W",
+   "roles": []
+  },
+  "Propeller Pioneer": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Prophetic Prism": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "draw",
+    "ramp"
+   ]
+  },
+  "Prosperous Pirates": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "threat",
+    "token"
+   ]
+  },
   "Protean Hydra": {
    "type": "Creature",
    "cmc": 1,
    "colors": "G",
+   "roles": []
+  },
+  "Prying Blade": {
+   "type": "Artifact",
+   "cmc": 1,
+   "colors": "",
+   "roles": [
+    "token"
+   ]
+  },
+  "Pterodon Knight": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Purify the Grave": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "W",
    "roles": []
   },
   "Pyroclasm": {
@@ -2759,6 +8530,69 @@
    "colors": "R",
    "roles": [
     "sweeper"
+   ]
+  },
+  "Qal Sisma Behemoth": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Qarsi Deceiver": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Qarsi Sadist": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Queen's Agent": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Queen's Bay Soldier": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Queen's Commission": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "token"
+   ]
+  },
+  "Quicksmith Genius": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "draw",
+    "threat"
+   ]
+  },
+  "Radiant Purge": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "removal"
    ]
   },
   "Radiating Lightning": {
@@ -2779,10 +8613,64 @@
     "threat"
    ]
   },
+  "Rage Thrower": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "threat"
+   ]
+  },
   "Raging Goblin": {
    "type": "Creature",
    "cmc": 1,
    "colors": "R",
+   "roles": []
+  },
+  "Raging Swordtooth": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "RG",
+   "roles": [
+    "evasion",
+    "sweeper",
+    "threat"
+   ]
+  },
+  "Raiders' Wake": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "discard"
+   ]
+  },
+  "Rakish Heir": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": []
+  },
+  "Rakshasa Gravecaller": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "threat",
+    "token"
+   ]
+  },
+  "Rally the Peasants": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Rallying Roar": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "W",
    "roles": []
   },
   "Rampaging Cyclops": {
@@ -2790,6 +8678,16 @@
    "cmc": 4,
    "colors": "R",
    "roles": [
+    "threat"
+   ]
+  },
+  "Rampaging Ferocidon": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "evasion",
     "threat"
    ]
   },
@@ -2801,11 +8699,58 @@
     "ramp"
    ]
   },
+  "Ranger's Guile": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Ranging Raptors": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Raptor Companion": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Raptor Hatchling": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "token"
+   ]
+  },
+  "Rashmi, Eternities Crafter": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "UG",
+   "roles": []
+  },
   "Rat Colony": {
    "type": "Creature",
    "cmc": 2,
    "colors": "B",
    "roles": []
+  },
+  "Ravenous Daggertooth": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "lifegain",
+    "threat"
+   ]
   },
   "Razorfoot Griffin": {
    "type": "Creature",
@@ -2816,11 +8761,75 @@
     "threat"
    ]
   },
+  "Reaper from the Abyss": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "removal",
+    "threat"
+   ]
+  },
+  "Rebuke": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Reckless Fireweaver": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn"
+   ]
+  },
+  "Reckless Imp": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Reckless Waif": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "R",
+   "roles": []
+  },
+  "Reduce in Stature": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Refurbish": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "W",
+   "roles": []
+  },
   "Regenerate": {
    "type": "Instant",
    "cmc": 2,
    "colors": "G",
    "roles": []
+  },
+  "Regisaur Alpha": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "RG",
+   "roles": [
+    "threat",
+    "token"
+   ]
   },
   "Relentless Rats": {
    "type": "Creature",
@@ -2834,12 +8843,91 @@
    "colors": "U",
    "roles": []
   },
+  "Rending Volley": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Renegade Freighter": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
+  "Renegade Tactics": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "draw",
+    "trick"
+   ]
+  },
+  "Repeating Barrage": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
   "Rescue": {
    "type": "Instant",
    "cmc": 1,
    "colors": "U",
    "roles": [
     "removal"
+   ]
+  },
+  "Restoration Gearsmith": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "WB",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Resupply": {
+   "type": "Instant",
+   "cmc": 6,
+   "colors": "W",
+   "roles": [
+    "draw",
+    "lifegain"
+   ]
+  },
+  "Revealing Wind": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Revel in Riches": {
+   "type": "Enchantment",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "token"
+   ]
+  },
+  "Revoke Privileges": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Revolutionary Rebuff": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "counter"
    ]
   },
   "Rhox Pikemaster": {
@@ -2850,6 +8938,12 @@
     "threat"
    ]
   },
+  "Rigging Runner": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "R",
+   "roles": []
+  },
   "Righteousness": {
    "type": "Instant",
    "cmc": 1,
@@ -2858,11 +8952,52 @@
     "trick"
    ]
   },
+  "Rile": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "draw",
+    "removal"
+   ]
+  },
+  "Riot Devils": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": []
+  },
+  "Riparian Tiger": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Ripjaw Raptor": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "draw",
+    "threat"
+   ]
+  },
   "Rise from the Grave": {
    "type": "Sorcery",
    "cmc": 5,
    "colors": "B",
    "roles": []
+  },
+  "Risen Executioner": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
   },
   "Rite of Belzenlok": {
    "type": "Enchantment",
@@ -2870,6 +9005,41 @@
    "colors": "B",
    "roles": [
     "token"
+   ]
+  },
+  "Ritual of Rejuvenation": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "draw",
+    "lifegain"
+   ]
+  },
+  "River Heralds' Boon": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "River Sneak": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
+  "River's Rebuke": {
+   "type": "Sorcery",
+   "cmc": 6,
+   "colors": "U",
+   "roles": []
+  },
+  "Roast": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "removal"
    ]
   },
   "Rod of Ruin": {
@@ -2881,12 +9051,44 @@
     "removal"
    ]
   },
+  "Rolling Temblor": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "sweeper"
+   ]
+  },
   "Rona, Disciple of Gix": {
    "type": "Creature",
    "cmc": 3,
    "colors": "UB",
    "roles": [
     "draw"
+   ]
+  },
+  "Rooftop Storm": {
+   "type": "Enchantment",
+   "cmc": 6,
+   "colors": "U",
+   "roles": []
+  },
+  "Rotting Fensnake": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Rowdy Crew": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "draw",
+    "evasion",
+    "threat"
    ]
   },
   "Royal Assassin": {
@@ -2897,6 +9099,37 @@
     "removal"
    ]
   },
+  "Ruin Raider": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "draw",
+    "threat"
+   ]
+  },
+  "Ruinous Gremlin": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Rummaging Goblin": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Run Aground": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "U",
+   "roles": []
+  },
   "Run Amok": {
    "type": "Instant",
    "cmc": 2,
@@ -2905,11 +9138,60 @@
     "trick"
    ]
   },
+  "Runechanter's Pike": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
   "Runeclaw Bear": {
    "type": "Creature",
    "cmc": 2,
    "colors": "G",
    "roles": []
+  },
+  "Runic Repetition": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
+  "Rush of Vitality": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Ruthless Deathfang": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "UB",
+   "roles": [
+    "evasion",
+    "removal",
+    "threat"
+   ]
+  },
+  "Ruthless Knave": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "draw",
+    "threat",
+    "token"
+   ]
+  },
+  "Sabertooth Outrider": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
   },
   "Safe Passage": {
    "type": "Instant",
@@ -2933,9 +9215,86 @@
     "draw"
    ]
   },
+  "Sage of Shaila's Claim": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Saheeli Rai": {
+   "type": "Planeswalker",
+   "cmc": 3,
+   "colors": "UR",
+   "roles": [
+    "burn"
+   ]
+  },
+  "Saheeli's Artistry": {
+   "type": "Sorcery",
+   "cmc": 6,
+   "colors": "U",
+   "roles": []
+  },
+  "Sailor of Means": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "token"
+   ]
+  },
+  "Salivating Gremlins": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": []
+  },
+  "Salt Road Ambushers": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Salt Road Quartermasters": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Sanctum Seeker": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "lifegain",
+    "threat"
+   ]
+  },
   "Sanctum Spirit": {
    "type": "Creature",
    "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Sandcrafter Mage": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Sandsteppe Scavenger": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": []
+  },
+  "Sandstorm Charger": {
+   "type": "Creature",
+   "cmc": 5,
    "colors": "W",
    "roles": [
     "threat"
@@ -2947,6 +9306,14 @@
    "colors": "B",
    "roles": []
   },
+  "Sanguine Sacrament": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "lifegain"
+   ]
+  },
   "Saproling Migration": {
    "type": "Sorcery",
    "cmc": 2,
@@ -2955,12 +9322,145 @@
     "token"
    ]
   },
+  "Sarkhan Unbroken": {
+   "type": "Planeswalker",
+   "cmc": 5,
+   "colors": "URG",
+   "roles": [
+    "draw",
+    "ramp",
+    "token"
+   ]
+  },
+  "Sarkhan's Rage": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Sarkhan's Triumph": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "R",
+   "roles": []
+  },
+  "Savage Stomp": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Savage Ventmaw": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "RG",
+   "roles": [
+    "evasion",
+    "ramp",
+    "threat"
+   ]
+  },
+  "Scale Blessing": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "W",
+   "roles": []
+  },
+  "Scaleguard Sentinels": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Scion of Ugin": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Scourge of Geier Reach": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Scrapheap Scrounger": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Screamreach Brawler": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": []
+  },
+  "Screeching Bat": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
   "Seal Away": {
    "type": "Enchantment",
    "cmc": 2,
    "colors": "W",
    "roles": [
     "removal"
+   ]
+  },
+  "Search for Azcanta": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Secure the Wastes": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "token"
+   ]
+  },
+  "Seekers' Squire": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Segmented Krotiq": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Seismic Rupture": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "sweeper"
    ]
   },
   "Seismic Shift": {
@@ -2979,6 +9479,56 @@
    "roles": [
     "removal"
    ]
+  },
+  "Select for Inspection": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Self-Assembler": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Self-Inflicted Wound": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Selfless Cathar": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
+  },
+  "Selhoff Occultist": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
+  "Sensory Deprivation": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Sentinel Totem": {
+   "type": "Artifact",
+   "cmc": 1,
+   "colors": "",
+   "roles": []
   },
   "Sentinel of the Pearl Trident": {
    "type": "Creature",
@@ -3020,6 +9570,28 @@
     "evasion"
    ]
   },
+  "Servant of the Conduit": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Servant of the Scale": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "G",
+   "roles": []
+  },
+  "Servo Exhibition": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "token"
+   ]
+  },
   "Settle the Score": {
    "type": "Sorcery",
    "cmc": 4,
@@ -3027,6 +9599,28 @@
    "roles": [
     "removal"
    ]
+  },
+  "Settle the Wreckage": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Sever the Bloodline": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Shadowed Caravel": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
   },
   "Shalai, Voice of Plenty": {
    "type": "Creature",
@@ -3037,10 +9631,63 @@
     "threat"
    ]
   },
+  "Shaman of Forgotten Ways": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Shambling Goblin": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
   "Shanna, Sisay's Legacy": {
    "type": "Creature",
    "cmc": 2,
    "colors": "WG",
+   "roles": []
+  },
+  "Shape the Sands": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Shaper Apprentice": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
+  "Shapers of Nature": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "UG",
+   "roles": [
+    "draw",
+    "threat"
+   ]
+  },
+  "Shapers' Sanctuary": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Sharpened Pitchfork": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
    "roles": []
   },
   "Shatter": {
@@ -3051,10 +9698,50 @@
     "removal"
    ]
   },
+  "Sheltered Aerie": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Sheltering Light": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "trick"
+   ]
+  },
   "Shield of the Realm": {
    "type": "Artifact",
    "cmc": 2,
    "colors": "",
+   "roles": []
+  },
+  "Shieldhide Dragon": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Shining Aerosaur": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Shipwreck Looter": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
    "roles": []
   },
   "Shivan Dragon": {
@@ -3074,11 +9761,56 @@
     "removal"
    ]
   },
+  "Shore Keeper": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Shorecrasher Elemental": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "removal",
+    "threat"
+   ]
+  },
   "Short Sword": {
    "type": "Artifact",
    "cmc": 1,
    "colors": "",
    "roles": []
+  },
+  "Shrewd Negotiation": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "U",
+   "roles": []
+  },
+  "Sibsig Icebreakers": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
+  },
+  "Sidisi's Faithful": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Sidisi, Undead Vizier": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
   },
   "Siege Mastodon": {
    "type": "Creature",
@@ -3098,6 +9830,20 @@
     "token"
    ]
   },
+  "Sight Beyond Sight": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Sight of the Scalelords": {
+   "type": "Enchantment",
+   "cmc": 5,
+   "colors": "G",
+   "roles": []
+  },
   "Sign in Blood": {
    "type": "Sorcery",
    "cmc": 2,
@@ -3112,10 +9858,148 @@
    "colors": "W",
    "roles": []
   },
+  "Silent Departure": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Silkwrap": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Silumgar Assassin": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Silumgar Butcher": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "removal",
+    "threat"
+   ]
+  },
+  "Silumgar Monument": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "ramp"
+   ]
+  },
+  "Silumgar Sorcerer": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "counter",
+    "evasion",
+    "threat"
+   ]
+  },
+  "Silumgar Spell-Eater": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "counter"
+   ]
+  },
+  "Silumgar's Command": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "UB",
+   "roles": [
+    "counter",
+    "removal"
+   ]
+  },
+  "Silumgar's Scorn": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "counter"
+   ]
+  },
+  "Silver-Inlaid Dagger": {
+   "type": "Artifact",
+   "cmc": 1,
+   "colors": "",
+   "roles": []
+  },
+  "Silverchase Fox": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
   "Silvercoat Lion": {
    "type": "Creature",
    "cmc": 2,
    "colors": "W",
+   "roles": []
+  },
+  "Siren Lookout": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Siren Stormtamer": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "U",
+   "roles": [
+    "counter",
+    "evasion"
+   ]
+  },
+  "Siren's Ruse": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "draw",
+    "removal"
+   ]
+  },
+  "Skaab Goliath": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Skaab Ruinator": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Skeletal Grimace": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "B",
    "roles": []
   },
   "Skirk Prospector": {
@@ -3125,6 +10009,29 @@
    "roles": [
     "ramp"
    ]
+  },
+  "Skirsdag Cultist": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Skirsdag High Priest": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "token"
+   ]
+  },
+  "Skittering Heartstopper": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "B",
+   "roles": []
   },
   "Skittering Surveyor": {
    "type": "Creature",
@@ -3141,11 +10048,127 @@
     "threat"
    ]
   },
+  "Skulduggery": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "B",
+   "roles": [
+    "removal",
+    "trick"
+   ]
+  },
+  "Sky Skiff": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
+  "Sky Terror": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "WR",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Skyblade of the Legion": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Skymarch Bloodletter": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "lifegain",
+    "threat"
+   ]
+  },
+  "Skyship Stalker": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Skysovereign, Consul Flagship": {
+   "type": "Artifact",
+   "cmc": 5,
+   "colors": "",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Skyswirl Harrier": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Skywhaler's Shot": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Skywise Teachings": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "token"
+   ]
+  },
+  "Slash of Talons": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Slayer of the Wicked": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "removal",
+    "threat"
+   ]
+  },
+  "Sleek Schooner": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
   "Sleep": {
    "type": "Sorcery",
    "cmc": 4,
    "colors": "U",
    "roles": []
+  },
+  "Slice in Twain": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "draw",
+    "removal"
+   ]
   },
   "Slimefoot, the Stowaway": {
    "type": "Creature",
@@ -3165,10 +10188,47 @@
     "threat"
    ]
   },
+  "Smite the Monstrous": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Smuggler's Copter": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
+  "Snapcaster Mage": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
   "Snapping Drake": {
    "type": "Creature",
    "cmc": 4,
    "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Snapping Sailback": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Snare Thopter": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "",
    "roles": [
     "evasion",
     "threat"
@@ -3182,6 +10242,12 @@
     "lifegain",
     "removal"
    ]
+  },
+  "Somberwald Spider": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": []
   },
   "Song of Freyalise": {
    "type": "Enchantment",
@@ -3198,6 +10264,12 @@
    "roles": [
     "burn"
    ]
+  },
+  "Sorcerous Spyglass": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
   },
   "Soul Bleed": {
    "type": "Enchantment",
@@ -3223,6 +10295,22 @@
     "lifegain"
    ]
   },
+  "Spare from Evil": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Spark of Creativity": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "draw",
+    "trick"
+   ]
+  },
   "Sparkmage Apprentice": {
    "type": "Creature",
    "cmc": 2,
@@ -3237,6 +10325,44 @@
    "cmc": 1,
    "colors": "",
    "roles": []
+  },
+  "Spectral Flight": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "U",
+   "roles": []
+  },
+  "Spectral Rider": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Speedway Fanatic": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Spell Pierce": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "U",
+   "roles": [
+    "counter"
+   ]
+  },
+  "Spell Swindle": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "counter",
+    "token"
+   ]
   },
   "Spellbook": {
    "type": "Artifact",
@@ -3253,6 +10379,60 @@
     "threat"
    ]
   },
+  "Spider Spawning": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "token"
+   ]
+  },
+  "Spidersilk Net": {
+   "type": "Artifact",
+   "cmc": 0,
+   "colors": "",
+   "roles": []
+  },
+  "Spidery Grasp": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Spike-Tailed Ceratops": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Spireside Infiltrator": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "threat"
+   ]
+  },
+  "Splinterfright": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Spontaneous Artist": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "threat",
+    "trick"
+   ]
+  },
   "Spore Swarm": {
    "type": "Instant",
    "cmc": 4,
@@ -3267,11 +10447,35 @@
    "colors": "G",
    "roles": []
   },
+  "Spreading Rot": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Sprinting Warbrute": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
   "Squee, the Immortal": {
    "type": "Creature",
    "cmc": 3,
    "colors": "R",
    "roles": []
+  },
+  "Stampeding Elk Herd": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
   },
   "Stampeding Rhino": {
    "type": "Creature",
@@ -3282,12 +10486,52 @@
     "threat"
    ]
   },
+  "Star of Extinction": {
+   "type": "Sorcery",
+   "cmc": 7,
+   "colors": "R",
+   "roles": [
+    "removal",
+    "sweeper"
+   ]
+  },
+  "Start Your Engines": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "R",
+   "roles": []
+  },
+  "Steadfast Armasaur": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "removal"
+   ]
+  },
   "Steel Leaf Champion": {
    "type": "Creature",
    "cmc": 3,
    "colors": "G",
    "roles": [
     "threat"
+   ]
+  },
+  "Stitched Drake": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Stitcher's Apprentice": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "token"
    ]
   },
   "Stone Giant": {
@@ -3299,12 +10543,117 @@
     "trick"
    ]
   },
+  "Stony Silence": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "W",
+   "roles": []
+  },
+  "Storm Fleet Aerialist": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Storm Fleet Arsonist": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "removal",
+    "threat"
+   ]
+  },
+  "Storm Fleet Pyromancer": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal",
+    "threat"
+   ]
+  },
+  "Storm Fleet Spy": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Storm Sculptor": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Stormcrag Elemental": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
   "Stormfront Pegasus": {
    "type": "Creature",
    "cmc": 2,
    "colors": "W",
    "roles": [
     "evasion",
+    "threat"
+   ]
+  },
+  "Stormrider Rig": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
+  "Stormwing Dragon": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Stratus Dancer": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "counter",
+    "evasion",
+    "threat"
+   ]
+  },
+  "Stromkirk Noble": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "R",
+   "roles": []
+  },
+  "Stromkirk Patrol": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Strongarm Monk": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
     "threat"
    ]
   },
@@ -3315,6 +10664,125 @@
    "roles": [
     "evasion"
    ]
+  },
+  "Student of Ojutai": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Sturmgeist": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "draw",
+    "evasion"
+   ]
+  },
+  "Subtle Strike": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Summit Prowler": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Sun-Crowned Hunters": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "threat"
+   ]
+  },
+  "Sunbird's Invocation": {
+   "type": "Enchantment",
+   "cmc": 6,
+   "colors": "R",
+   "roles": []
+  },
+  "Sunbringer's Touch": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "G",
+   "roles": []
+  },
+  "Sunrise Seeker": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Sunscorch Regent": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "lifegain",
+    "threat"
+   ]
+  },
+  "Sure Strike": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Surge of Righteousness": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "lifegain",
+    "removal"
+   ]
+  },
+  "Surrak, the Hunt Caller": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "threat",
+    "trick"
+   ]
+  },
+  "Swashbuckling": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Swift Warkite": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "BR",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Sword-Point Diplomacy": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
   },
   "Sylvan Awakening": {
    "type": "Sorcery",
@@ -3329,6 +10797,54 @@
    "roles": [
     "counter"
    ]
+  },
+  "Syndicate Trafficker": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Taigam's Strike": {
+   "type": "Sorcery",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Tail Slash": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "removal",
+    "trick"
+   ]
+  },
+  "Take Down": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "G",
+   "roles": [
+    "removal",
+    "sweeper"
+   ]
+  },
+  "Tapestry of the Ages": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Tasseled Dromedary": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
   },
   "Tatyova, Benthic Druid": {
    "type": "Creature",
@@ -3352,6 +10868,12 @@
   "Telepathy": {
    "type": "Enchantment",
    "cmc": 1,
+   "colors": "U",
+   "roles": []
+  },
+  "Tempest Caller": {
+   "type": "Creature",
+   "cmc": 4,
    "colors": "U",
    "roles": []
   },
@@ -3389,6 +10911,37 @@
     "threat"
    ]
   },
+  "Territorial Gorger": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Territorial Hammerskull": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Territorial Roc": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Terror of the Fairgrounds": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
   "Teshar, Ancestor's Apostle": {
    "type": "Creature",
    "cmc": 4,
@@ -3403,6 +10956,14 @@
    "cmc": 2,
    "colors": "U",
    "roles": []
+  },
+  "Tezzeret's Ambition": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
   },
   "Thallid Omnivore": {
    "type": "Creature",
@@ -3420,6 +10981,12 @@
    "roles": [
     "draw"
    ]
+  },
+  "Thaumatic Compass": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
   },
   "The Antiquities War": {
    "type": "Enchantment",
@@ -3467,11 +11034,36 @@
    "colors": "U",
    "roles": []
   },
+  "Think Twice": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
   "Thorn Elemental": {
    "type": "Creature",
    "cmc": 7,
    "colors": "G",
    "roles": [
+    "threat"
+   ]
+  },
+  "Thraben Purebloods": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Thraben Sentry": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": [
+    "evasion",
     "threat"
    ]
   },
@@ -3481,6 +11073,63 @@
    "colors": "",
    "roles": []
   },
+  "Thrash of Raptors": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Thriving Grubs": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Thriving Ibex": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": []
+  },
+  "Thriving Rats": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": []
+  },
+  "Thriving Rhino": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Thriving Turtle": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "U",
+   "roles": []
+  },
+  "Thunderbreak Regent": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "evasion",
+    "threat"
+   ]
+  },
+  "Thundering Spineback": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "G",
+   "roles": [
+    "threat",
+    "token"
+   ]
+  },
   "Tiana, Ship's Caretaker": {
    "type": "Creature",
    "cmc": 5,
@@ -3489,6 +11138,27 @@
     "evasion",
     "threat"
    ]
+  },
+  "Tidy Conclusion": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "B",
+   "roles": [
+    "lifegain",
+    "removal"
+   ]
+  },
+  "Tilonalli's Knight": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Tilonalli's Skinshifter": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "R",
+   "roles": []
   },
   "Time Warp": {
    "type": "Sorcery",
@@ -3500,6 +11170,26 @@
    "type": "Enchantment",
    "cmc": 4,
    "colors": "U",
+   "roles": []
+  },
+  "Tishana's Wayfinder": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Tishana, Voice of Thunder": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "UG",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Tocatli Honor Guard": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
    "roles": []
   },
   "Tolarian Scholar": {
@@ -3514,10 +11204,46 @@
    "colors": "U",
    "roles": []
   },
+  "Toolcraft Exemplar": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "W",
+   "roles": []
+  },
+  "Torch Gauntlet": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
   "Torgaar, Famine Incarnate": {
    "type": "Creature",
    "cmc": 8,
    "colors": "B",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Tormented Pariah": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Tormenting Voice": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Torrential Gearhulk": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "U",
    "roles": [
     "threat"
    ]
@@ -3528,10 +11254,28 @@
    "colors": "W",
    "roles": []
   },
+  "Traitorous Blood": {
+   "type": "Sorcery",
+   "cmc": 3,
+   "colors": "R",
+   "roles": []
+  },
   "Traumatize": {
    "type": "Sorcery",
    "cmc": 5,
    "colors": "U",
+   "roles": []
+  },
+  "Travel Preparations": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "G",
+   "roles": []
+  },
+  "Traveler's Amulet": {
+   "type": "Artifact",
+   "cmc": 1,
+   "colors": "",
    "roles": []
   },
   "Traxos, Scourge of Kroog": {
@@ -3543,6 +11287,44 @@
     "threat"
    ]
   },
+  "Tread Upon": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Treasure Map": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "draw",
+    "token"
+   ]
+  },
+  "Tree of Redemption": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": []
+  },
+  "Trepanation Blade": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
+  "Tribute to Hunger": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "lifegain",
+    "removal"
+   ]
+  },
   "Triumph of Gerrard": {
    "type": "Enchantment",
    "cmc": 2,
@@ -3551,11 +11333,36 @@
     "trick"
    ]
   },
+  "Trove of Temptation": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "token"
+   ]
+  },
   "Trumpet Blast": {
    "type": "Instant",
    "cmc": 3,
    "colors": "R",
    "roles": []
+  },
+  "Trusty Companion": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Twin Bolt": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
   },
   "Twincast": {
    "type": "Instant",
@@ -3571,11 +11378,69 @@
     "threat"
    ]
   },
+  "Typhoid Rats": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "B",
+   "roles": []
+  },
+  "Ukud Cobra": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": []
+  },
+  "Ultimate Price": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Ulvenwald Mystics": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Unbreathing Horde": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
+  },
+  "Unburial Rites": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "B",
+   "roles": []
+  },
+  "Undead Alchemist": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "threat",
+    "token"
+   ]
+  },
   "Undead Slayer": {
    "type": "Creature",
    "cmc": 3,
    "colors": "W",
    "roles": []
+  },
+  "Underhanded Designs": {
+   "type": "Enchantment",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "lifegain",
+    "removal"
+   ]
   },
   "Underworld Dreams": {
    "type": "Enchantment",
@@ -3585,10 +11450,34 @@
     "burn"
    ]
   },
+  "Unfriendly Fire": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
   "Unholy Strength": {
    "type": "Enchantment",
    "cmc": 1,
    "colors": "B",
+   "roles": []
+  },
+  "Unlicensed Disintegration": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "BR",
+   "roles": [
+    "burn",
+    "removal"
+   ]
+  },
+  "Unruly Mob": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "W",
    "roles": []
   },
   "Unsummon": {
@@ -3614,6 +11503,22 @@
    "colors": "U",
    "roles": [
     "counter"
+   ]
+  },
+  "Updraft Elemental": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "evasion"
+   ]
+  },
+  "Urgent Exorcism": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "W",
+   "roles": [
+    "removal"
    ]
   },
   "Urgoros, the Empty One": {
@@ -3655,6 +11560,15 @@
    "colors": "B",
    "roles": []
   },
+  "Vampire Interloper": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
   "Vampire Nocturnus": {
    "type": "Creature",
    "cmc": 4,
@@ -3663,6 +11577,60 @@
     "threat"
    ]
   },
+  "Vampire's Zeal": {
+   "type": "Instant",
+   "cmc": 1,
+   "colors": "W",
+   "roles": [
+    "trick"
+   ]
+  },
+  "Vampiric Fury": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Vance's Blasting Cannons": {
+   "type": "Enchantment",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "burn",
+    "draw",
+    "removal"
+   ]
+  },
+  "Vandalize": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Vanquish the Weak": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Vanquisher's Banner": {
+   "type": "Artifact",
+   "cmc": 5,
+   "colors": "",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Vedalken Blademaster": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
   "Verdant Force": {
    "type": "Creature",
    "cmc": 8,
@@ -3670,6 +11638,32 @@
    "roles": [
     "threat",
     "token"
+   ]
+  },
+  "Verdant Rebirth": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "draw"
+   ]
+  },
+  "Verdant Sun's Avatar": {
+   "type": "Creature",
+   "cmc": 7,
+   "colors": "G",
+   "roles": [
+    "lifegain",
+    "threat"
+   ]
+  },
+  "Verdurous Gearhulk": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "G",
+   "roles": [
+    "evasion",
+    "threat"
    ]
   },
   "Verix Bladewing": {
@@ -3688,6 +11682,14 @@
    "colors": "W",
    "roles": []
   },
+  "Veteran Motorist": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "WR",
+   "roles": [
+    "threat"
+   ]
+  },
   "Veteran Swordsmith": {
    "type": "Creature",
    "cmc": 3,
@@ -3696,10 +11698,24 @@
     "threat"
    ]
   },
+  "Vial of Dragonfire": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "removal"
+   ]
+  },
   "Viashino Spearhunter": {
    "type": "Creature",
    "cmc": 3,
    "colors": "R",
+   "roles": []
+  },
+  "Vicious Conquistador": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "B",
    "roles": []
   },
   "Vicious Offering": {
@@ -3710,6 +11726,56 @@
     "removal"
    ]
   },
+  "Victim of Night": {
+   "type": "Instant",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Village Bell-Ringer": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": []
+  },
+  "Village Cannibals": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
+  },
+  "Village Ironsmith": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": []
+  },
+  "Villagers of Estwald": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Vineshaper Mystic": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "G",
+   "roles": []
+  },
+  "Virulent Plague": {
+   "type": "Enchantment",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
+  },
+  "Visionary Augmenter": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "W",
+   "roles": []
+  },
   "Vodalian Arcanist": {
    "type": "Creature",
    "cmc": 2,
@@ -3718,10 +11784,116 @@
     "ramp"
    ]
   },
+  "Voiceless Spirit": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Void Squall": {
+   "type": "Sorcery",
+   "cmc": 5,
+   "colors": "U",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Volcanic Rush": {
+   "type": "Instant",
+   "cmc": 5,
+   "colors": "R",
+   "roles": []
+  },
+  "Volcanic Vision": {
+   "type": "Sorcery",
+   "cmc": 7,
+   "colors": "R",
+   "roles": [
+    "sweeper"
+   ]
+  },
+  "Voltaic Brawler": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "RG",
+   "roles": [
+    "threat"
+   ]
+  },
   "Voltaic Servant": {
    "type": "Creature",
    "cmc": 2,
    "colors": "",
+   "roles": []
+  },
+  "Vona, Butcher of Magan": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "WB",
+   "roles": [
+    "removal",
+    "threat"
+   ]
+  },
+  "Vraska's Contempt": {
+   "type": "Instant",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Vraska, Relic Seeker": {
+   "type": "Planeswalker",
+   "cmc": 6,
+   "colors": "BG",
+   "roles": [
+    "removal",
+    "token"
+   ]
+  },
+  "Vulturous Aven": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": [
+    "draw",
+    "evasion",
+    "threat"
+   ]
+  },
+  "Wakening Sun's Avatar": {
+   "type": "Creature",
+   "cmc": 8,
+   "colors": "W",
+   "roles": [
+    "sweeper",
+    "threat"
+   ]
+  },
+  "Waker of the Wilds": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Walk the Plank": {
+   "type": "Sorcery",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Walking Corpse": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
    "roles": []
   },
   "Wall of Bone": {
@@ -3747,6 +11919,29 @@
    "cmc": 3,
    "colors": "U",
    "roles": []
+  },
+  "Wandering Tombshell": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "B",
+   "roles": []
+  },
+  "Wanted Scoundrels": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "B",
+   "roles": [
+    "threat",
+    "token"
+   ]
+  },
+  "Warbringer": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "R",
+   "roles": [
+    "threat"
+   ]
   },
   "Warcry Phoenix": {
    "type": "Creature",
@@ -3779,6 +11974,21 @@
     "threat"
    ]
   },
+  "Watertrap Weaver": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": []
+  },
+  "Wayward Giant": {
+   "type": "Creature",
+   "cmc": 5,
+   "colors": "R",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
   "Weakness": {
    "type": "Enchantment",
    "cmc": 1,
@@ -3786,6 +11996,12 @@
    "roles": [
     "removal"
    ]
+  },
+  "Weaponcraft Enthusiast": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "B",
+   "roles": []
   },
   "Weatherlight": {
    "type": "Artifact",
@@ -3801,6 +12017,46 @@
    "colors": "U",
    "roles": [
     "draw"
+   ]
+  },
+  "Weldfast Monitor": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Weldfast Wingsmith": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "threat"
+   ]
+  },
+  "Welding Sparks": {
+   "type": "Instant",
+   "cmc": 3,
+   "colors": "R",
+   "roles": [
+    "removal"
+   ]
+  },
+  "Whirler Virtuoso": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "UR",
+   "roles": [
+    "token"
+   ]
+  },
+  "Whirlermaker": {
+   "type": "Artifact",
+   "cmc": 3,
+   "colors": "",
+   "roles": [
+    "token"
    ]
   },
   "Whisper, Blood Liturgist": {
@@ -3827,9 +12083,55 @@
    "colors": "G",
    "roles": []
   },
+  "Wild Wanderer": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": [
+    "ramp",
+    "threat"
+   ]
+  },
+  "Wildest Dreams": {
+   "type": "Sorcery",
+   "cmc": 1,
+   "colors": "G",
+   "roles": []
+  },
+  "Wildgrowth Walker": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "G",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Wily Bandar": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "G",
+   "roles": []
+  },
+  "Wily Goblin": {
+   "type": "Creature",
+   "cmc": 2,
+   "colors": "R",
+   "roles": [
+    "token"
+   ]
+  },
   "Wind Drake": {
    "type": "Creature",
    "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "evasion",
+    "threat"
+   ]
+  },
+  "Wind Strider": {
+   "type": "Creature",
+   "cmc": 5,
    "colors": "U",
    "roles": [
     "evasion",
@@ -3854,6 +12156,24 @@
     "sweeper"
    ]
   },
+  "Wispweaver Angel": {
+   "type": "Creature",
+   "cmc": 6,
+   "colors": "W",
+   "roles": [
+    "evasion",
+    "removal",
+    "threat"
+   ]
+  },
+  "Witchbane Orb": {
+   "type": "Artifact",
+   "cmc": 4,
+   "colors": "",
+   "roles": [
+    "sweeper"
+   ]
+  },
   "Wizard's Lightning": {
    "type": "Instant",
    "cmc": 3,
@@ -3870,6 +12190,38 @@
    "roles": [
     "counter"
    ]
+  },
+  "Wooden Stake": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": []
+  },
+  "Woodland Sleuth": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "G",
+   "roles": []
+  },
+  "Woodweaver's Puzzleknot": {
+   "type": "Artifact",
+   "cmc": 2,
+   "colors": "",
+   "roles": [
+    "lifegain"
+   ]
+  },
+  "Workshop Assistant": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "",
+   "roles": []
+  },
+  "Wreath of Geists": {
+   "type": "Enchantment",
+   "cmc": 1,
+   "colors": "G",
+   "roles": []
   },
   "Wurm's Tooth": {
    "type": "Artifact",
@@ -3920,6 +12272,14 @@
     "removal"
    ]
   },
+  "Youthful Scholar": {
+   "type": "Creature",
+   "cmc": 4,
+   "colors": "U",
+   "roles": [
+    "draw"
+   ]
+  },
   "Zahid, Djinn of the Lamp": {
    "type": "Creature",
    "cmc": 6,
@@ -3927,6 +12287,14 @@
    "roles": [
     "evasion",
     "threat"
+   ]
+  },
+  "Zephyr Scribe": {
+   "type": "Creature",
+   "cmc": 3,
+   "colors": "U",
+   "roles": [
+    "draw"
    ]
   },
   "Zephyr Sprite": {
@@ -3944,6 +12312,12 @@
    "roles": [
     "threat"
    ]
+  },
+  "Zurgo Bellstriker": {
+   "type": "Creature",
+   "cmc": 1,
+   "colors": "R",
+   "roles": []
   }
  }
 }

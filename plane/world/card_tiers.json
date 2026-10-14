@@ -1,13 +1,18 @@
 {
-  "_about": "Hand-set tiers that override the computed score in scripts/card_scores.py: S 95, A 85, B 70, C 50, D 30. For cards the formula misjudges (popularity comes from Commander play, so build-arounds and legendary sorceries rank too high for an Adventure deck).",
-  "tiers": {
-    "Jaya's Immolating Inferno": "C",
-    "Karn's Temporal Sundering": "C",
-    "Urza's Ruinous Blast": "D",
-    "Kamahl's Druidic Vow": "C",
-    "Yawgmoth's Vile Offering": "D",
-    "Oath of Teferi": "D",
-    "Ornithopter": "C",
-    "Yargle, Glutton of Urborg": "D"
-  }
+ "_about": "Hand-set tiers that override the computed score in scripts/card_scores.py: S 95, A 85, B 70, C 50, D 30. For cards the formula misjudges (popularity comes from Commander play, so build-arounds and legendary sorceries rank too high for an Adventure deck).",
+ "tiers": {
+  "Jaya's Immolating Inferno": "C",
+  "Karn's Temporal Sundering": "C",
+  "Urza's Ruinous Blast": "D",
+  "Kamahl's Druidic Vow": "C",
+  "Yawgmoth's Vile Offering": "D",
+  "Oath of Teferi": "D",
+  "Ornithopter": "C",
+  "Yargle, Glutton of Urborg": "D",
+  "Aetherflux Reservoir": "C",
+  "Paradoxical Outcome": "D",
+  "Dragon Tempest": "C",
+  "Tree of Redemption": "C",
+  "Muldrotha, the Gravetide": "B"
+ }
 }

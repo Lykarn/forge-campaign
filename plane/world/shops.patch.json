@@ -39,6 +39,110 @@
      "count": 8
     }
    ]
+  },
+  {
+   "name": "Merchant_blue",
+   "description": "Merchant of the Azure Reach: picked for your deck",
+   "spriteAtlas": "maps/tileset/buildings.atlas",
+   "sprite": "BlueShop",
+   "rewards": [
+    {
+     "type": "campaignMerchant",
+     "pool": "blue",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "name": "GrandMerchant_blue",
+   "description": "Grand Merchant of Mirrorhall: picked for your deck",
+   "spriteAtlas": "maps/tileset/buildings.atlas",
+   "sprite": "CapitalShop",
+   "rewards": [
+    {
+     "type": "campaignMerchant",
+     "pool": "blue",
+     "count": 8
+    }
+   ]
+  },
+  {
+   "name": "Merchant_green",
+   "description": "Merchant of the Wildwood: picked for your deck",
+   "spriteAtlas": "maps/tileset/buildings.atlas",
+   "sprite": "GreenShop",
+   "rewards": [
+    {
+     "type": "campaignMerchant",
+     "pool": "green",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "name": "GrandMerchant_green",
+   "description": "Grand Merchant of Oakheart: picked for your deck",
+   "spriteAtlas": "maps/tileset/buildings.atlas",
+   "sprite": "CapitalShop",
+   "rewards": [
+    {
+     "type": "campaignMerchant",
+     "pool": "green",
+     "count": 8
+    }
+   ]
+  },
+  {
+   "name": "Merchant_red",
+   "description": "Merchant of the Cinder Peaks: picked for your deck",
+   "spriteAtlas": "maps/tileset/buildings.atlas",
+   "sprite": "RedShop",
+   "rewards": [
+    {
+     "type": "campaignMerchant",
+     "pool": "red",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "name": "GrandMerchant_red",
+   "description": "Grand Merchant of Emberhold: picked for your deck",
+   "spriteAtlas": "maps/tileset/buildings.atlas",
+   "sprite": "CapitalShop",
+   "rewards": [
+    {
+     "type": "campaignMerchant",
+     "pool": "red",
+     "count": 8
+    }
+   ]
+  },
+  {
+   "name": "Merchant_black",
+   "description": "Merchant of Duskmire: picked for your deck",
+   "spriteAtlas": "maps/tileset/buildings.atlas",
+   "sprite": "BlackShop",
+   "rewards": [
+    {
+     "type": "campaignMerchant",
+     "pool": "black",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "name": "GrandMerchant_black",
+   "description": "Grand Merchant of Gravenhold: picked for your deck",
+   "spriteAtlas": "maps/tileset/buildings.atlas",
+   "sprite": "CapitalShop",
+   "rewards": [
+    {
+     "type": "campaignMerchant",
+     "pool": "black",
+     "count": 8
+    }
+   ]
   }
  ]
 }

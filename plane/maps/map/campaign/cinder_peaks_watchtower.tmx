@@ -40,10 +40,18 @@
    <properties>
     <property name="dialog">[
  {
-  &quot;text&quot;: &quot;The road is closed. The lands beyond open in a later update of Forge Campaign.&quot;,
+  &quot;text&quot;: &quot;From the top of the watchtower you can see all of The Cinder Peaks: its towns, roads and lairs are now on your map.&quot;,
   &quot;options&quot;: [
    {
-    &quot;name&quot;: &quot;Turn back&quot;
+    &quot;name&quot;: &quot;Climb down&quot;,
+    &quot;action&quot;: [
+     {
+      &quot;setQuestFlag&quot;: {
+       &quot;key&quot;: &quot;tower_red&quot;,
+       &quot;val&quot;: 1
+      }
+     }
+    ]
    }
   ]
  }
