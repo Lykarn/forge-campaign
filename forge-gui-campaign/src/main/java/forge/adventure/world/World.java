@@ -347,6 +347,35 @@ public class World implements Disposable, SaveFileContent {
             }
         }
         List<forge.campaign.world.RegionLayout.Region> regions = layout.regions;
+        if (campaignWall == null) {
+            computeRegionMasks(layout);
+        }
+        int[][] region = campaignRegion;
+        boolean[][] wall = campaignWall;
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                if (wall[x][y] && !inPass(layout, x, y)) {
+                    biomeMap[x][y] = 1L << ocean;
+                    terrainMap[x][y] = collisionBit;
+                }
+            }
+        }
+        finishRegionWalls(layout, region, wall, ocean, roadBit, regions);
+    }
+
+    /** The region of every tile and where the walls will go, from the biomes alone. */
+    private int[][] campaignRegion;
+    private boolean[][] campaignWall;
+
+    /**
+     * Computed right after the biomes, before any point of interest is placed: Adventure's random
+     * placement then avoids the future walls (a town placed first and walled over later sat in
+     * the water: playtest), and the walls themselves are drawn after the roads, from these masks.
+     */
+    private void computeRegionMasks(forge.campaign.world.RegionLayout layout) {
+        List<BiomeData> biomes = data.GetBiomes();
+        long roadBit = 1L << biomes.size();
+        List<forge.campaign.world.RegionLayout.Region> regions = layout.regions;
         int[][] region = new int[width][height];
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
@@ -378,14 +407,28 @@ public class World implements Disposable, SaveFileContent {
                 }
             }
         }
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                if (wall[x][y] && !inPass(layout, x, y)) {
-                    biomeMap[x][y] = 1L << ocean;
-                    terrainMap[x][y] = collisionBit;
+        campaignRegion = region;
+        campaignWall = wall;
+    }
+
+    /** True if a wall (outside a pass) lies within r tiles of map tile (x, y from the top). */
+    private boolean nearCampaignWall(int x, int mapY, int r) {
+        forge.campaign.world.RegionLayout layout = forge.campaign.world.RegionLayout.get();
+        if (campaignWall == null || layout == null) {
+            return false;
+        }
+        for (int wx = Math.max(0, x - r); wx <= Math.min(width - 1, x + r); wx++) {
+            for (int wy = Math.max(0, mapY - r); wy <= Math.min(height - 1, mapY + r); wy++) {
+                if (campaignWall[wx][wy] && !inPass(layout, wx, wy)) {
+                    return true;
                 }
             }
         }
+        return false;
+    }
+
+    private void finishRegionWalls(forge.campaign.world.RegionLayout layout, int[][] region, boolean[][] wall,
+                                        int ocean, long roadBit, List<forge.campaign.world.RegionLayout.Region> regions) {
         dumpRegions(layout, region, wall);
         // Where each authored point of interest landed: a typo'd tile shows up here, not in play.
         for (forge.campaign.world.RegionLayout.Poi p : layout.pois) {
@@ -604,6 +647,12 @@ public class World implements Disposable, SaveFileContent {
                 }
             }
             currentTime[0] = measureGenerationTime("biomes in total", currentTime[0]);
+            // FORGE-CAMPAIGN: where the region walls will go, before any point of interest is placed.
+            campaignWall = null;
+            if (layout != null) {
+                computeRegionMasks(layout);
+            }
+            // FORGE-CAMPAIGN end
 
 //////////////////
 ///////// set poi placement
@@ -649,6 +698,10 @@ public class World implements Disposable, SaveFileContent {
                                 x += (poi.offsetX * (biome.width * width));
 
                                 if ((int) x < 0 || (int) y <= 0 || (int) y >= height || (int) x >= width || biomeIndex2 != highestBiome(getBiome((int) x, (int) y))) {
+                                    continue;
+                                }
+                                // FORGE-CAMPAIGN: not on or next to a future region wall.
+                                if (nearCampaignWall((int) x, height - 1 - (int) y, 4)) {
                                     continue;
                                 }
 
@@ -1190,7 +1243,11 @@ public class World implements Disposable, SaveFileContent {
             int x = (int) (poi.getPosition().x / data.tileSize);
             int mapY = height - 1 - (int) (poi.getPosition().y / data.tileSize);
             int r = campaignRegionAt(x, mapY);
-            if (r >= 0 && layout.regions.get(r).authored()) {
+            forge.campaign.world.RegionLayout.Region region = r >= 0 ? layout.regions.get(r) : null;
+            // A gated region counts once its gate is open, so early quests stay in reach.
+            if (region != null && region.authored() && (region.requiresFlag() == null
+                    || (forge.adventure.util.Current.player() != null
+                        && forge.adventure.util.Current.player().getQuestFlag(region.requiresFlag()) >= 1))) {
                 open.add(poi);
             }
         }

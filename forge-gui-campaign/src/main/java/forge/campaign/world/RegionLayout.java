@@ -26,9 +26,10 @@ public final class RegionLayout {
     public static final String FILE = "world/region_layout.json";
 
     /** authored: its points of interest come from this file, not Adventure's random placement.
-     *  pool: the card pool (plane/card_scores.json) its merchants and rewards draw from. */
+     *  pool: the card pool (plane/card_scores.json) its merchants and rewards draw from.
+     *  requiresFlag: a quest flag that must be set before quests may send the player here (its gate). */
     public record Region(String id, String name, List<String> biomes, String towerFlag, boolean revealedAtStart,
-                         boolean authored, String pool) {
+                         boolean authored, String pool, String requiresFlag) {
     }
 
     public record Poi(String name, int x, int y, String displayName) {
@@ -72,7 +73,7 @@ public final class RegionLayout {
             }
             Region region = new Region(r.getString("id"), r.getString("name", r.getString("id")), biomes,
                     r.getString("towerFlag", null), r.getBoolean("revealedAtStart", false),
-                    r.getBoolean("authored", false), r.getString("pool", null));
+                    r.getBoolean("authored", false), r.getString("pool", null), r.getString("requiresFlag", null));
             regions.add(region);
             for (String b : biomes) {
                 regionOfBiome.put(b, region);

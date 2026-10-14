@@ -22,7 +22,8 @@
    ],
    "authored": true,
    "towerFlag": "tower_white",
-   "pool": "white"
+   "pool": "white",
+   "requiresFlag": "gate_white"
   },
   {
    "id": "blue",

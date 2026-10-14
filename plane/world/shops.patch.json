@@ -1,9 +1,9 @@
 {
- "_about": "Merged by scripts/package.py into Adventure's world/shops.json. Our towns keep one shop, which sells from these (see scripts/make_maps.py and forge.campaign.shop.Merchant).",
+ "_about": "Merged by scripts/package.py into Adventure's world/shops.json. Our towns keep one shop, which sells from these (see scripts/make_maps.py and forge.campaign.shop.Merchant). Names are ids without spaces: Adventure strips whitespace from a town's shop list before matching.",
  "add": [
   {
-   "name": "Merchant of The Crossroads",
-   "description": "Curated for your deck",
+   "name": "Merchant_hub",
+   "description": "Merchant of the Crossroads: picked for your deck",
    "spriteAtlas": "maps/tileset/buildings.atlas",
    "sprite": "CardShop",
    "rewards": [
@@ -15,8 +15,8 @@
    ]
   },
   {
-   "name": "Merchant of Plains of Serra",
-   "description": "Curated for your deck",
+   "name": "Merchant_white",
+   "description": "Merchant of the Plains: picked for your deck",
    "spriteAtlas": "maps/tileset/buildings.atlas",
    "sprite": "WhiteShop",
    "rewards": [
@@ -28,8 +28,8 @@
    ]
   },
   {
-   "name": "Grand Merchant of Plains of Serra",
-   "description": "Curated for your deck",
+   "name": "GrandMerchant_white",
+   "description": "Grand Merchant of Serra's Rest: picked for your deck",
    "spriteAtlas": "maps/tileset/buildings.atlas",
    "sprite": "CapitalShop",
    "rewards": [

@@ -84,12 +84,29 @@ public final class DuelRewards {
                 names.add(c.getName());
             }
         }
-        // The region's card: from the best third of its pool, so the third choice is a real one.
+        // The region's card: in the player's colours, good but not a bomb (score 45-80, no
+        // planeswalkers), and only sometimes rare. The first version took the pool's best third,
+        // which in Magic 2010 meant an off-colour mythic planeswalker after every win (playtest).
         Map<String, Integer> pool = scores.pool(regionPool());
-        List<String> top = new ArrayList<>(pool.keySet()).subList(0, Math.max(0, pool.size() / 3));
+        Merchant.DeckProfile deck = Merchant.DeckProfile.of(player, scores);
         Random random = new Random();
-        for (int tries = 0; tries < 20 && names.size() < 3 && !top.isEmpty(); tries++) {
-            names.add(top.get(random.nextInt(top.size())));
+        List<String> fits = new ArrayList<>();
+        for (Map.Entry<String, Integer> e : pool.entrySet()) {
+            CardScores.Card c = scores.card(e.getKey());
+            if (c == null || e.getValue() < 45 || e.getValue() > 80 || "Planeswalker".equals(c.type())
+                    || !deck.inColours(c.colors()) || names.contains(e.getKey())) {
+                continue;
+            }
+            PaperCard pc = StaticData.instance().getCommonCards().getCard(e.getKey());
+            boolean rare = pc != null && pc.getRarity() != null
+                    && (pc.getRarity().ordinal() >= forge.card.CardRarity.Rare.ordinal()
+                        && pc.getRarity() != forge.card.CardRarity.Special);
+            if (!rare || random.nextInt(100) < 15) {
+                fits.add(e.getKey());
+            }
+        }
+        if (names.size() < 3 && !fits.isEmpty()) {
+            names.add(fits.get(random.nextInt(fits.size())));
         }
         for (PaperCard c : cards) { // a small pool or an unlucky draw: fill from the loot
             if (names.size() < 3) {

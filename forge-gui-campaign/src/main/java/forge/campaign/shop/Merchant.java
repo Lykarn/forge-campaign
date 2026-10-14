@@ -170,7 +170,7 @@ public final class Merchant {
     }
 
     /** What the player's selected deck has: colours, cards, and its weakest card per role. */
-    static final class DeckProfile {
+    static final class DeckProfile { // also used by DuelRewards
         private final String colours;
         private final Map<String, Integer> counts = new HashMap<>();
         private final Map<String, String> weakest = new HashMap<>();

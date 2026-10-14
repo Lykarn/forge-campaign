@@ -116,7 +116,9 @@ def main() -> int:
             src = upstream[build["from"]]
             region = regions[build["merchant"]]
             # Capitals get the grand merchant (8 offers instead of 6).
-            merchant = ("Grand Merchant of " if src.get("type") == "capital" else "Merchant of ") + region["name"]
+            # A shop id, not a name: MapStage strips all whitespace from a town's shop list before
+            # matching, so a name with spaces never matches (the playtest's missing merchant).
+            merchant = ("GrandMerchant_" if src.get("type") == "capital" else "Merchant_") + region["id"]
             text = town_map(src["map"], merchant)
             entry.update({k: src[k] for k in ("type", "spriteAtlas", "sprite") if k in src})
             entry["questTags"] = list(src.get("questTags", [])) + ["Campaign"]

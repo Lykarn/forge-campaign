@@ -33,10 +33,10 @@
   <object id="38" template="../../../../common/maps/obj/entry_up.tx" x="219" y="383" width="28" height="16"/>
   <object id="41" template="../../../../common/maps/obj/shop.tx" x="97" y="305">
    <properties>
-    <property name="commonShopList" value="Merchant of Plains of Serra"/>
-    <property name="uncommonShopList" value="Merchant of Plains of Serra"/>
-    <property name="rareShopList" value="Merchant of Plains of Serra"/>
-    <property name="mythicShopList" value="Merchant of Plains of Serra"/>
+    <property name="commonShopList" value="Merchant_white"/>
+    <property name="uncommonShopList" value="Merchant_white"/>
+    <property name="rareShopList" value="Merchant_white"/>
+    <property name="mythicShopList" value="Merchant_white"/>
    </properties>
   </object>
   

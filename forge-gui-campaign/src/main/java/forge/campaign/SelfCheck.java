@@ -71,7 +71,12 @@ public final class SelfCheck {
             check("the gate blocks before it is opened", world.isColliding(pass.x(), worldY), null);
             player.setQuestFlag(pass.gateFlag(), 1);
             check("the gate lets you through once opened", !world.isColliding(pass.x(), worldY), null);
+            boolean whileOpen = hasPoi(world, "Serra's Rest");
             player.setQuestFlag(pass.gateFlag(), 0);
+            check("quests can target the Plains once the gate is open", whileOpen, null);
+            check("quests cannot target the Plains while the gate is shut", !hasPoi(world, "Serra's Rest"), null);
+            check("quests cannot target closed regions", world.getAllPointOfInterest().size() < 40,
+                    world.getAllPointOfInterest().size() + " targetable points of interest");
         }
 
         // Fog: the hub shows from the start, White only after its watchtower.
@@ -114,10 +119,52 @@ public final class SelfCheck {
                 choices == null ? "none" : choices.size + ": " + names(choices));
         check("the loot's gold is paid at once", player.getGold() == gold + 25, (player.getGold() - gold) + " gold paid");
 
+        // A town: load the Crossroads map as entering it does, and find its merchant.
+        forge.adventure.pointofintrest.PointOfInterest town = null;
+        for (forge.adventure.pointofintrest.PointOfInterest poi : world.getAllPointOfInterest()) {
+            if ("Crossroads".equals(poi.getData().name)) {
+                town = poi;
+            }
+        }
+        check("the Crossroads town exists", town != null, null);
+        if (town != null) {
+            forge.adventure.scene.TileMapScene.instance().load(town);
+            java.util.List<forge.adventure.character.ShopActor> shops = new java.util.ArrayList<>();
+            findShops(forge.adventure.stage.MapStage.getInstance().getRoot(), shops);
+            StringBuilder found = new StringBuilder();
+            for (forge.adventure.character.ShopActor s : shops) {
+                found.append(found.length() == 0 ? "" : "; ").append(s.getDescription()).append(" (")
+                        .append(s.getRewardData().size).append(" offers)");
+            }
+            check("the Crossroads has exactly one merchant with offers",
+                    shops.size() == 1 && shops.get(0).getRewardData().size >= 6, shops.size() + " shops: " + found);
+        }
+
         // Deck size: +2 life per full 10 cards over the minimum, capped at +4.
         check("a 40-card deck gets no bonus life", DeckSize.lifeBonus(deckOf(40)) == 0, null);
         check("a 50-card deck gets +2 life", DeckSize.lifeBonus(deckOf(50)) == 2, null);
         check("a 75-card deck gets +4 life (the cap)", DeckSize.lifeBonus(deckOf(75)) == 4, null);
+    }
+
+    private static boolean hasPoi(World world, String name) {
+        for (forge.adventure.pointofintrest.PointOfInterest poi : world.getAllPointOfInterest()) {
+            if (name.equals(poi.getData().name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static void findShops(com.badlogic.gdx.scenes.scene2d.Actor actor,
+                                  java.util.List<forge.adventure.character.ShopActor> out) {
+        if (actor instanceof forge.adventure.character.ShopActor shop) {
+            out.add(shop);
+        }
+        if (actor instanceof com.badlogic.gdx.scenes.scene2d.Group group) {
+            for (com.badlogic.gdx.scenes.scene2d.Actor child : group.getChildren()) {
+                findShops(child, out);
+            }
+        }
     }
 
     private static forge.deck.Deck deckOf(int cards) {
