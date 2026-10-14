@@ -10,7 +10,7 @@ Free, unofficial fan project; see [NOTICE.md](NOTICE.md). The full design is in 
 
 ## Status
 
-**Phase 2, one full region.** Phases 0 (foundation) and 1 (AI tiers) are merged. Phase 2 replaces the random world with an authored one: a fixed map, the Crossroads hub and the Plains of Serra, water walls with gated passes, fog of war lifted by watchtowers, fewer named towns with one curated merchant each (offers chosen for your deck, with a swap preview), pick 1 of 3 after won duels, and extra starting life for bigger decks. The other regions open in Phase 3.
+**Phase 3, the whole campaign.** Phases 0 and 1 are merged; Phase 2 (the authored world, fog of war, curated merchants, pick 1 of 3) is built. Phase 3 opens all five colour regions around the Crossroads hub, each with its own towns, card pool, watchtower and castle. Beating castles opens the roads to the next regions, Shandalar's main story leads through them, enemies get tougher and the minimum deck grows, and the finale waits in the hub after the fifth castle.
 
 ## How it is put together
 

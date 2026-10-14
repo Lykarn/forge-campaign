@@ -5,8 +5,6 @@ import forge.StaticData;
 import forge.adventure.player.AdventurePlayer;
 import forge.adventure.util.Current;
 import forge.adventure.util.Reward;
-import forge.adventure.world.World;
-import forge.adventure.world.WorldSave;
 import forge.campaign.world.RegionLayout;
 import forge.item.PaperCard;
 
@@ -125,18 +123,7 @@ public final class DuelRewards {
     /** The card pool of the region at the player's position (the hub's if none). */
     private static String regionPool() {
         RegionLayout layout = RegionLayout.get();
-        if (layout == null || WorldSave.getCurrentSave() == null) {
-            return "hub";
-        }
-        World world = WorldSave.getCurrentSave().getWorld();
-        AdventurePlayer player = Current.player();
-        int x = (int) (player.getWorldPosX() / world.getTileSize());
-        int mapY = world.getHeightInTiles() - 1 - (int) (player.getWorldPosY() / world.getTileSize());
-        int region = world.campaignRegionAt(x, mapY);
-        if (region < 0) {
-            return "hub";
-        }
-        String pool = layout.regions.get(region).pool();
-        return pool == null ? "hub" : pool;
+        RegionLayout.Region region = layout == null ? null : layout.regionAtPlayer();
+        return region == null || region.pool() == null ? "hub" : region.pool();
     }
 }

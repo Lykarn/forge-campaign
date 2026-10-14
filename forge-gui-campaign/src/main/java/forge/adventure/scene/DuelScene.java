@@ -524,7 +524,10 @@ public class DuelScene extends ForgeScene {
             enemyPlayer.setAvatarIndex(enemyAvatarKey + i);
             aiPlayer.setPlayer(enemyPlayer);
             aiPlayer.setTeamNumber(currentEnemy.teamNumber);
-            aiPlayer.setStartingLife(eventData != null ? eventData.eventRules.startingLife : Math.round((float) currentEnemy.life * advPlayer.getDifficulty().enemyLifeFactor));
+            // FORGE-CAMPAIGN: + the region's enemy life bonus (forge.campaign.ai.CampaignAi.regionLifeBonus).
+            aiPlayer.setStartingLife(eventData != null ? eventData.eventRules.startingLife
+                    : Math.round((float) currentEnemy.life * advPlayer.getDifficulty().enemyLifeFactor)
+                    + forge.campaign.ai.CampaignAi.regionLifeBonus());
 
             Array<EffectData> equipmentEffects = new Array<>();
             if (eventData != null && eventData.eventRules.allowsItems) {

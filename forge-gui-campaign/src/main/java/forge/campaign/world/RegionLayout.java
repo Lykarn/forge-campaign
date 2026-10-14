@@ -27,9 +27,12 @@ public final class RegionLayout {
 
     /** authored: its points of interest come from this file, not Adventure's random placement.
      *  pool: the card pool (plane/card_scores.json) its merchants and rewards draw from.
-     *  requiresFlag: a quest flag that must be set before quests may send the player here (its gate). */
+     *  requiresFlag: a quest flag that must be set before quests may send the player here (its gate).
+     *  enemyMinTier / enemyLifeBonus: soft difficulty by region: enemies fought here play at least at
+     *  this tier and start with this much extra life. */
     public record Region(String id, String name, List<String> biomes, String towerFlag, boolean revealedAtStart,
-                         boolean authored, String pool, String requiresFlag) {
+                         boolean authored, String pool, String requiresFlag, String enemyMinTier,
+                         int enemyLifeBonus) {
     }
 
     public record Poi(String name, int x, int y, String displayName) {
@@ -73,7 +76,8 @@ public final class RegionLayout {
             }
             Region region = new Region(r.getString("id"), r.getString("name", r.getString("id")), biomes,
                     r.getString("towerFlag", null), r.getBoolean("revealedAtStart", false),
-                    r.getBoolean("authored", false), r.getString("pool", null), r.getString("requiresFlag", null));
+                    r.getBoolean("authored", false), r.getString("pool", null), r.getString("requiresFlag", null),
+                    r.getString("enemyMinTier", null), r.getInt("enemyLifeBonus", 0));
             regions.add(region);
             for (String b : biomes) {
                 regionOfBiome.put(b, region);
@@ -91,6 +95,20 @@ public final class RegionLayout {
     private static JsonValue child(JsonValue v, String name) {
         JsonValue list = v.get(name);
         return list == null ? null : list.child;
+    }
+
+    /** The region at the player's position on the overworld, or null (no layout, no world, the ocean). */
+    public Region regionAtPlayer() {
+        forge.adventure.world.WorldSave save = forge.adventure.world.WorldSave.getCurrentSave();
+        forge.adventure.player.AdventurePlayer player = forge.adventure.util.Current.player();
+        if (save == null || save.getWorld() == null || player == null) {
+            return null;
+        }
+        forge.adventure.world.World world = save.getWorld();
+        int x = (int) (player.getWorldPosX() / world.getTileSize());
+        int mapY = world.getHeightInTiles() - 1 - (int) (player.getWorldPosY() / world.getTileSize());
+        int index = world.campaignRegionAt(x, mapY);
+        return index < 0 ? null : regions.get(index);
     }
 
     /** The region a biome belongs to, or null. */

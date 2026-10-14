@@ -24,10 +24,24 @@ public final class CampaignAi {
     public static LobbyPlayer createEnemyPlayer(EnemyData enemy, String explicitProfile) {
         forge.campaign.SelfCheck.maybeRun(); // only with -Dcampaign.selfcheck (scripts/test_package.py)
         EnemyTiers.Settings settings = EnemyTiers.get().settingsFor(enemy);
+        // Soft difficulty by region: later regions raise the tier floor (RegionLayout enemyMinTier).
+        forge.campaign.world.RegionLayout layout = forge.campaign.world.RegionLayout.get();
+        forge.campaign.world.RegionLayout.Region region = layout == null ? null : layout.regionAtPlayer();
+        Tier floor = region == null ? null : Tier.parse(region.enemyMinTier());
+        if (floor != null && floor.ordinal() > settings.tier().ordinal()) {
+            settings = EnemyTiers.get().settingsOf(floor);
+        }
         String profile = explicitProfile != null && !explicitProfile.isEmpty() ? explicitProfile : settings.profile();
         System.out.println("[campaign] enemy " + enemy.getName() + ": " + settings
                 + (profile.equals(settings.profile()) ? "" : ", profile " + profile + " from enemies.json"));
         return createAiPlayer(enemy.getName(), profile, settings);
+    }
+
+    /** Extra starting life for an enemy fought here (RegionLayout enemyLifeBonus). */
+    public static int regionLifeBonus() {
+        forge.campaign.world.RegionLayout layout = forge.campaign.world.RegionLayout.get();
+        forge.campaign.world.RegionLayout.Region region = layout == null ? null : layout.regionAtPlayer();
+        return region == null ? 0 : region.enemyLifeBonus();
     }
 
     /** Shared with the benchmark, so it plays exactly the AI the Adventure would. */
