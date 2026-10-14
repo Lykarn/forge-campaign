@@ -60,6 +60,11 @@ Phases, each ending at a gate: 0 Foundation (Gate A) → 1 AI tiers (Gate B) →
 - **Shops:** one merchant per town, 6–8 offers: 3 for your deck, 2 region specials, 1 wildcard, with a swap preview. Pick 1 of 3 after wins. Region card pools. Scores from a build-time pipeline (Scryfall bulk or MTGJSON, cached ≥24h) into `card_scores.json` in the plane.
 - **Deck size:** minimum 40 in the first regions, 50 after the first castle, 60 late; enemies follow the same curve. +2 starting life per full 10 cards above the minimum, up to two breakpoints, tuned by benchmark. Some encounters set their own rules (60+, singleton, commons). Town drafts stay 40-card.
 - **Setting:** Shandalar assets. **Platform:** Windows first.
+- **After Gate D (Rory, 2026-10-15): relics and legendary rewards.** Not yet scheduled; do after Gate D.
+  - **Power 9:** one pick per colour region from a secret chest or boss (pick 1 of the 9), so up to 5 by the finale. Fully playable once earned; scarcity is the limit. Lift Adventure's `restrictedCards` ban for them in our plane, but keep them out of shops and random loot.
+  - **Oracle of the Alpha** (boss): starts with the Power 9 (Moxen and Lotus on the battlefield via `startBattleWithCard`); takes the player's Power 9 into his deck **for that match only** (our `DuelScene`).
+  - **Planeswalker bosses**: start with a planeswalker in play (`startBattleWithCard`), for strong tuned decks.
+  - **Relics** (Adventure items whose `EffectData` puts our custom cards in the command zone or battlefield): start with a planeswalker; an extra land per turn; +1 non-combat damage; a named card fetched at the first upkeep; "companion" access to a card for {3} once per game; keywords added with Forge's perpetual effects.
 
 ## Useful upstream facts
 
