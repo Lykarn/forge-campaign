@@ -1,0 +1,266 @@
+{
+ "_about": "The authored world, read by forge.campaign.world.RegionLayout and our shadowed World. Coordinates are map tiles from the top-left (the minimap image divided by 4). Regions group biomes; walls of water separate regions except at passes; a pass with a gateFlag stays shut until that quest flag is set; authored regions get their points of interest from 'pois' instead of random placement.",
+ "seed": 20261014,
+ "wallWidth": 2,
+ "regions": [
+  {
+   "id": "hub",
+   "name": "The Crossroads",
+   "biomes": [
+    "waste"
+   ],
+   "revealedAtStart": true,
+   "authored": true,
+   "towerFlag": "tower_hub"
+  },
+  {
+   "id": "white",
+   "name": "Plains of Serra",
+   "biomes": [
+    "white"
+   ],
+   "authored": true,
+   "towerFlag": "tower_white"
+  },
+  {
+   "id": "blue",
+   "name": "Blue",
+   "biomes": [
+    "blue"
+   ]
+  },
+  {
+   "id": "black",
+   "name": "Black",
+   "biomes": [
+    "black"
+   ]
+  },
+  {
+   "id": "red",
+   "name": "Red",
+   "biomes": [
+    "red"
+   ]
+  },
+  {
+   "id": "green",
+   "name": "Green",
+   "biomes": [
+    "green"
+   ]
+  }
+ ],
+ "pois": [
+  {
+   "name": "Spawn",
+   "region": "hub",
+   "x": 350,
+   "y": 350
+  },
+  {
+   "name": "Crossroads",
+   "region": "hub",
+   "x": 322,
+   "y": 382,
+   "build": {
+    "kind": "town",
+    "from": "Waste Town Generic",
+    "merchant": "hub"
+   }
+  },
+  {
+   "name": "Ashford",
+   "region": "hub",
+   "x": 406,
+   "y": 432,
+   "build": {
+    "kind": "town",
+    "from": "Waste Town Identity",
+    "merchant": "hub"
+   }
+  },
+  {
+   "name": "Cinderwell",
+   "region": "hub",
+   "x": 304,
+   "y": 475,
+   "build": {
+    "kind": "town",
+    "from": "Waste Town Tribal",
+    "merchant": "hub"
+   }
+  },
+  {
+   "name": "Old Watch Fort",
+   "region": "hub",
+   "x": 403,
+   "y": 340,
+   "build": {
+    "kind": "keyfort",
+    "from": "Fort3",
+    "item": "Writ of Passage"
+   }
+  },
+  {
+   "name": "CaveC1",
+   "region": "hub",
+   "x": 345,
+   "y": 455
+  },
+  {
+   "name": "CaveKobold",
+   "region": "hub",
+   "x": 262,
+   "y": 402
+  },
+  {
+   "name": "North Gate",
+   "region": "hub",
+   "x": 360,
+   "y": 293,
+   "build": {
+    "kind": "gate",
+    "flag": "gate_white",
+    "key": "Writ of Passage",
+    "text": "A barred gate blocks the road north to the Plains of Serra. A notice reads: 'By order of the Crossroads council, this road is shut. Writs of passage are held at the Old Watch Fort.'",
+    "opened": "The guard reads the writ, nods, and lifts the bar. The road north lies open."
+   }
+  },
+  {
+   "name": "Closed Road West",
+   "region": "hub",
+   "x": 284,
+   "y": 360,
+   "build": {
+    "kind": "closed"
+   }
+  },
+  {
+   "name": "Closed Road East",
+   "region": "hub",
+   "x": 441,
+   "y": 380,
+   "build": {
+    "kind": "closed"
+   }
+  },
+  {
+   "name": "Closed Road South",
+   "region": "hub",
+   "x": 359,
+   "y": 534,
+   "build": {
+    "kind": "closed"
+   }
+  },
+  {
+   "name": "Closed Road Southeast",
+   "region": "hub",
+   "x": 388,
+   "y": 505,
+   "build": {
+    "kind": "closed"
+   }
+  },
+  {
+   "name": "Serra's Rest",
+   "region": "white",
+   "x": 330,
+   "y": 112,
+   "build": {
+    "kind": "town",
+    "from": "Plains Capital",
+    "merchant": "white"
+   }
+  },
+  {
+   "name": "Highmeadow",
+   "region": "white",
+   "x": 380,
+   "y": 240,
+   "build": {
+    "kind": "town",
+    "from": "Plains Town Generic",
+    "merchant": "white"
+   }
+  },
+  {
+   "name": "Lumen Ford",
+   "region": "white",
+   "x": 276,
+   "y": 190,
+   "build": {
+    "kind": "town",
+    "from": "Plains Town Identity",
+    "merchant": "white"
+   }
+  },
+  {
+   "name": "Brightwater",
+   "region": "white",
+   "x": 430,
+   "y": 172,
+   "build": {
+    "kind": "town",
+    "from": "Plains Town Tribal",
+    "merchant": "white"
+   }
+  },
+  {
+   "name": "Serra Watchtower",
+   "region": "white",
+   "x": 312,
+   "y": 152,
+   "build": {
+    "kind": "watchtower",
+    "region": "white"
+   }
+  },
+  {
+   "name": "Monastery",
+   "region": "white",
+   "x": 392,
+   "y": 196
+  },
+  {
+   "name": "CatLairW",
+   "region": "white",
+   "x": 256,
+   "y": 101
+  },
+  {
+   "name": "CaveW1",
+   "region": "white",
+   "x": 409,
+   "y": 226
+  },
+  {
+   "name": "NestW",
+   "region": "white",
+   "x": 311,
+   "y": 62
+  },
+  {
+   "name": "Nahiri Encampment",
+   "region": "white",
+   "x": 420,
+   "y": 100
+  },
+  {
+   "name": "White Castle",
+   "region": "white",
+   "x": 352,
+   "y": 72
+  }
+ ],
+ "passes": [
+  {
+   "id": "hub_white",
+   "x": 360,
+   "y": 285,
+   "radius": 5,
+   "gateFlag": "gate_white"
+  }
+ ]
+}

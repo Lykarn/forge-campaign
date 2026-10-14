@@ -8,7 +8,7 @@ The full research and design plan is a Claude doc Rory owns: https://claude.ai/c
 
 - Rory is hands-off. Claude designs and builds everything in the plan and makes the calls inside it.
 - Ask Rory only about: scope changes, sharing or licensing, and problems only visible on his Windows machine.
-- Work happens on `claude/...` branches, one pull request per gate. Each gate has a test script in `docs/gates/`. Rory tests, and merging the PR is his sign-off.
+- Work happens on `claude/...` branches, one branch per gate, each with a test script in `docs/gates/` that also summarises what changed. Rory tests, then merges the branch into `main` himself with GitHub Desktop: the merge is his sign-off. Hand him the branch name (and the merge order if branches are stacked); no pull-request pages or pasted descriptions, and he reports in chat. There is no `gh` CLI on his machine.
 - Rory prefers to understand the reasoning behind technical steps, so explain why, briefly.
 
 ## Hard rules
@@ -36,8 +36,8 @@ python scripts/test_package.py    # contents, Neo Forge deckcheck, Adventure sel
 
 ## Status
 
-- **Phase 0 (Foundation), PR #1: Gate A passed** (Rory, 2026-10-13). Merging PR #1 is his sign-off.
-- **Phase 1 (AI tiers), branch `claude/phase-1-ai-tiers`** (stacked on Phase 0): built, benchmarked, `test_package.py` passes (a Lathliss Boss duel through `DuelScene` with the Boss tier). Waiting on Rory's Gate B test (`docs/gates/gate-b.md`, helper `docs/gates/gate-b-fight.cmd`).
+- **Phase 0 (Foundation): Gate A passed**, merged to `main` (PR #1, 2026-10-14).
+- **Phase 1 (AI tiers): merged to `main`** (PR #2, 2026-10-14) before Rory ran the Gate B playtest (`docs/gates/gate-b.md`, helper `docs/gates/gate-b-fight.cmd`); his findings (Boss strength, turn time) land as tuning on later branches.
   - Tiers from `plane/world/enemy_tiers.json`: overrides, else boss flag, else life >= 25 = Elite (366 Grunt / 58 Elite / 40 Boss). All tiers use the Default profile; Grunt = no simulation, Elite = hybrid (safety check, ~1 veto/game), Boss = full simulation with 1.5 s per decision and 10 s per turn.
   - Benchmark (enemy win % vs Forge Default AI with `bench/decks`, midrange / aggro): Grunt 27/33, Elite 35/56 (stock 37/57), Boss 66/74 (stock 41/80). Boss slowest turn: 12 s in 9 of 10 games, worst 45 s.
   - Findings: Experimental-based Elite.ai and Boss.ai profiles made both tiers weaker (dropped). The budget can only cut between whole candidate plays (cutting inside SpellAbilityChoicesIterator breaks the search stack), hence the per-turn cap. Forge's GameCopier still throws "Couldn't map <card>" (The Monarch, some creatures) on ~0.5% of Boss decisions: caught, worth an upstream report. Bosses vs aggro are carried by 30-40 starting life: tune in Phase 2 against real player progression.

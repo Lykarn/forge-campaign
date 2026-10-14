@@ -14,6 +14,7 @@ Usage: python scripts/package.py
 """
 from __future__ import annotations
 
+import json
 import os
 import re
 import shutil
@@ -87,6 +88,45 @@ def merge_jars(ours: Path, neo: Path, dest: Path) -> int:
                     seen.add(name)
                     out.writestr(info, src.read(name))
     return shadowed
+
+
+def apply_patch(patch_file: Path, plane_file: Path, common_file: Path) -> None:
+    """Apply plane/<dir>/<name>.patch.json to Adventure's <name>.json list of named entries.
+
+    The base is the plane's own copy (from Shandalar) when it has one, else common/'s; the result
+    is written into the plane, where Adventure looks first. A patch keeps our changes to the
+    big upstream lists (items, points of interest, shops) small, and survives upstream edits to
+    every entry we do not touch. Format, every part optional:
+      {"add": [entry, ...],                       new entries (a name already there is an error)
+       "modify": {"Name": {"field": value}},       set fields on an existing entry (null removes)
+       "remove": ["Name", ...]}                    drop entries
+    """
+    base_file = plane_file if plane_file.is_file() else common_file
+    entries = json.loads(base_file.read_text(encoding="utf-8"))
+    patch = json.loads(patch_file.read_text(encoding="utf-8"))
+    by_name = {e.get("name"): e for e in entries}
+    for name in patch.get("remove", []):
+        if name not in by_name:
+            sys.exit(f"{patch_file.name}: cannot remove {name!r}: not in {base_file.name}")
+        entries.remove(by_name.pop(name))
+    for name, fields in patch.get("modify", {}).items():
+        if name not in by_name:
+            sys.exit(f"{patch_file.name}: cannot modify {name!r}: not in {base_file.name}")
+        for key, value in fields.items():
+            if value is None:
+                by_name[name].pop(key, None)
+            else:
+                by_name[name][key] = value
+    for entry in patch.get("add", []):
+        if entry.get("name") in by_name:
+            sys.exit(f"{patch_file.name}: {entry.get('name')!r} is already in {base_file.name}")
+        entries.append(entry)
+        by_name[entry.get("name")] = entry
+    plane_file.parent.mkdir(parents=True, exist_ok=True)
+    plane_file.write_text(json.dumps(entries, indent=1, ensure_ascii=False), encoding="utf-8")
+    print(f"  {plane_file.relative_to(plane_file.parents[2])}: {base_file.parent.parent.name}'s with "
+          f"{len(patch.get('add', []))} added, {len(patch.get('modify', {}))} changed, "
+          f"{len(patch.get('remove', []))} removed")
 
 
 def zip_cardsfolder(cardsfolder: Path) -> int:
@@ -202,14 +242,21 @@ def main() -> int:
     plane = res / "adventure" / PLANE_NAME
     shutil.copytree(res / "adventure" / BASE_PLANE, plane)
     overlay = ROOT / "plane"
-    files = 0
-    for src in overlay.rglob("*"):
-        if src.is_file():
-            dest = plane / src.relative_to(overlay)
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, dest)
-            files += 1
-    print(f"  res/adventure/{PLANE_NAME}: a copy of {BASE_PLANE} with {files} overlay files")
+    files = patches = 0
+    for src in sorted(overlay.rglob("*")):
+        if not src.is_file():
+            continue
+        rel = src.relative_to(overlay)
+        if src.name.endswith(".patch.json"):
+            apply_patch(src, plane / rel.with_name(src.name.replace(".patch.json", ".json")),
+                        res / "adventure" / "common" / rel.with_name(src.name.replace(".patch.json", ".json")))
+            patches += 1
+            continue
+        dest = plane / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dest)
+        files += 1
+    print(f"  res/adventure/{PLANE_NAME}: a copy of {BASE_PLANE} with {files} overlay files and {patches} patches")
     print(f"  cardsfolder.zip: {zip_cardsfolder(res / 'cardsfolder')} scripts")
 
     step("4. Licence, notices and source pointers")

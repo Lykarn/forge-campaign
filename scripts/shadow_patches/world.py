@@ -1,0 +1,269 @@
+"""Re-apply the FORGE-CAMPAIGN changes to a fresh copy of Forge's World.java (for rebases).
+
+Copy the upstream original over forge-gui-campaign/src/main/java/forge/adventure/world/World.java,
+run this, then update its hash in shadows.tsv. Each replacement asserts its anchor still exists.
+"""
+from pathlib import Path
+
+p = Path(__file__).resolve().parents[2] / "forge-gui-campaign/src/main/java/forge/adventure/world/World.java"
+t = p.read_text(encoding="utf-8").replace("\r\n", "\n")
+
+HEADER = """// SHADOW COPY of forge-gui-mobile/src/forge/adventure/world/World.java (Card-Forge/forge).
+// It sits ahead of Forge's original on the classpath; the original is never edited.
+// Changes are marked FORGE-CAMPAIGN. If upstream changes the original, scripts/check_shadows.py
+// fails: re-copy the new original and re-apply the marked blocks.
+"""
+
+def rep(old, new):
+    global t
+    assert t.count(old) == 1, old[:80]
+    t = t.replace(old, new)
+
+# 1. Fixed seed from the layout.
+rep("""            if (seed == 0) {
+                seed = random.nextLong();
+            }
+            this.seed = seed;""",
+"""            // FORGE-CAMPAIGN: an authored layout fixes the seed, so the terrain is the same in every
+            // game and the layout's positions stay valid (forge.campaign.world.RegionLayout).
+            forge.campaign.world.RegionLayout layout = forge.campaign.world.RegionLayout.get();
+            if (layout != null && layout.seed != 0) {
+                seed = layout.seed;
+            }
+            // FORGE-CAMPAIGN end
+            if (seed == 0) {
+                seed = random.nextLong();
+            }
+            this.seed = seed;""")
+
+# 2. No random points of interest in authored regions.
+rep("""                    biomeIndex2++;
+                    for (PointOfInterestData poi : biome.getPointsOfInterest()) {""",
+"""                    biomeIndex2++;
+                    // FORGE-CAMPAIGN: authored regions get their points of interest from the layout.
+                    if (layout != null && layout.isAuthored(biome.name)) {
+                        continue;
+                    }
+                    // FORGE-CAMPAIGN end
+                    for (PointOfInterestData poi : biome.getPointsOfInterest()) {""")
+
+# 3. The layout's points of interest at fixed tiles.
+rep("""            currentTime[0] = measureGenerationTime("poi placement", currentTime[0]);""",
+"""            // FORGE-CAMPAIGN: points of interest at fixed tiles from the layout (map tiles from the top).
+            if (layout != null) {
+                for (forge.campaign.world.RegionLayout.Poi p : layout.pois) {
+                    PointOfInterestData poi = PointOfInterestData.getPointOfInterest(p.name());
+                    if (poi == null) {
+                        System.err.println("[campaign] layout: no point of interest named " + p.name());
+                        continue;
+                    }
+                    int tileY = height - p.y();
+                    float x = p.x() * (float) data.tileSize;
+                    float y = tileY * (float) data.tileSize;
+                    PointOfInterest newPoint = new PointOfInterest(poi, new Vector2(x, y), random);
+                    clearTerrain(p.x(), tileY, 3);
+                    mapPoiIds.add(newPoint);
+                    TextureAtlas.AtlasRegion marker = mapMarker.findRegion(poi.type);
+                    if (marker != null) {
+                        int xInPixels = p.x() * data.miniMapTileSize - marker.getRegionWidth() / 2;
+                        int yInPixels = p.y() * data.miniMapTileSize - marker.getRegionHeight() / 2;
+                        drawPixmapLater(mapMarkerPixmap, marker.getRegionX(), marker.getRegionY(),
+                                marker.getRegionWidth(), marker.getRegionHeight(), xInPixels, yInPixels,
+                                marker.getRegionWidth(), marker.getRegionHeight());
+                    }
+                    if (p.displayName() != null) {
+                        newPoint.setDisplayName(p.displayName());
+                    } else if (poi.displayName != null && !poi.displayName.isEmpty()) {
+                        newPoint.setDisplayName(poi.getDisplayName());
+                    }
+                    if (poi.type != null && (poi.type.equals("town") || poi.type.equals("capital"))) {
+                        towns.add(newPoint);
+                    } else {
+                        notTowns.add(newPoint);
+                    }
+                }
+            }
+            // FORGE-CAMPAIGN end
+            currentTime[0] = measureGenerationTime("poi placement", currentTime[0]);""")
+
+# 4. Walls between regions, after roads (so no road cuts through) and before the minimap.
+rep("""            currentTime[0] = measureGenerationTime("roads", currentTime[0]);
+""",
+"""            currentTime[0] = measureGenerationTime("roads", currentTime[0]);
+            // FORGE-CAMPAIGN: water walls between regions, opened at passes.
+            if (layout != null) {
+                applyRegionWalls(layout);
+                currentTime[0] = measureGenerationTime("region walls", currentTime[0]);
+            }
+            // FORGE-CAMPAIGN end
+""")
+
+# 5. Debug dump of the generated map.
+rep("""            System.out.println("Generating world took :\\t\\t" + ((System.currentTimeMillis() - startTime) / 1000f) + " s");""",
+"""            System.out.println("Generating world took :\\t\\t" + ((System.currentTimeMillis() - startTime) / 1000f) + " s");
+            // FORGE-CAMPAIGN: -Dcampaign.dumpWorld=<file.png> saves the minimap, to author the layout.
+            String dump = System.getProperty("campaign.dumpWorld");
+            if (dump != null && !dump.isEmpty()) {
+                com.badlogic.gdx.graphics.PixmapIO.writePNG(new FileHandle(dump), biomeImage);
+                System.out.println("[campaign] world map written to " + dump + " (seed " + this.seed + ")");
+            }
+            // FORGE-CAMPAIGN end""")
+
+# 6. Gates: pass tiles that block until their quest flag is set.
+rep("""    public boolean isColliding(int x, int y) {
+        try {
+            return (terrainMap[x][height - y - 1] & collisionBit) != 0;""",
+"""    public boolean isColliding(int x, int y) {
+        try {
+            // FORGE-CAMPAIGN: a gated pass blocks until its quest flag is set.
+            return (terrainMap[x][height - y - 1] & collisionBit) != 0 || gateBlocks(x, height - y - 1);""")
+
+# 7. The helpers, before generateNew.
+rep("""    public boolean generateNew(long seed) {""",
+"""    // FORGE-CAMPAIGN: helpers for the authored layout (forge.campaign.world.RegionLayout).
+    /** True if map tile (x, y from the top) lies in a pass whose gate is shut. */
+    private boolean gateBlocks(int x, int mapY) {
+        forge.campaign.world.RegionLayout layout = forge.campaign.world.RegionLayout.get();
+        if (layout == null) {
+            return false;
+        }
+        for (forge.campaign.world.RegionLayout.Pass pass : layout.passes) {
+            if (pass.gateFlag() == null && !pass.closed()) {
+                continue;
+            }
+            int dx = x - pass.x();
+            int dy = mapY - pass.y();
+            if (dx * dx + dy * dy > pass.radius() * pass.radius()) {
+                continue;
+            }
+            if (pass.closed()) {
+                return true;
+            }
+            forge.adventure.player.AdventurePlayer player = forge.adventure.util.Current.player();
+            return player == null || player.getQuestFlag(pass.gateFlag()) < 1;
+        }
+        return false;
+    }
+
+    /**
+     * Water walls along every border between two regions of the layout, wallWidth tiles each
+     * side, except inside a pass, which becomes road. Cells outside any region (the ocean) are
+     * left alone, so the coast stays as it is.
+     */
+    private void applyRegionWalls(forge.campaign.world.RegionLayout layout) {
+        List<BiomeData> biomes = data.GetBiomes();
+        long roadBit = 1L << biomes.size();
+        int ocean = 0;
+        for (int i = 0; i < biomes.size(); i++) {
+            if (biomes.get(i).collision && biomes.get(i).invertHeight) {
+                ocean = i;
+                break;
+            }
+        }
+        List<forge.campaign.world.RegionLayout.Region> regions = layout.regions;
+        int[][] region = new int[width][height];
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                long bits = biomeMap[x][y] & ~roadBit;
+                region[x][y] = -1;
+                if (bits == 0) {
+                    continue;
+                }
+                forge.campaign.world.RegionLayout.Region r = layout.regionOf(biomes.get(highestBiome(bits)).name);
+                region[x][y] = r == null ? -1 : regions.indexOf(r);
+            }
+        }
+        int w = layout.wallWidth;
+        boolean[][] wall = new boolean[width][height];
+        for (int x = 0; x < width - 1; x++) {
+            for (int y = 0; y < height - 1; y++) {
+                int r = region[x][y];
+                if (r < 0) {
+                    continue;
+                }
+                int right = region[x + 1][y];
+                int down = region[x][y + 1];
+                if ((right >= 0 && right != r) || (down >= 0 && down != r)) {
+                    for (int wx = Math.max(0, x - w); wx <= Math.min(width - 1, x + w); wx++) {
+                        for (int wy = Math.max(0, y - w); wy <= Math.min(height - 1, y + w); wy++) {
+                            wall[wx][wy] = true;
+                        }
+                    }
+                }
+            }
+        }
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                if (wall[x][y] && !inPass(layout, x, y)) {
+                    biomeMap[x][y] = 1L << ocean;
+                    terrainMap[x][y] = collisionBit;
+                }
+            }
+        }
+        dumpRegions(layout, region, wall);
+        // Where each authored point of interest landed: a typo'd tile shows up here, not in play.
+        for (forge.campaign.world.RegionLayout.Poi p : layout.pois) {
+            if (p.x() < 0 || p.y() < 0 || p.x() >= width || p.y() >= height) {
+                System.err.println("[campaign] layout: " + p.name() + " is off the map");
+                continue;
+            }
+            int r = region[p.x()][p.y()];
+            String where = wall[p.x()][p.y()] && !inPass(layout, p.x(), p.y()) ? "IN A WALL"
+                    : r < 0 ? "IN THE OCEAN" : regions.get(r).id();
+            System.out.println("[campaign] layout: " + p.name() + " at (" + p.x() + ", " + p.y() + "): " + where);
+        }
+        for (forge.campaign.world.RegionLayout.Pass pass : layout.passes) {
+            int r = pass.radius();
+            for (int x = Math.max(0, pass.x() - r); x <= Math.min(width - 1, pass.x() + r); x++) {
+                for (int y = Math.max(0, pass.y() - r); y <= Math.min(height - 1, pass.y() + r); y++) {
+                    if (inPass(layout, x, y) && biomeMap[x][y] != 0) {
+                        biomeMap[x][y] = (biomeMap[x][y] & ~(1L << ocean)) | roadBit;
+                        terrainMap[x][y] = 0;
+                    }
+                }
+            }
+        }
+    }
+
+    /** With -Dcampaign.dumpWorld, also a flat map: regions, walls, passes, authored points of interest. */
+    private void dumpRegions(forge.campaign.world.RegionLayout layout, int[][] region, boolean[][] wall) {
+        String dump = System.getProperty("campaign.dumpWorld");
+        if (dump == null || dump.isEmpty()) {
+            return;
+        }
+        int[] colours = {0xb0b0b0ff, 0xf0e6b0ff, 0x80c8f0ff, 0x505050ff, 0xe07050ff, 0x70c050ff, 0xc090e0ff, 0x90e0c0ff};
+        Pixmap map = new Pixmap(width, height, Pixmap.Format.RGBA8888);
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                int c = region[x][y] < 0 ? 0x2060a0ff : colours[region[x][y] % colours.length];
+                if (wall[x][y]) {
+                    c = inPass(layout, x, y) ? 0xffe000ff : 0x103060ff;
+                }
+                map.drawPixel(x, y, c);
+            }
+        }
+        for (forge.campaign.world.RegionLayout.Poi p : layout.pois) {
+            map.setColor(1, 0, 0, 1);
+            map.fillCircle(p.x(), p.y(), 3);
+        }
+        String file = dump.replace(".png", "_regions.png");
+        com.badlogic.gdx.graphics.PixmapIO.writePNG(new FileHandle(file), map);
+        map.dispose();
+    }
+
+    private static boolean inPass(forge.campaign.world.RegionLayout layout, int x, int mapY) {
+        for (forge.campaign.world.RegionLayout.Pass pass : layout.passes) {
+            int dx = x - pass.x();
+            int dy = mapY - pass.y();
+            if (dx * dx + dy * dy <= pass.radius() * pass.radius()) {
+                return true;
+            }
+        }
+        return false;
+    }
+    // FORGE-CAMPAIGN end
+
+    public boolean generateNew(long seed) {""")
+
+p.write_text(HEADER + t, encoding="utf-8", newline="\n")
+print("World.java patched")

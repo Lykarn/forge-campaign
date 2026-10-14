@@ -1,0 +1,6 @@
+{
+  "_about": "Card pools for merchants and rewards, read by scripts/card_scores.py (which writes plane/card_scores.json). Each pool draws from one or two sets (Forge edition codes), optionally limited to rarities (C, U, R, M), minus any names under exclude.",
+  "pools": {
+    "hub": { "name": "Crossroads", "sets": ["M10"], "rarities": ["C", "U", "R", "M"] }
+  }
+}

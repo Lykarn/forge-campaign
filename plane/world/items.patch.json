@@ -1,0 +1,37 @@
+{
+ "_about": "Merged by scripts/package.py into Adventure's world/items.json (add / modify / remove by name).",
+ "add": [
+  {
+   "name": "Writ of Passage",
+   "iconName": "WhiteKey",
+   "questItem": true,
+   "description": "A council writ that opens the Crossroads' north gate to the Plains of Serra."
+  }
+ ],
+ "modify": {
+  "Blue rune": {
+   "usableOnWorldMap": false,
+   "commandOnUse": null,
+   "description": "The way to the island lands is closed for now."
+  },
+  "Black rune": {
+   "usableOnWorldMap": false,
+   "commandOnUse": null,
+   "description": "The way to the swamp lands is closed for now."
+  },
+  "Red rune": {
+   "usableOnWorldMap": false,
+   "commandOnUse": null,
+   "description": "The way to the mountain lands is closed for now."
+  },
+  "Green rune": {
+   "usableOnWorldMap": false,
+   "commandOnUse": null,
+   "description": "The way to the forest lands is closed for now."
+  },
+  "Blue Staff": {
+   "commandOnUse": "sprint 10",
+   "description": "Doubles your speed for some time (flight would skip the region gates)"
+  }
+ }
+}
