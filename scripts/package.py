@@ -184,9 +184,21 @@ def main() -> int:
         print(f"  {cfg.relative_to(app)}:")
         print("    " + cfg.read_text(encoding="utf-8", errors="replace").replace("\n", "\n    "))
 
-    step("3. Forge's resources, and our plane")
+    step("3. Forge's resources, our added resources, and our plane")
     res = app / "res"
     shutil.copytree(FORGE / "forge-gui" / "res", res)
+    # res/ in this repo (when present) only ADDS files, such as a new AI profile; never replace
+    # one of Forge's, which would be an upstream edit by another name.
+    added = 0
+    for src in (ROOT / "res").rglob("*") if (ROOT / "res").is_dir() else []:
+        if src.is_file():
+            dest = res / src.relative_to(ROOT / "res")
+            if dest.exists():
+                sys.exit(f"res/{dest.relative_to(res).as_posix()} already exists in Forge: res/ may only add files")
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dest)
+            added += 1
+    print(f"  res/: Forge's, plus {added} files of ours")
     plane = res / "adventure" / PLANE_NAME
     shutil.copytree(res / "adventure" / BASE_PLANE, plane)
     overlay = ROOT / "plane"

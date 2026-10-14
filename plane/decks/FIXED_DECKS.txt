@@ -1,0 +1,156 @@
+# Enemy decks rewritten by scripts/fix_decks.py: AI-unusable cards swapped for playable ones.
+# Deck paths in this file are relative to plane/. Do not edit by hand: edit the deck and add it
+# to HAND_EDITED.txt instead.
+
+decks/boss/emrakul.dck (Boss): Emrakul, the Promised End -> Void Winnower; Emrakul, the Promised End -> Void Winnower; Titan's Presence -> Forsaken Monument; Titan's Presence -> Sol Ring; Titan's Presence -> Sol Ring
+decks/boss/ghalta.dck (Boss): Wild Growth -> The Great Henge; Wild Growth -> The Great Henge; Wild Growth -> Return to Nature; Wild Growth -> Return to Nature
+decks/boss/griselbrand.dck (Boss): Cabal Coffers -> Swamp; Cabal Coffers -> Swamp; Cabal Coffers -> Swamp; Ob Nixilis of the Black Oath -> Harvester of Souls; Ob Nixilis of the Black Oath -> Stronghold Overseer
+decks/miniboss/angel_rainbow_encounter.dck (Boss): Razia, Boros Archangel -> Stoic Angel; Volrath's Stronghold -> Island
+decks/miniboss/bluedragon.dck (Boss): Swan Song -> Fact or Fiction; Swan Song -> Supplant Form
+decks/miniboss/copperhostbrutalizer.dck (Grunt): Blighted Burgeoning -> Vat of Rebirth; Blighted Burgeoning -> Vat of Rebirth
+decks/miniboss/darkenchanter.dck (Boss): Oubliette -> Yavimaya Enchantress; Oubliette -> Yavimaya Enchantress; Oubliette -> Trial of Ambition; Oubliette -> Cartouche of Ambition; Wild Growth -> Swamp; Wild Growth -> Forest; Wild Growth -> Swamp; Wild Growth -> Forest
+decks/miniboss/frogboss.dck (Boss): Polymorphist's Jest -> Yargle, Glutton of Urborg; Polymorphist's Jest -> Yargle, Glutton of Urborg; Polymorphist's Jest -> Yargle and Multani; Polymorphist's Jest -> Yargle and Multani
+decks/miniboss/garruk.dck (Boss): Nature's Chosen -> Return to Nature
+decks/miniboss/jace.dck (Boss): Jace, the Living Guildpact -> Grasping Current; Jace, the Living Guildpact -> Jace, the Perfected Mind
+decks/miniboss/kiora.dck (Boss): Crush of Tentacles -> Kiora, the Crashing Wave; Kiora's Follower -> Sea-Dasher Octopus; Kiora's Follower -> Xolatoyac, the Smiling Flood; Kiora's Follower -> Xolatoyac, the Smiling Flood; Kiora's Follower -> Troyan, Gutsy Explorer
+decks/miniboss/nahiri.dck (Boss): Embercleave -> Swords to Plowshares; Nahiri, the Lithomancer -> Sword of Body and Mind
+decks/miniboss/ooze_boss.dck (Boss): Beast Within -> Murder; Beast Within -> Murder; Beast Within -> Scavenging Ooze
+decks/miniboss/scarecrowcaptain.dck (Boss): Death Cloud -> Unearth; Death Cloud -> Feed the Swarm; Death Cloud -> Sol Ring
+decks/miniboss/slimefoot.dck (Boss): Ghave, Guru of Spores -> Sporemound; Ghave, Guru of Spores -> Sporecrown Thallid; Nemata, Grove Guardian -> Akawalli, the Seething Tower; Nemata, Grove Guardian -> Verdeloth the Ancient
+decks/miniboss/sliver_queen.dck (Boss): Pact of the Serpent -> River's Rebuke; Pact of the Serpent -> Reflections of Littjara; Patriarch's Bidding -> Kindred Discovery; Patriarch's Bidding -> Hive Stirrings
+decks/miniboss/slobad.dck (Boss): Goblin Welder -> Sokenzan Smelter; Goblin Welder -> Sokenzan Smelter; Scrap Mastery -> Mind Stone; Slobad, Goblin Tinkerer -> Slobad, Iron Goblin; Slobad, Goblin Tinkerer -> Slobad, Iron Goblin
+decks/miniboss/teferi_boss.dck (Boss): Swan Song -> Time Wipe; Swan Song -> Time Wipe; Swan Song -> Teferi's Protection; Swan Song -> Teferi's Protection
+decks/miniboss/valyx.dck (Boss): Phyrexian Reclamation -> Sign in Blood; Phyrexian Reclamation -> Murder
+decks/miniboss/walter.dck (Boss): Righteousness -> Wrath of God; Righteousness -> Wrath of God
+decks/miniboss/zedruubis.dck (Boss): Chromeshell Crab -> Lord Xander, the Collector; Chromeshell Crab -> Lord Xander, the Collector; Jinxed Idol -> Sphere of Safety; Jinxed Idol -> Ghostly Prison; Jinxed Idol -> Ghostly Prison; Jinxed Idol -> Confiscate; Swan Song -> Confiscate; Swan Song -> Akroan Horse; Zedruu the Greathearted -> Akroan Horse; Zedruu the Greathearted -> Mind Flayer, the Shadow
+decks/standard/aerie_guard.dck (Grunt): Swan Song -> Path to Exile; Swan Song -> Path to Exile
+decks/standard/archaeologist.dck (Grunt): Dispatch -> Tempered Steel; Dispatch -> Tempered Steel
+decks/standard/archivist.dck (Grunt): Jace's Archivist -> Geist of the Archives; Jace's Archivist -> Archivist; Jace's Archivist -> Automatic Librarian; Jace's Archivist -> Automatic Librarian; Ormos, Archive Keeper -> Preston, the Vanisher; Ormos, Archive Keeper -> Preston, the Vanisher
+decks/standard/armored_knight.dck (Elite): Embercleave -> Valiant Endeavor
+decks/standard/badger.dck (Grunt): Beast Within -> Nature's Lore; Beast Within -> Harrow; Beast Within -> Forest; Beast Within -> Forest
+decks/standard/banditarcher_blink.dck (Grunt): Flicker of Fate -> Electropotence; Flicker of Fate -> Electropotence; Flickerform -> Durable Handicraft; Flickerform -> Durable Handicraft
+decks/standard/banditleader_bolas.dck (Elite): Disciple of Bolas -> Hypersonic Dragon; Disciple of Bolas -> Hypersonic Dragon; Disciple of Bolas -> Flayer of the Hatebound; Grimoire of the Dead -> Tormenting Voice
+decks/standard/banditslingshot_flyers.dck (Grunt): Bloodshot Cyclops -> Wall of Razors; Bloodshot Cyclops -> Wall of Razors; Unerring Sling -> Volley of Boulders; Unerring Sling -> Volley of Boulders
+decks/standard/blackwizard_easy_artifact.dck (Grunt): Heap Doll -> Snapsail Glider; Heap Doll -> Crypt Rats; Phyrexia's Core -> Swamp; Phyrexia's Core -> Swamp; Phyrexia's Core -> Swamp; Voodoo Doll -> Executioner's Capsule
+decks/standard/blackwizard_easy_bog.dck (Grunt): Urborg -> Swamp
+decks/standard/blackwizard_easy_humans.dck (Grunt): Cruel Sadist -> Nekrataal; Cruel Sadist -> Pain Seer
+decks/standard/blackwizard_easy_pile.dck (Grunt): Innocent Blood -> Unholy Strength; Innocent Blood -> Unholy Strength; Nightscape Apprentice -> Virus Beetle; Nightscape Apprentice -> Virus Beetle; Skeletal Scrying -> Stir the Grave
+decks/standard/blackwizard_hard_knight.dck (Grunt): Crypt of Agadeem -> Swamp; Crypt of Agadeem -> Swamp; Death Pit Offering -> Vraska's Contempt; Dregs of Sorrow -> Vraska's Contempt; Dregs of Sorrow -> Vampiric Embrace; Volrath's Stronghold -> Swamp
+decks/standard/blackwizard_hard_sacrifice.dck (Grunt): Malevolent Awakening -> Go for the Throat; Stronghold Assassin -> Nezumi Bone-Reader
+decks/standard/blackwizard_medium_demonicpact.dck (Grunt): Abyssal Persecutor -> Blood Speaker; Abyssal Persecutor -> Spawn of Mayhem; Volrath's Stronghold -> Swamp
+decks/standard/bloodiedskeleton.dck (Grunt): Wake the Dead -> Grafted Exoskeleton; Wake the Dead -> Grafted Exoskeleton
+decks/standard/bluewizard_apprentice_1.dck (Grunt): Cache Raiders -> Separatist Voidmage; Martyr of Frost -> Merchant of Secrets
+decks/standard/bluewizard_apprentice_2.dck (Grunt): Elite Arcanist -> Omen Hawker; Long-Term Plans -> Pore Over the Pages; Long-Term Plans -> Opt
+decks/standard/bluewizard_easy_artifact.dck (Grunt): Brass Squire -> Towashi Guide-Bot; Brass Squire -> Towashi Guide-Bot
+decks/standard/bluewizard_medium_dragons.dck (Grunt): Quicksilver Dragon -> Phyrexian Metamorph
+decks/standard/bonegolem.dck (Grunt): Altar of the Wretched -> Corpses of the Lost; Altar of the Wretched -> Case of the Stashed Skeleton; Champion of Stray Souls -> Hunted Bonebrute
+decks/standard/br_elemental.dck (Elite): Ashling the Pilgrim -> Brighthearth Banneret; Incandescent Soulstoke -> Spitemare; Incandescent Soulstoke -> Spitemare; Incandescent Soulstoke -> Nyxathid; Incandescent Soulstoke -> Nyxathid
+decks/standard/bull.dck (Grunt): Rimehorn Aurochs -> Zodiac Ox; Rimehorn Aurochs -> Yoked Ox; Rimehorn Aurochs -> Giant Ox; Rimehorn Aurochs -> Earth-Origin Yak
+decks/standard/cat_greenblack.dck (Grunt): Echoing Decay -> Song of Freyalise; Echoing Decay -> Deathreap Ritual; Echoing Decay -> Deathreap Ritual; Echoing Decay -> Tribute to Horobi; Waiting in the Weeds -> Song of Freyalise; Waiting in the Weeds -> Deathreap Ritual; Waiting in the Weeds -> Swamp
+decks/standard/cephalid.dck (Elite): Callous Oppressor -> Shield Broker; Cephalid Broker -> Cephalid Constable
+decks/standard/challenger_20_allied_fires.dck (Grunt): Drawn from Dreams -> Sarkhan the Masterless; Drawn from Dreams -> Deafening Clarion; Interplanar Beacon -> Mountain; Interplanar Beacon -> Plains; Interplanar Beacon -> Island; Interplanar Beacon -> Mountain
+decks/standard/challenger_20_cavalcade_charge.dck (Grunt): Embercleave -> Chandra, Acolyte of Flame
+decks/standard/challenger_21_mono-red_aggro.dck (Grunt): Embercleave -> Shatterskull Smashing
+decks/standard/chandra1.dck (Grunt): Chandra Ablaze -> Skewer the Critics; Chandra Ablaze -> Skewer the Critics; Chandra, Pyromaster -> Shock; Chandra, Pyromaster -> Shock
+decks/standard/chandra2.dck (Elite): Chandra Ablaze -> Skewer the Critics; Chandra, Pyromaster -> Skewer the Critics
+decks/standard/chandra3.dck (Grunt): Chandra, Pyromaster -> Skullcrack; Chandra, Pyromaster -> Skullcrack
+decks/standard/chandra4.dck (Grunt): Chandra, Pyromaster -> Chandra, Torch of Defiance; Chandra, Pyromaster -> Chandra, Torch of Defiance
+decks/standard/chandra5.dck (Elite): Chandra, Pyromaster -> Chandra's Fury
+decks/standard/chandra6.dck (Grunt): Chandra, Pyromaster -> Chandra, Torch of Defiance; Chandra, Pyromaster -> Chandra, Torch of Defiance
+decks/standard/cloaker.dck (Grunt): Specter's Shriek -> Fatal Push; Specter's Shriek -> Liliana's Specter; Specter's Shriek -> Scythe Specter; Specter's Shriek -> Scythe Specter
+decks/standard/crocodile.dck (Grunt): Hunter's Insight -> Wild Crocodile
+decks/standard/dark_spirit.dck (Grunt): Devouring Greed -> Consume Spirit; Devouring Greed -> Consume Spirit; Iname, Death Aspect -> Yargle, Glutton of Urborg
+decks/standard/demon_demonicpact.dck (Elite): Volrath's Stronghold -> Swamp
+decks/standard/demon_hellbent.dck (Elite): Bloodshot Cyclops -> Hellrider; Bloodshot Cyclops -> Hellrider
+decks/standard/demon_humansac.dck (Elite): Cabal Patriarch -> Witch of the Moors; Diabolic Intent -> Tendrils of Corruption; Diabolic Intent -> Heraldic Banner; Disciple of Bolas -> Village Cannibals; Disciple of Bolas -> Zulaport Cutthroat; Disciple of Bolas -> Zulaport Cutthroat; Skirsdag Flayer -> Ophiomancer; Skirsdag Flayer -> Ophiomancer; Volrath's Stronghold -> Swamp; Volrath's Stronghold -> Swamp
+decks/standard/demon_swamp.dck (Elite): Bloodshot Cyclops -> Avatar of Discord; Bloodshot Cyclops -> Tibalt's Rager; Eater of Hope -> Tibalt's Rager; Molten Slagheap -> Mountain; Molten Slagheap -> Swamp; Molten Slagheap -> Mountain; Zombie Infestation -> Dash Hopes; Zombie Infestation -> Bedevil
+decks/standard/demoncaller.dck (Grunt): Ob Nixilis of the Black Oath -> Worn Powerstone; Wake of Destruction -> Worn Powerstone
+decks/standard/demonshard.dck (Grunt): Decree of Pain -> Lightning Bolt; Decree of Pain -> Lightning Bolt; Decree of Pain -> Exalted Flamer of Tzeentch; Decree of Pain -> Be'lakor, the Dark Master
+decks/standard/dinosaur_rw_enrage.dck (Grunt): Marauding Raptor -> Rampaging Raptor; Marauding Raptor -> Otepec Huntmaster; Marauding Raptor -> Trapjaw Tyrant; Marauding Raptor -> Trapjaw Tyrant
+decks/standard/drake_ur_beginner.dck (Grunt): Faithless Looting -> Vision Skeins; Faithless Looting -> Train of Thought
+decks/standard/drake_ur_mid.dck (Grunt): Faithless Looting -> Compulsive Research; Faithless Looting -> Talrand, Sky Summoner; Faithless Looting -> Crackling Drake; Faithless Looting -> Izzet Charm
+decks/standard/dwarf_whitecastle.dck (Grunt): Dispatch -> Thousand Moons Smithy; Dispatch -> Thousand Moons Smithy; Dispatch -> Thopter Shop; Dispatch -> Thopter Shop
+decks/standard/dwarfdemolisher.dck (Grunt): Dwarven Ruins -> Mountain; Dwarven Ruins -> Mountain; Wake of Destruction -> Lava Flow
+decks/standard/eldrazilarge.dck (Elite): Emrakul, the Promised End -> Void Winnower
+decks/standard/enchantress.dck (Grunt): Darksteel Mutation -> Mantle of the Ancients; Darksteel Mutation -> Mantle of the Ancients; Darksteel Mutation -> Swords to Plowshares; Darksteel Mutation -> Mantle of the Ancients
+decks/standard/esper_artificer.dck (Elite): Dispatch -> Tempered Steel; Dispatch -> Smogbelcher Chariot; Dispatch -> Thran Dynamo; Dispatch -> Thran Dynamo
+decks/standard/evilgoblin.dck (Grunt): Grenzo, Dungeon Warden -> Murderous Redcap; Grenzo, Dungeon Warden -> Zoyowa Lava-Tongue
+decks/standard/fanaticpriest.dck (Grunt): Abundance -> Warstorm Surge; Abundance -> Warstorm Surge; Flicker of Fate -> Electropotence; Flicker of Fate -> Electropotence; Flickerform -> Durable Handicraft; Flickerform -> Durable Handicraft
+decks/standard/flesh_horror.dck (Elite): Flesh Reaver -> Fleshwrither; Flesh Reaver -> Defiler of Flesh; Flesh Reaver -> Abyssal Gatekeeper
+decks/standard/furnacetormentor.dck (Grunt): Blighted Burgeoning -> Thrill of Possibility; Blighted Burgeoning -> Thrill of Possibility
+decks/standard/ghost_blue.dck (Grunt): Spectral Adversary -> Phantom Carriage
+decks/standard/ghoul.dck (Grunt): Tainted Adversary -> Seagraf Skaab
+decks/standard/ghoulgravecrawler.dck (Grunt): Ghoulcaller Gisa -> Zombie Master
+decks/standard/giantpanda.dck (Grunt): Wild Growth -> Sixth Sense; Wild Growth -> Cartouche of Strength; Wild Growth -> Rancor; Wild Growth -> Rancor
+decks/standard/giralfgisa.dck (Grunt): Crypt of Agadeem -> Island; Crypt of Agadeem -> Swamp; Ghoulcaller Gisa -> Gisa, Glorious Resurrector
+decks/standard/gladiator.dck (Grunt): Embercleave -> Koth, Fire of Resistance
+decks/standard/goblin_fanatic.dck (Grunt): Vexing Shusher -> Jund Hackblade; Vexing Shusher -> Grumgully, the Generous
+decks/standard/gravetitan.dck (Grunt): Dakmor Salvage -> Swamp; Dakmor Salvage -> Swamp
+decks/standard/greenwizard_easy_vanilla.dck (Grunt): Momentous Fall -> Call of the Herd
+decks/standard/greenwizard_hard_sapproling.dck (Grunt): Marshal's Anthem -> Sprout Swarm; Marshal's Anthem -> Rebuff the Wicked; Nemata, Grove Guardian -> Sporesower Thallid
+decks/standard/greenwizard_medium_trample.dck (Grunt): Primal Adversary -> Gnarlid Colony
+decks/standard/hedgehog.dck (Grunt): Myojin of Life's Web -> Vivien's Jaguar
+decks/standard/hellion.dck (Grunt): Caldera Hellion -> Plated Geopede
+decks/standard/homarid.dck (Grunt): Homarid Spawning Bed -> Unsummon; Homarid Spawning Bed -> Unsummon
+decks/standard/jodah.dck (Elite): Ertai, the Corrupted -> Ratadrabik of Urborg; Garth One-Eye -> Ratadrabik of Urborg; Garth One-Eye -> Kess, Dissident Mage
+decks/standard/kobold.dck (Grunt): Rakdos Charm -> Terminate; Rakdos Charm -> Terminate
+decks/standard/koboldtrapmaster.dck (Grunt): Inferno Trap -> Springjaw Trap; Inferno Trap -> Runeflare Trap; Inferno Trap -> Ricochet Trap; Inferno Trap -> Mountain
+decks/standard/koboldworker.dck (Grunt): Rakdos Charm -> Terminate; Rakdos Charm -> Terminate
+decks/standard/kor_warrior.dck (Grunt): Embercleave -> Sword of the Animist
+decks/standard/ladybug.dck (Grunt): Giant Caterpillar -> Zask, Skittering Swarmlord; Giant Caterpillar -> Zask, Skittering Swarmlord; Giant Caterpillar -> Spring-Leaf Avenger
+decks/standard/lion.dck (Grunt): Jamuraan Lion -> Whitemane Lion; Jamuraan Lion -> Whitemane Lion; Jamuraan Lion -> Huntmaster Liger; Jamuraan Lion -> Huntmaster Liger
+decks/standard/luckyminotaur.dck (Elite): Aleatory -> Ral, Storm Conduit; Aleatory -> Ral, Storm Conduit; Aleatory -> Ral, Izzet Viceroy; Aleatory -> Ral, Izzet Viceroy; Fiery Gambit -> Ancestral Vision; Fiery Gambit -> Ancestral Vision; Fiery Gambit -> Yusri, Fortune's Flame; Fiery Gambit -> Yusri, Fortune's Flame; Karplusan Minotaur -> Skyclaw Thrash; Karplusan Minotaur -> Skyclaw Thrash; Karplusan Minotaur -> Niv-Mizzet, the Firemind; Karplusan Minotaur -> Niv-Mizzet, the Firemind
+decks/standard/magma_elemental.dck (Elite): Ashling the Pilgrim -> Brighthearth Banneret; Incandescent Soulstoke -> Spitemare; Incandescent Soulstoke -> Spitemare; Incandescent Soulstoke -> Nyxathid; Incandescent Soulstoke -> Nyxathid
+decks/standard/merfolk_elite.dck (Elite): Swan Song -> Cultivate; Swan Song -> Cultivate; Swan Song -> Time Wipe; Swan Song -> Time Wipe
+decks/standard/mighty_djinn.dck (Elite): Serendib Djinn -> Calim, Djinn Emperor; Serendib Djinn -> Waterspout Djinn; Serendib Djinn -> Waterspout Djinn; Serendib Djinn -> Waterfall Aerialist
+decks/standard/minotaurmonored.dck (Grunt): Anaba Ancestor -> Fanatic of Mogis; Anaba Ancestor -> Fanatic of Mogis; Anaba Ancestor -> Barrage of Boulders; Anaba Ancestor -> Barrage of Boulders
+decks/standard/nantuko_morpher.dck (Elite): Nantuko Cultivator -> Nantuko Vigilante; Nantuko Cultivator -> Yedora, Grave Gardener; Obscuring Aether -> Ugin, the Ineffable; Primordial Mist -> Ugin, the Ineffable; Primordial Mist -> Cut Down; Voidmage Apprentice -> Yedora, Grave Gardener; Voidmage Apprentice -> Thousand Winds; Voidmage Apprentice -> Thousand Winds
+decks/standard/octopus.dck (Grunt): Crush of Tentacles -> Octopus Umbra
+decks/standard/ooze_greenblackred.dck (Grunt): Jund Charm -> Uchuulon; Jund Charm -> Gelatinous Cube; Jund Charm -> Biogenic Ooze; Ooze Flux -> Scavenging Ooze; Ooze Flux -> Scavenging Ooze
+decks/standard/ooze_monogreen.dck (Grunt): Wild Growth -> Rampant Growth; Wild Growth -> Rampant Growth; Wild Growth -> Splitting Slime; Wild Growth -> Splitting Slime
+decks/standard/penguin.dck (Grunt): Swan Song -> Unsummon
+decks/standard/pharaoh.dck (Elite): Corpse Augur -> Cruel Celebrant; Corpse Augur -> Undead Augur
+decks/standard/phoenix.dck (Grunt): Firestorm -> Molten Echoes; Firestorm -> Molten Echoes
+decks/standard/phyrexianangel.dck (Grunt): Phyrexia's Core -> Plains; Phyrexia's Core -> Forest
+decks/standard/pirate2.dck (Grunt): March of the Drowned -> Lookout's Dispersal; March of the Drowned -> Jace, Cunning Castaway
+decks/standard/pirate_captain.dck (Elite): March of the Drowned -> Walk the Plank; March of the Drowned -> Walk the Plank; Steal Enchantment -> Unsummon; Steal Enchantment -> Unsummon
+decks/standard/pirate_captain_2.dck (Grunt): March of the Drowned -> Sleek Schooner; March of the Drowned -> Sleek Schooner
+decks/standard/ragavan.dck (Grunt): Scrounging Bandar -> Zodiac Monkey; Scrounging Bandar -> Rashmi and Ragavan; Scrounging Bandar -> Rashmi and Ragavan
+decks/standard/rat_leader.dck (Elite): Patriarch's Bidding -> Lord Skitter's Blessing
+decks/standard/reassemblingskeleton.dck (Grunt): Dakmor Salvage -> Swamp; Dakmor Salvage -> Swamp; Dakmor Salvage -> Swamp; Dakmor Salvage -> Swamp
+decks/standard/redwiz_corrupted.dck (Grunt): Kill-Suit Cultist -> Thunderscape Battlemage
+decks/standard/redwizard_easy_burn.dck (Grunt): Incandescent Soulstoke -> Young Pyromancer; Incandescent Soulstoke -> Young Pyromancer
+decks/standard/redwizard_hard_burn.dck (Grunt): Incandescent Soulstoke -> Young Pyromancer; Incandescent Soulstoke -> Kiln Fiend; Incandescent Soulstoke -> Fire Servant
+decks/standard/redwizard_medium_giant.dck (Grunt): Magma Giant -> Shatterskull Giant
+decks/standard/redwizard_medium_hasteburn.dck (Grunt): Bloodthirsty Adversary -> Ember-Eye Wolf
+decks/standard/roshnakhtheroic.dck (Grunt): Wild Magic Surge -> Unleash Fury; Wild Magic Surge -> Unleash Fury
+decks/standard/runelord.dck (Grunt): Wild Growth -> Elspeth Conquers Death; Wild Growth -> Mantle of the Ancients; Wild Growth -> Mantle of the Ancients; Wild Growth -> Mantle of the Ancients
+decks/standard/satyr_hard.dck (Grunt): Xenagos, the Reveler -> Fall of Gil-galad; Xenagos, the Reveler -> Spellbreaker Behemoth; Xenagos, the Reveler -> Satyr Wayfinder; Xenagos, the Reveler -> Gallia of the Endless Dance
+decks/standard/scarecrow.dck (Grunt): Signpost Scarecrow -> Farmstead Gleaner; Signpost Scarecrow -> Farmstead Gleaner; Signpost Scarecrow -> Farmstead Gleaner; Signpost Scarecrow -> Colossal Plow
+decks/standard/shade.dck (Grunt): Cabal Coffers -> Swamp; Cabal Coffers -> Swamp; Cabal Coffers -> Swamp; Cabal Coffers -> Swamp
+decks/standard/skeleton_champion.dck (Elite): Cabal Coffers -> Swamp; Cabal Coffers -> Swamp; Dead-Iron Sledge -> Drain Life
+decks/standard/sliver_blue.dck (Grunt): Basal Sliver -> Vedalken Mastermind; Basal Sliver -> Vedalken Mastermind
+decks/standard/sliver_green.dck (Grunt): Homing Sliver -> The First Sliver; Homing Sliver -> The First Sliver
+decks/standard/sliver_recruitersliver.dck (Elite): Steal Enchantment -> Shore Up
+decks/standard/slug.dck (Grunt): Giant Slug -> Toxrill, the Corrosive; Giant Slug -> Toxrill, the Corrosive; Giant Slug -> Toxrill, the Corrosive; Giant Slug -> Fumulus, the Infestation
+decks/standard/spirit.dck (Grunt): Think Tank -> Mirrorhall Mimic; Think Tank -> Mirrorhall Mimic
+decks/standard/supremeelemental.dck (Grunt): Omnath, Locus of Mana -> Sol'Kanar the Tainted
+decks/standard/tibalt_horror.dck (Grunt): Decree of Pain -> Torment of Hailfire; Decree of Pain -> Torment of Hailfire
+decks/standard/trap.dck (Grunt): Illusory Demon -> Phantasmal Image; Illusory Demon -> Phantasmal Image; Mistform Warchief -> Lord of the Unreal; Mistform Warchief -> Lord of the Unreal
+decks/standard/treefolk_golgari.dck (Elite): Fendeep Summoner -> Vito, Thorn of the Dusk Rose; Plunge into Darkness -> Bosk Banneret; Plunge into Darkness -> Realmwalker
+decks/standard/treefolkelite.dck (Elite): Wild Growth -> Lignify; Wild Growth -> Up the Beanstalk; Wild Growth -> Up the Beanstalk; Wild Growth -> Tend the Sprigs
+decks/standard/unholyknight.dck (Grunt): Doomsday Confluence -> Exsanguinate; Doomsday Confluence -> Mind Rot; Doomsday Confluence -> Mind Rot; Doomsday Confluence -> Demogorgon's Clutches
+decks/standard/vampire.dck (Grunt): Vampire Lacerator -> Vampire Outcasts; Vampire Lacerator -> Vampire Nighthawk; Vampire Lacerator -> Vampire Nighthawk; Vampire Lacerator -> Bloodghast; Viscera Seer -> Bloodghast; Viscera Seer -> Vampire Hexmage; Viscera Seer -> Vampire Hexmage; Viscera Seer -> Vampire Hexmage
+decks/standard/vampire_blood_token_fly.dck (Grunt): Bloodthirsty Adversary -> Vampire Interloper
+decks/standard/vulture.dck (Grunt): Circling Vultures -> Wake of Vultures; Circling Vultures -> Sultai Scavenger; Circling Vultures -> Screeching Buzzard; Circling Vultures -> Gorging Vulture
+decks/standard/walkingbrain.dck (Grunt): Steal Enchantment -> Steal Artifact; Steal Enchantment -> Steal Artifact
+decks/standard/wanderinggiant.dck (Grunt): Desolation Giant -> Craven Giant; Desolation Giant -> Lowland Giant
+decks/standard/whitewizard_easy_angelhuman.dck (Grunt): Hallow -> Gather the Townsfolk; Hallow -> Path to Exile; Selfless Cathar -> Thraben Valiant; Selfless Cathar -> Unruly Mob
+decks/standard/whitewizard_easy_wanderer.dck (Grunt): Resilient Wanderer -> Martyr for the Cause; Resilient Wanderer -> Martyr for the Cause
+decks/standard/whitewizard_hard_armaggedon.dck (Grunt): Limited Resources -> Sol Ring
+decks/standard/witch.dck (Grunt): Cuombajj Witches -> Witch of the Moors; Cuombajj Witches -> Witch of the Moors; Cuombajj Witches -> Veinwitch Coven; Cuombajj Witches -> Veinwitch Coven
+decks/standard/wolfboss.dck (Grunt): Primal Adversary -> Witchstalker; Primal Adversary -> Witchstalker
+decks/standard/worm.dck (Grunt): Death Cloud -> Echoing Return; Death Cloud -> Echoing Return
+decks/standard/zombie_black_hard.dck (Elite): Contamination -> Deadly Plot; Contamination -> Deadly Plot
+decks/standard/zombie_black_medium.dck (Grunt): Balthor the Defiled -> Murderous Rider
+decks/standard/zombie_greater.dck (Elite): Cabal Coffers -> Swamp; Cabal Coffers -> Swamp

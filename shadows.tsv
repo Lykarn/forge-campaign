@@ -3,3 +3,7 @@
 # build if it no longer matches: that means upstream changed it and our copy must be re-ported.
 # Columns (tab-separated): our file, upstream (forge|neo), upstream path, sha256 of the original we copied.
 forge-gui-campaign/src/main/java/forge/adventure/util/Config.java	forge	forge-gui-mobile/src/forge/adventure/util/Config.java	4ec1e8945bbd9bb9629656e58dd771dee07314528da86b8d789ab482bc38503c
+forge-gui-campaign/src/main/java/forge/adventure/scene/DuelScene.java	neo	forge-gui-neo/src/main/java/forge/adventure/scene/DuelScene.java	76ddfa52c4c456292bfa9aced959aeb3767b06f11c41fa90aeae37a8bba790ee
+forge-gui-campaign/src/main/java/forge/ai/simulation/SimulationController.java	forge	forge-ai/src/main/java/forge/ai/simulation/SimulationController.java	92acde637f5a3ae20f3449bedc8ad17a71d6a6472217eb5ca9daa5892e8849c6
+forge-gui-campaign/src/main/java/forge/ai/simulation/SpellAbilityPicker.java	forge	forge-ai/src/main/java/forge/ai/simulation/SpellAbilityPicker.java	d618613461bf7edcb332a988deedc35ad7b2b41c907cd2dcea962efb8e5dfecd
+forge-gui-campaign/src/main/java/forge/ai/simulation/OnePlaySafetyChecker.java	forge	forge-ai/src/main/java/forge/ai/simulation/OnePlaySafetyChecker.java	eabe82e30cfc8255afb079c01af22bf4a287eec440271a4bcaffde2555f6fb03
