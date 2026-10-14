@@ -1,0 +1,7 @@
+# Build tree: upstream checkouts, staging and packages (scripts/assemble.py, package.py)
+_build/
+target/
+__pycache__/
+*.pyc
+.idea/
+*.iml

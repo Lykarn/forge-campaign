@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- Built inside Forge's Maven reactor: scripts/assemble.py copies this folder into the
+         Forge checkout and adds it to the parent pom, next to forge-gui-neo. -->
+    <parent>
+        <artifactId>forge</artifactId>
+        <groupId>forge</groupId>
+        <version>${revision}</version>
+    </parent>
+    <artifactId>forge-gui-campaign</artifactId>
+    <packaging>jar</packaging>
+    <name>Forge Campaign</name>
+    <description>A reworked Adventure campaign on Forge and Neo Forge. Free fan project, GPL-3.0.</description>
+
+    <properties>
+        <campaign.version>0.1.0</campaign.version>
+    </properties>
+
+    <dependencies>
+        <!-- Neo Forge brings the JavaFX table and, through its own dependencies, the whole
+             Forge engine and the Adventure (forge-gui-mobile-dev). Consumed, never edited. -->
+        <dependency>
+            <groupId>forge</groupId>
+            <artifactId>forge-gui-neo</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- All runtime jars to target/lib, for scripts/package.py. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-runtime-deps</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <includeScope>runtime</includeScope>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

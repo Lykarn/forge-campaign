@@ -1,0 +1,12 @@
+# Exact upstream commits this repo is built and tested against.
+# scripts/assemble.py reads this file. Bump both together when rebasing,
+# then run the build: scripts/check_shadows.py fails if a shadowed file changed.
+
+# Card-Forge/forge: rules engine, cards, AI, Adventure.
+# Same commit Neo Forge's own CI uses (FORGE_REF in its workflows).
+FORGE_REPO=https://github.com/Card-Forge/forge.git
+FORGE_REF=b38ce2c1361d5439122065c12ac91dbd27cc474c
+
+# AdrianLopez98/NeoForge: the JavaFX client (forge-gui-neo module).
+NEO_REPO=https://github.com/AdrianLopez98/NeoForge.git
+NEO_REF=0fc64d8aba5b466f69856eedfaacd409199c91c4

@@ -1,0 +1,70 @@
+name: Windows build
+
+# Builds the Windows package on every push, tests the packaged app, and
+# uploads it as an artifact (Actions > this run > Artifacts > ForgeCampaign-windows-x64).
+# The upstream commits come from upstream.lock; nothing here pins them.
+
+on:
+  # Pushes cover pull requests too: a PR shows the result for its head commit.
+  push:
+  workflow_dispatch:
+
+concurrency:
+  group: windows-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 120
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      MAVEN_OPTS: -Dfile.encoding=UTF-8 -Xmx3g
+      PYTHONUTF8: "1"
+    steps:
+      - name: Allow long paths in git (Forge has paths over 260 characters)
+        run: git config --global core.longpaths true
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Assemble Forge, Neo Forge and our module
+        run: python scripts/assemble.py
+
+      - name: Build with Maven
+        working-directory: _build/forge
+        # -DskipLaunch4j: Forge's own desktop .exe is not needed; we package with jpackage.
+        run: mvn -B -ntp install "-DskipTests" "-DskipLaunch4j=true" -pl forge-gui-campaign -am
+
+      - name: Package
+        run: python scripts/package.py
+
+      - name: Upload the package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ForgeCampaign-windows-x64
+          path: _build/out/ForgeCampaign-windows-x64.zip
+          compression-level: 0
+          retention-days: 30
+
+      - name: Test the packaged app
+        run: python scripts/test_package.py
+
+      - name: Upload test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs
+          path: _build/out/*.log
+          retention-days: 14
