@@ -11,8 +11,8 @@ Why MTGJSON and not Scryfall: Scryfall's terms bar using its data to make new ga
 data is free to use. Card images still come from Scryfall at runtime, as Forge does.
 
 Score (0-100, within each pool):
-  creatures      50% stats for the cost (power counts most, evasion, per mana), 35% popularity, 15% rarity
-  other spells   50% role value (removal > draw/tokens > counter/ramp > tricks), 35%, 15%
+  creatures      60% stats for the cost (power counts most, evasion, per mana), 25% popularity, 15% rarity
+  other spells   60% role value (removal > draw/tokens > counter/ramp > tricks), 25%, 15%
   a hand tier in card_tiers.json (S/A/B/C/D) replaces the computed score.
 
 Usage: python scripts/card_scores.py      (after scripts/assemble.py)
@@ -227,7 +227,7 @@ def main() -> int:
                 quality = stats[n]
             else:
                 quality = max([ROLE_VALUE.get(x, 0.2) for x in r] or [0.2])
-            score = 100 * (0.5 * quality + 0.35 * popularity[n] + 0.15 * RARITY.get(rarity, 0))
+            score = 100 * (0.6 * quality + 0.25 * popularity[n] + 0.15 * RARITY.get(rarity, 0))
             if n in tiers:
                 score = TIER_SCORES[tiers[n]]
             scored[n] = round(score)

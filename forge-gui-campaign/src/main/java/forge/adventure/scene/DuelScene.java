@@ -270,6 +270,8 @@ public class DuelScene extends ForgeScene {
             Forge.advFreezePlayerControls = false;
             Scene last = Forge.switchToLast();
             Current.player().getStatistic().setResult(enemyName, winner);
+            // FORGE-CAMPAIGN: tell RewardScene this loot is a won map duel's (pick 1 of 3).
+            forge.campaign.shop.DuelRewards.duelEnded(winner && !isArena && eventData == null);
 
             if (last instanceof IAfterMatch) {
                 ((IAfterMatch) last).setWinner(winner, isArena);
@@ -417,7 +419,9 @@ public class DuelScene extends ForgeScene {
         playerObject.setAvatarIndex(playerAvatarKey);
         humanPlayer.setPlayer(playerObject);
         humanPlayer.setTeamNumber(0);
-        humanPlayer.setStartingLife(eventData != null ? eventData.eventRules.startingLife : advPlayer.getLife());
+        // FORGE-CAMPAIGN: + forge.campaign.DeckSize.lifeBonus (bigger decks start with more life).
+        humanPlayer.setStartingLife(eventData != null ? eventData.eventRules.startingLife
+                : advPlayer.getLife() + forge.campaign.DeckSize.lifeBonus(playerDeck));
         if (eventData == null || eventData.eventRules.allowsShards)
             humanPlayer.setManaShards(advPlayer.getShards());
 

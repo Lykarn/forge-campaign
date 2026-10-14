@@ -22,6 +22,7 @@ public final class CampaignAi {
      *                        mapped by DuelScene.selectAI; it wins over the tier's profile when set
      */
     public static LobbyPlayer createEnemyPlayer(EnemyData enemy, String explicitProfile) {
+        forge.campaign.SelfCheck.maybeRun(); // only with -Dcampaign.selfcheck (scripts/test_package.py)
         EnemyTiers.Settings settings = EnemyTiers.get().settingsFor(enemy);
         String profile = explicitProfile != null && !explicitProfile.isEmpty() ? explicitProfile : settings.profile();
         System.out.println("[campaign] enemy " + enemy.getName() + ": " + settings

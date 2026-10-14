@@ -11,7 +11,8 @@
    ],
    "revealedAtStart": true,
    "authored": true,
-   "towerFlag": "tower_hub"
+   "towerFlag": "tower_hub",
+   "pool": "hub"
   },
   {
    "id": "white",
@@ -20,7 +21,8 @@
     "white"
    ],
    "authored": true,
-   "towerFlag": "tower_white"
+   "towerFlag": "tower_white",
+   "pool": "white"
   },
   {
    "id": "blue",

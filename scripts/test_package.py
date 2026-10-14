@@ -96,10 +96,17 @@ def check_contents() -> None:
     if not jar.is_file():
         fail("app/campaign.jar is missing")
         return
-    # Every shadow in shadows.tsv must be OUR class in campaign.jar. Each one calls into our code
-    # or reads our property, so its bytecode names "campaign"; the upstream originals never do.
+    # Every shadow in shadows.tsv must be OUR class in campaign.jar: different from the upstream
+    # class in the app's Forge jars. (Neo Forge's own classes are merged into campaign.jar, so for
+    # its shadows, which all call our code, the bytecode must name "campaign" instead.)
     shadows = [line.split("\t")[0] for line in (ROOT / "shadows.tsv").read_text(encoding="utf-8").splitlines()
                if line.strip() and not line.startswith("#")]
+    upstream = {}
+    for forge_jar in (APP / "app").glob("forge-*.jar"):
+        with zipfile.ZipFile(forge_jar) as fz:
+            for name in fz.namelist():
+                if name.endswith(".class"):
+                    upstream[name] = (forge_jar, name)
     with zipfile.ZipFile(jar) as zf:
         for ours in shadows:
             cls = ours.split("src/main/java/", 1)[1].replace(".java", ".class")
@@ -108,8 +115,12 @@ def check_contents() -> None:
             except KeyError:
                 fail(f"campaign.jar has no {cls}: the shadow is not packaged")
                 continue
-            if b"campaign" not in data:
-                fail(f"{cls} in campaign.jar is the upstream original, not our shadow")
+            if cls in upstream:
+                with zipfile.ZipFile(upstream[cls][0]) as fz:
+                    if fz.read(cls) == data:
+                        fail(f"{cls} in campaign.jar is the upstream original, not our shadow")
+            elif b"campaign" not in data:
+                fail(f"{cls} in campaign.jar is not our shadow")
     for profile in sorted((ROOT / "res" / "ai").glob("*.ai")):
         if not (APP / "res" / "ai" / profile.name).is_file():
             fail(f"res/ai/{profile.name} is missing from the package")
@@ -160,7 +171,9 @@ def check_adventure() -> None:
             # selftest=anteduel enters through DuelScene, as a map encounter does (selftest=duel goes
             # straight to Neo Forge's duel bridge and would skip our tiers); auto plays our side.
             extra_java="-Dneo.adventure.autoLaunch=true -Dneo.adventure.selftest=anteduel "
-                       f"-Dneo.adventure.ante=false -Dneo.adventure.enemy={BOSS} -Dneo.adventure.auto=true")
+                       f"-Dneo.adventure.ante=false -Dneo.adventure.enemy={BOSS} -Dneo.adventure.auto=true "
+                       # Our in-game checks of the region slice (forge.campaign.SelfCheck).
+                       f"\"-Dcampaign.selfcheck={OUT / 'selfcheck'}\"")
     log = find_adventure_log()
     if log:
         shutil.copy2(log, OUT / "adventure.log")
@@ -177,6 +190,12 @@ def check_adventure() -> None:
         print(f"  ok: the Adventure loaded the {PLANE} plane")
     else:
         warn("the Adventure did not reach plane loading; no GPU on this machine is the usual cause")
+    checks = [line.split("[campaign] selfcheck", 1)[1].strip() for line in text.splitlines()
+              if "[campaign] selfcheck" in line]
+    for c in checks:
+        print(f"  selfcheck {c}")
+    if not any(c.startswith("PASS") for c in checks):
+        fail("the in-game region checks did not pass (forge.campaign.SelfCheck; see adventure.log)")
     if "PARTIDA TERMINADA" in text:
         print("  ok: the self-test duel finished")
         # The duel's enemy came through our shadowed DuelScene, so it must have a tier.

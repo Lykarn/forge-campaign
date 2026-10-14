@@ -265,5 +265,81 @@ rep("""    public boolean generateNew(long seed) {""",
 
     public boolean generateNew(long seed) {""")
 
+# 9. Merchant offers are remembered per stock and saved with the world (forge.campaign.shop.MerchantLedger).
+rep("""        data.store("seed", seed);
+        return data;""",
+"""        data.store("seed", seed);
+        data.storeObject("campaignMerchants", forge.campaign.shop.MerchantLedger.snapshot()); // FORGE-CAMPAIGN
+        return data;""")
+rep("""        seed = saveFileData.readLong("seed");
+    }""",
+"""        seed = saveFileData.readLong("seed");
+        forge.campaign.shop.MerchantLedger.restore(saveFileData.readObject("campaignMerchants")); // FORGE-CAMPAIGN
+    }""")
+rep("""            loadWorldData();
+//////////////////
+///////// initialize""",
+"""            loadWorldData();
+            forge.campaign.shop.MerchantLedger.restore(null); // FORGE-CAMPAIGN: a new world, no stocks yet
+//////////////////
+///////// initialize""")
+
+# 10. Quests (and anything else that asks) only see points of interest in authored regions:
+# the others sit behind closed roads, and a quest sending the player there could not be done.
+rep("""    public List<PointOfInterest> getAllPointOfInterest(){
+        return mapPoiIds.getAllPointOfInterest();
+    }""",
+"""    public List<PointOfInterest> getAllPointOfInterest(){
+        // FORGE-CAMPAIGN: only points of interest in the layout's authored regions.
+        List<PointOfInterest> all = mapPoiIds.getAllPointOfInterest();
+        forge.campaign.world.RegionLayout layout = forge.campaign.world.RegionLayout.get();
+        if (layout == null) {
+            return all;
+        }
+        List<PointOfInterest> open = new ArrayList<>();
+        for (PointOfInterest poi : all) {
+            int x = (int) (poi.getPosition().x / data.tileSize);
+            int mapY = height - 1 - (int) (poi.getPosition().y / data.tileSize);
+            int r = campaignRegionAt(x, mapY);
+            if (r >= 0 && layout.regions.get(r).authored()) {
+                open.add(poi);
+            }
+        }
+        return open;
+        // FORGE-CAMPAIGN end
+    }""")
+
+# 8. Fog of war: the map screens get a fogged image; saves keep the clear one.
+rep("""    public Pixmap getBiomeImage() {
+        return biomeImage;
+    }""",
+"""    public Pixmap getBiomeImage() {
+        // FORGE-CAMPAIGN: fog of war on the minimap and the map screen (forge.campaign.world.Fog).
+        // save() reads the field, so saves keep the clear image.
+        return forge.campaign.world.Fog.apply(this, biomeImage);
+        // FORGE-CAMPAIGN end
+    }
+
+    // FORGE-CAMPAIGN: for forge.campaign.world.Fog and DuelRewards.
+    /** The layout region (its index) of map tile (x, y from the top), or -1 for none. */
+    public int campaignRegionAt(int x, int mapY) {
+        forge.campaign.world.RegionLayout layout = forge.campaign.world.RegionLayout.get();
+        if (layout == null || x < 0 || mapY < 0 || x >= width || mapY >= height) {
+            return -1;
+        }
+        List<BiomeData> biomes = data.GetBiomes();
+        long bits = biomeMap[x][mapY] & ~(1L << biomes.size());
+        if (bits == 0) {
+            return -1;
+        }
+        int index = highestBiome(bits);
+        if (index >= biomes.size()) {
+            return -1;
+        }
+        forge.campaign.world.RegionLayout.Region r = layout.regionOf(biomes.get(index).name);
+        return r == null ? -1 : layout.regions.indexOf(r);
+    }
+    // FORGE-CAMPAIGN end""")
+
 p.write_text(HEADER + t, encoding="utf-8", newline="\n")
 print("World.java patched")

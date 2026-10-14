@@ -125,6 +125,7 @@ public class World implements Disposable, SaveFileContent {
         mapPoiIds = new PointOfInterestMap(getChunkSize(), this.data.tileSize, this.data.width / getChunkSize(), this.data.height / getChunkSize());
         mapPoiIds.load(saveFileData.readSubData("mapPoiIds"));
         seed = saveFileData.readLong("seed");
+        forge.campaign.shop.MerchantLedger.restore(saveFileData.readObject("campaignMerchants")); // FORGE-CAMPAIGN
     }
 
     @Override
@@ -140,6 +141,7 @@ public class World implements Disposable, SaveFileContent {
         data.store("mapObjectIds", mapObjectIds.save());
         data.store("mapPoiIds", mapPoiIds.save());
         data.store("seed", seed);
+        data.storeObject("campaignMerchants", forge.campaign.shop.MerchantLedger.snapshot()); // FORGE-CAMPAIGN
         return data;
     }
 
@@ -455,6 +457,7 @@ public class World implements Disposable, SaveFileContent {
             long startTime = System.currentTimeMillis();
 
             loadWorldData();
+            forge.campaign.shop.MerchantLedger.restore(null); // FORGE-CAMPAIGN: a new world, no stocks yet
 //////////////////
 ///////// initialize
 //////////////////
@@ -1132,8 +1135,32 @@ public class World implements Disposable, SaveFileContent {
     }
 
     public Pixmap getBiomeImage() {
-        return biomeImage;
+        // FORGE-CAMPAIGN: fog of war on the minimap and the map screen (forge.campaign.world.Fog).
+        // save() reads the field, so saves keep the clear image.
+        return forge.campaign.world.Fog.apply(this, biomeImage);
+        // FORGE-CAMPAIGN end
     }
+
+    // FORGE-CAMPAIGN: for forge.campaign.world.Fog and DuelRewards.
+    /** The layout region (its index) of map tile (x, y from the top), or -1 for none. */
+    public int campaignRegionAt(int x, int mapY) {
+        forge.campaign.world.RegionLayout layout = forge.campaign.world.RegionLayout.get();
+        if (layout == null || x < 0 || mapY < 0 || x >= width || mapY >= height) {
+            return -1;
+        }
+        List<BiomeData> biomes = data.GetBiomes();
+        long bits = biomeMap[x][mapY] & ~(1L << biomes.size());
+        if (bits == 0) {
+            return -1;
+        }
+        int index = highestBiome(bits);
+        if (index >= biomes.size()) {
+            return -1;
+        }
+        forge.campaign.world.RegionLayout.Region r = layout.regionOf(biomes.get(index).name);
+        return r == null ? -1 : layout.regions.indexOf(r);
+    }
+    // FORGE-CAMPAIGN end
 
     public List<Pair<Vector2, Integer>> GetMapObjects(int chunkX, int chunkY) {
         return mapObjectIds.positions(chunkX, chunkY);
@@ -1152,7 +1179,23 @@ public class World implements Disposable, SaveFileContent {
     }
 
     public List<PointOfInterest> getAllPointOfInterest(){
-        return mapPoiIds.getAllPointOfInterest();
+        // FORGE-CAMPAIGN: only points of interest in the layout's authored regions.
+        List<PointOfInterest> all = mapPoiIds.getAllPointOfInterest();
+        forge.campaign.world.RegionLayout layout = forge.campaign.world.RegionLayout.get();
+        if (layout == null) {
+            return all;
+        }
+        List<PointOfInterest> open = new ArrayList<>();
+        for (PointOfInterest poi : all) {
+            int x = (int) (poi.getPosition().x / data.tileSize);
+            int mapY = height - 1 - (int) (poi.getPosition().y / data.tileSize);
+            int r = campaignRegionAt(x, mapY);
+            if (r >= 0 && layout.regions.get(r).authored()) {
+                open.add(poi);
+            }
+        }
+        return open;
+        // FORGE-CAMPAIGN end
     }
 
     public int getChunkSize() {

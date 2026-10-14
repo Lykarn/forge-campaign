@@ -222,8 +222,13 @@ public class Config {
         return commonPrefix + path;
     }
 
-    private String langFilePath(String fullPath, String rootPrefix) {
+    // FORGE-CAMPAIGN: synchronized, with a local builder. World generation loads its structures on
+    // several threads at once; the shared static StringBuilder garbled their paths ("Illegal char <|>")
+    // and a structure that failed to load left World.generateNew waiting for it forever.
+    private synchronized String langFilePath(String fullPath, String rootPrefix) {
         if (fullPath == null || rootPrefix == null) return "";
+        StringBuilder stringBuilder = new StringBuilder(256);
+        // FORGE-CAMPAIGN end
 
         // return compiled path locations if available
         stringBuilder.setLength(0);
@@ -256,7 +261,8 @@ public class Config {
         return compiledPath;
     }
 
-    public FileHandle getFile(String path) {
+    // FORGE-CAMPAIGN: synchronized (see langFilePath): its cache is a plain HashMap filled from several threads.
+    public synchronized FileHandle getFile(String path) {
         if (Cache.containsKey(path)) return Cache.get(path);
 
         //if (Cache.containsKey(commonPath)) return Cache.get(commonPath);

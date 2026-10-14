@@ -115,7 +115,9 @@ def main() -> int:
         if kind == "town":
             src = upstream[build["from"]]
             region = regions[build["merchant"]]
-            text = town_map(src["map"], f"Merchant of {region['name']}")
+            # Capitals get the grand merchant (8 offers instead of 6).
+            merchant = ("Grand Merchant of " if src.get("type") == "capital" else "Merchant of ") + region["name"]
+            text = town_map(src["map"], merchant)
             entry.update({k: src[k] for k in ("type", "spriteAtlas", "sprite") if k in src})
             entry["questTags"] = list(src.get("questTags", [])) + ["Campaign"]
         elif kind == "watchtower":
