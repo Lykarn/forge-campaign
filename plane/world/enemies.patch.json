@@ -1,0 +1,20 @@
+{
+ "_about": "Merged by scripts/package.py into Adventure's world/enemies.json. Castle bosses' life tuned with scripts/region_bench.py so the castles rise in difficulty (target: about 40% enemy wins at the first castle, rising to about 65% for the finale, against Forge's AI piloting the reference decks).",
+ "modify": {
+  "Akroma": {
+   "life": 20
+  },
+  "Ghalta": {
+   "life": 22
+  },
+  "Lathliss": {
+   "life": 30
+  },
+  "Griselbrand": {
+   "life": 28
+  },
+  "Emrakul": {
+   "life": 32
+  }
+ }
+}

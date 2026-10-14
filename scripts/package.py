@@ -100,10 +100,25 @@ def apply_patch(patch_file: Path, plane_file: Path, common_file: Path) -> None:
       {"add": [entry, ...],                       new entries (a name already there is an error)
        "modify": {"Name": {"field": value}},       set fields on an existing entry (null removes)
        "remove": ["Name", ...]}                    drop entries
+    For a file that is one object (a biome), the patch is {"set": {"field": value}}.
     """
     base_file = plane_file if plane_file.is_file() else common_file
-    entries = json.loads(base_file.read_text(encoding="utf-8"))
+    raw = base_file.read_text(encoding="utf-8")
+    try:
+        entries = json.loads(raw)
+    except ValueError:
+        # Some of Adventure's files have trailing commas, which libGDX accepts and Python does not.
+        entries = json.loads(re.sub(r",\s*([\]}])", r"\1", raw))
     patch = json.loads(patch_file.read_text(encoding="utf-8"))
+    if isinstance(entries, dict):
+        # An object (a biome file): {"set": {"field": value}} replaces fields.
+        for key, value in patch.get("set", {}).items():
+            entries[key] = value
+        plane_file.parent.mkdir(parents=True, exist_ok=True)
+        plane_file.write_text(json.dumps(entries, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"  {plane_file.relative_to(plane_file.parents[2])}: {base_file.parent.parent.name}'s with "
+              f"{', '.join(patch.get('set', {}))} set")
+        return
     by_name = {e.get("name"): e for e in entries}
     for name in patch.get("remove", []):
         if name not in by_name:
