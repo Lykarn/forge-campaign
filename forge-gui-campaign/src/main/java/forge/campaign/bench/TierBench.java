@@ -57,6 +57,7 @@ import java.util.concurrent.TimeoutException;
  *   TierBench --list                       every enemy with its tier, tab-separated
  *   TierBench --enemies FILE --decks A.dck,B.dck --games N --out results.csv
  *             [--player-life 20] [--enemy-life-factor 1.0] [--timeout 900] [--stock]
+ *             [--life-bonus N] [--min-tier Elite]   (a region's soft difficulty)
  *
  * --stock plays every enemy as the Adventure does without tiers (Default profile, no simulation),
  * still grouped by tier: the baseline the tiers are measured against.
@@ -66,6 +67,8 @@ public final class TierBench {
     public static final int RESTART = 3;
 
     private static boolean stock;
+    private static int lifeBonus;
+    private static forge.campaign.ai.Tier minTier;
 
     private TierBench() {
     }
@@ -90,6 +93,9 @@ public final class TierBench {
         float enemyLifeFactor = Float.parseFloat(opt(args, "--enemy-life-factor", "1.0"));
         int timeout = Integer.parseInt(opt(args, "--timeout", "900"));
         stock = has(args, "--stock");
+        // A region's soft difficulty (RegionLayout enemyLifeBonus / enemyMinTier), as the Adventure applies it.
+        lifeBonus = Integer.parseInt(opt(args, "--life-bonus", "0"));
+        minTier = forge.campaign.ai.Tier.parse(opt(args, "--min-tier", ""));
 
         // Resumable: rows already in --out are skipped, so scripts/bench.py can restart a worker
         // that stopped (see RESTART below) and it carries on where it was.
@@ -176,9 +182,11 @@ public final class TierBench {
         EnemyTiers.Settings settings = EnemyTiers.get().settingsFor(enemy);
         if (stock) {
             settings = new EnemyTiers.Settings(settings.tier(), "Default", null, 0, 0);
+        } else if (minTier != null && minTier.ordinal() > settings.tier().ordinal()) {
+            settings = EnemyTiers.get().settingsOf(minTier);
         }
         String deckPath = enemy.deck[gameIndex % enemy.deck.length];
-        int enemyLife = Math.round(enemy.life * enemyLifeFactor);
+        int enemyLife = Math.round(enemy.life * enemyLifeFactor) + lifeBonus;
         String refName = new File(refPath).getName();
         String note = "";
         try {

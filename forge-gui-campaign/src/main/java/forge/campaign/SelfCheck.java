@@ -168,6 +168,8 @@ public final class SelfCheck {
                     shops.size() == 1 && shops.get(0).getRewardData().size >= 6, shops.size() + " shops: " + found);
         }
 
+        checkEveryPlace(layout, world, player);
+
         // Deck size: +2 life per full 10 cards over the minimum, capped at +4.
         check("a 40-card deck gets no bonus life", DeckSize.lifeBonus(deckOf(40)) == 0, null);
         check("a 50-card deck gets +2 life", DeckSize.lifeBonus(deckOf(50)) == 2, null);
@@ -181,6 +183,57 @@ public final class SelfCheck {
         DeckSize.minimum();
         check("the minimum deck grows 40, 50, 60 with castles", start == 40 && afterOne == 50 && afterThree == 60,
                 start + ", " + afterOne + ", " + afterThree);
+    }
+
+    /**
+     * Every point of interest of the layout, entered as the player would (its map loaded through
+     * TileMapScene): the map must load, and our towns must hold exactly one merchant with its
+     * offers (6, or 8 in a capital). Closed regions are opened for the check and shut again.
+     */
+    private static void checkEveryPlace(RegionLayout layout, World world, AdventurePlayer player) {
+        java.util.Map<String, Integer> saved = new java.util.HashMap<>();
+        for (RegionLayout.Region r : layout.regions) {
+            if (r.requiresFlag() != null) {
+                saved.put(r.requiresFlag(), player.getQuestFlag(r.requiresFlag()));
+                player.setQuestFlag(r.requiresFlag(), 1);
+            }
+        }
+        java.util.Map<String, forge.adventure.pointofintrest.PointOfInterest> placed = new java.util.HashMap<>();
+        for (forge.adventure.pointofintrest.PointOfInterest poi : world.getAllPointOfInterest()) {
+            placed.put(poi.getData().name, poi);
+        }
+        for (java.util.Map.Entry<String, Integer> e : saved.entrySet()) {
+            player.setQuestFlag(e.getKey(), e.getValue());
+        }
+        int loaded = 0;
+        java.util.List<String> problems = new java.util.ArrayList<>();
+        for (RegionLayout.Poi p : layout.pois) {
+            forge.adventure.pointofintrest.PointOfInterest poi = placed.get(p.name());
+            if (poi == null) {
+                problems.add(p.name() + ": not placed");
+                continue;
+            }
+            try {
+                forge.adventure.scene.TileMapScene.instance().load(poi);
+                loaded++;
+                String map = poi.getData().map == null ? "" : poi.getData().map;
+                String type = poi.getData().type == null ? "" : poi.getData().type;
+                if (map.contains("/campaign/") && (type.equals("town") || type.equals("capital"))) {
+                    java.util.List<forge.adventure.character.ShopActor> shops = new java.util.ArrayList<>();
+                    findShops(forge.adventure.stage.MapStage.getInstance().getRoot(), shops);
+                    int want = type.equals("capital") ? 8 : 6;
+                    if (shops.size() != 1) {
+                        problems.add(p.name() + ": " + shops.size() + " merchants");
+                    } else if (shops.get(0).getRewardData().size < want) {
+                        problems.add(p.name() + ": " + shops.get(0).getRewardData().size + " offers (want " + want + ")");
+                    }
+                }
+            } catch (Throwable t) {
+                problems.add(p.name() + ": " + t);
+            }
+        }
+        check("every place loads, and every town has its merchant (" + loaded + " of " + layout.pois.size() + " entered)",
+                problems.isEmpty(), problems.isEmpty() ? null : String.join("; ", problems));
     }
 
     private static boolean hasPoi(World world, String name) {

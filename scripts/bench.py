@@ -37,6 +37,12 @@ BENCH_DATA = WORK / "bench-data"
 MAIN = "forge.campaign.bench.TierBench"
 RESTART = 3  # TierBench.RESTART
 TUNED_DECKS = [ROOT / "bench" / "decks" / "ref_red_aggro.dck", ROOT / "bench" / "decks" / "ref_gw_midrange.dck"]
+
+
+def tuned_decks(size: int) -> list:
+    """The reference decks at a deck size (40, 50 or 60): the minimum grows with the castles beaten."""
+    suffix = "" if size == 40 else f"_{size}"
+    return [ROOT / "bench" / "decks" / f"ref_red_aggro{suffix}.dck", ROOT / "bench" / "decks" / f"ref_gw_midrange{suffix}.dck"]
 STARTER_DECKS = ["decks/starter/red_n.json", "decks/starter/green_n.json"]
 TIERS = ("Grunt", "Elite", "Boss")
 
@@ -67,6 +73,13 @@ def list_enemies(cmd: list[str]) -> list[tuple[str, str, int]]:
 
 
 def pick(enemies, args) -> list[tuple[str, str]]:
+    if args.enemies:
+        tier_of = {name: tier for name, tier, _life in enemies}
+        names = [n.strip() for n in args.enemies.split(";") if n.strip()]
+        missing = [n for n in names if n not in tier_of]
+        if missing:
+            sys.exit(f"unknown enemies: {missing}")
+        return [(n, tier_of[n]) for n in names]
     by_tier = defaultdict(list)
     for name, tier, _life in enemies:
         by_tier[tier].append(name)
@@ -128,6 +141,10 @@ def main() -> int:
                         help="baseline: every enemy plays stock Default AI, no simulation (still grouped by tier)")
     parser.add_argument("--label", default="", help="added to the run folder name")
     parser.add_argument("--seed", type=int, default=1)
+    parser.add_argument("--enemies", default="", help="exact enemies to play, separated by ;")
+    parser.add_argument("--deck-size", type=int, default=40, choices=(40, 50, 60), help="reference deck size")
+    parser.add_argument("--life-bonus", type=int, default=0, help="extra enemy life (a region's enemyLifeBonus)")
+    parser.add_argument("--min-tier", default="", help="tier floor (a region's enemyMinTier)")
     parser.add_argument("--timeout", type=int, default=900, help="seconds before a game counts as a draw")
     args = parser.parse_args()
     if args.quick:
@@ -147,7 +164,7 @@ def main() -> int:
         counts[tier] += 1
     print("  " + ", ".join(f"{counts[t]} {t}" for t in TIERS))
 
-    decks = [str(d) for d in TUNED_DECKS[:1 if args.quick else None]]
+    decks = [str(d) for d in tuned_decks(args.deck_size)[:1 if args.quick else None]]
     if args.starter:
         decks += STARTER_DECKS
     games = len(chosen) * len(decks) * args.games
@@ -163,7 +180,8 @@ def main() -> int:
             [*cmd, "--enemies", str(run_dir / f"enemies-{i}.txt"), "--decks", ",".join(decks),
              "--games", str(args.games), "--player-life", str(args.player_life),
              "--timeout", str(args.timeout), "--out", str(run_dir / f"results-{i}.csv"),
-             *(["--stock"] if args.stock else [])],
+             *(["--stock"] if args.stock else []),
+             "--life-bonus", str(args.life_bonus), *(["--min-tier", args.min_tier] if args.min_tier else [])],
             cwd=APP, stdout=log, stderr=subprocess.STDOUT)
 
     workers = {}
