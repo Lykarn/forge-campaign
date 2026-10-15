@@ -1,10 +1,9 @@
 Name:Emrakul's Ascension
 ManaCost:no cost
 Types:Artifact
-R:Event$ GameLoss | ActiveZones$ Command | ValidPlayer$ You | ReplaceWith$ Ascend | Description$ If Emrakul would lose the game, instead exile CARDNAME, her life total becomes 30, and she conjures Emrakul, the Aeons Torn onto the battlefield.
+R:Event$ GameLoss | ActiveZones$ Command | ValidPlayer$ You | ReplaceWith$ Ascend | Description$ If Emrakul would lose the game, instead exile CARDNAME and her life total becomes 8.
 SVar:Ascend:DB$ ChangeZone | Origin$ Command | Destination$ Exile | Defined$ Self | SubAbility$ DBSetLife
-SVar:DBSetLife:DB$ SetLife | Defined$ You | LifeAmount$ 30 | SubAbility$ DBConjure
-SVar:DBConjure:DB$ MakeCard | Conjure$ True | Name$ Emrakul, the Aeons Torn | Zone$ Battlefield
+SVar:DBSetLife:DB$ SetLife | Defined$ You | LifeAmount$ 8
 S:Mode$ Continuous | EffectZone$ Command | Affected$ Eldrazi.YouCtrl | AddKeyword$ Annihilator:1 | Description$ Eldrazi you control have annihilator 1.
 AI:RemoveDeck:All
-Oracle:If Emrakul would lose the game, instead exile CARDNAME, her life total becomes 30, and she conjures Emrakul, the Aeons Torn onto the battlefield.\nEldrazi you control have annihilator 1.
+Oracle:If Emrakul would lose the game, instead exile CARDNAME and her life total becomes 8.\nEldrazi you control have annihilator 1.

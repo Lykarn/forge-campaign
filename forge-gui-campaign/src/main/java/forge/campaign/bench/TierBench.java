@@ -60,6 +60,7 @@ import java.util.concurrent.TimeoutException;
  *   TierBench --enemies FILE --decks A.dck,B.dck --games N --out results.csv
  *             [--player-life 20] [--enemy-life-factor 1.0] [--timeout 900] [--stock]
  *             [--life-bonus N] [--min-tier Elite]   (a region's soft difficulty)
+ *             [--gamelog DIR]    each game's log, newest entry last, as DIR/<enemy>-<deck>-<n>.txt
  *             [--effects FILE]   {"enemy": EffectData, "player": EffectData}: a castle's map
  *                                effect, a relic on the player... (as DuelScene adds them)
  *
@@ -77,6 +78,7 @@ public final class TierBench {
     private static forge.campaign.ai.Tier minTier;
     private static EffectData extraEnemyEffect;
     private static EffectData extraPlayerEffect;
+    private static Path gameLogDir;
 
     private TierBench() {
     }
@@ -106,6 +108,8 @@ public final class TierBench {
         // A region's soft difficulty (RegionLayout enemyLifeBonus / enemyMinTier), as the Adventure applies it.
         lifeBonus = Integer.parseInt(opt(args, "--life-bonus", "0"));
         minTier = forge.campaign.ai.Tier.parse(opt(args, "--min-tier", ""));
+        String logs = opt(args, "--gamelog", "");
+        gameLogDir = logs.isEmpty() ? null : Path.of(logs);
         String effects = opt(args, "--effects", "");
         if (!effects.isEmpty()) {
             com.badlogic.gdx.utils.Json json = new com.badlogic.gdx.utils.Json();
@@ -269,6 +273,17 @@ public final class TierBench {
             long end = System.nanoTime();
             double seconds = (end - start) / 1e9;
 
+            if (gameLogDir != null) {
+                List<String> lines = new ArrayList<>();
+                List<forge.game.GameLogEntry> entries = new ArrayList<>(game.getGameLog().getLogEntries(null));
+                java.util.Collections.reverse(entries);
+                for (forge.game.GameLogEntry e : entries) {
+                    lines.add(e.toString());
+                }
+                Files.createDirectories(gameLogDir);
+                Files.write(gameLogDir.resolve((enemy.name + "-" + refName + "-" + gameIndex).replaceAll("[^A-Za-z0-9_.-]", "_") + ".txt"),
+                        lines, StandardCharsets.UTF_8);
+            }
             GameOutcome outcome = game.getOutcome();
             String winner;
             int turns = outcome == null ? clock.starts.size() : outcome.getLastTurnNumber();

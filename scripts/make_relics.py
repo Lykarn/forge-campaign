@@ -189,16 +189,14 @@ RELICS = [
 # plane/world/enemy_effects.json.
 ENEMY_CARDS = [
     ("Emrakul's Ascension", "Artifact", [
-        "R:Event$ GameLoss | ActiveZones$ Command | ValidPlayer$ You | ReplaceWith$ Ascend | Description$ If Emrakul would lose the game, instead exile CARDNAME, her life total becomes 30, and she conjures Emrakul, the Aeons Torn onto the battlefield.",
+        "R:Event$ GameLoss | ActiveZones$ Command | ValidPlayer$ You | ReplaceWith$ Ascend | Description$ If Emrakul would lose the game, instead exile CARDNAME and her life total becomes 8.",
         "SVar:Ascend:DB$ ChangeZone | Origin$ Command | Destination$ Exile | Defined$ Self | SubAbility$ DBSetLife",
-        "SVar:DBSetLife:DB$ SetLife | Defined$ You | LifeAmount$ 30 | SubAbility$ DBConjure",
-        "SVar:DBConjure:DB$ MakeCard | Conjure$ True | Name$ Emrakul, the Aeons Torn | Zone$ Battlefield",
+        "SVar:DBSetLife:DB$ SetLife | Defined$ You | LifeAmount$ 8",
         "S:Mode$ Continuous | EffectZone$ Command | Affected$ Eldrazi.YouCtrl | AddKeyword$ Annihilator:1 | Description$ Eldrazi you control have annihilator 1.",
     ]),
     ("The Alpha's Hoard", "Artifact", [
         f"T:{EACH_UPKEEP} | Execute$ TrigScry | TriggerDescription$ At the beginning of your upkeep, scry 1.",
         "SVar:TrigScry:DB$ Scry | ScryNum$ 1",
-        "S:Mode$ ReduceCost | ValidCard$ Artifact | EffectZone$ Command | Type$ Spell | Activator$ You | Amount$ 1 | Description$ Artifact spells you cast cost {1} less.",
     ]),
 ]
 
@@ -240,7 +238,7 @@ NEW_ENEMIES = [{
     "name": "Oracle of the Alpha",
     "sprite": "sprites/enemy/humanoid/human/wizard/archmage.atlas",
     "deck": ["decks/boss/oracle_of_the_alpha.dck"],
-    "ai": "", "boss": True, "flying": False, "speed": 1, "scale": 1.5, "life": 30,
+    "ai": "", "boss": True, "flying": False, "speed": 1, "scale": 1.5, "life": 14,
     "rewards": [{"type": "gold", "probability": 1, "count": 3000, "addMaxCount": 1000},
                 {"type": "shards", "probability": 1, "count": 30, "addMaxCount": 20}],
     "colors": "UR", "questTags": ["Boss", "Wizard", "Humanoid", "IdentityBlue", "IdentityRed"],

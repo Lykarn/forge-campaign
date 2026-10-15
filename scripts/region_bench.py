@@ -108,6 +108,8 @@ def run(label: str, enemies: list[str], deck_size: int, life: int, tier: str, ar
            "--workers", str(args.workers), "--label", label]
     if tier:
         cmd += ["--min-tier", tier]
+    if args.gamelog:
+        cmd += ["--gamelog"]
     if effect:
         fx = OUT / "bench" / f"effects-{label}.json"
         fx.parent.mkdir(parents=True, exist_ok=True)
@@ -128,6 +130,7 @@ def main() -> int:
     parser.add_argument("--castles-only", action="store_true")
     parser.add_argument("--bosses", action="store_true", help="side bosses, champions and the Oracle instead")
     parser.add_argument("--only", default="", help="just these bosses, separated by ;")
+    parser.add_argument("--gamelog", action="store_true", help="save each game's log (bench.py --gamelog)")
     args = parser.parse_args()
     layout = json.loads((ROOT / "plane" / "world" / "region_layout.json").read_text(encoding="utf-8"))
     enemies = {e["name"]: e for e in json.loads(ENEMIES.read_text(encoding="utf-8"))}

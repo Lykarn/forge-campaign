@@ -220,7 +220,7 @@
    ]
   },
   "Emrakul": {
-   "life": 30,
+   "life": 12,
    "rewards": [
     {
      "type": "gold",
@@ -1540,7 +1540,7 @@
    "flying": false,
    "speed": 1,
    "scale": 1.5,
-   "life": 30,
+   "life": 14,
    "rewards": [
     {
      "type": "gold",
