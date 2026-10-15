@@ -1,0 +1,156 @@
+{
+ "Akroma": {
+  "life": 10,
+  "hand": 0,
+  "measured": 0.62,
+  "target": 0.5,
+  "games": 16
+ },
+ "Lorthos": {
+  "life": 33,
+  "hand": 0,
+  "measured": 0.62,
+  "target": 0.55,
+  "games": 16
+ },
+ "Ghalta": {
+  "life": 13,
+  "hand": 0,
+  "measured": 0.56,
+  "target": 0.55,
+  "games": 16
+ },
+ "Lathliss": {
+  "life": 12,
+  "hand": 0,
+  "measured": 0.56,
+  "target": 0.62,
+  "games": 16
+ },
+ "Griselbrand": {
+  "life": 20,
+  "hand": 0,
+  "measured": 0.62,
+  "target": 0.62,
+  "games": 16
+ },
+ "Nahiri": {
+  "life": 13,
+  "hand": 0,
+  "measured": 0.75,
+  "target": 0.65,
+  "games": 16
+ },
+ "Jace": {
+  "life": 13,
+  "hand": 0,
+  "measured": 0.81,
+  "target": 0.68,
+  "games": 16
+ },
+ "Garruk": {
+  "life": 25,
+  "hand": 0,
+  "measured": 0.94,
+  "target": 0.68,
+  "games": 16
+ },
+ "Tibalt": {
+  "life": 17,
+  "hand": 0,
+  "measured": 0.75,
+  "target": 0.7,
+  "games": 16
+ },
+ "Grolnok": {
+  "life": 15,
+  "hand": 0,
+  "measured": 0.62,
+  "target": 0.7,
+  "games": 16
+ },
+ "Scarecrow Captain": {
+  "life": 40,
+  "hand": 0,
+  "measured": 0.62,
+  "target": 0.55,
+  "games": 16
+ },
+ "Teferi": {
+  "life": 40,
+  "hand": 0,
+  "measured": 0.38,
+  "target": 0.6,
+  "games": 16
+ },
+ "Kiora": {
+  "life": 25,
+  "hand": 0,
+  "measured": 0.93,
+  "target": 0.62,
+  "games": 16
+ },
+ "Slimefoot": {
+  "life": 25,
+  "hand": 0,
+  "measured": 0.88,
+  "target": 0.65,
+  "games": 16
+ },
+ "Slobad": {
+  "life": 13,
+  "hand": 0,
+  "measured": 0.81,
+  "target": 0.65,
+  "games": 16
+ },
+ "Xira": {
+  "life": 11,
+  "hand": 0,
+  "measured": 0.75,
+  "target": 0.68,
+  "games": 16
+ },
+ "Zedruu": {
+  "life": 40,
+  "hand": 0,
+  "measured": 0.69,
+  "target": 0.7,
+  "games": 16
+ },
+ "Liliana": {
+  "life": 13,
+  "hand": 0,
+  "measured": 0.75,
+  "target": 0.72,
+  "games": 16
+ },
+ "The Hydra of Shandalaar": {
+  "life": 30,
+  "hand": 0,
+  "measured": 1.0,
+  "target": 0.78,
+  "games": 16
+ },
+ "Sorin": {
+  "life": 12,
+  "hand": 0,
+  "measured": 0.88,
+  "target": 0.78,
+  "games": 16
+ },
+ "Sliver Queen": {
+  "life": 20,
+  "hand": 0,
+  "measured": 0.88,
+  "target": 0.8,
+  "games": 16
+ },
+ "Oracle of the Alpha": {
+  "life": 14,
+  "hand": 0,
+  "measured": 0.75,
+  "target": 0.8,
+  "games": 16
+ }
+}

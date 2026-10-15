@@ -4,10 +4,27 @@
     "eliteMinLife": 25
   },
   "tiers": {
-    "Grunt": { "profile": "Default", "simulation": "none" },
-    "Elite": { "profile": "Default", "simulation": "hybrid", "budgetMs": 3000 },
-    "Boss": { "profile": "Default", "simulation": "full", "budgetMs": 1500, "turnBudgetMs": 10000 }
+    "Grunt": {
+      "profile": "Default",
+      "simulation": "none"
+    },
+    "Elite": {
+      "profile": "Default",
+      "simulation": "hybrid",
+      "budgetMs": 3000
+    },
+    "Boss": {
+      "profile": "Default",
+      "simulation": "full",
+      "budgetMs": 1500,
+      "turnBudgetMs": 10000
+    }
   },
   "enemies": {
-  }
+    "The Hydra of Shandalaar": "Elite",
+    "Garruk": "Elite",
+    "Kiora": "Elite",
+    "Slimefoot": "Elite"
+  },
+  "_tuning": "Elite overrides (2026-10-16): these bosses' upstream effects (the Hydra's heads, Garruk's second phase, Kiora's Tentacles, Slimefoot's Fungi) dominate whatever their life; the Boss tier's full simulation added turns of up to 45 s for no difference in strength (scripts/boss_tune.py, region_bench.py)."
 }

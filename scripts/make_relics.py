@@ -230,10 +230,13 @@ MOXEN = ["Mox Pearl", "Mox Sapphire", "Mox Jet", "Mox Ruby", "Mox Emerald"]
 ENEMY_EFFECTS = {
     "Nahiri": {"effect": {"startBattleWithCard": ["Nahiri, the Harbinger"]}},
     "Jace": {"effect": {"startBattleWithCard": ["Jace Beleren"]}},
-    "Garruk": {"effect": {"startBattleWithCard": ["Garruk Wildspeaker"]}},
+    # Garruk, Kiora and Slimefoot: their upstream effects snowball whatever their life; the player starts
+    # with 10 more life against them (boss_tune.py could not tune them by life).
+    "Garruk": {"effect": {"startBattleWithCard": ["Garruk Wildspeaker"], "opponent": {"lifeModifier": 10}}},
     "Tibalt": {"effect": {"startBattleWithCard": ["Tibalt, the Fiend-Blooded"]}},
     "Teferi": {"effect": {"startBattleWithCard": ["Teferi, Temporal Archmage"]}},
-    "Kiora": {"effect": {"startBattleWithCard": ["Kiora, the Crashing Wave"]}},
+    "Kiora": {"effect": {"startBattleWithCard": ["Kiora, the Crashing Wave"], "opponent": {"lifeModifier": 10}}},
+    "Slimefoot": {"effect": {"opponent": {"lifeModifier": 10}}},
     "Sorin": {"effect": {"startBattleWithCard": ["Sorin, Vengeful Bloodlord"]}},
     "Liliana": {"effect": {"startBattleWithCard": ["Liliana of the Veil"]}},
     "Emrakul": {"effect": {"startBattleWithCardInCommandZone": ["Emrakul's Ascension"]}},

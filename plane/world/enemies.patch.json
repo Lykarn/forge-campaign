@@ -2,7 +2,7 @@
  "_about": "Merged by scripts/package.py into Adventure's world/enemies.json. Castle bosses' life tuned with scripts/region_bench.py so the castles rise in difficulty (target: about 40% enemy wins at the first castle, rising to about 65% for the finale, against Forge's AI piloting the reference decks).",
  "modify": {
   "Akroma": {
-   "life": 16,
+   "life": 10,
    "rewards": [
     {
      "type": "card",
@@ -58,7 +58,7 @@
    ]
   },
   "Ghalta": {
-   "life": 22,
+   "life": 13,
    "rewards": [
     {
      "type": "card",
@@ -112,7 +112,7 @@
    ]
   },
   "Lathliss": {
-   "life": 30,
+   "life": 12,
    "rewards": [
     {
      "type": "card",
@@ -166,7 +166,7 @@
    ]
   },
   "Griselbrand": {
-   "life": 31,
+   "life": 20,
    "rewards": [
     {
      "type": "card",
@@ -349,7 +349,8 @@
       "Choice: Castle Relic"
      ]
     }
-   ]
+   ],
+   "life": 33
   },
   "Nahiri": {
    "rewards": [
@@ -420,7 +421,8 @@
       "Choice: Power 9"
      ]
     }
-   ]
+   ],
+   "life": 13
   },
   "Jace": {
    "rewards": [
@@ -491,7 +493,8 @@
       "Choice: Power 9"
      ]
     }
-   ]
+   ],
+   "life": 13
   },
   "Garruk": {
    "rewards": [
@@ -568,7 +571,8 @@
       "Choice: Power 9"
      ]
     }
-   ]
+   ],
+   "life": 25
   },
   "Tibalt": {
    "rewards": [
@@ -659,7 +663,8 @@
       "Choice: Power 9"
      ]
     }
-   ]
+   ],
+   "life": 17
   },
   "Grolnok": {
    "rewards": [
@@ -747,7 +752,8 @@
       "Choice: Power 9"
      ]
     }
-   ]
+   ],
+   "life": 15
   },
   "Teferi": {
    "rewards": [
@@ -818,7 +824,8 @@
       "Choice: Relic"
      ]
     }
-   ]
+   ],
+   "life": 40
   },
   "Kiora": {
    "rewards": [
@@ -906,7 +913,8 @@
       "Choice: Relic"
      ]
     }
-   ]
+   ],
+   "life": 25
   },
   "Slimefoot": {
    "rewards": [
@@ -988,7 +996,8 @@
       "Choice: Relic"
      ]
     }
-   ]
+   ],
+   "life": 25
   },
   "Slobad": {
    "rewards": [
@@ -1070,7 +1079,8 @@
       "Choice: Relic"
      ]
     }
-   ]
+   ],
+   "life": 13
   },
   "Zedruu": {
    "rewards": [
@@ -1141,7 +1151,8 @@
       "Choice: Relic"
      ]
     }
-   ]
+   ],
+   "life": 40
   },
   "Xira": {
    "rewards": [
@@ -1229,7 +1240,8 @@
       "Choice: Relic"
      ]
     }
-   ]
+   ],
+   "life": 11
   },
   "Liliana": {
    "rewards": [
@@ -1319,7 +1331,8 @@
       "Choice: Relic"
      ]
     }
-   ]
+   ],
+   "life": 13
   },
   "Scarecrow Captain": {
    "rewards": [
@@ -1378,7 +1391,8 @@
       "Choice: Relic"
      ]
     }
-   ]
+   ],
+   "life": 40
   },
   "The Hydra of Shandalaar": {
    "rewards": [
@@ -1413,7 +1427,8 @@
       "Choice: Castle Relic"
      ]
     }
-   ]
+   ],
+   "life": 30
   },
   "Sorin": {
    "rewards": [
@@ -1484,7 +1499,8 @@
       "Choice: Castle Relic"
      ]
     }
-   ]
+   ],
+   "life": 12
   },
   "Sliver Queen": {
    "rewards": [
@@ -1525,7 +1541,8 @@
       "Choice: Castle Relic"
      ]
     }
-   ]
+   ],
+   "life": 20
   }
  },
  "add": [

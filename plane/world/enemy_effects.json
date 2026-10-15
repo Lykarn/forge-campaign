@@ -18,7 +18,10 @@
   "effect": {
    "startBattleWithCard": [
     "Garruk Wildspeaker"
-   ]
+   ],
+   "opponent": {
+    "lifeModifier": 10
+   }
   }
  },
  "Tibalt": {
@@ -39,7 +42,17 @@
   "effect": {
    "startBattleWithCard": [
     "Kiora, the Crashing Wave"
-   ]
+   ],
+   "opponent": {
+    "lifeModifier": 10
+   }
+  }
+ },
+ "Slimefoot": {
+  "effect": {
+   "opponent": {
+    "lifeModifier": 10
+   }
   }
  },
  "Sorin": {
