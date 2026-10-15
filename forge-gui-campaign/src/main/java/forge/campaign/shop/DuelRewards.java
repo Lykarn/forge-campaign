@@ -50,6 +50,16 @@ public final class DuelRewards {
      */
     public static Array<Reward> choose(Array<Reward> loot) {
         AdventurePlayer player = Current.player();
+        // In a Planar Rift the pick is for the rift deck, from the rift's sets (forge.campaign.rift.RiftRun).
+        Array<Reward> rift = forge.campaign.rift.RiftRun.choices();
+        if (rift != null && rift.size > 0) {
+            for (Reward r : new Array.ArrayIterator<>(loot)) {
+                if (r.getType() != Reward.Type.Card) {
+                    player.addReward(r);
+                }
+            }
+            return rift;
+        }
         CardScores scores = CardScores.get();
         boolean anyCard = false;
         for (Reward r : new Array.ArrayIterator<>(loot)) {

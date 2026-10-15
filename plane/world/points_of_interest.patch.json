@@ -597,6 +597,60 @@
      "val": 3
     }
    ]
+  },
+  {
+   "name": "Rift of Alara",
+   "displayName": "Rift of Alara",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/rift_of_alara.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "dungeon",
+   "spriteAtlas": "../common/maps/tileset/buildingsbosses.atlas",
+   "sprite": "FortBlue",
+   "questFlagsToActivate": [
+    {
+     "key": "Ch1CastlesComplete",
+     "val": 1
+    }
+   ]
+  },
+  {
+   "name": "Rift of Kamigawa",
+   "displayName": "Rift of Kamigawa",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/rift_of_kamigawa.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "dungeon",
+   "spriteAtlas": "../common/maps/tileset/buildingsbosses.atlas",
+   "sprite": "MageTowerWhite",
+   "questFlagsToActivate": [
+    {
+     "key": "Ch1CastlesComplete",
+     "val": 3
+    }
+   ]
+  },
+  {
+   "name": "Rift of New Phyrexia",
+   "displayName": "Rift of New Phyrexia",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/rift_of_new_phyrexia.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "dungeon",
+   "spriteAtlas": "../common/maps/tileset/phyrexia/Phyrexian_Buildings.atlas",
+   "sprite": "CopperhostForest",
+   "questFlagsToActivate": [
+    {
+     "key": "Ch1CastlesComplete",
+     "val": 5
+    }
+   ]
   }
  ]
 }

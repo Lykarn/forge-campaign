@@ -767,7 +767,10 @@ public class RewardScene extends UIScene {
                     if (remainingSelections >= 1) {
 
                         remainingSelections--;
-                        Current.player().addReward(rewardActor.getReward());
+                        // FORGE-CAMPAIGN: a Planar Rift's pick joins the rift deck (forge.campaign.rift.RiftRun).
+                        if (!forge.campaign.rift.RiftRun.takePick(rewardActor.getReward()))
+                            Current.player().addReward(rewardActor.getReward());
+                        // FORGE-CAMPAIGN end
 
                         headerLabel.setVisible(remainingSelections > 0);
                         headerLabel.setText("Select " + remainingSelections + " rewards");

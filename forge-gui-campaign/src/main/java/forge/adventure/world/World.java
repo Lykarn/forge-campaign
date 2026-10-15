@@ -126,6 +126,7 @@ public class World implements Disposable, SaveFileContent {
         mapPoiIds.load(saveFileData.readSubData("mapPoiIds"));
         seed = saveFileData.readLong("seed");
         forge.campaign.shop.MerchantLedger.restore(saveFileData.readObject("campaignMerchants")); // FORGE-CAMPAIGN
+        forge.campaign.rift.RiftRun.restore(saveFileData.containsKey("campaignRift") ? saveFileData.readObject("campaignRift") : null); // FORGE-CAMPAIGN
     }
 
     @Override
@@ -142,6 +143,7 @@ public class World implements Disposable, SaveFileContent {
         data.store("mapPoiIds", mapPoiIds.save());
         data.store("seed", seed);
         data.storeObject("campaignMerchants", forge.campaign.shop.MerchantLedger.snapshot()); // FORGE-CAMPAIGN
+        data.storeObject("campaignRift", forge.campaign.rift.RiftRun.snapshot()); // FORGE-CAMPAIGN
         return data;
     }
 
@@ -501,6 +503,7 @@ public class World implements Disposable, SaveFileContent {
 
             loadWorldData();
             forge.campaign.shop.MerchantLedger.restore(null); // FORGE-CAMPAIGN: a new world, no stocks yet
+            forge.campaign.rift.RiftRun.restore(null); // FORGE-CAMPAIGN: and no rift run
 //////////////////
 ///////// initialize
 //////////////////

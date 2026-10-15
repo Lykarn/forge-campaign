@@ -1590,6 +1590,108 @@
    "gamesPerMatch": 3,
    "bossIntro": "Before your kind had names, I held the first power. Show me yours, and it is mine.",
    "bossInsult": "The Alpha remembers what you have forgotten."
+  },
+  {
+   "name": "Hegemon of Esper",
+   "sprite": "sprites/enemy/humanoid/human/artificer/esper_artificer.atlas",
+   "deck": [
+    "decks/standard/esper_artificer.dck"
+   ],
+   "ai": "",
+   "boss": false,
+   "flying": false,
+   "speed": 1,
+   "scale": 1.5,
+   "life": 25,
+   "rewards": [
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Heart of the Shards"
+     ]
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1500,
+     "addMaxCount": 500
+    }
+   ],
+   "colors": "WUB",
+   "questTags": [
+    "Rift",
+    "Boss"
+   ]
+  },
+  {
+   "name": "The Myojin of Night",
+   "sprite": "sprites/enemy/celestial/seraphim.atlas",
+   "deck": [
+    "decks/standard/seraphim.dck"
+   ],
+   "ai": "",
+   "boss": false,
+   "flying": false,
+   "speed": 1,
+   "scale": 1.5,
+   "life": 25,
+   "rewards": [
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Lantern of the Kami"
+     ]
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1500,
+     "addMaxCount": 500
+    }
+   ],
+   "colors": "WB",
+   "questTags": [
+    "Rift",
+    "Boss"
+   ]
+  },
+  {
+   "name": "Grand Cenobite",
+   "sprite": "sprites/enemy/aberration/phyrexian/copperhostbrutalizer.atlas",
+   "deck": [
+    "decks/miniboss/copperhostbrutalizer.dck"
+   ],
+   "ai": "",
+   "boss": false,
+   "flying": false,
+   "speed": 1,
+   "scale": 1.5,
+   "life": 25,
+   "rewards": [
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Ichor of the Mother"
+     ]
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1500,
+     "addMaxCount": 500
+    }
+   ],
+   "colors": "BG",
+   "questTags": [
+    "Rift",
+    "Boss"
+   ]
   }
  ]
 }

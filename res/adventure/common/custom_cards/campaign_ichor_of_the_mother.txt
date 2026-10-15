@@ -1,0 +1,8 @@
+Name:Ichor of the Mother
+ManaCost:no cost
+Types:Artifact
+S:Mode$ Continuous | EffectZone$ Command | Affected$ Creature.YouCtrl | AddKeyword$ Toxic:1 | Description$ Creatures you control have toxic 1.
+T:Mode$ Phase | Phase$ End of Turn | ValidPlayer$ You | TriggerZones$ Command | Execute$ TrigProliferate | TriggerDescription$ At the beginning of your end step, proliferate.
+SVar:TrigProliferate:DB$ Proliferate
+AI:RemoveDeck:All
+Oracle:Creatures you control have toxic 1.\nAt the beginning of your end step, proliferate.

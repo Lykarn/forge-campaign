@@ -77,5 +77,20 @@
    ]
   },
   "takesPower9": true
+ },
+ "Hegemon of Esper": {
+  "effect": {
+   "changeStartCards": 1
+  }
+ },
+ "The Myojin of Night": {
+  "effect": {
+   "changeStartCards": 1
+  }
+ },
+ "Grand Cenobite": {
+  "effect": {
+   "changeStartCards": 1
+  }
  }
 }

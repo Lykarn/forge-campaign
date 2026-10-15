@@ -13,6 +13,8 @@ items. Writes, all committed:
   res/adventure/common/custom_cards/campaign_*.txt   the cards (res/ only adds files to Forge's)
   plane/world/relics.json                            the catalogue LegendaryChoice reads
   plane/world/items.patch.json                       the items (its other entries are kept)
+  plane/world/enemy_effects.json, enemies.patch.json enemy effects, boss rewards and tuned life
+                                                     (plane/world/boss_tuning.json, by scripts/boss_tune.py)
 
 Every card says AI:RemoveDeck:All, and Adventure's reward pools skip custom cards, so none of them
 can turn up in a shop, a random deck or loot. A name that is already a Magic card is an error.
@@ -31,6 +33,7 @@ CARDS_OUT = ROOT / "res" / "adventure" / "common" / "custom_cards"
 CATALOGUE = ROOT / "plane" / "world" / "relics.json"
 ITEMS_PATCH = ROOT / "plane" / "world" / "items.patch.json"
 EFFECTS_FILE = ROOT / "plane" / "world" / "enemy_effects.json"
+TUNING = ROOT / "plane" / "world" / "boss_tuning.json"
 ENEMIES_PATCH = ROOT / "plane" / "world" / "enemies.patch.json"
 UPSTREAM_ENEMIES = FORGE / "forge-gui" / "res" / "adventure" / "common" / "world" / "enemies.json"
 CARDSFOLDER = FORGE / "forge-gui" / "res" / "cardsfolder"
@@ -185,6 +188,26 @@ RELICS = [
     ], {}),
 ]
 
+# Planar relics: one per Planar Rift, the reward for beating its boss (forge.campaign.rift.RiftRun).
+# Relic slot, tier "planar": never offered by a choice.
+PLANAR_RELICS = [
+    ("Heart of the Shards", "Relic", "", "MulticolorRune", "Artifact", [
+        "S:Mode$ ReduceCost | ValidCard$ Card.MultiColor | EffectZone$ Command | Type$ Spell | Activator$ You | Amount$ 1 | Description$ Multicolored spells you cast cost {1} less.",
+        "T:Mode$ SpellCast | ValidCard$ Card.MultiColor | ValidActivatingPlayer$ You | TriggerZones$ Command | Execute$ TrigScry | TriggerDescription$ Whenever you cast a multicolored spell, scry 1.",
+        "SVar:TrigScry:DB$ Scry | ScryNum$ 1",
+    ], {}),
+    ("Lantern of the Kami", "Relic", "", "ZedruuLantern", "Artifact", [
+        "S:Mode$ ReduceCost | ValidCard$ Card.Legendary | EffectZone$ Command | Type$ Spell | Activator$ You | Amount$ 1 | Description$ Legendary spells you cast cost {1} less.",
+        f"T:{SECOND_SPELL} | Execute$ TrigToken | TriggerDescription$ Whenever you cast your second spell each turn, create a 1/1 colorless Spirit creature token.",
+        "SVar:TrigToken:DB$ Token | TokenScript$ c_1_1_spirit | TokenOwner$ You",
+    ], {}),
+    ("Ichor of the Mother", "Relic", "", "Blood", "Artifact", [
+        "S:Mode$ Continuous | EffectZone$ Command | Affected$ Creature.YouCtrl | AddKeyword$ Toxic:1 | Description$ Creatures you control have toxic 1.",
+        "T:Mode$ Phase | Phase$ End of Turn | ValidPlayer$ You | TriggerZones$ Command | Execute$ TrigProliferate | TriggerDescription$ At the beginning of your end step, proliferate.",
+        "SVar:TrigProliferate:DB$ Proliferate",
+    ], {}),
+]
+
 # Our enemies' custom cards: (name, card type, script lines). Given to enemies by
 # plane/world/enemy_effects.json.
 ENEMY_CARDS = [
@@ -234,6 +257,12 @@ REWARD_MARKERS = {
     "Emrakul": [POWER],
 }
 
+RIFT_BOSSES = [
+    ("Hegemon of Esper", "sprites/enemy/humanoid/human/artificer/esper_artificer.atlas", "decks/standard/esper_artificer.dck", "WUB", "Heart of the Shards"),
+    ("The Myojin of Night", "sprites/enemy/celestial/seraphim.atlas", "decks/standard/seraphim.dck", "WB", "Lantern of the Kami"),
+    ("Grand Cenobite", "sprites/enemy/aberration/phyrexian/copperhostbrutalizer.atlas", "decks/miniboss/copperhostbrutalizer.dck", "BG", "Ichor of the Mother"),
+]
+
 NEW_ENEMIES = [{
     "name": "Oracle of the Alpha",
     "sprite": "sprites/enemy/humanoid/human/wizard/archmage.atlas",
@@ -246,6 +275,17 @@ NEW_ENEMIES = [{
     "bossIntro": "Before your kind had names, I held the first power. Show me yours, and it is mine.",
     "bossInsult": "The Alpha remembers what you have forgotten.",
 }]
+
+for _name, _sprite, _deck, _colours, _relic in RIFT_BOSSES:
+    # Their decks are dealt by the rift (sealed, more packs); the deck here is only a fallback.
+    NEW_ENEMIES.append({
+        "name": _name, "sprite": _sprite, "deck": [_deck], "ai": "", "boss": False, "flying": False,
+        "speed": 1, "scale": 1.5, "life": 25,
+        "rewards": [{"type": "item", "probability": 1, "count": 1, "itemNames": [_relic]},
+                    {"type": "gold", "probability": 1, "count": 1500, "addMaxCount": 500}],
+        "colors": _colours, "questTags": ["Rift", "Boss"],
+    })
+    ENEMY_EFFECTS[_name] = {"effect": {"changeStartCards": 1}}
 
 MARKERS = [
     {"name": "Choice: Relic", "iconName": "TreasureChest",
@@ -302,7 +342,7 @@ def forge_names() -> set[str]:
 
 def main() -> int:
     taken = forge_names()
-    clash = [n for n, *_ in RELICS + ENEMY_CARDS if n in taken]
+    clash = [n for n, *_ in RELICS + PLANAR_RELICS + ENEMY_CARDS if n in taken]
     if clash:
         sys.exit(f"these names are already Magic or Adventure cards: {clash}")
     CARDS_OUT.mkdir(parents=True, exist_ok=True)
@@ -310,16 +350,17 @@ def main() -> int:
         old.unlink()
     catalogue = {"_about": "Written by scripts/make_relics.py; read by forge.campaign.relics.Relics."}
     items = []
-    for name, slot, colours, icon, ctype, lines, extra in RELICS:
+    for name, slot, colours, icon, ctype, lines, extra in RELICS + PLANAR_RELICS:
         (CARDS_OUT / f"{slug(name)}.txt").write_text(card_text(name, ctype, lines, colours), encoding="utf-8", newline="\n")
-        tier = "castle" if slot == "Relic" else "champion"
+        tier = "planar" if (name, slot) in {(r[0], r[1]) for r in PLANAR_RELICS} else "castle" if slot == "Relic" else "champion"
         catalogue[name] = {"tier": tier, "colors": colours, "card": name}
         text = oracle(lines).replace("\\n", " ").replace("CARDNAME", name)
         effect = {"startBattleWithCardInCommandZone": [name]}
         effect.update(extra)
         items.append({"name": name, "equipmentSlot": slot, "iconName": icon,
                       "cost": 12000 if tier == "castle" else 6000,
-                      "description": ("Castle relic. " if tier == "castle" else "Relic. ") + text, "effect": effect})
+                      "description": {"castle": "Castle relic. ", "planar": "Planar relic. "}.get(tier, "Relic. ") + text,
+                      "effect": effect})
     for name, ctype, lines in ENEMY_CARDS:
         (CARDS_OUT / f"{slug(name)}.txt").write_text(card_text(name, ctype, lines), encoding="utf-8", newline="\n")
     CATALOGUE.write_text(json.dumps(catalogue, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
@@ -327,9 +368,15 @@ def main() -> int:
     ours = {i["name"] for i in items} | {m["name"] for m in MARKERS}
     patch["add"] = [e for e in patch.get("add", []) if e["name"] not in ours] + MARKERS + items
     ITEMS_PATCH.write_text(json.dumps(patch, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+    # Boss tuning (scripts/boss_tune.py): life into the enemies patch, a smaller hand into the effects.
+    tuning = {k: v for k, v in json.loads(TUNING.read_text(encoding="utf-8")).items() if not k.startswith("_")}         if TUNING.is_file() else {}
     effects = {"_about": "Written by scripts/make_relics.py; read by forge.campaign.enemies.EnemyEffects "
                          "(each enemy's effect in every map duel)."}
-    effects.update(ENEMY_EFFECTS)
+    effects.update(json.loads(json.dumps(ENEMY_EFFECTS)))
+    for name, tune in tuning.items():
+        if tune.get("hand"):
+            fx = effects.setdefault(name, {"effect": {}})["effect"]
+            fx["changeStartCards"] = fx.get("changeStartCards", 0) + tune["hand"]
     EFFECTS_FILE.write_text(json.dumps(effects, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     upstream = {e["name"]: e for e in json.loads(UPSTREAM_ENEMIES.read_text(encoding="utf-8"))}
     new = {e["name"]: e for e in NEW_ENEMIES}
@@ -337,6 +384,8 @@ def main() -> int:
     enemies["add"] = [e for e in enemies.get("add", []) if e["name"] not in new]
     for name, enemy in new.items():
         enemy = dict(enemy, rewards=enemy["rewards"] + [marker_reward(m) for m in REWARD_MARKERS.get(name, [])])
+        if name in tuning:
+            enemy["life"] = tuning[name]["life"]
         enemies["add"].append(enemy)
     modify = enemies.setdefault("modify", {})
     for name, markers in REWARD_MARKERS.items():
@@ -346,6 +395,11 @@ def main() -> int:
             sys.exit(f"REWARD_MARKERS: no enemy {name!r} in Adventure's enemies.json")
         base = [r for r in upstream[name].get("rewards", []) if not is_marker(r)]
         modify.setdefault(name, {})["rewards"] = base + [marker_reward(m) for m in markers]
+    for name, tune in tuning.items():
+        if name not in new:
+            if name not in upstream:
+                sys.exit(f"boss_tuning.json: no enemy {name!r}")
+            modify.setdefault(name, {})["life"] = tune["life"]
     ENEMIES_PATCH.write_text(json.dumps(enemies, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     castle = sum(1 for r in RELICS if r[1] == "Relic")
     print(f"{len(RELICS)} relics ({castle} castle, {len(RELICS) - castle} champion), {len(ENEMY_CARDS)} enemy cards, "

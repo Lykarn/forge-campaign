@@ -8,7 +8,7 @@ generated from one of Forge's (paths rewritten to point back at common/):
   closed      a small map with a sign: the road opens in a later update
   keyfort     a copy of an upstream dungeon whose treasure chest holds the gate's key
   lair        a copy of an upstream boss map with its boss replaced by ours ("replace":
-              {upstream enemy: ours}); the replaced boss loses its map effect, ours has
+              {upstream enemy: ours}, the first "limit" of them if set); the replaced boss loses its map effect, ours has
               its own (enemy_effects.json). "flag": [key, value] hides it until then
 and plane/world/points_of_interest.patch.json lists them (package.py merges it into Adventure's
 list). Entries without "build" use Adventure's points of interest as they are.
@@ -95,7 +95,7 @@ def keyfort_map(source_map: str, item: str) -> str:
     return tmx[:chest.start()] + new + tmx[chest.end():]
 
 
-def lair_map(source_map: str, replace: dict) -> str:
+def lair_map(source_map: str, replace: dict, limit: int = 0) -> str:
     """An upstream boss map with its boss swapped for ours (and the upstream boss's map effect dropped)."""
     tmx = rewrite_paths((COMMON / source_map.replace("../common/", "")).read_text(encoding="utf-8"))
     for old, new in replace.items():
@@ -105,7 +105,7 @@ def lair_map(source_map: str, replace: dict) -> str:
         def swap(m):
             nonlocal hits
             props = m.group(2)
-            if f'name="enemy" value="{old}"' not in props:
+            if f'name="enemy" value="{old}"' not in props or (limit and hits >= limit):
                 return m.group(0)
             hits += 1
             props = re.sub(r'\s*<property name="effect"[^>]*?(?:/>|>.*?</property>)', "", props, flags=re.S)
@@ -180,7 +180,7 @@ def main() -> int:
             entry.update({k: src[k] for k in ("type", "spriteAtlas", "sprite") if k in src})
         elif kind == "lair":
             src = upstream[build["from"]]
-            text = lair_map(src["map"], build["replace"])
+            text = lair_map(src["map"], build["replace"], build.get("limit", 0))
             entry.update({k: src[k] for k in ("type", "spriteAtlas", "sprite") if k in src})
             if "flag" in build:
                 entry["questFlagsToActivate"] = [{"key": build["flag"][0], "val": build["flag"][1]}]

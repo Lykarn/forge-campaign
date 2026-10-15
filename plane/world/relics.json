@@ -154,5 +154,20 @@
   "tier": "champion",
   "colors": "G",
   "card": "Whistle of the Pack"
+ },
+ "Heart of the Shards": {
+  "tier": "planar",
+  "colors": "",
+  "card": "Heart of the Shards"
+ },
+ "Lantern of the Kami": {
+  "tier": "planar",
+  "colors": "",
+  "card": "Lantern of the Kami"
+ },
+ "Ichor of the Mother": {
+  "tier": "planar",
+  "colors": "",
+  "card": "Ichor of the Mother"
  }
 }

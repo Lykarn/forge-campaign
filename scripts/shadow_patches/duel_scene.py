@@ -84,5 +84,43 @@ rep("""            RegisteredPlayer aiPlayer = RegisteredPlayer.forVariants(play
             // FORGE-CAMPAIGN end
             RegisteredPlayer aiPlayer = RegisteredPlayer.forVariants(playerCount, appliedVariants, deck, null, false, null, null);
 """)
+# Planar Rifts (forge.campaign.rift.RiftRun): the rift deck, rift enemies' decks and life, no relics or gear, the result.
+rep("""            forge.campaign.shop.DuelRewards.duelEnded(winner && !isArena && eventData == null);
+""", """            forge.campaign.shop.DuelRewards.duelEnded(winner && !isArena && eventData == null);
+            // FORGE-CAMPAIGN: a rift run picks a card after a win, and ends on a loss or the boss's fall.
+            if (!isArena && eventData == null)
+                forge.campaign.rift.RiftRun.duelEnded(winner, enemy.getData());
+            // FORGE-CAMPAIGN end
+""")
+rep("""        else
+            this.playerDeck = (Deck) Current.player().getSelectedDeck().copyTo("PlayerDeckCopy");
+""", """        else
+            this.playerDeck = (Deck) Current.player().getSelectedDeck().copyTo("PlayerDeckCopy");
+        // FORGE-CAMPAIGN: in a Planar Rift the player's deck stays behind; the rift deck plays.
+        if (eventData == null && !isArena && forge.campaign.rift.RiftRun.inRift())
+            this.playerDeck = forge.campaign.rift.RiftRun.playerDeck();
+        // FORGE-CAMPAIGN end
+""")
+rep("""        if (eventData == null || eventData.eventRules.allowsItems) {
+            //Collect and add items effects first.""", """        // FORGE-CAMPAIGN: relics and gear stay behind in a Planar Rift.
+        if ((eventData == null && !forge.campaign.rift.RiftRun.inRift()) || (eventData != null && eventData.eventRules.allowsItems)) {
+            //Collect and add items effects first.""")
+rep("""            if (deck == null) {
+                isDeckMissing = true;""", """            // FORGE-CAMPAIGN: rift enemies play sealed decks of the rift's sets.
+            if (eventData == null && !arenaBattleChallenge && forge.campaign.rift.RiftRun.inRift()) {
+                Deck riftDeck = forge.campaign.rift.RiftRun.enemyDeck(currentEnemy);
+                if (riftDeck != null && !riftDeck.getMain().isEmpty())
+                    deck = riftDeck;
+            }
+            // FORGE-CAMPAIGN end
+            if (deck == null) {
+                isDeckMissing = true;""")
+rep("""                    + forge.campaign.ai.CampaignAi.regionLifeBonus());
+""", """                    + forge.campaign.ai.CampaignAi.regionLifeBonus());
+            // FORGE-CAMPAIGN: rift enemies' life is the rift's (the boss keeps its own).
+            if (eventData == null && forge.campaign.rift.RiftRun.inRift())
+                aiPlayer.setStartingLife(forge.campaign.rift.RiftRun.enemyLife(currentEnemy));
+            // FORGE-CAMPAIGN end
+""")
 p.write_text(HEADER + t, encoding="utf-8", newline="\n")
 print("DuelScene.java patched")

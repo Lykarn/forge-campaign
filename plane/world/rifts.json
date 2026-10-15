@@ -1,0 +1,50 @@
+{
+ "_about": "Planar Rifts, read by forge.campaign.rift.RiftRun: the dungeon's point of interest name; the booster sets a sealed deck opens (one pack per entry; the boss opens bossPacks); the rift boss (an enemy on the map); the quest flag its fall sets; rift enemies' life.",
+ "Rift of Alara": {
+  "packs": [
+   "ALA",
+   "ALA",
+   "ALA",
+   "CON",
+   "CON",
+   "ARB",
+   "ARB",
+   "ARB"
+  ],
+  "landSet": "ALA",
+  "boss": "Hegemon of Esper",
+  "flag": "rift_alara",
+  "enemyLife": 16,
+  "bossPacks": 11
+ },
+ "Rift of Kamigawa": {
+  "packs": [
+   "NEO",
+   "NEO",
+   "NEO",
+   "NEO",
+   "NEO",
+   "NEO"
+  ],
+  "landSet": "NEO",
+  "boss": "The Myojin of Night",
+  "flag": "rift_kamigawa",
+  "enemyLife": 16,
+  "bossPacks": 9
+ },
+ "Rift of New Phyrexia": {
+  "packs": [
+   "ONE",
+   "ONE",
+   "ONE",
+   "ONE",
+   "ONE",
+   "ONE"
+  ],
+  "landSet": "ONE",
+  "boss": "Grand Cenobite",
+  "flag": "rift_phyrexia",
+  "enemyLife": 16,
+  "bossPacks": 9
+ }
+}

@@ -11,3 +11,4 @@ forge-gui-campaign/src/main/java/forge/adventure/world/World.java	forge	forge-gu
 forge-gui-campaign/src/main/java/forge/adventure/pointofintrest/PointOfInterest.java	forge	forge-gui-mobile/src/forge/adventure/pointofintrest/PointOfInterest.java	cb548f143f2bf7d30abc7636360d9dffba8e9dae56d6747814f93a72bc1f95fc
 forge-gui-campaign/src/main/java/forge/adventure/data/RewardData.java	forge	forge-gui-mobile/src/forge/adventure/data/RewardData.java	2472cd2fc9c606d670dc28eeb579a837f8990bfad08b7e1d1f2759d575673e4a
 forge-gui-campaign/src/main/java/forge/adventure/scene/RewardScene.java	forge	forge-gui-mobile/src/forge/adventure/scene/RewardScene.java	4783445a85bd4b5e927ed3b63a2ca703142c08f6899f6c1cf4bb1c4889ae2376
+forge-gui-campaign/src/main/java/forge/adventure/scene/InventoryScene.java	forge	forge-gui-mobile/src/forge/adventure/scene/InventoryScene.java	8529069ffcfe14f976a7061603c5dc16b6bf37550811736d365bc530bc41fb66

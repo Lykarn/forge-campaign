@@ -24,7 +24,8 @@ import java.util.Map;
  * CHAMPION relics (LegendaryChoice).
  */
 public final class Relics {
-    public enum Tier { CHAMPION, CASTLE }
+    /** PLANAR: a Planar Rift's own relic, never offered by a choice. */
+    public enum Tier { CHAMPION, CASTLE, PLANAR }
 
     /** colours: "" for any deck, else the colours a deck needs one of ("WU"...). */
     public record Relic(String item, Tier tier, String colours, String card) {

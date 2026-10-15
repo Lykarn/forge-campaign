@@ -394,6 +394,42 @@
      "Whistle of the Pack"
     ]
    }
+  },
+  {
+   "name": "Heart of the Shards",
+   "equipmentSlot": "Relic",
+   "iconName": "MulticolorRune",
+   "cost": 6000,
+   "description": "Planar relic. Multicolored spells you cast cost {1} less. Whenever you cast a multicolored spell, scry 1.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Heart of the Shards"
+    ]
+   }
+  },
+  {
+   "name": "Lantern of the Kami",
+   "equipmentSlot": "Relic",
+   "iconName": "ZedruuLantern",
+   "cost": 6000,
+   "description": "Planar relic. Legendary spells you cast cost {1} less. Whenever you cast your second spell each turn, create a 1/1 colorless Spirit creature token.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Lantern of the Kami"
+    ]
+   }
+  },
+  {
+   "name": "Ichor of the Mother",
+   "equipmentSlot": "Relic",
+   "iconName": "Blood",
+   "cost": 6000,
+   "description": "Planar relic. Creatures you control have toxic 1. At the beginning of your end step, proliferate.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Ichor of the Mother"
+    ]
+   }
   }
  ],
  "modify": {

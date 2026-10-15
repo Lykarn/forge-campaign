@@ -888,6 +888,63 @@
    },
    "x": 302,
    "y": 422
+  },
+  {
+   "name": "Rift of Alara",
+   "region": "hub",
+   "auto": true,
+   "build": {
+    "kind": "lair",
+    "from": "FortBlue3",
+    "replace": {
+     "Esper Artificer": "Hegemon of Esper"
+    },
+    "limit": 1,
+    "flag": [
+     "Ch1CastlesComplete",
+     1
+    ]
+   },
+   "x": 410,
+   "y": 382
+  },
+  {
+   "name": "Rift of Kamigawa",
+   "region": "hub",
+   "auto": true,
+   "build": {
+    "kind": "lair",
+    "from": "MageTower7Church",
+    "replace": {
+     "Holy Apparition": "The Myojin of Night"
+    },
+    "limit": 1,
+    "flag": [
+     "Ch1CastlesComplete",
+     3
+    ]
+   },
+   "x": 324,
+   "y": 268
+  },
+  {
+   "name": "Rift of New Phyrexia",
+   "region": "hub",
+   "auto": true,
+   "build": {
+    "kind": "lair",
+    "from": "CopperhostForest",
+    "replace": {
+     "Copper Host Brutalizer": "Grand Cenobite"
+    },
+    "limit": 1,
+    "flag": [
+     "Ch1CastlesComplete",
+     5
+    ]
+   },
+   "x": 312,
+   "y": 342
   }
  ],
  "passes": [

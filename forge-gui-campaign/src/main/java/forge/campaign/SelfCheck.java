@@ -168,7 +168,6 @@ public final class SelfCheck {
                     shops.size() == 1 && shops.get(0).getRewardData().size >= 6, shops.size() + " shops: " + found);
         }
 
-        checkEveryPlace(layout, world, player);
 
         // Deck size: +2 life per full 10 cards over the minimum, capped at +4.
         check("a 40-card deck gets no bonus life", DeckSize.lifeBonus(deckOf(40)) == 0, null);
@@ -185,6 +184,8 @@ public final class SelfCheck {
                 start + ", " + afterOne + ", " + afterThree);
 
         checkLegendary();
+        // Last: it leaves the player in the last place loaded (a Planar Rift), which other checks would see.
+        checkEveryPlace(layout, world, player);
     }
 
     /**
@@ -276,6 +277,97 @@ public final class SelfCheck {
                 deck.getMain().count(StaticData.instance().getCommonCards().getCard("Black Lotus")) == 1, null);
         check("the Oracle of the Alpha claims the Power 9",
                 forge.campaign.enemies.EnemyEffects.takesPower9(forge.adventure.data.WorldData.getEnemy("Oracle of the Alpha")), null);
+
+        checkRelicSlots(Current.player());
+        checkRifts();
+    }
+
+    /**
+     * Each Planar Rift opens its packs and deals a playable sealed deck, its boss and planar relic
+     * exist, and a run survives the world save.
+     */
+    private static void checkRifts() {
+        java.util.List<String> problems = new java.util.ArrayList<>();
+        int ok = 0;
+        for (forge.campaign.rift.RiftRun.Rift rift : forge.campaign.rift.RiftRun.rifts().values()) {
+            int pool = forge.campaign.rift.RiftRun.open(rift, rift.packs().size()).countAll();
+            forge.deck.Deck deck = forge.campaign.rift.RiftRun.build(rift, rift.packs().size(), new Random(1));
+            forge.adventure.data.EnemyData boss = forge.adventure.data.WorldData.getEnemy(rift.boss());
+            String relic = boss == null || boss.rewards == null || boss.rewards.length == 0 || boss.rewards[0].itemNames == null
+                    ? null : boss.rewards[0].itemNames[0];
+            if (pool < 9 * rift.packs().size()) { // some older sets' Adventure boosters hold 10 cards
+                problems.add(rift.name() + ": " + pool + " cards from " + rift.packs().size() + " packs");
+            } else if (deck.getMain().countAll() < 40) {
+                problems.add(rift.name() + ": a " + deck.getMain().countAll() + "-card deck");
+            } else if (boss == null) {
+                problems.add(rift.name() + ": no boss " + rift.boss());
+            } else if (relic == null || forge.adventure.data.ItemListData.getItem(relic) == null) {
+                problems.add(rift.name() + ": its boss drops no planar relic");
+            } else {
+                ok++;
+            }
+        }
+        check(ok + " Planar Rifts deal sealed decks and have a boss with a planar relic",
+                problems.isEmpty() && ok == 3, problems.isEmpty() ? null : String.join("; ", problems));
+
+        forge.campaign.rift.RiftRun.Rift first = forge.campaign.rift.RiftRun.rifts().values().iterator().next();
+        forge.campaign.rift.RiftRun.start(first, new Random(2));
+        java.util.HashMap<String, java.util.ArrayList<String>> saved = forge.campaign.rift.RiftRun.snapshot();
+        forge.campaign.rift.RiftRun.restore(null);
+        boolean cleared = forge.campaign.rift.RiftRun.activeRift() == null;
+        forge.campaign.rift.RiftRun.restore(saved);
+        boolean back = first.name().equals(forge.campaign.rift.RiftRun.activeRift())
+                && forge.campaign.rift.RiftRun.snapshot().values().iterator().next().size()
+                == saved.values().iterator().next().size();
+        forge.campaign.rift.RiftRun.restore(null);
+        check("a rift run survives the world save", cleared && back, String.valueOf(saved.keySet()));
+    }
+
+    /** Relic slots open with castles, and two relics go to two slots once the second is open. */
+    private static void checkRelicSlots(AdventurePlayer player) {
+        int castles = player.getQuestFlag(DeckSize.CASTLES_FLAG);
+        player.setQuestFlag(DeckSize.CASTLES_FLAG, 0);
+        boolean closedAtStart = !forge.campaign.relics.RelicSlots.isOpen(player, "Relic2")
+                && forge.campaign.relics.RelicSlots.isOpen(player, "Relic");
+        player.setQuestFlag(DeckSize.CASTLES_FLAG, 2);
+        boolean openAfterTwo = forge.campaign.relics.RelicSlots.isOpen(player, "Relic2")
+                && forge.campaign.relics.RelicSlots.isOpen(player, "Trinket2")
+                && !forge.campaign.relics.RelicSlots.isOpen(player, "Relic3");
+        player.setQuestFlag(DeckSize.CASTLES_FLAG, 4);
+        boolean openAfterFour = forge.campaign.relics.RelicSlots.isOpen(player, "Relic3");
+        check("relic slots open with castles: 1 + 1 at the start, +2 after two, +1 after four",
+                closedAtStart && openAfterTwo && openAfterFour, null);
+
+        player.setQuestFlag(DeckSize.CASTLES_FLAG, 2);
+        player.addItem("Crown of the Five Castles", false);
+        player.addItem("Emberheart Brand", false);
+        java.util.List<forge.adventure.data.ItemData> relics = new java.util.ArrayList<>();
+        for (forge.adventure.data.ItemData item : player.getItems()) {
+            if ("Crown of the Five Castles".equals(item.name) || "Emberheart Brand".equals(item.name)) {
+                relics.add(item);
+            }
+        }
+        for (forge.adventure.data.ItemData item : relics) { // as InventoryScene.equip does
+            String family = item.equipmentSlot;
+            item.equipmentSlot = forge.campaign.relics.RelicSlots.slotFor(player, item, null);
+            player.equip(item);
+            item.equipmentSlot = family;
+        }
+        boolean both = relics.size() == 2 && player.itemInSlot("Relic") != null && player.itemInSlot("Relic2") != null
+                && !player.itemInSlot("Relic").equals(player.itemInSlot("Relic2"));
+        for (forge.adventure.data.ItemData item : relics) { // and the same click takes each off again
+            String family = item.equipmentSlot;
+            item.equipmentSlot = forge.campaign.relics.RelicSlots.slotFor(player, item, null);
+            player.equip(item);
+            item.equipmentSlot = family;
+        }
+        boolean off = player.itemInSlot("Relic") == null && player.itemInSlot("Relic2") == null;
+        for (forge.adventure.data.ItemData item : relics) {
+            player.removeItem(item);
+        }
+        player.setQuestFlag(DeckSize.CASTLES_FLAG, castles);
+        check("two relics equip into Relic and Relic2, and unequip again", both && off,
+                relics.size() + " relics, " + player.itemInSlot("Relic") + " / " + player.itemInSlot("Relic2"));
     }
 
     /**

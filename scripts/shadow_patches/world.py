@@ -410,5 +410,18 @@ rep("""    public Pixmap getBiomeImage() {
     }
     // FORGE-CAMPAIGN end""")
 
+# Planar Rifts: the rift run is saved with the world.
+rep("""        forge.campaign.shop.MerchantLedger.restore(saveFileData.readObject("campaignMerchants")); // FORGE-CAMPAIGN
+""", """        forge.campaign.shop.MerchantLedger.restore(saveFileData.readObject("campaignMerchants")); // FORGE-CAMPAIGN
+        forge.campaign.rift.RiftRun.restore(saveFileData.containsKey("campaignRift") ? saveFileData.readObject("campaignRift") : null); // FORGE-CAMPAIGN
+""")
+rep("""        data.storeObject("campaignMerchants", forge.campaign.shop.MerchantLedger.snapshot()); // FORGE-CAMPAIGN
+""", """        data.storeObject("campaignMerchants", forge.campaign.shop.MerchantLedger.snapshot()); // FORGE-CAMPAIGN
+        data.storeObject("campaignRift", forge.campaign.rift.RiftRun.snapshot()); // FORGE-CAMPAIGN
+""")
+rep("""            forge.campaign.shop.MerchantLedger.restore(null); // FORGE-CAMPAIGN: a new world, no stocks yet
+""", """            forge.campaign.shop.MerchantLedger.restore(null); // FORGE-CAMPAIGN: a new world, no stocks yet
+            forge.campaign.rift.RiftRun.restore(null); // FORGE-CAMPAIGN: and no rift run
+""")
 p.write_text(HEADER + t, encoding="utf-8", newline="\n")
 print("World.java patched")

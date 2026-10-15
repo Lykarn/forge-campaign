@@ -73,6 +73,42 @@
     },
     {
       "type": "ImageButton",
+      "name": "Equipment_Relic2",
+      "style": "item_frame_static",
+      "width": 20,
+      "height": 20,
+      "x": 17,
+      "y": 175
+    },
+    {
+      "type": "ImageButton",
+      "name": "Equipment_Relic3",
+      "style": "item_frame_static",
+      "width": 20,
+      "height": 20,
+      "x": 17,
+      "y": 75
+    },
+    {
+      "type": "ImageButton",
+      "name": "Equipment_Relic4",
+      "style": "item_frame_static",
+      "width": 20,
+      "height": 20,
+      "x": 107,
+      "y": 75
+    },
+    {
+      "type": "ImageButton",
+      "name": "Equipment_Trinket2",
+      "style": "item_frame_static",
+      "width": 20,
+      "height": 20,
+      "x": 107,
+      "y": 175
+    },
+    {
+      "type": "ImageButton",
       "name": "Equipment_Trinket",
       "style": "item_frame_static",
       "width": 20,

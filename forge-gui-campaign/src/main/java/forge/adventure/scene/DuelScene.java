@@ -272,6 +272,10 @@ public class DuelScene extends ForgeScene {
             Current.player().getStatistic().setResult(enemyName, winner);
             // FORGE-CAMPAIGN: tell RewardScene this loot is a won map duel's (pick 1 of 3).
             forge.campaign.shop.DuelRewards.duelEnded(winner && !isArena && eventData == null);
+            // FORGE-CAMPAIGN: a rift run picks a card after a win, and ends on a loss or the boss's fall.
+            if (!isArena && eventData == null)
+                forge.campaign.rift.RiftRun.duelEnded(winner, enemy.getData());
+            // FORGE-CAMPAIGN end
 
             if (last instanceof IAfterMatch) {
                 ((IAfterMatch) last).setWinner(winner, isArena);
@@ -448,7 +452,8 @@ public class DuelScene extends ForgeScene {
             humanPlayer.addExtraCardsOnBattlefield(playerCards);
         }
 
-        if (eventData == null || eventData.eventRules.allowsItems) {
+        // FORGE-CAMPAIGN: relics and gear stay behind in a Planar Rift.
+        if ((eventData == null && !forge.campaign.rift.RiftRun.inRift()) || (eventData != null && eventData.eventRules.allowsItems)) {
             //Collect and add items effects first.
             for (Long id : advPlayer.getEquippedItems()) {
                 ItemData item = Current.player().getEquippedItem(id);
@@ -521,6 +526,13 @@ public class DuelScene extends ForgeScene {
                 boolean useGeneticAI = Config.instance().getConfigData().enableGeneticAI && (Current.player().isUsingCustomDeck() || Current.player().isHardorInsaneDifficulty());
                 deck = currentEnemy.copyPlayerDeck ? this.playerDeck : currentEnemy.generateDeck(Current.player().isFantasyMode(), useGeneticAI);
             }
+            // FORGE-CAMPAIGN: rift enemies play sealed decks of the rift's sets.
+            if (eventData == null && !arenaBattleChallenge && forge.campaign.rift.RiftRun.inRift()) {
+                Deck riftDeck = forge.campaign.rift.RiftRun.enemyDeck(currentEnemy);
+                if (riftDeck != null && !riftDeck.getMain().isEmpty())
+                    deck = riftDeck;
+            }
+            // FORGE-CAMPAIGN end
             if (deck == null) {
                 isDeckMissing = true;
                 boolean canUseGeneticAI = Config.instance().getConfigData().enableGeneticAI;
@@ -552,6 +564,10 @@ public class DuelScene extends ForgeScene {
             aiPlayer.setStartingLife(eventData != null ? eventData.eventRules.startingLife
                     : Math.round((float) currentEnemy.life * advPlayer.getDifficulty().enemyLifeFactor)
                     + forge.campaign.ai.CampaignAi.regionLifeBonus());
+            // FORGE-CAMPAIGN: rift enemies' life is the rift's (the boss keeps its own).
+            if (eventData == null && forge.campaign.rift.RiftRun.inRift())
+                aiPlayer.setStartingLife(forge.campaign.rift.RiftRun.enemyLife(currentEnemy));
+            // FORGE-CAMPAIGN end
 
             Array<EffectData> equipmentEffects = new Array<>();
             if (eventData != null && eventData.eventRules.allowsItems) {
@@ -876,6 +892,10 @@ public class DuelScene extends ForgeScene {
             this.playerDeck = (Deck) eventData.registeredDeck.copyTo("EventDeckCopy");
         else
             this.playerDeck = (Deck) Current.player().getSelectedDeck().copyTo("PlayerDeckCopy");
+        // FORGE-CAMPAIGN: in a Planar Rift the player's deck stays behind; the rift deck plays.
+        if (eventData == null && !isArena && forge.campaign.rift.RiftRun.inRift())
+            this.playerDeck = forge.campaign.rift.RiftRun.playerDeck();
+        // FORGE-CAMPAIGN end
         this.chaosBattle = this.enemy.getData().copyPlayerDeck && Current.player().isFantasyMode();
         this.AIExtras.clear();
         this.playerExtras.clear();

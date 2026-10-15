@@ -80,5 +80,14 @@ rep("""        //save RAM
         ImageCache.getInstance().unloadCardTextures(true);
         Forge.advFreezePlayerControls = false;
 """)
+# Planar Rifts: a rift pick goes into the rift deck, not the collection.
+rep("""                        remainingSelections--;
+                        Current.player().addReward(rewardActor.getReward());
+""", """                        remainingSelections--;
+                        // FORGE-CAMPAIGN: a Planar Rift's pick joins the rift deck (forge.campaign.rift.RiftRun).
+                        if (!forge.campaign.rift.RiftRun.takePick(rewardActor.getReward()))
+                            Current.player().addReward(rewardActor.getReward());
+                        // FORGE-CAMPAIGN end
+""")
 p.write_text(HEADER + t, encoding="utf-8", newline="\n")
 print("RewardScene.java patched")

@@ -32,7 +32,8 @@ public final class DeckSize {
         }
         AdventurePlayer player = Current.player();
         int castles = player == null ? 0 : player.getQuestFlag(CASTLES_FLAG);
-        int min = base + (castles >= 3 ? 20 : castles >= 1 ? 10 : 0);
+        // A Planar Rift deals sealed decks: its duels keep the 40-card minimum (forge.campaign.rift.RiftRun).
+        int min = forge.campaign.rift.RiftRun.inRift() ? base : base + (castles >= 3 ? 20 : castles >= 1 ? 10 : 0);
         Config.instance().getConfigData().minDeckSize = min;
         return min;
     }
