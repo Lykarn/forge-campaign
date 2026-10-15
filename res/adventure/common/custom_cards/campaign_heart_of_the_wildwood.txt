@@ -1,0 +1,8 @@
+Name:Heart of the Wildwood
+ManaCost:no cost
+Colors:green
+Types:Artifact
+K:ETBReplacement:Other:AddExtraCounter:Mandatory:Command:Creature.YouCtrl
+SVar:AddExtraCounter:DB$ PutCounter | ETB$ True | Defined$ ReplacedCard | CounterType$ P1P1 | CounterNum$ 1 | SpellDescription$ Creatures you control enter with an additional +1/+1 counter on them.
+AI:RemoveDeck:All
+Oracle:Creatures you control enter with an additional +1/+1 counter on them.

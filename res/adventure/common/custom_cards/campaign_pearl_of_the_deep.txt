@@ -1,0 +1,9 @@
+Name:Pearl of the Deep
+ManaCost:no cost
+Colors:blue
+Types:Artifact
+T:Mode$ Phase | Phase$ End of Turn | ValidPlayer$ You | TriggerZones$ Command | CheckSVar$ X | SVarCompare$ EQ0 | Execute$ TrigDraw | TriggerDescription$ At the beginning of your end step, if you have no cards in hand, draw a card.
+SVar:TrigDraw:DB$ Draw | Defined$ You | NumCards$ 1
+SVar:X:Count$InYourHand
+AI:RemoveDeck:All
+Oracle:At the beginning of your end step, if you have no cards in hand, draw a card.

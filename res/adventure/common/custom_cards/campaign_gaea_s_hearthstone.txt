@@ -1,0 +1,9 @@
+Name:Gaea's Hearthstone
+ManaCost:no cost
+Colors:green
+Types:Artifact
+S:Mode$ Continuous | EffectZone$ Command | Affected$ You | AdjustLandPlays$ 1 | Description$ You may play an additional land on each of your turns.
+T:Mode$ ChangesZone | Destination$ Battlefield | ValidCard$ Land.YouCtrl | TriggerZones$ Command | Execute$ TrigGain | TriggerDescription$ Whenever a land you control enters, you gain 1 life.
+SVar:TrigGain:DB$ GainLife | Defined$ You | LifeAmount$ 1
+AI:RemoveDeck:All
+Oracle:You may play an additional land on each of your turns.\nWhenever a land you control enters, you gain 1 life.

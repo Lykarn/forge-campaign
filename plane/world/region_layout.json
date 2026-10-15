@@ -333,15 +333,15 @@
    "name": "FortBlue1",
    "region": "blue",
    "auto": true,
-   "x": 584,
-   "y": 352
+   "x": 486,
+   "y": 300
   },
   {
    "name": "MerfolkPool",
    "region": "blue",
    "auto": true,
-   "x": 488,
-   "y": 298
+   "x": 584,
+   "y": 352
   },
   {
    "name": "CaveU1",
@@ -411,7 +411,7 @@
     "from": "Forest Town Identity",
     "merchant": "green"
    },
-   "x": 158,
+   "x": 160,
    "y": 294
   },
   {
@@ -434,35 +434,35 @@
     "kind": "watchtower",
     "region": "green"
    },
-   "x": 238,
-   "y": 266
+   "x": 242,
+   "y": 268
   },
   {
    "name": "ElfTown",
    "region": "green",
    "auto": true,
    "x": 196,
-   "y": 196
+   "y": 198
   },
   {
    "name": "CatLairG",
    "region": "green",
    "auto": true,
-   "x": 94,
+   "x": 96,
    "y": 336
   },
   {
    "name": "Fort7",
    "region": "green",
    "auto": true,
-   "x": 96,
-   "y": 248
+   "x": 98,
+   "y": 250
   },
   {
    "name": "WurmPond",
    "region": "green",
    "auto": true,
-   "x": 212,
+   "x": 214,
    "y": 326
   },
   {
@@ -476,8 +476,8 @@
    "name": "Garruk Forest",
    "region": "green",
    "auto": true,
-   "x": 144,
-   "y": 342
+   "x": 128,
+   "y": 374
   },
   {
    "name": "Green Castle",
@@ -521,8 +521,8 @@
     "from": "Mountain Town Generic",
     "merchant": "red"
    },
-   "x": 174,
-   "y": 518
+   "x": 178,
+   "y": 524
   },
   {
    "name": "Ashpeak",
@@ -533,8 +533,8 @@
     "from": "Mountain Town Identity",
     "merchant": "red"
    },
-   "x": 256,
-   "y": 564
+   "x": 264,
+   "y": 562
   },
   {
    "name": "Kiln Hollow",
@@ -546,7 +546,7 @@
     "merchant": "red"
    },
    "x": 190,
-   "y": 624
+   "y": 614
   },
   {
    "name": "Cinder Peaks Watchtower",
@@ -556,50 +556,50 @@
     "kind": "watchtower",
     "region": "red"
    },
-   "x": 110,
-   "y": 556
+   "x": 106,
+   "y": 492
   },
   {
    "name": "BarbarianCamp",
    "region": "red",
    "auto": true,
    "x": 200,
-   "y": 450
+   "y": 452
   },
   {
    "name": "LavaForge1",
    "region": "red",
    "auto": true,
-   "x": 332,
-   "y": 574
+   "x": 118,
+   "y": 562
   },
   {
    "name": "Maze",
    "region": "red",
    "auto": true,
-   "x": 116,
-   "y": 482
+   "x": 334,
+   "y": 574
   },
   {
    "name": "SkullCaveR",
    "region": "red",
    "auto": true,
-   "x": 238,
+   "x": 240,
    "y": 502
   },
   {
    "name": "CaveR2",
    "region": "red",
    "auto": true,
-   "x": 164,
-   "y": 574
+   "x": 306,
+   "y": 528
   },
   {
    "name": "Tibalts Fortress",
    "region": "red",
    "auto": true,
-   "x": 290,
-   "y": 606
+   "x": 212,
+   "y": 566
   },
   {
    "name": "Red Castle",
@@ -744,7 +744,7 @@
    "auto": true,
    "story": true,
    "x": 306,
-   "y": 290
+   "y": 304
   },
   {
    "name": "Quest_ShardMines",
@@ -759,11 +759,19 @@
    "region": "blue",
    "auto": true,
    "story": true,
-   "x": 478,
-   "y": 346
+   "x": 476,
+   "y": 348
   },
   {
    "name": "Quest_DigSite",
+   "region": "hub",
+   "auto": true,
+   "story": true,
+   "x": 410,
+   "y": 284
+  },
+  {
+   "name": "Quest_APortalToNowhere",
    "region": "hub",
    "auto": true,
    "story": true,
@@ -771,19 +779,11 @@
    "y": 396
   },
   {
-   "name": "Quest_APortalToNowhere",
-   "region": "hub",
-   "auto": true,
-   "story": true,
-   "x": 408,
-   "y": 282
-  },
-  {
    "name": "Quest_PrimalJungle",
    "region": "green",
    "auto": true,
    "story": true,
-   "x": 44,
+   "x": 46,
    "y": 338
   },
   {
@@ -791,8 +791,103 @@
    "region": "green",
    "auto": true,
    "story": true,
+   "x": 196,
+   "y": 258
+  },
+  {
+   "name": "Scarecrow Farm",
+   "region": "hub",
+   "auto": true,
+   "x": 350,
+   "y": 500
+  },
+  {
+   "name": "Teferi Hideout",
+   "region": "white",
+   "auto": true,
+   "x": 380,
+   "y": 140
+  },
+  {
+   "name": "Kiora Island",
+   "region": "blue",
+   "auto": true,
+   "x": 602,
+   "y": 176
+  },
+  {
+   "name": "Slimefoots Lair",
+   "region": "green",
+   "auto": true,
    "x": 226,
    "y": 372
+  },
+  {
+   "name": "Grove7",
+   "region": "green",
+   "auto": true,
+   "x": 80,
+   "y": 292
+  },
+  {
+   "name": "Slobads Factory",
+   "region": "red",
+   "auto": true,
+   "x": 242,
+   "y": 610
+  },
+  {
+   "name": "Zedruu City",
+   "region": "red",
+   "auto": true,
+   "x": 156,
+   "y": 478
+  },
+  {
+   "name": "Skep",
+   "region": "red",
+   "auto": true,
+   "x": 292,
+   "y": 604
+  },
+  {
+   "name": "Xiras Hive",
+   "region": "black",
+   "auto": true,
+   "x": 410,
+   "y": 578
+  },
+  {
+   "name": "VampireCastle3",
+   "region": "black",
+   "auto": true,
+   "x": 554,
+   "y": 580
+  },
+  {
+   "name": "Temple of Liliana",
+   "region": "black",
+   "auto": true,
+   "x": 484,
+   "y": 514
+  },
+  {
+   "name": "Alpha Sanctum",
+   "region": "hub",
+   "auto": true,
+   "build": {
+    "kind": "lair",
+    "from": "Teferi Hideout",
+    "replace": {
+     "Teferi": "Oracle of the Alpha"
+    },
+    "flag": [
+     "Ch1CastlesComplete",
+     3
+    ]
+   },
+   "x": 302,
+   "y": 422
   }
  ],
  "passes": [

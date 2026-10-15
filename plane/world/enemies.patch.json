@@ -2,19 +2,1594 @@
  "_about": "Merged by scripts/package.py into Adventure's world/enemies.json. Castle bosses' life tuned with scripts/region_bench.py so the castles rise in difficulty (target: about 40% enemy wins at the first castle, rising to about 65% for the finale, against Forge's AI piloting the reference decks).",
  "modify": {
   "Akroma": {
-   "life": 16
+   "life": 16,
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Swords to Plowshares"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 250
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 10,
+     "addMaxCount": 20
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Karmic Guide"
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Akroma, Angel of Wrath"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "White Key"
+     ]
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Castle Relic"
+     ]
+    }
+   ]
   },
   "Ghalta": {
-   "life": 22
+   "life": 22,
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Ghalta, Primal Hunger"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Green Key"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 250
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Finale of Devastation"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Exploration"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 10,
+     "addMaxCount": 20
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Castle Relic"
+     ]
+    }
+   ]
   },
   "Lathliss": {
-   "life": 30
+   "life": 30,
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Lightning Bolt"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Red Key"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 250
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Lathliss, Dragon Queen"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Torbran, Thane of Red Fell"
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 10,
+     "addMaxCount": 20
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Castle Relic"
+     ]
+    }
+   ]
   },
   "Griselbrand": {
-   "life": 31
+   "life": 31,
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Griselbrand"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Black Key"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 250
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Demonic Tutor"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Toxic Deluge"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 10,
+     "addMaxCount": 20
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Castle Relic"
+     ]
+    }
+   ]
   },
   "Emrakul": {
-   "life": 30
+   "life": 30,
+   "rewards": [
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 5000,
+     "addMaxCount": 2500
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 5,
+     "addMaxCount": 10,
+     "subTypes": [
+      "Eldrazi"
+     ],
+     "cardTypes": [
+      "Creature"
+     ]
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "Union",
+     "probability": 1,
+     "count": 1,
+     "cardUnion": [
+      {
+       "count": 1,
+       "cardName": "Ancestral Recall"
+      },
+      {
+       "count": 1,
+       "cardName": "Black Lotus"
+      },
+      {
+       "count": 1,
+       "cardName": "Mox Emerald"
+      },
+      {
+       "count": 1,
+       "cardName": "Mox Jet"
+      },
+      {
+       "count": 1,
+       "cardName": "Mox Pearl"
+      },
+      {
+       "count": 1,
+       "cardName": "Mox Ruby"
+      },
+      {
+       "count": 1,
+       "cardName": "Mox Sapphire"
+      },
+      {
+       "count": 1,
+       "cardName": "Timetwister"
+      },
+      {
+       "count": 1,
+       "cardName": "Time Walk"
+      }
+     ]
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Power 9"
+     ]
+    }
+   ]
+  },
+  "Lorthos": {
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Lorthos, the Tidemaker"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Blue Key"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 250
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 10,
+     "addMaxCount": 20
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Windfall"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Force of Will"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Castle Relic"
+     ]
+    }
+   ]
+  },
+  "Nahiri": {
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Nahiri, Heir of the Ancients"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Embercleave"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Skullclamp"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Lightning Bolt"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Wheel of Fortune"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Sword of Fire and Ice"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 5000
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Nahiri's Armory"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 50,
+     "addMaxCount": 100
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Power 9"
+     ]
+    }
+   ]
+  },
+  "Jace": {
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Jace, the Mind Sculptor"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Jace, the Perfected Mind"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Jace's Defeat"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Treasure Cruise"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Castaway's Despair"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Counterspell"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 5000
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Jace's Signature Hoodie"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 30,
+     "addMaxCount": 30
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Power 9"
+     ]
+    }
+   ]
+  },
+  "Garruk": {
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Garruk Wildspeaker"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Garruk, Apex Predator"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Exploration"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Primeval Titan"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "In Garruk's Wake"
+    },
+    {
+     "type": "card",
+     "probability": 0.3,
+     "count": 1,
+     "cardName": "Gaea's Cradle"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Thragtusk"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 9000
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Garruk's Mighty Axe"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 20,
+     "addMaxCount": 10
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Power 9"
+     ]
+    }
+   ]
+  },
+  "Tibalt": {
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "rarity": [
+      "rare"
+     ],
+     "cardTypes": [
+      "Land"
+     ]
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 5000
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Valki, God of Lies"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Tibalt, Wicked Tormentor"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Mayhem Devil"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Fiendish Duo"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Hellrider"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Badlands"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Wheel of Fortune"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Tibalt's Bag of Tricks",
+     "itemNames": [
+      "Tibalt's Bag of Tricks"
+     ]
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 50,
+     "addMaxCount": 50
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Power 9"
+     ]
+    }
+   ]
+  },
+  "Grolnok": {
+   "rewards": [
+    {
+     "type": "deckCard",
+     "probability": 1,
+     "count": 4,
+     "rarity": [
+      "rare"
+     ],
+     "cardTypes": [
+      "Land"
+     ]
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 500,
+     "addMaxCount": 1000
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Grolnok, the Omnivore"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "The Gitrog Monster"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Thalia and The Gitrog Monster"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Damnation"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Gitrog, Horror of Zhava"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Froghemoth"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Yargle and Multani"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Grolnok's Skin"
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 50,
+     "addMaxCount": 50
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Power 9"
+     ]
+    }
+   ]
+  },
+  "Teferi": {
+   "rewards": [
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 500,
+     "addMaxCount": 1000
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Swords to Plowshares"
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Teferi's Protection"
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Brainstorm"
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Teferi, Hero of Dominaria"
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Borrowed Time"
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Teferi's Moat"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Teferi's Staff"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 50,
+     "addMaxCount": 50
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Relic"
+     ]
+    }
+   ]
+  },
+  "Kiora": {
+   "rewards": [
+    {
+     "type": "deckCard",
+     "probability": 1,
+     "count": 2,
+     "rarity": [
+      "rare"
+     ],
+     "cardTypes": [
+      "Land"
+     ]
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 5000
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Bident of Thassa"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Kiora, the Tide's Fury"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Kiora, the Crashing Wave"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Kiora Bests the Sea God"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Kiora, Behemoth Beckoner"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Kiora, Master of the Depths"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 4,
+     "cardName": "Kiora's Follower"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Kiora's Bident"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 20,
+     "addMaxCount": 30
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Relic"
+     ]
+    }
+   ]
+  },
+  "Slimefoot": {
+   "rewards": [
+    {
+     "type": "deckCard",
+     "probability": 1,
+     "count": 1,
+     "rarity": [
+      "rare"
+     ],
+     "cardTypes": [
+      "Land"
+     ]
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 5000
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Tendershoot Dryad"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Slimefoot, Thallid Transplant"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Ghave, Guru of Spores"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Corpsejack Menace"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Mycoloth"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Doubling Season"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Slimefoot's Slimy Staff"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 50,
+     "addMaxCount": 50
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Relic"
+     ]
+    }
+   ]
+  },
+  "Slobad": {
+   "rewards": [
+    {
+     "type": "Card",
+     "probability": 1,
+     "count": 1,
+     "rarity": [
+      "rare"
+     ],
+     "cardTypes": [
+      "Land"
+     ]
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 5000
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Solemn Simulacrum"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Slobad, Goblin Tinkerer"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Slobad, Iron Goblin"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Gilded Lotus"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Goblin Engineer"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "March of the Machines"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Slobad's Iron Boots"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 50,
+     "addMaxCount": 50
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Relic"
+     ]
+    }
+   ]
+  },
+  "Zedruu": {
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Zedruu the Greathearted"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Approach of the Second Sun"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Akroan Horse"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Nine Lives"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Castaway's Despair"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Role Reversal"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 5000
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Zedruu's Lantern"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 50,
+     "addMaxCount": 100
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Relic"
+     ]
+    }
+   ]
+  },
+  "Xira": {
+   "rewards": [
+    {
+     "type": "deckCard",
+     "probability": 1,
+     "count": 4,
+     "rarity": [
+      "rare"
+     ],
+     "cardTypes": [
+      "Land"
+     ]
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 5000
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Luminous Broodmoth"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Zask, Skittering Swarmlord"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Mazirek, Kraul Death Priest"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Scute Swarm"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Fatal Push"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Grist, the Hunger Tide"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Doom Blade"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Xira's Fancy Hat"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 50,
+     "addMaxCount": 50
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Relic"
+     ]
+    }
+   ]
+  },
+  "Liliana": {
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 1,
+     "cardName": "Liliana of the Dark Realms"
+    },
+    {
+     "type": "Union",
+     "probability": 1,
+     "count": 4,
+     "cardUnion": [
+      {
+       "count": 1,
+       "subTypes": [
+        "Liliana"
+       ]
+      },
+      {
+       "count": 1,
+       "colors": [
+        "black"
+       ],
+       "superTypes": [
+        "Legend",
+        "Legendary"
+       ],
+       "cardText": "Liliana"
+      },
+      {
+       "count": 1,
+       "cardName": "Oath of Liliana"
+      },
+      {
+       "count": 1,
+       "cardName": "Pyromancer's Goggles"
+      },
+      {
+       "count": 1,
+       "cardName": "Pyromancer's Gauntlet"
+      },
+      {
+       "count": 1,
+       "cardName": "Chandra's Regulator"
+      }
+     ]
+    },
+    {
+     "count": 1,
+     "cardName": "Liliana's Defeat"
+    },
+    {
+     "type": "deckCard",
+     "probability": 0.5,
+     "count": 4,
+     "addMaxCount": 2,
+     "rarity": [
+      "uncommon"
+     ],
+     "cardTypes": [
+      "Creature",
+      "Artifact",
+      "Enchantment",
+      "Instant",
+      "Sorcery"
+     ]
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 9000
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Liliana's Stone"
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Relic"
+     ]
+    }
+   ]
+  },
+  "Scarecrow Captain": {
+   "rewards": [
+    {
+     "type": "deckCard",
+     "probability": 1,
+     "count": 2,
+     "rarity": [
+      "rare"
+     ],
+     "cardTypes": [
+      "Land"
+     ]
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Reaper King"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Wickerwing Effigy"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Pili-Pala"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 500,
+     "addMaxCount": 2000
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemName": "Giant Scythe"
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 20,
+     "addMaxCount": 30
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Relic"
+     ]
+    }
+   ]
+  },
+  "The Hydra of Shandalaar": {
+   "rewards": [
+    {
+     "type": "deckCard",
+     "probability": 1,
+     "count": 2,
+     "addMaxCount": 4
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 150,
+     "addMaxCount": 250
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 4,
+     "colors": [
+      "Green"
+     ],
+     "rarity": [
+      "Mythic Rare"
+     ]
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Castle Relic"
+     ]
+    }
+   ]
+  },
+  "Sorin": {
+   "rewards": [
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Bazaar of Baghdad"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Mox Jet"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Sorin, Imperious Bloodlord"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Swords to Plowshares"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Anguished Unmaking"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Vampiric Tutor"
+    },
+    {
+     "type": "card",
+     "probability": 0.5,
+     "count": 1,
+     "cardName": "Diabolic Intent"
+    },
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 1000,
+     "addMaxCount": 9000
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 20,
+     "addMaxCount": 10
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Castle Relic"
+     ]
+    }
+   ]
+  },
+  "Sliver Queen": {
+   "rewards": [
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 2500,
+     "addMaxCount": 1000
+    },
+    {
+     "type": "card",
+     "probability": 1,
+     "count": 5,
+     "addMaxCount": 10,
+     "subTypes": [
+      "Sliver"
+     ],
+     "cardTypes": [
+      "Creature"
+     ]
+    },
+    {
+     "type": "life",
+     "probability": 1,
+     "count": 1
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 50,
+     "addMaxCount": 50
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Castle Relic"
+     ]
+    }
+   ]
   }
- }
+ },
+ "add": [
+  {
+   "name": "Oracle of the Alpha",
+   "sprite": "sprites/enemy/humanoid/human/wizard/archmage.atlas",
+   "deck": [
+    "decks/boss/oracle_of_the_alpha.dck"
+   ],
+   "ai": "",
+   "boss": true,
+   "flying": false,
+   "speed": 1,
+   "scale": 1.5,
+   "life": 30,
+   "rewards": [
+    {
+     "type": "gold",
+     "probability": 1,
+     "count": 3000,
+     "addMaxCount": 1000
+    },
+    {
+     "type": "shards",
+     "probability": 1,
+     "count": 30,
+     "addMaxCount": 20
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Power 9"
+     ]
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Power 9"
+     ]
+    },
+    {
+     "type": "item",
+     "probability": 1,
+     "count": 1,
+     "itemNames": [
+      "Choice: Castle Relic"
+     ]
+    }
+   ],
+   "colors": "UR",
+   "questTags": [
+    "Boss",
+    "Wizard",
+    "Humanoid",
+    "IdentityBlue",
+    "IdentityRed"
+   ],
+   "gamesPerMatch": 3,
+   "bossIntro": "Before your kind had names, I held the first power. Show me yours, and it is mine.",
+   "bossInsult": "The Alpha remembers what you have forgotten."
+  }
+ ]
 }

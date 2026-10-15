@@ -1,0 +1,7 @@
+Name:Seeker's Map
+ManaCost:no cost
+Types:Artifact
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Command | CheckSVar$ Count$YourTurns | SVarCompare$ EQ1 | Execute$ TrigSeek | TriggerDescription$ At the beginning of your first upkeep, put a random land card from your library into your hand.
+SVar:TrigSeek:DB$ ChangeZone | Origin$ Library | Destination$ Hand | ChangeType$ Land.YouOwn | ChangeNum$ 1 | Hidden$ True | AtRandom$ True
+AI:RemoveDeck:All
+Oracle:At the beginning of your first upkeep, put a random land card from your library into your hand.

@@ -1,0 +1,7 @@
+Name:Oathstone of the Walkers
+ManaCost:no cost
+Types:Artifact
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Command | CheckSVar$ Count$YourTurns | SVarCompare$ EQ1 | Execute$ TrigConjure | TriggerDescription$ At the beginning of your first upkeep, conjure a random planeswalker card from the Oathstone's spellbook onto the battlefield.
+SVar:TrigConjure:DB$ MakeCard | Conjure$ True | Zone$ Battlefield | AtRandom$ True | Spellbook$ Ajani Goldmane,Jace Beleren,Liliana Vess,Chandra Nalaar,Garruk Wildspeaker,Nissa Revane,Elspeth; Knight-Errant,Tezzeret the Seeker,Sorin Markov,Gideon Jura
+AI:RemoveDeck:All
+Oracle:At the beginning of your first upkeep, conjure a random planeswalker card from the Oathstone's spellbook onto the battlefield.

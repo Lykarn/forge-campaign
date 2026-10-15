@@ -1,0 +1,8 @@
+Name:Gravecaller's Coin
+ManaCost:no cost
+Colors:black
+Types:Artifact
+T:Mode$ ChangesZone | Origin$ Battlefield | Destination$ Graveyard | ValidCard$ Creature.nonToken+YouCtrl | TriggerZones$ Command | Execute$ TrigDrain | TriggerDescription$ Whenever a nontoken creature you control dies, each opponent loses 1 life.
+SVar:TrigDrain:DB$ LoseLife | Defined$ Player.Opponent | LifeAmount$ 1
+AI:RemoveDeck:All
+Oracle:Whenever a nontoken creature you control dies, each opponent loses 1 life.

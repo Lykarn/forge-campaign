@@ -1,0 +1,9 @@
+Name:Emberheart Brand
+ManaCost:no cost
+Colors:red
+Types:Artifact
+R:Event$ DamageDone | ActiveZones$ Command | ValidSource$ Card.YouCtrl,Emblem.YouCtrl | ValidTarget$ Permanent.OppCtrl,Opponent | IsCombat$ False | ReplaceWith$ DmgPlus | Description$ If a source you control would deal noncombat damage to an opponent or a permanent an opponent controls, it deals that much damage plus 1 instead.
+SVar:DmgPlus:DB$ ReplaceEffect | VarName$ DamageAmount | VarValue$ X
+SVar:X:ReplaceCount$DamageAmount/Plus.1
+AI:RemoveDeck:All
+Oracle:If a source you control would deal noncombat damage to an opponent or a permanent an opponent controls, it deals that much damage plus 1 instead.

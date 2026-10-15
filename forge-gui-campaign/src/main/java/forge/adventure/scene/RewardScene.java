@@ -148,6 +148,17 @@ public class RewardScene extends UIScene {
                 actor.remove();
             }
         }
+        // FORGE-CAMPAIGN: a queued legendary choice comes next, in this scene, instead of closing.
+        Array<Reward> legendary = forge.campaign.relics.LegendaryChoice.next();
+        if (legendary != null) {
+            flipCountDown = 1.0f;
+            exitCountDown = 0.0f;
+            shown = false;
+            loadSelectableRewards(legendary, Type.RewardChoice, 1);
+            reactivateInputs();
+            return;
+        }
+        // FORGE-CAMPAIGN end
         //save RAM
         ImageCache.getInstance().unloadCardTextures(true);
         Forge.advFreezePlayerControls = false;
@@ -349,6 +360,18 @@ public class RewardScene extends UIScene {
     }
 
     public void loadRewards(Array<Reward> newRewards, Type type, ShopActor shopActor) {
+        // FORGE-CAMPAIGN: legendary choices (relics, Power 9) leave the loot; quitScene shows them
+        // after it (forge.campaign.relics.LegendaryChoice).
+        if (type == Type.Loot || type == Type.QuestReward || type == Type.EventReward) {
+            if (forge.campaign.relics.LegendaryChoice.queue(newRewards) && newRewards.size == 0) {
+                Array<Reward> legendary = forge.campaign.relics.LegendaryChoice.next();
+                if (legendary != null) {
+                    loadSelectableRewards(legendary, Type.RewardChoice, 1);
+                    return;
+                }
+            }
+        }
+        // FORGE-CAMPAIGN end
         // FORGE-CAMPAIGN: loot from a won map duel: gold, shards and items are granted now and the
         // cards become a choice of three (forge.campaign.shop.DuelRewards); chests stay as they are.
         if (type == Type.Loot && forge.campaign.shop.DuelRewards.takeDuelWin()) {

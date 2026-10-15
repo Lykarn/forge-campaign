@@ -1,0 +1,81 @@
+{
+ "_about": "Written by scripts/make_relics.py; read by forge.campaign.enemies.EnemyEffects (each enemy's effect in every map duel).",
+ "Nahiri": {
+  "effect": {
+   "startBattleWithCard": [
+    "Nahiri, the Harbinger"
+   ]
+  }
+ },
+ "Jace": {
+  "effect": {
+   "startBattleWithCard": [
+    "Jace Beleren"
+   ]
+  }
+ },
+ "Garruk": {
+  "effect": {
+   "startBattleWithCard": [
+    "Garruk Wildspeaker"
+   ]
+  }
+ },
+ "Tibalt": {
+  "effect": {
+   "startBattleWithCard": [
+    "Tibalt, the Fiend-Blooded"
+   ]
+  }
+ },
+ "Teferi": {
+  "effect": {
+   "startBattleWithCard": [
+    "Teferi, Temporal Archmage"
+   ]
+  }
+ },
+ "Kiora": {
+  "effect": {
+   "startBattleWithCard": [
+    "Kiora, the Crashing Wave"
+   ]
+  }
+ },
+ "Sorin": {
+  "effect": {
+   "startBattleWithCard": [
+    "Sorin, Vengeful Bloodlord"
+   ]
+  }
+ },
+ "Liliana": {
+  "effect": {
+   "startBattleWithCard": [
+    "Liliana of the Veil"
+   ]
+  }
+ },
+ "Emrakul": {
+  "effect": {
+   "startBattleWithCardInCommandZone": [
+    "Emrakul's Ascension"
+   ]
+  }
+ },
+ "Oracle of the Alpha": {
+  "effect": {
+   "startBattleWithCard": [
+    "Mox Pearl",
+    "Mox Sapphire",
+    "Mox Jet",
+    "Mox Ruby",
+    "Mox Emerald"
+   ],
+   "startBattleWithCardInCommandZone": [
+    "The Alpha's Hoard"
+   ]
+  },
+  "takesPower9": true
+ }
+}

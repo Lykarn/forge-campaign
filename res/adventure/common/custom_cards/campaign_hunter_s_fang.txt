@@ -1,0 +1,7 @@
+Name:Hunter's Fang
+ManaCost:no cost
+Colors:green
+Types:Artifact
+S:Mode$ Continuous | EffectZone$ Command | Affected$ Creature.YouCtrl+powerGE4 | AddKeyword$ Trample | Description$ Creatures you control with power 4 or greater have trample.
+AI:RemoveDeck:All
+Oracle:Creatures you control with power 4 or greater have trample.

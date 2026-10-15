@@ -1,0 +1,9 @@
+Name:Pilgrim's Flask
+ManaCost:no cost
+Colors:white
+Types:Artifact
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Command | CheckSVar$ YourLife | SVarCompare$ LE10 | Execute$ TrigGain | TriggerDescription$ At the beginning of your upkeep, if you have 10 or less life, you gain 2 life.
+SVar:TrigGain:DB$ GainLife | Defined$ You | LifeAmount$ 2
+SVar:YourLife:Count$YourLifeTotal
+AI:RemoveDeck:All
+Oracle:At the beginning of your upkeep, if you have 10 or less life, you gain 2 life.

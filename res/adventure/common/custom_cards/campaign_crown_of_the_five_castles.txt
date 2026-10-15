@@ -1,0 +1,6 @@
+Name:Crown of the Five Castles
+ManaCost:no cost
+Types:Artifact
+A:AB$ Mana | Cost$ 0 | Produced$ Any | ActivationZone$ Command | ActivationLimit$ 1 | SpellDescription$ Add one mana of any color. Activate only once each turn.
+AI:RemoveDeck:All
+Oracle:Add one mana of any color. Activate only once each turn.

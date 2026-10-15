@@ -413,6 +413,13 @@ public class DuelScene extends ForgeScene {
             currentEnemy = currentEnemy.nextEnemy;
         }
 
+        // FORGE-CAMPAIGN: the Oracle of the Alpha plays the player's Power 9 for this duel only
+        // (forge.campaign.enemies.PowerNine; playerDeck is this duel's copy).
+        List<PaperCard> claimedPower = new ArrayList<>();
+        if (eventData == null && forge.campaign.enemies.EnemyEffects.takesPower9(enemy.getData())) {
+            claimedPower = forge.campaign.enemies.PowerNine.takeFrom(playerDeck);
+        }
+        // FORGE-CAMPAIGN end
         humanPlayer = RegisteredPlayer.forVariants(playerCount, appliedVariants, playerDeck, null, false, null, null);
         LobbyPlayer playerObject = GamePlayerUtil.getGuiPlayer();
         FSkin.getAvatars().put(playerAvatarKey, advPlayer.avatar());
@@ -467,6 +474,17 @@ public class DuelScene extends ForgeScene {
                     playerEffects.add(enemy.effect.opponent);
             }
         }
+        // FORGE-CAMPAIGN: the enemy's own effect in every map duel, wherever it is met
+        // (plane/world/enemy_effects.json, forge.campaign.enemies.EnemyEffects).
+        if (eventData == null) {
+            EffectData campaignEffect = forge.campaign.enemies.EnemyEffects.effectOf(enemy.getData());
+            if (campaignEffect != null) {
+                oppEffects.add(campaignEffect);
+                if (campaignEffect.opponent != null)
+                    playerEffects.add(campaignEffect.opponent);
+            }
+        }
+        // FORGE-CAMPAIGN end
         //Collect and add dungeon-wide effects.
         if (dungeonEffect != null) {
             oppEffects.add(dungeonEffect);
@@ -511,6 +529,12 @@ public class DuelScene extends ForgeScene {
                 System.err.println(isDeckMissingMsg);
                 deck = this.eventData == null && canUseGeneticAI ? Aggregates.random(DeckProxy.getAllGeneticAIDecks()).getDeck() : this.playerDeck;
             }
+            // FORGE-CAMPAIGN: the Power 9 taken from the player join the first enemy's deck.
+            if (i == 0 && !claimedPower.isEmpty()) {
+                deck = (Deck) deck.copyTo(deck.getName());
+                forge.campaign.enemies.PowerNine.giveTo(deck, claimedPower);
+            }
+            // FORGE-CAMPAIGN end
             RegisteredPlayer aiPlayer = RegisteredPlayer.forVariants(playerCount, appliedVariants, deck, null, false, null, null);
 
             // FORGE-CAMPAIGN: the enemy's tier picks its AI profile, simulation and time budget

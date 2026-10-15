@@ -1,0 +1,9 @@
+Name:Phylactery of the Undying
+ManaCost:no cost
+Colors:black
+Types:Artifact
+R:Event$ GameLoss | ActiveZones$ Command | ValidPlayer$ You | ReplaceWith$ ExileSetLife | Description$ If you would lose the game, instead exile CARDNAME and your life total becomes 7.
+SVar:ExileSetLife:DB$ ChangeZone | Origin$ Command | Destination$ Exile | Defined$ Self | SubAbility$ DBSetLife
+SVar:DBSetLife:DB$ SetLife | Defined$ You | LifeAmount$ 7
+AI:RemoveDeck:All
+Oracle:If you would lose the game, instead exile CARDNAME and your life total becomes 7.

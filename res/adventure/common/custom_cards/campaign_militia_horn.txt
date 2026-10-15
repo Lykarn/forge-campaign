@@ -1,0 +1,8 @@
+Name:Militia Horn
+ManaCost:no cost
+Colors:white
+Types:Artifact
+T:Mode$ Phase | Phase$ BeginCombat | ValidPlayer$ You | TriggerZones$ Command | IsPresent$ Creature.YouCtrl | PresentCompare$ EQ0 | Execute$ TrigToken | TriggerDescription$ At the beginning of combat on your turn, if you control no creatures, create a 1/1 white Soldier creature token.
+SVar:TrigToken:DB$ Token | TokenScript$ w_1_1_soldier | TokenOwner$ You
+AI:RemoveDeck:All
+Oracle:At the beginning of combat on your turn, if you control no creatures, create a 1/1 white Soldier creature token.

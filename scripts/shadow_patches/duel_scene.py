@@ -49,5 +49,40 @@ rep("""            aiPlayer.setStartingLife(eventData != null ? eventData.eventR
 rep("""        int minDeckSize = format == DeckFormat.Adventure ? Config.instance().getConfigData().minDeckSize : format.getMainRange().getMinimum();""",
     """        // FORGE-CAMPAIGN: 40, then 50 after the first castle, 60 after the third (forge.campaign.DeckSize).
         int minDeckSize = format == DeckFormat.Adventure ? forge.campaign.DeckSize.minimum() : format.getMainRange().getMinimum();""")
+# Relics and bosses: each enemy's own effect in every map duel (forge.campaign.enemies.EnemyEffects),
+# and the Oracle of the Alpha playing the player's Power 9 (forge.campaign.enemies.PowerNine).
+rep("""        humanPlayer = RegisteredPlayer.forVariants(playerCount, appliedVariants, playerDeck, null, false, null, null);
+""", """        // FORGE-CAMPAIGN: the Oracle of the Alpha plays the player's Power 9 for this duel only
+        // (forge.campaign.enemies.PowerNine; playerDeck is this duel's copy).
+        List<PaperCard> claimedPower = new ArrayList<>();
+        if (eventData == null && forge.campaign.enemies.EnemyEffects.takesPower9(enemy.getData())) {
+            claimedPower = forge.campaign.enemies.PowerNine.takeFrom(playerDeck);
+        }
+        // FORGE-CAMPAIGN end
+        humanPlayer = RegisteredPlayer.forVariants(playerCount, appliedVariants, playerDeck, null, false, null, null);
+""")
+rep("""        //Collect and add dungeon-wide effects.
+""", """        // FORGE-CAMPAIGN: the enemy's own effect in every map duel, wherever it is met
+        // (plane/world/enemy_effects.json, forge.campaign.enemies.EnemyEffects).
+        if (eventData == null) {
+            EffectData campaignEffect = forge.campaign.enemies.EnemyEffects.effectOf(enemy.getData());
+            if (campaignEffect != null) {
+                oppEffects.add(campaignEffect);
+                if (campaignEffect.opponent != null)
+                    playerEffects.add(campaignEffect.opponent);
+            }
+        }
+        // FORGE-CAMPAIGN end
+        //Collect and add dungeon-wide effects.
+""")
+rep("""            RegisteredPlayer aiPlayer = RegisteredPlayer.forVariants(playerCount, appliedVariants, deck, null, false, null, null);
+""", """            // FORGE-CAMPAIGN: the Power 9 taken from the player join the first enemy's deck.
+            if (i == 0 && !claimedPower.isEmpty()) {
+                deck = (Deck) deck.copyTo(deck.getName());
+                forge.campaign.enemies.PowerNine.giveTo(deck, claimedPower);
+            }
+            // FORGE-CAMPAIGN end
+            RegisteredPlayer aiPlayer = RegisteredPlayer.forVariants(playerCount, appliedVariants, deck, null, false, null, null);
+""")
 p.write_text(HEADER + t, encoding="utf-8", newline="\n")
 print("DuelScene.java patched")

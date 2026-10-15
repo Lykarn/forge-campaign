@@ -1,0 +1,10 @@
+Name:Chalice of Dawn
+ManaCost:no cost
+Colors:white
+Types:Artifact
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Command | Execute$ TrigGain | TriggerDescription$ At the beginning of your upkeep, you gain 1 life.
+SVar:TrigGain:DB$ GainLife | Defined$ You | LifeAmount$ 1
+T:Mode$ LifeGained | ValidPlayer$ You | TriggerZones$ Command | FirstTime$ True | Execute$ TrigCounter | TriggerDescription$ Whenever you gain life for the first time each turn, put a +1/+1 counter on target creature you control.
+SVar:TrigCounter:DB$ PutCounter | ValidTgts$ Creature.YouCtrl | TgtPrompt$ Select target creature you control | CounterType$ P1P1 | CounterNum$ 1
+AI:RemoveDeck:All
+Oracle:At the beginning of your upkeep, you gain 1 life.\nWhenever you gain life for the first time each turn, put a +1/+1 counter on target creature you control.

@@ -6,6 +6,394 @@
    "iconName": "WhiteKey",
    "questItem": true,
    "description": "A council writ that opens the Crossroads' north gate to the Plains of Serra."
+  },
+  {
+   "name": "Choice: Relic",
+   "iconName": "TreasureChest",
+   "description": "Choose one of three relics for your Trinket slot."
+  },
+  {
+   "name": "Choice: Castle Relic",
+   "iconName": "Star",
+   "description": "Choose one of three castle relics for your Relic slot."
+  },
+  {
+   "name": "Choice: Power 9",
+   "iconName": "BlackLotus",
+   "description": "Choose one of the Power 9 you do not own yet."
+  },
+  {
+   "name": "Oathstone of the Walkers",
+   "equipmentSlot": "Relic",
+   "iconName": "Star",
+   "cost": 12000,
+   "description": "Castle relic. At the beginning of your first upkeep, conjure a random planeswalker card from the Oathstone's spellbook onto the battlefield.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Oathstone of the Walkers"
+    ]
+   }
+  },
+  {
+   "name": "Crown of the Five Castles",
+   "equipmentSlot": "Relic",
+   "iconName": "MulticolorRune",
+   "cost": 12000,
+   "description": "Castle relic. Add one mana of any color. Activate only once each turn.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Crown of the Five Castles"
+    ]
+   }
+  },
+  {
+   "name": "Bell of Wishes",
+   "equipmentSlot": "Relic",
+   "iconName": "RingofThreeWishes",
+   "cost": 12000,
+   "description": "Castle relic. Put a card you own from your sideboard into your hand, then exile Bell of Wishes. Activate only as a sorcery.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Bell of Wishes"
+    ]
+   }
+  },
+  {
+   "name": "Whetstone of Ages",
+   "equipmentSlot": "Relic",
+   "iconName": "SteelSword",
+   "cost": 12000,
+   "description": "Castle relic. Whenever a creature you control deals combat damage to an opponent, it perpetually gets +1/+0.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Whetstone of Ages"
+    ]
+   }
+  },
+  {
+   "name": "Standard of the Vanguard",
+   "equipmentSlot": "Relic",
+   "iconName": "CartoucheOfSolidarity",
+   "cost": 12000,
+   "description": "Castle relic. Whenever you cast a creature spell, that spell perpetually gets +1/+0 and gains vigilance.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Standard of the Vanguard"
+    ]
+   }
+  },
+  {
+   "name": "Chalice of Dawn",
+   "equipmentSlot": "Relic",
+   "iconName": "SunMagusStaff",
+   "cost": 12000,
+   "description": "Castle relic. At the beginning of your upkeep, you gain 1 life. Whenever you gain life for the first time each turn, put a +1/+1 counter on target creature you control.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Chalice of Dawn"
+    ]
+   }
+  },
+  {
+   "name": "Tidecaller's Codex",
+   "equipmentSlot": "Relic",
+   "iconName": "CartoucheOfKnowledge",
+   "cost": 12000,
+   "description": "Castle relic. Whenever you cast your second spell each turn, draw a card. You have no maximum hand size.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Tidecaller's Codex"
+    ]
+   }
+  },
+  {
+   "name": "Astrolabe of First Light",
+   "equipmentSlot": "Relic",
+   "iconName": "MindMagusStaff",
+   "cost": 12000,
+   "description": "Castle relic. At the beginning of your first upkeep, draw two cards. At the beginning of your upkeep, scry 1.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Astrolabe of First Light"
+    ]
+   }
+  },
+  {
+   "name": "Phylactery of the Undying",
+   "equipmentSlot": "Relic",
+   "iconName": "EvilAnkh",
+   "cost": 12000,
+   "description": "Castle relic. If you would lose the game, instead exile Phylactery of the Undying and your life total becomes 7.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Phylactery of the Undying"
+    ]
+   }
+  },
+  {
+   "name": "Grimoire of the First Tutor",
+   "equipmentSlot": "Relic",
+   "iconName": "BurningBook",
+   "cost": 12000,
+   "description": "Castle relic. At the beginning of your first upkeep, search your library for a card, put it into your hand, then shuffle. You lose 2 life.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Grimoire of the First Tutor"
+    ]
+   }
+  },
+  {
+   "name": "Lantern of the Lich-Lord",
+   "equipmentSlot": "Relic",
+   "iconName": "DeathMagusStaff",
+   "cost": 12000,
+   "description": "Castle relic. Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Lantern of the Lich-Lord"
+    ]
+   }
+  },
+  {
+   "name": "Emberheart Brand",
+   "equipmentSlot": "Relic",
+   "iconName": "FireMagusStaff",
+   "cost": 12000,
+   "description": "Castle relic. If a source you control would deal noncombat damage to an opponent or a permanent an opponent controls, it deals that much damage plus 1 instead.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Emberheart Brand"
+    ]
+   }
+  },
+  {
+   "name": "Sigil of the Storm",
+   "equipmentSlot": "Relic",
+   "iconName": "CartoucheOfZeal",
+   "cost": 12000,
+   "description": "Castle relic. Whenever you cast your second spell each turn, Sigil of the Storm deals 2 damage to each opponent.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Sigil of the Storm"
+    ]
+   }
+  },
+  {
+   "name": "Heart of the Wildwood",
+   "equipmentSlot": "Relic",
+   "iconName": "WildMagusStaff",
+   "cost": 12000,
+   "description": "Castle relic. Creatures you control enter with an additional +1/+1 counter on them.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Heart of the Wildwood"
+    ]
+   }
+  },
+  {
+   "name": "Gaea's Hearthstone",
+   "equipmentSlot": "Relic",
+   "iconName": "GreenLeaf",
+   "cost": 12000,
+   "description": "Castle relic. You may play an additional land on each of your turns. Whenever a land you control enters, you gain 1 life.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Gaea's Hearthstone"
+    ]
+   }
+  },
+  {
+   "name": "Explorer's Charm",
+   "equipmentSlot": "Trinket",
+   "iconName": "TravelersAmulet",
+   "cost": 6000,
+   "description": "Relic. You may play an additional land on each of your turns.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Explorer's Charm"
+    ]
+   }
+  },
+  {
+   "name": "Scrying Lens",
+   "equipmentSlot": "Trinket",
+   "iconName": "Magnifier",
+   "cost": 6000,
+   "description": "Relic. At the beginning of your upkeep, scry 1.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Scrying Lens"
+    ]
+   }
+  },
+  {
+   "name": "Seeker's Map",
+   "equipmentSlot": "Trinket",
+   "iconName": "DungeonMap",
+   "cost": 6000,
+   "description": "Relic. At the beginning of your first upkeep, put a random land card from your library into your hand.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Seeker's Map"
+    ]
+   }
+  },
+  {
+   "name": "Tutor's Satchel",
+   "equipmentSlot": "Trinket",
+   "iconName": "ToolBox",
+   "cost": 6000,
+   "description": "Relic. At the beginning of your first upkeep, look at the top four cards of your library. Put one of them into your hand and the rest on the bottom of your library in a random order.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Tutor's Satchel"
+    ]
+   }
+  },
+  {
+   "name": "Wishing Coin",
+   "equipmentSlot": "Trinket",
+   "iconName": "FortuneCoin",
+   "cost": 6000,
+   "description": "Relic. Put a card you own from your sideboard into your hand, then exile Wishing Coin. Activate only as a sorcery.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Wishing Coin"
+    ]
+   }
+  },
+  {
+   "name": "Charm of the Gatewatch",
+   "equipmentSlot": "Trinket",
+   "iconName": "SpiritGuard",
+   "cost": 6000,
+   "description": "Relic. At the beginning of your first upkeep, conjure a random planeswalker card from the Oathstone's spellbook into your hand.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Charm of the Gatewatch"
+    ]
+   }
+  },
+  {
+   "name": "Pilgrim's Flask",
+   "equipmentSlot": "Trinket",
+   "iconName": "LifeAmulet",
+   "cost": 6000,
+   "description": "Relic. At the beginning of your upkeep, if you have 10 or less life, you gain 2 life.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Pilgrim's Flask"
+    ],
+    "lifeModifier": 2
+   }
+  },
+  {
+   "name": "Militia Horn",
+   "equipmentSlot": "Trinket",
+   "iconName": "BattleStandard",
+   "cost": 6000,
+   "description": "Relic. At the beginning of combat on your turn, if you control no creatures, create a 1/1 white Soldier creature token.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Militia Horn"
+    ]
+   }
+  },
+  {
+   "name": "Quill of Insight",
+   "equipmentSlot": "Trinket",
+   "iconName": "Bookmark",
+   "cost": 6000,
+   "description": "Relic. Whenever you cast an instant or sorcery spell, scry 1.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Quill of Insight"
+    ]
+   }
+  },
+  {
+   "name": "Pearl of the Deep",
+   "equipmentSlot": "Trinket",
+   "iconName": "BlueRune",
+   "cost": 6000,
+   "description": "Relic. At the beginning of your end step, if you have no cards in hand, draw a card.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Pearl of the Deep"
+    ]
+   }
+  },
+  {
+   "name": "Gravecaller's Coin",
+   "equipmentSlot": "Trinket",
+   "iconName": "BlackRune",
+   "cost": 6000,
+   "description": "Relic. Whenever a nontoken creature you control dies, each opponent loses 1 life.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Gravecaller's Coin"
+    ]
+   }
+  },
+  {
+   "name": "Vial of Ichor",
+   "equipmentSlot": "Trinket",
+   "iconName": "Blood",
+   "cost": 6000,
+   "description": "Relic. Whenever a creature an opponent controls dies, you gain 1 life.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Vial of Ichor"
+    ]
+   }
+  },
+  {
+   "name": "Kindling Charm",
+   "equipmentSlot": "Trinket",
+   "iconName": "RedRune",
+   "cost": 6000,
+   "description": "Relic. Whenever you cast an instant or sorcery spell, Kindling Charm deals 1 damage to each opponent. This ability triggers only once each turn.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Kindling Charm"
+    ]
+   }
+  },
+  {
+   "name": "Spark of the Forge",
+   "equipmentSlot": "Trinket",
+   "iconName": "RedStaff",
+   "cost": 6000,
+   "description": "Relic. At the beginning of combat on your turn, target creature you control gets +1/+0 until end of turn.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Spark of the Forge"
+    ]
+   }
+  },
+  {
+   "name": "Hunter's Fang",
+   "equipmentSlot": "Trinket",
+   "iconName": "Dagger",
+   "cost": 6000,
+   "description": "Relic. Creatures you control with power 4 or greater have trample.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Hunter's Fang"
+    ]
+   }
+  },
+  {
+   "name": "Whistle of the Pack",
+   "equipmentSlot": "Trinket",
+   "iconName": "GreenRune",
+   "cost": 6000,
+   "description": "Relic. At the beginning of your first upkeep, create a 2/2 green Wolf creature token.",
+   "effect": {
+    "startBattleWithCardInCommandZone": [
+     "Whistle of the Pack"
+    ]
+   }
   }
  ],
  "modify": {

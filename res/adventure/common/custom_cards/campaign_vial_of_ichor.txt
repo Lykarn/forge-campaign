@@ -1,0 +1,8 @@
+Name:Vial of Ichor
+ManaCost:no cost
+Colors:black
+Types:Artifact
+T:Mode$ ChangesZone | Origin$ Battlefield | Destination$ Graveyard | ValidCard$ Creature.OppCtrl | TriggerZones$ Command | Execute$ TrigGain | TriggerDescription$ Whenever a creature an opponent controls dies, you gain 1 life.
+SVar:TrigGain:DB$ GainLife | Defined$ You | LifeAmount$ 1
+AI:RemoveDeck:All
+Oracle:Whenever a creature an opponent controls dies, you gain 1 life.

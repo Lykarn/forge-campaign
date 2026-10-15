@@ -1,0 +1,9 @@
+Name:Tidecaller's Codex
+ManaCost:no cost
+Colors:blue
+Types:Artifact
+T:Mode$ SpellCast | ValidCard$ Card.YouCtrl | ValidActivatingPlayer$ You | TriggerZones$ Command | ActivatorThisTurnCast$ EQ2 | Execute$ TrigDraw | TriggerDescription$ Whenever you cast your second spell each turn, draw a card.
+SVar:TrigDraw:DB$ Draw | Defined$ You | NumCards$ 1
+S:Mode$ Continuous | EffectZone$ Command | Affected$ You | SetMaxHandSize$ Unlimited | Description$ You have no maximum hand size.
+AI:RemoveDeck:All
+Oracle:Whenever you cast your second spell each turn, draw a card.\nYou have no maximum hand size.

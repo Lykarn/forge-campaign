@@ -1,0 +1,7 @@
+Name:Scrying Lens
+ManaCost:no cost
+Types:Artifact
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Command | Execute$ TrigScry | TriggerDescription$ At the beginning of your upkeep, scry 1.
+SVar:TrigScry:DB$ Scry | ScryNum$ 1
+AI:RemoveDeck:All
+Oracle:At the beginning of your upkeep, scry 1.

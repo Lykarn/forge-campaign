@@ -1,0 +1,7 @@
+Name:Wishing Coin
+ManaCost:no cost
+Types:Artifact
+A:AB$ ChangeZone | Cost$ 5 | ActivationZone$ Command | SorcerySpeed$ True | Origin$ Sideboard | Destination$ Hand | ChangeType$ Card.YouOwn | ChangeTypeDesc$ card you own | ChangeNum$ 1 | Hidden$ True | Reveal$ True | SubAbility$ DBExileSelf | SpellDescription$ Put a card you own from your sideboard into your hand, then exile CARDNAME. Activate only as a sorcery.
+SVar:DBExileSelf:DB$ ChangeZone | Origin$ Command | Destination$ Exile | Defined$ Self
+AI:RemoveDeck:All
+Oracle:Put a card you own from your sideboard into your hand, then exile CARDNAME. Activate only as a sorcery.

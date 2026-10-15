@@ -1,0 +1,8 @@
+Name:Spark of the Forge
+ManaCost:no cost
+Colors:red
+Types:Artifact
+T:Mode$ Phase | Phase$ BeginCombat | ValidPlayer$ You | TriggerZones$ Command | IsPresent$ Creature.YouCtrl | Execute$ TrigPump | TriggerDescription$ At the beginning of combat on your turn, target creature you control gets +1/+0 until end of turn.
+SVar:TrigPump:DB$ Pump | ValidTgts$ Creature.YouCtrl | TgtPrompt$ Select target creature you control | NumAtt$ +1
+AI:RemoveDeck:All
+Oracle:At the beginning of combat on your turn, target creature you control gets +1/+0 until end of turn.

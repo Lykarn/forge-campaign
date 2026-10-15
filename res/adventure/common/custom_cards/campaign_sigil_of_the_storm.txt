@@ -1,0 +1,8 @@
+Name:Sigil of the Storm
+ManaCost:no cost
+Colors:red
+Types:Artifact
+T:Mode$ SpellCast | ValidCard$ Card.YouCtrl | ValidActivatingPlayer$ You | TriggerZones$ Command | ActivatorThisTurnCast$ EQ2 | Execute$ TrigDmg | TriggerDescription$ Whenever you cast your second spell each turn, CARDNAME deals 2 damage to each opponent.
+SVar:TrigDmg:DB$ DealDamage | Defined$ Player.Opponent | NumDmg$ 2
+AI:RemoveDeck:All
+Oracle:Whenever you cast your second spell each turn, CARDNAME deals 2 damage to each opponent.

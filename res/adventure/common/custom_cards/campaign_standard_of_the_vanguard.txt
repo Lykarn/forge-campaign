@@ -1,0 +1,8 @@
+Name:Standard of the Vanguard
+ManaCost:no cost
+Colors:white
+Types:Artifact
+T:Mode$ SpellCast | ValidCard$ Creature | ValidActivatingPlayer$ You | TriggerZones$ Command | Execute$ TrigPump | TriggerDescription$ Whenever you cast a creature spell, that spell perpetually gets +1/+0 and gains vigilance.
+SVar:TrigPump:DB$ Pump | PumpZone$ Stack | Defined$ TriggeredCard | NumAtt$ +1 | KW$ Vigilance | Duration$ Perpetual
+AI:RemoveDeck:All
+Oracle:Whenever you cast a creature spell, that spell perpetually gets +1/+0 and gains vigilance.

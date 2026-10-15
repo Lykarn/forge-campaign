@@ -1,0 +1,8 @@
+Name:Whistle of the Pack
+ManaCost:no cost
+Colors:green
+Types:Artifact
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Command | CheckSVar$ Count$YourTurns | SVarCompare$ EQ1 | Execute$ TrigToken | TriggerDescription$ At the beginning of your first upkeep, create a 2/2 green Wolf creature token.
+SVar:TrigToken:DB$ Token | TokenScript$ g_2_2_wolf | TokenOwner$ You
+AI:RemoveDeck:All
+Oracle:At the beginning of your first upkeep, create a 2/2 green Wolf creature token.

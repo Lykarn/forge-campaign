@@ -1,0 +1,158 @@
+{
+ "_about": "Written by scripts/make_relics.py; read by forge.campaign.relics.Relics.",
+ "Oathstone of the Walkers": {
+  "tier": "castle",
+  "colors": "",
+  "card": "Oathstone of the Walkers"
+ },
+ "Crown of the Five Castles": {
+  "tier": "castle",
+  "colors": "",
+  "card": "Crown of the Five Castles"
+ },
+ "Bell of Wishes": {
+  "tier": "castle",
+  "colors": "",
+  "card": "Bell of Wishes"
+ },
+ "Whetstone of Ages": {
+  "tier": "castle",
+  "colors": "",
+  "card": "Whetstone of Ages"
+ },
+ "Standard of the Vanguard": {
+  "tier": "castle",
+  "colors": "W",
+  "card": "Standard of the Vanguard"
+ },
+ "Chalice of Dawn": {
+  "tier": "castle",
+  "colors": "W",
+  "card": "Chalice of Dawn"
+ },
+ "Tidecaller's Codex": {
+  "tier": "castle",
+  "colors": "U",
+  "card": "Tidecaller's Codex"
+ },
+ "Astrolabe of First Light": {
+  "tier": "castle",
+  "colors": "U",
+  "card": "Astrolabe of First Light"
+ },
+ "Phylactery of the Undying": {
+  "tier": "castle",
+  "colors": "B",
+  "card": "Phylactery of the Undying"
+ },
+ "Grimoire of the First Tutor": {
+  "tier": "castle",
+  "colors": "B",
+  "card": "Grimoire of the First Tutor"
+ },
+ "Lantern of the Lich-Lord": {
+  "tier": "castle",
+  "colors": "B",
+  "card": "Lantern of the Lich-Lord"
+ },
+ "Emberheart Brand": {
+  "tier": "castle",
+  "colors": "R",
+  "card": "Emberheart Brand"
+ },
+ "Sigil of the Storm": {
+  "tier": "castle",
+  "colors": "R",
+  "card": "Sigil of the Storm"
+ },
+ "Heart of the Wildwood": {
+  "tier": "castle",
+  "colors": "G",
+  "card": "Heart of the Wildwood"
+ },
+ "Gaea's Hearthstone": {
+  "tier": "castle",
+  "colors": "G",
+  "card": "Gaea's Hearthstone"
+ },
+ "Explorer's Charm": {
+  "tier": "champion",
+  "colors": "",
+  "card": "Explorer's Charm"
+ },
+ "Scrying Lens": {
+  "tier": "champion",
+  "colors": "",
+  "card": "Scrying Lens"
+ },
+ "Seeker's Map": {
+  "tier": "champion",
+  "colors": "",
+  "card": "Seeker's Map"
+ },
+ "Tutor's Satchel": {
+  "tier": "champion",
+  "colors": "",
+  "card": "Tutor's Satchel"
+ },
+ "Wishing Coin": {
+  "tier": "champion",
+  "colors": "",
+  "card": "Wishing Coin"
+ },
+ "Charm of the Gatewatch": {
+  "tier": "champion",
+  "colors": "",
+  "card": "Charm of the Gatewatch"
+ },
+ "Pilgrim's Flask": {
+  "tier": "champion",
+  "colors": "W",
+  "card": "Pilgrim's Flask"
+ },
+ "Militia Horn": {
+  "tier": "champion",
+  "colors": "W",
+  "card": "Militia Horn"
+ },
+ "Quill of Insight": {
+  "tier": "champion",
+  "colors": "U",
+  "card": "Quill of Insight"
+ },
+ "Pearl of the Deep": {
+  "tier": "champion",
+  "colors": "U",
+  "card": "Pearl of the Deep"
+ },
+ "Gravecaller's Coin": {
+  "tier": "champion",
+  "colors": "B",
+  "card": "Gravecaller's Coin"
+ },
+ "Vial of Ichor": {
+  "tier": "champion",
+  "colors": "B",
+  "card": "Vial of Ichor"
+ },
+ "Kindling Charm": {
+  "tier": "champion",
+  "colors": "R",
+  "card": "Kindling Charm"
+ },
+ "Spark of the Forge": {
+  "tier": "champion",
+  "colors": "R",
+  "card": "Spark of the Forge"
+ },
+ "Hunter's Fang": {
+  "tier": "champion",
+  "colors": "G",
+  "card": "Hunter's Fang"
+ },
+ "Whistle of the Pack": {
+  "tier": "champion",
+  "colors": "G",
+  "card": "Whistle of the Pack"
+ }
+}

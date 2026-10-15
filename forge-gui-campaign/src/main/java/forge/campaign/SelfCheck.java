@@ -183,6 +183,99 @@ public final class SelfCheck {
         DeckSize.minimum();
         check("the minimum deck grows 40, 50, 60 with castles", start == 40 && afterOne == 50 && afterThree == 60,
                 start + ", " + afterOne + ", " + afterThree);
+
+        checkLegendary();
+    }
+
+    /**
+     * Relics, special enemies and legendary choices: every relic item and every enemy effect
+     * points at a card the game knows, the Power 9 and our custom cards stay out of random loot,
+     * the choices offer what they should, and the Oracle's claim leaves the player's deck alone.
+     */
+    private static void checkLegendary() {
+        java.util.List<String> problems = new java.util.ArrayList<>();
+        int relics = 0;
+        for (forge.campaign.relics.Relics.Relic r : forge.campaign.relics.Relics.get().all()) {
+            forge.adventure.data.ItemData item = forge.adventure.data.ItemListData.getItem(r.item());
+            forge.item.PaperCard card = StaticData.instance().getCommonCards().getCard(r.card());
+            if (item == null) {
+                problems.add(r.item() + ": no item");
+            } else if (!"Relic".equals(item.equipmentSlot) && !"Trinket".equals(item.equipmentSlot)) {
+                problems.add(r.item() + ": slot " + item.equipmentSlot);
+            } else if (card == null || !card.getRules().isCustom()) {
+                problems.add(r.item() + ": no custom card " + r.card());
+            } else if (item.effect == null || item.effect.startBattleWithCardsInCommandZone().size != 1) {
+                problems.add(r.item() + ": its effect does not start the card in the command zone");
+            } else {
+                relics++;
+            }
+        }
+        check(relics + " relics, each an item with its card", problems.isEmpty() && relics >= 30,
+                problems.isEmpty() ? null : String.join("; ", problems));
+
+        problems.clear();
+        int effects = 0;
+        for (java.util.Map.Entry<String, forge.campaign.enemies.EnemyEffects.Entry> e
+                : forge.campaign.enemies.EnemyEffects.all().entrySet()) {
+            forge.adventure.data.EffectData fx = e.getValue().effect;
+            int named = (fx.startBattleWithCard == null ? 0 : fx.startBattleWithCard.length)
+                    + (fx.startBattleWithCardInCommandZone == null ? 0 : fx.startBattleWithCardInCommandZone.length);
+            int found = fx.startBattleWithCards().size + fx.startBattleWithCardsInCommandZone().size;
+            if (forge.adventure.data.WorldData.getEnemy(e.getKey()) == null) {
+                problems.add(e.getKey() + ": no such enemy");
+            } else if (found != named) {
+                problems.add(e.getKey() + ": " + (named - found) + " unknown cards");
+            } else {
+                effects++;
+            }
+        }
+        check(effects + " enemy effects, every card known", problems.isEmpty() && effects >= 10,
+                problems.isEmpty() ? null : String.join("; ", problems));
+
+        int leaks = 0;
+        StringBuilder leaked = new StringBuilder();
+        for (forge.item.PaperCard c : forge.adventure.data.RewardData.getAllCards()) {
+            if (forge.campaign.enemies.PowerNine.isPower(c.getName()) || c.getRules().isCustom()) {
+                leaks++;
+                leaked.append(' ').append(c.getName());
+            }
+        }
+        check("random loot never holds the Power 9 or a relic card", leaks == 0, leaks == 0 ? null : leaked.toString());
+
+        Array<Reward> loot = new Array<>();
+        loot.add(new Reward(Reward.Type.Gold, 10));
+        loot.add(new Reward(forge.adventure.data.ItemListData.getItem(forge.campaign.relics.LegendaryChoice.CASTLE_RELIC)));
+        loot.add(new Reward(forge.adventure.data.ItemListData.getItem(forge.campaign.relics.LegendaryChoice.POWER_9)));
+        boolean queued = forge.campaign.relics.LegendaryChoice.queue(loot);
+        Array<Reward> castle = forge.campaign.relics.LegendaryChoice.next();
+        Array<Reward> power = forge.campaign.relics.LegendaryChoice.next();
+        boolean drained = forge.campaign.relics.LegendaryChoice.next() == null;
+        java.util.Set<String> castleNames = new java.util.HashSet<>();
+        boolean allCastle = castle != null;
+        for (Reward r : castle == null ? new Array<Reward>() : castle) {
+            castleNames.add(r.getItem().name);
+            allCastle &= "Relic".equals(r.getItem().equipmentSlot);
+        }
+        check("choice markers leave the loot and become choices", queued && loot.size == 1 && drained, loot.size + " left");
+        check("a castle relic choice offers three different castle relics", allCastle && castleNames.size() == 3,
+                String.valueOf(castleNames));
+        check("a Power 9 choice offers the nine to a new player", power != null && power.size == 9,
+                power == null ? "none" : names(power));
+
+        forge.deck.Deck deck = deckOf(39);
+        deck.getMain().add(StaticData.instance().getCommonCards().getCard("Black Lotus"), 1);
+        forge.deck.Deck duelCopy = (forge.deck.Deck) deck.copyTo("PlayerDeckCopy");
+        java.util.List<forge.item.PaperCard> taken = forge.campaign.enemies.PowerNine.takeFrom(duelCopy);
+        forge.deck.Deck oracleDeck = new forge.deck.Deck("oracle");
+        forge.campaign.enemies.PowerNine.giveTo(oracleDeck, taken);
+        check("the Oracle takes Black Lotus for the duel and leaves Wastes",
+                taken.size() == 1 && duelCopy.getMain().countAll() == 40
+                        && duelCopy.getMain().count(StaticData.instance().getCommonCards().getCard("Wastes")) == 1
+                        && oracleDeck.getMain().countAll() == 1, duelCopy.getMain().countAll() + " cards");
+        check("the player's own deck keeps its Black Lotus",
+                deck.getMain().count(StaticData.instance().getCommonCards().getCard("Black Lotus")) == 1, null);
+        check("the Oracle of the Alpha claims the Power 9",
+                forge.campaign.enemies.EnemyEffects.takesPower9(forge.adventure.data.WorldData.getEnemy("Oracle of the Alpha")), null);
     }
 
     /**

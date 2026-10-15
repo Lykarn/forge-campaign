@@ -46,5 +46,39 @@ rep("""            if (collectionPool != null && Reward.Type.Card.equals(reward.
                         : "[%75][+GoldCoin] " + price + "  " + owned + "\\n[%65]" + why);
                 // FORGE-CAMPAIGN end
             }""")
+# Relics and bosses: legendary choices (forge.campaign.relics.LegendaryChoice) follow the loot.
+rep("""        // FORGE-CAMPAIGN: loot from a won map duel: gold, shards and items are granted now and the
+""", """        // FORGE-CAMPAIGN: legendary choices (relics, Power 9) leave the loot; quitScene shows them
+        // after it (forge.campaign.relics.LegendaryChoice).
+        if (type == Type.Loot || type == Type.QuestReward || type == Type.EventReward) {
+            if (forge.campaign.relics.LegendaryChoice.queue(newRewards) && newRewards.size == 0) {
+                Array<Reward> legendary = forge.campaign.relics.LegendaryChoice.next();
+                if (legendary != null) {
+                    loadSelectableRewards(legendary, Type.RewardChoice, 1);
+                    return;
+                }
+            }
+        }
+        // FORGE-CAMPAIGN end
+        // FORGE-CAMPAIGN: loot from a won map duel: gold, shards and items are granted now and the
+""")
+rep("""        //save RAM
+        ImageCache.getInstance().unloadCardTextures(true);
+        Forge.advFreezePlayerControls = false;
+""", """        // FORGE-CAMPAIGN: a queued legendary choice comes next, in this scene, instead of closing.
+        Array<Reward> legendary = forge.campaign.relics.LegendaryChoice.next();
+        if (legendary != null) {
+            flipCountDown = 1.0f;
+            exitCountDown = 0.0f;
+            shown = false;
+            loadSelectableRewards(legendary, Type.RewardChoice, 1);
+            reactivateInputs();
+            return;
+        }
+        // FORGE-CAMPAIGN end
+        //save RAM
+        ImageCache.getInstance().unloadCardTextures(true);
+        Forge.advFreezePlayerControls = false;
+""")
 p.write_text(HEADER + t, encoding="utf-8", newline="\n")
 print("RewardScene.java patched")

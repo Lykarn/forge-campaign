@@ -3,12 +3,14 @@ package forge.campaign.bench;
 import com.badlogic.gdx.utils.Array;
 import com.google.common.eventbus.Subscribe;
 import forge.LobbyPlayer;
+import forge.adventure.data.EffectData;
 import forge.adventure.data.EnemyData;
 import forge.adventure.data.WorldData;
 import forge.adventure.util.CardUtil;
 import forge.campaign.ai.AiStats;
 import forge.campaign.ai.CampaignAi;
 import forge.campaign.ai.EnemyTiers;
+import forge.campaign.enemies.EnemyEffects;
 import forge.deck.Deck;
 import forge.deck.io.DeckSerializer;
 import forge.game.Game;
@@ -58,6 +60,10 @@ import java.util.concurrent.TimeoutException;
  *   TierBench --enemies FILE --decks A.dck,B.dck --games N --out results.csv
  *             [--player-life 20] [--enemy-life-factor 1.0] [--timeout 900] [--stock]
  *             [--life-bonus N] [--min-tier Elite]   (a region's soft difficulty)
+ *             [--effects FILE]   {"enemy": EffectData, "player": EffectData}: a castle's map
+ *                                effect, a relic on the player... (as DuelScene adds them)
+ *
+ * Each enemy also gets its plane/world/enemy_effects.json effect, as in a map duel.
  *
  * --stock plays every enemy as the Adventure does without tiers (Default profile, no simulation),
  * still grouped by tier: the baseline the tiers are measured against.
@@ -69,6 +75,8 @@ public final class TierBench {
     private static boolean stock;
     private static int lifeBonus;
     private static forge.campaign.ai.Tier minTier;
+    private static EffectData extraEnemyEffect;
+    private static EffectData extraPlayerEffect;
 
     private TierBench() {
     }
@@ -77,6 +85,8 @@ public final class TierBench {
         NeoPortable.apply();
         GuiBase.setInterface(new NeoGuiBase(new ConsoleUiDispatcher()));
         NeoBoot.loadEngine(null);
+        // Item, boss and relic effects are custom cards, which only the game itself registers.
+        forge.campaign.cards.CustomCards.load();
 
         if (has(args, "--list")) {
             for (EnemyData e : new Array.ArrayIterator<>(WorldData.getAllEnemies())) {
@@ -96,6 +106,15 @@ public final class TierBench {
         // A region's soft difficulty (RegionLayout enemyLifeBonus / enemyMinTier), as the Adventure applies it.
         lifeBonus = Integer.parseInt(opt(args, "--life-bonus", "0"));
         minTier = forge.campaign.ai.Tier.parse(opt(args, "--min-tier", ""));
+        String effects = opt(args, "--effects", "");
+        if (!effects.isEmpty()) {
+            com.badlogic.gdx.utils.Json json = new com.badlogic.gdx.utils.Json();
+            json.setIgnoreUnknownFields(true);
+            com.badlogic.gdx.utils.JsonValue root = new com.badlogic.gdx.utils.JsonReader()
+                    .parse(Files.readString(Path.of(effects), StandardCharsets.UTF_8));
+            if (root.has("enemy")) extraEnemyEffect = json.readValue(EffectData.class, root.get("enemy"));
+            if (root.has("player")) extraPlayerEffect = json.readValue(EffectData.class, root.get("player"));
+        }
 
         // Resumable: rows already in --out are skipped, so scripts/bench.py can restart a worker
         // that stopped (see RESTART below) and it carries on where it was.
@@ -203,6 +222,22 @@ public final class TierBench {
             RegisteredPlayer refRp = new RegisteredPlayer(ref);
             refRp.setPlayer(refPlayer);
             refRp.setStartingLife(playerLife);
+            // As DuelScene: the enemy's own effect, the map's, and the player's items; each side's
+            // "opponent" part goes to the other side.
+            List<EffectData> enemyEffects = new ArrayList<>();
+            List<EffectData> playerEffects = new ArrayList<>();
+            for (EffectData e : new EffectData[] {stock ? null : EnemyEffects.effectOf(enemy), extraEnemyEffect}) {
+                if (e != null) {
+                    enemyEffects.add(e);
+                    if (e.opponent != null) playerEffects.add(e.opponent);
+                }
+            }
+            if (extraPlayerEffect != null) {
+                playerEffects.add(extraPlayerEffect);
+                if (extraPlayerEffect.opponent != null) enemyEffects.add(extraPlayerEffect.opponent);
+            }
+            applyEffects(enemyRp, enemyEffects);
+            applyEffects(refRp, playerEffects);
 
             GameRules rules = new GameRules(GameType.Adventure);
             rules.setGamesPerMatch(1);
@@ -278,6 +313,25 @@ public final class TierBench {
             sb.append(v.contains(",") || v.contains("\"") ? "\"" + v.replace("\"", "\"\"") + "\"" : v);
         }
         return sb.toString();
+    }
+
+    /** DuelScene.addEffects, for a RegisteredPlayer outside the Adventure. */
+    private static void applyEffects(RegisteredPlayer rp, List<EffectData> effects) {
+        int life = 0;
+        int hand = 0;
+        List<forge.item.IPaperCard> battlefield = new ArrayList<>();
+        List<forge.item.IPaperCard> command = new ArrayList<>();
+        for (EffectData e : effects) {
+            life += e.lifeModifier;
+            hand += e.changeStartCards;
+            for (forge.item.IPaperCard c : e.startBattleWithCards()) battlefield.add(c);
+            for (forge.item.IPaperCard c : e.startBattleWithCardsInCommandZone()) command.add(c);
+        }
+        rp.addExtraCardsOnBattlefield(battlefield);
+        rp.addExtraCardsInCommandZone(command);
+        if (life != 0) rp.setStartingLife(Math.max(1, rp.getStartingLife() + life));
+        rp.setStartingHand(rp.getStartingHand() + hand);
+        rp.setEnableETBCountersEffect(true);
     }
 
     private static boolean has(String[] args, String flag) {

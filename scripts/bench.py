@@ -146,6 +146,8 @@ def main() -> int:
     parser.add_argument("--life-bonus", type=int, default=0, help="extra enemy life (a region's enemyLifeBonus)")
     parser.add_argument("--min-tier", default="", help="tier floor (a region's enemyMinTier)")
     parser.add_argument("--timeout", type=int, default=900, help="seconds before a game counts as a draw")
+    parser.add_argument("--effects", default="", help='JSON file {"enemy": EffectData, "player": EffectData}: '
+                        "a map's effect on the enemy, a relic on the player")
     args = parser.parse_args()
     if args.quick:
         args.games = 1
@@ -181,7 +183,8 @@ def main() -> int:
              "--games", str(args.games), "--player-life", str(args.player_life),
              "--timeout", str(args.timeout), "--out", str(run_dir / f"results-{i}.csv"),
              *(["--stock"] if args.stock else []),
-             "--life-bonus", str(args.life_bonus), *(["--min-tier", args.min_tier] if args.min_tier else [])],
+             "--life-bonus", str(args.life_bonus), *(["--min-tier", args.min_tier] if args.min_tier else []),
+             *(["--effects", str(Path(args.effects).resolve())] if args.effects else [])],
             cwd=APP, stdout=log, stderr=subprocess.STDOUT)
 
     workers = {}

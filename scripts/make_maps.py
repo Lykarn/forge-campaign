@@ -7,6 +7,9 @@ generated from one of Forge's (paths rewritten to point back at common/):
   gate        a small map whose dialog opens the pass (sets its quest flag) if you hold the key
   closed      a small map with a sign: the road opens in a later update
   keyfort     a copy of an upstream dungeon whose treasure chest holds the gate's key
+  lair        a copy of an upstream boss map with its boss replaced by ours ("replace":
+              {upstream enemy: ours}); the replaced boss loses its map effect, ours has
+              its own (enemy_effects.json). "flag": [key, value] hides it until then
 and plane/world/points_of_interest.patch.json lists them (package.py merges it into Adventure's
 list). Entries without "build" use Adventure's points of interest as they are.
 
@@ -92,6 +95,28 @@ def keyfort_map(source_map: str, item: str) -> str:
     return tmx[:chest.start()] + new + tmx[chest.end():]
 
 
+def lair_map(source_map: str, replace: dict) -> str:
+    """An upstream boss map with its boss swapped for ours (and the upstream boss's map effect dropped)."""
+    tmx = rewrite_paths((COMMON / source_map.replace("../common/", "")).read_text(encoding="utf-8"))
+    for old, new in replace.items():
+        pattern = re.compile(r'(<object [^>]*>\s*<properties>)(.*?)(</properties>)', re.S)
+        hits = 0
+
+        def swap(m):
+            nonlocal hits
+            props = m.group(2)
+            if f'name="enemy" value="{old}"' not in props:
+                return m.group(0)
+            hits += 1
+            props = re.sub(r'\s*<property name="effect"[^>]*?(?:/>|>.*?</property>)', "", props, flags=re.S)
+            props = props.replace(f'name="enemy" value="{old}"', f'name="enemy" value="{html.escape(new, quote=True)}"')
+            return m.group(1) + props + m.group(3)
+
+        tmx = pattern.sub(swap, tmx)
+        if not hits:
+            sys.exit(f"{source_map}: no enemy {old!r} to replace")
+    return tmx
+
 def main() -> int:
     if not COMMON.is_dir():
         sys.exit(f"{COMMON} not found: run scripts/assemble.py first")
@@ -153,6 +178,12 @@ def main() -> int:
             src = upstream[build["from"]]
             text = keyfort_map(src["map"], build["item"])
             entry.update({k: src[k] for k in ("type", "spriteAtlas", "sprite") if k in src})
+        elif kind == "lair":
+            src = upstream[build["from"]]
+            text = lair_map(src["map"], build["replace"])
+            entry.update({k: src[k] for k in ("type", "spriteAtlas", "sprite") if k in src})
+            if "flag" in build:
+                entry["questFlagsToActivate"] = [{"key": build["flag"][0], "val": build["flag"][1]}]
         else:
             sys.exit(f"layout: {poi['name']}: unknown build kind {kind!r}")
         (OUT_MAPS / f"{slug}.tmx").write_text(text, encoding="utf-8", newline="\n")

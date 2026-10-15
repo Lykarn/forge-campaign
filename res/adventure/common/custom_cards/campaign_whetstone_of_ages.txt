@@ -1,0 +1,7 @@
+Name:Whetstone of Ages
+ManaCost:no cost
+Types:Artifact
+T:Mode$ DamageDone | ValidSource$ Creature.YouCtrl | ValidTarget$ Opponent | CombatDamage$ True | TriggerZones$ Command | Execute$ TrigPump | TriggerDescription$ Whenever a creature you control deals combat damage to an opponent, it perpetually gets +1/+0.
+SVar:TrigPump:DB$ Pump | Defined$ TriggeredSource | NumAtt$ +1 | Duration$ Perpetual
+AI:RemoveDeck:All
+Oracle:Whenever a creature you control deals combat damage to an opponent, it perpetually gets +1/+0.

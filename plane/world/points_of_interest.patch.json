@@ -23,6 +23,12 @@
      "val": 5
     }
    ]
+  },
+  "VampireCastle3": {
+   "displayName": "Sorin's Keep"
+  },
+  "Skep": {
+   "displayName": "The Skep"
   }
  },
  "add": [
@@ -573,6 +579,24 @@
    "type": "landmark",
    "spriteAtlas": "../common/maps/tileset/buildings.atlas",
    "sprite": "MageTower"
+  },
+  {
+   "name": "Alpha Sanctum",
+   "displayName": "Alpha Sanctum",
+   "count": 0,
+   "map": "../Campaign/maps/map/campaign/alpha_sanctum.tmx",
+   "questTags": [
+    "Campaign"
+   ],
+   "type": "sidebosseasy",
+   "spriteAtlas": "../common/maps/tileset/buildings.atlas",
+   "sprite": "Jace",
+   "questFlagsToActivate": [
+    {
+     "key": "Ch1CastlesComplete",
+     "val": 3
+    }
+   ]
   }
  ]
 }

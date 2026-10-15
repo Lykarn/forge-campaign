@@ -1,0 +1,9 @@
+Name:Grimoire of the First Tutor
+ManaCost:no cost
+Colors:black
+Types:Artifact
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Command | CheckSVar$ Count$YourTurns | SVarCompare$ EQ1 | Execute$ TrigTutor | TriggerDescription$ At the beginning of your first upkeep, search your library for a card, put it into your hand, then shuffle. You lose 2 life.
+SVar:TrigTutor:DB$ ChangeZone | Origin$ Library | Destination$ Hand | ChangeType$ Card | ChangeNum$ 1 | Mandatory$ True | SubAbility$ DBLoseLife
+SVar:DBLoseLife:DB$ LoseLife | Defined$ You | LifeAmount$ 2
+AI:RemoveDeck:All
+Oracle:At the beginning of your first upkeep, search your library for a card, put it into your hand, then shuffle. You lose 2 life.
